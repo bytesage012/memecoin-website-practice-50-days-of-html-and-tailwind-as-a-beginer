@@ -1,0 +1,422 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        MoonMango ($MNGO) - Tropical Memecoin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0b1a0f;
+            color: #e0f2f1;
+            overflow-x: hidden;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Pacifico', cursive;
+            color: #ffb347;
+            text-shadow: 0 0 8px #ffb347;
+        }
+        /* Moonlit jungle background overlay */
+        
+        .background-jungle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .background-jungle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.3) contrast(1.2);
+        }
+        /* Animated fruit chart bars */
+        
+        .bar {
+            transition: height 2s ease;
+            border-radius: 0.5rem;
+            position: relative;
+            overflow: visible;
+        }
+        
+        .bar-fruit {
+            position: absolute;
+            top: -2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            box-shadow: 0 0 10px rgba(255, 179, 71, 0.7);
+            animation: bounce 2s infinite ease-in-out;
+        }
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+        /* Countdown timer digits */
+        
+        .countdown-digit {
+            background: #ffb347;
+            color: #0b1a0f;
+            font-weight: 700;
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 0 10px #ffb347;
+            min-width: 3.5rem;
+            text-align: center;
+        }
+        /* Scrollbar for roadmap */
+        
+        .roadmap-scroll {
+            max-height: 400px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #ffb347 transparent;
+        }
+        
+        .roadmap-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .roadmap-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .roadmap-scroll::-webkit-scrollbar-thumb {
+            background-color: #ffb347;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+
+<body class="relative">
+    <div aria-hidden="true" class="background-jungle">
+        <img alt="Moonlit jungle background with glowing moonlight filtering through dense tropical leaves and palm trees, dark green and blue hues with soft glowing stars" height="1080" src="https://storage.googleapis.com/a1aa/image/3c29cc30-2b35-4597-2d9b-dae6d60f3092.jpg"
+            width="1920" />
+    </div>
+    <header class="flex items-center justify-between px-6 py-4 bg-black bg-opacity-50 backdrop-blur-md fixed w-full z-30">
+        <div class="flex items-center space-x-3">
+            <img alt="Juicy mango fruit with a crescent moon behind it, logo for MoonMango memecoin" class="w-12 h-12 rounded-full shadow-lg" height="48" src="https://storage.googleapis.com/a1aa/image/18f074c9-995a-4b8d-da99-851c008a2b5f.jpg" width="48" />
+            <h1 class="text-3xl font-bold text-yellow-400 select-none">
+                MoonMango
+                <span class="text-yellow-300 text-xl font-normal">
+      ($MNGO)
+     </span>
+            </h1>
+        </div>
+        <nav class="hidden md:flex space-x-8 font-semibold text-yellow-300">
+            <a class="hover:text-yellow-400 transition" href="#mission">
+     Mission
+    </a>
+            <a class="hover:text-yellow-400 transition" href="#tokenomics">
+     Tokenomics
+    </a>
+            <a class="hover:text-yellow-400 transition" href="#roadmap">
+     Roadmap
+    </a>
+            <a class="hover:text-yellow-400 transition" href="#joinus">
+     Join Us
+    </a>
+        </nav>
+        <button class="md:hidden text-yellow-300 focus:outline-none" id="mobile-menu-button">
+    <i class="fas fa-bars fa-lg">
+    </i>
+   </button>
+    </header>
+    <nav class="hidden fixed top-16 left-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-40 flex flex-col space-y-4 py-6 px-8 text-yellow-300 font-semibold text-lg md:hidden" id="mobile-menu">
+        <a class="hover:text-yellow-400 transition" href="#mission" onclick="toggleMobileMenu()">
+    Mission
+   </a>
+        <a class="hover:text-yellow-400 transition" href="#tokenomics" onclick="toggleMobileMenu()">
+    Tokenomics
+   </a>
+        <a class="hover:text-yellow-400 transition" href="#roadmap" onclick="toggleMobileMenu()">
+    Roadmap
+   </a>
+        <a class="hover:text-yellow-400 transition" href="#joinus" onclick="toggleMobileMenu()">
+    Join Us
+   </a>
+    </nav>
+    <main class="pt-24 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 space-y-24">
+        <!-- Hero Section with Countdown -->
+        <section class="text-center max-w-4xl mx-auto" id="hero">
+            <img alt="A juicy ripe mango glowing softly under moonlight with tropical leaves around it, vibrant yellow and orange colors with blue moonlight highlights" class="mx-auto w-48 h-48 rounded-full shadow-2xl mb-8" height="400" src="https://storage.googleapis.com/a1aa/image/389bee4c-f34d-4cd8-3f69-f26ec3fe3933.jpg"
+                width="400" />
+            <h2 class="text-5xl mb-4">
+                Welcome to MoonMango
+            </h2>
+            <p class="text-yellow-200 text-lg max-w-3xl mx-auto mb-8">
+                The juiciest memecoin on the blockchain, ripe with potential and powered by the moonlit jungle vibes. Join the $MNGO revolution and ride the tropical wave to the moon!
+            </p>
+            <div aria-label="Launch countdown timer" class="flex justify-center space-x-4 select-none">
+                <div>
+                    <div aria-atomic="true" aria-live="polite" class="countdown-digit" id="days">
+                        00
+                    </div>
+                    <div class="text-yellow-300 mt-1 font-semibold text-sm">
+                        Days
+                    </div>
+                </div>
+                <div>
+                    <div aria-atomic="true" aria-live="polite" class="countdown-digit" id="hours">
+                        00
+                    </div>
+                    <div class="text-yellow-300 mt-1 font-semibold text-sm">
+                        Hours
+                    </div>
+                </div>
+                <div>
+                    <div aria-atomic="true" aria-live="polite" class="countdown-digit" id="minutes">
+                        00
+                    </div>
+                    <div class="text-yellow-300 mt-1 font-semibold text-sm">
+                        Minutes
+                    </div>
+                </div>
+                <div>
+                    <div aria-atomic="true" aria-live="polite" class="countdown-digit" id="seconds">
+                        00
+                    </div>
+                    <div class="text-yellow-300 mt-1 font-semibold text-sm">
+                        Seconds
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Mission Section -->
+        <section class="max-w-5xl mx-auto bg-black bg-opacity-40 rounded-3xl p-10 shadow-lg" id="mission">
+            <h2 class="text-4xl mb-6 text-center">
+                Our Mission
+            </h2>
+            <p class="text-yellow-100 text-lg leading-relaxed max-w-3xl mx-auto">
+                At MoonMango, our mission is to blend the fun and vibrant spirit of tropical jungles with the power of decentralized finance. We aim to create a memecoin that’s not only juicy and delicious but also community-driven, transparent, and sustainable. We want
+                to bring the excitement of the crypto jungle to everyone, making $MNGO a symbol of growth, prosperity, and moonlit adventures.
+            </p>
+        </section>
+        <!-- Tokenomics Section -->
+        <section class="max-w-6xl mx-auto bg-black bg-opacity-40 rounded-3xl p-10 shadow-lg" id="tokenomics">
+            <h2 class="text-4xl mb-10 text-center">
+                Tokenomics
+            </h2>
+            <div class="flex flex-col md:flex-row md:space-x-16 items-end justify-center space-y-12 md:space-y-0">
+                <!-- Bar 1: Liquidity Pool -->
+                <div class="flex flex-col items-center w-24">
+                    <div aria-label="Liquidity Pool 45 percent" class="bar bg-yellow-400 w-16" data-height="180" style="height: 0;">
+                        <img alt="Juicy mango fruit icon representing liquidity pool" class="bar-fruit" height="40" src="https://storage.googleapis.com/a1aa/image/c2a4944d-09b3-43f8-cf2b-3ba3dd98a995.jpg" width="40" />
+                    </div>
+                    <span class="mt-4 text-yellow-300 font-semibold text-center">
+       Liquidity Pool
+       <br/>
+       45%
+      </span>
+                </div>
+                <!-- Bar 2: Marketing -->
+                <div class="flex flex-col items-center w-24">
+                    <div aria-label="Marketing 22.5 percent" class="bar bg-green-400 w-16" data-height="90" style="height: 0;">
+                        <img alt="Sliced mango fruit icon representing marketing budget" class="bar-fruit" height="40" src="https://storage.googleapis.com/a1aa/image/3297e658-a7fc-4697-cb1b-b8951e1e1969.jpg" width="40" />
+                    </div>
+                    <span class="mt-4 text-yellow-300 font-semibold text-center">
+       Marketing
+       <br/>
+       22.5%
+      </span>
+                </div>
+                <!-- Bar 3: Development -->
+                <div class="flex flex-col items-center w-24">
+                    <div aria-label="Development 17.5 percent" class="bar bg-orange-400 w-16" data-height="70" style="height: 0;">
+                        <img alt="Mango leaf icon representing development funds" class="bar-fruit" height="40" src="https://storage.googleapis.com/a1aa/image/667a33c3-d4bc-43ab-0d62-d2ca5d9b3c58.jpg" width="40" />
+                    </div>
+                    <span class="mt-4 text-yellow-300 font-semibold text-center">
+       Development
+       <br/>
+       17.5%
+      </span>
+                </div>
+                <!-- Bar 4: Team -->
+                <div class="flex flex-col items-center w-24">
+                    <div aria-label="Team 10 percent" class="bar bg-red-400 w-16" data-height="40" style="height: 0;">
+                        <img alt="Mango seed icon representing team allocation" class="bar-fruit" height="40" src="https://storage.googleapis.com/a1aa/image/3c66bc3b-585b-44ae-f76f-7c4653d61071.jpg" width="40" />
+                    </div>
+                    <span class="mt-4 text-yellow-300 font-semibold text-center">
+       Team
+       <br/>
+       10%
+      </span>
+                </div>
+            </div>
+        </section>
+        <!-- Roadmap Section -->
+        <section class="max-w-5xl mx-auto bg-black bg-opacity-40 rounded-3xl p-10 shadow-lg" id="roadmap">
+            <h2 class="text-4xl mb-8 text-center">
+                Roadmap
+            </h2>
+            <div class="roadmap-scroll space-y-8 px-4">
+                <div class="flex items-start space-x-6">
+                    <img alt="Seedling sprouting from soil representing project inception" class="w-16 h-16 rounded-full shadow-lg" height="64" src="https://storage.googleapis.com/a1aa/image/9ae8cdc3-05e0-47ba-ea4c-70374d6fb529.jpg" width="64" />
+                    <div>
+                        <h3 class="text-yellow-300 text-2xl font-semibold mb-1">
+                            Q2 2024 - Seed Planting
+                        </h3>
+                        <p class="text-yellow-100 leading-relaxed">
+                            Conceptualize MoonMango, build the core team, design the logo and branding, and start community engagement on social media.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <img alt="Full moon shining bright representing token launch" class="w-16 h-16 rounded-full shadow-lg" height="64" src="https://storage.googleapis.com/a1aa/image/42bf8ed5-5cc2-40b6-7b75-921b1a826c17.jpg" width="64" />
+                    <div>
+                        <h3 class="text-yellow-300 text-2xl font-semibold mb-1">
+                            Q3 2024 - Moon Launch
+                        </h3>
+                        <p class="text-yellow-100 leading-relaxed">
+                            Launch $MNGO token on major decentralized exchanges, initiate liquidity pools, and start marketing campaigns.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <img alt="Tropical palm tree representing ecosystem growth" class="w-16 h-16 rounded-full shadow-lg" height="64" src="https://storage.googleapis.com/a1aa/image/f8df1188-4424-45f4-625e-1d88f095ec44.jpg" width="64" />
+                    <div>
+                        <h3 class="text-yellow-300 text-2xl font-semibold mb-1">
+                            Q4 2024 - Jungle Expansion
+                        </h3>
+                        <p class="text-yellow-100 leading-relaxed">
+                            Develop staking platform, launch NFT collection featuring tropical mango art, and expand partnerships within the crypto jungle.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <img alt="Rocket launching representing moonshot ambitions" class="w-16 h-16 rounded-full shadow-lg" height="64" src="https://storage.googleapis.com/a1aa/image/3c98b8ae-b0dc-4ba0-2989-e7a2b5ff507b.jpg" width="64" />
+                    <div>
+                        <h3 class="text-yellow-300 text-2xl font-semibold mb-1">
+                            Q1 2025 - To The Moon
+                        </h3>
+                        <p class="text-yellow-100 leading-relaxed">
+                            Expand community governance, list on additional exchanges, and launch MoonMango merchandise to fuel the tropical memecoin movement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Join Us Section -->
+        <section class="max-w-4xl mx-auto bg-black bg-opacity-40 rounded-3xl p-10 shadow-lg text-center" id="joinus">
+            <h2 class="text-4xl mb-6">
+                Join Us
+            </h2>
+            <p class="text-yellow-100 mb-8 text-lg leading-relaxed">
+                Become part of the MoonMango family! Follow us on social media, join our Telegram and Discord communities, and stay updated on all juicy developments. Together, we’ll take $MNGO to the moon and beyond.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a aria-label="Follow MoonMango on Twitter" class="flex items-center space-x-3 bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition" href="https://twitter.com" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-twitter fa-lg">
+      </i>
+                    <span>
+       Twitter
+      </span>
+                </a>
+                <a aria-label="Join MoonMango Telegram" class="flex items-center space-x-3 bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition" href="https://t.me" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-telegram fa-lg">
+      </i>
+                    <span>
+       Telegram
+      </span>
+                </a>
+                <a aria-label="Join MoonMango Discord" class="flex items-center space-x-3 bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-300 transition" href="https://discord.com" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-discord fa-lg">
+      </i>
+                    <span>
+       Discord
+      </span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="mt-24 mb-12 text-center text-yellow-300 font-semibold select-none">
+        © 2024 MoonMango Memecoin. All rights reserved.
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // Animate tokenomics bars on scroll into view
+        const bars = document.querySelectorAll('.bar');
+
+        function animateBars() {
+            bars.forEach((bar) => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const targetHeight = bar.getAttribute('data-height');
+                    bar.style.height = targetHeight + 'px';
+                }
+            });
+        }
+        window.addEventListener('scroll', animateBars);
+        window.addEventListener('load', animateBars);
+
+        // Countdown timer
+        // Set launch date (example: 30 days from now)
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 30);
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = launchDate - now;
+
+            if (diff <= 0) {
+                daysEl.textContent = '00';
+                hoursEl.textContent = '00';
+                minutesEl.textContent = '00';
+                secondsEl.textContent = '00';
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            daysEl.textContent = days.toString().padStart(2, '0');
+            hoursEl.textContent = hours.toString().padStart(2, '0');
+            minutesEl.textContent = minutes.toString().padStart(2, '0');
+            secondsEl.textContent = seconds.toString().padStart(2, '0');
+        }
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>

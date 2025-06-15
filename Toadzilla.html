@@ -1,0 +1,445 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Toadzilla ($CROAK) - Giant Monster Frog Meme Coin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&amp;family=Press+Start+2P&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive, sans-serif;
+            background: #0f172a;
+            color: #e0e7ff;
+        }
+        
+        .comic-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+        /* Scrollbar for roadmap */
+        
+        .scrollbar-thin::-webkit-scrollbar {
+            height: 6px;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background-color: #4f46e5;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-indigo-900 bg-opacity-90 fixed w-full z-30 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a class="text-3xl font-extrabold text-green-400 tracking-widest comic-font select-none" href="#">
+     TOADZILLA
+    </a>
+            <ul class="hidden md:flex space-x-10 text-indigo-200 font-semibold">
+                <li>
+                    <a class="hover:text-green-400 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-400 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-400 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-400 transition" href="#croak">
+       CROAK
+      </a>
+                </li>
+            </ul>
+            <button class="md:hidden text-green-400 focus:outline-none" id="mobile-menu-btn">
+     <i class="fas fa-bars fa-2x">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-indigo-900 bg-opacity-95" id="mobile-menu">
+            <ul class="flex flex-col space-y-4 p-6 text-indigo-200 font-semibold">
+                <li>
+                    <a class="hover:text-green-400 transition block" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-400 transition block" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-400 transition block" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-400 transition block" href="#croak">
+       CROAK
+      </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative flex flex-col justify-center items-center pt-28 pb-20 bg-gradient-to-b from-indigo-900 via-indigo-800 to-indigo-900 overflow-hidden" id="hero">
+        <h1 class="text-5xl md:text-7xl font-extrabold text-green-400 comic-font mb-6 select-none drop-shadow-lg">
+            TOADZILLA
+            <span class="text-yellow-400">
+     ($CROAK)
+    </span>
+        </h1>
+        <p class="max-w-3xl text-center text-indigo-200 text-lg md:text-xl mb-12 px-4 md:px-0 font-semibold">
+            The Giant Monster Frog Meme Coin stomping through the crypto cityscape!
+        </p>
+        <!-- Animated city destruction scene container -->
+        <div class="relative w-full max-w-6xl h-96 md:h-[28rem] select-none">
+            <!-- City skyline -->
+            <img alt="City skyline at night with skyscrapers lit up in blue and purple hues" class="absolute bottom-0 left-0 w-full h-48 md:h-56 object-cover z-10" height="350" src="https://storage.googleapis.com/a1aa/image/7b8780c6-1110-44da-95d2-ff38728ab99c.jpg"
+                width="1200" />
+            <!-- Buildings to be destroyed -->
+            <img alt="Tall dark blue building with lit windows" class="absolute bottom-0 left-1/4 w-36 md:w-44 h-48 md:h-56 object-cover z-20" height="200" id="building1" src="https://storage.googleapis.com/a1aa/image/34571e2b-b1e7-449a-1609-11ca719bc964.jpg" width="150"
+            />
+            <img alt="Medium height gray-blue building with windows" class="absolute bottom-0 left-1/2 w-28 md:w-36 h-44 md:h-52 object-cover z-20" height="180" id="building2" src="https://storage.googleapis.com/a1aa/image/11fed4e3-bccf-4824-e664-e027f217ad2e.jpg"
+                width="120" />
+            <img alt="Shorter blue-gray building with rooftop antennas" class="absolute bottom-0 left-3/4 w-32 md:w-40 h-48 md:h-56 object-cover z-20" height="190" id="building3" src="https://storage.googleapis.com/a1aa/image/79418824-84c8-447d-d205-75b85c35644d.jpg"
+                width="130" />
+            <!-- Toadzilla monster frog -->
+            <img alt="Giant green monster frog with glowing yellow eyes stomping on city" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 md:w-96 h-auto z-30 drop-shadow-2xl" height="300" id="toadzilla" src="https://storage.googleapis.com/a1aa/image/da0cfed7-11cb-4425-6e0d-5de694c74352.jpg"
+                width="300" />
+            <!-- Cracks on ground -->
+            <img alt="Crack on the ground near building 1" class="absolute bottom-0 left-1/4 w-24 md:w-28 h-10 md:h-12 opacity-0 z-25" height="40" id="crack1" src="https://storage.googleapis.com/a1aa/image/5c2a970e-3c7d-4d2c-c1e9-bf30a1921733.jpg" width="100" />
+            <img alt="Crack on the ground near building 2" class="absolute bottom-0 left-1/2 w-20 md:w-24 h-8 md:h-10 opacity-0 z-25" height="30" id="crack2" src="https://storage.googleapis.com/a1aa/image/9f5a7ee4-f9a5-48b1-e4ae-67251315d4e8.jpg" width="80" />
+            <img alt="Crack on the ground near building 3" class="absolute bottom-0 left-3/4 w-22 md:w-26 h-9 md:h-11 opacity-0 z-25" height="35" id="crack3" src="https://storage.googleapis.com/a1aa/image/8e600050-7348-4ccd-c8a8-493fa3ec173b.jpg" width="90" />
+        </div>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="bg-indigo-800 bg-opacity-90 py-20 px-6 md:px-12 flex flex-col items-center" id="tokenomics">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-green-400 comic-font mb-12 select-none drop-shadow-lg">
+            Tokenomics with Stomp Effects
+        </h2>
+        <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="bg-indigo-900 rounded-xl p-8 flex flex-col items-center shadow-lg transform transition-transform duration-300 cursor-pointer stomp-item">
+                <img alt="Icon representing total supply with green frog coin" class="mb-6 w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/02bf2305-7cac-4207-c1d3-6e2702c1cd55.jpg" width="100" />
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2 comic-font">
+                    Total Supply
+                </h3>
+                <p class="text-indigo-200 text-center text-lg font-semibold">
+                    1,000,000,000 $CROAK
+                </p>
+            </div>
+            <div class="bg-indigo-900 rounded-xl p-8 flex flex-col items-center shadow-lg transform transition-transform duration-300 cursor-pointer stomp-item">
+                <img alt="Icon representing burned tokens with fire and frog coin" class="mb-6 w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/edfcdae5-f520-4142-e3b4-0b49720e5eb2.jpg" width="100" />
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2 comic-font">
+                    Burned Tokens
+                </h3>
+                <p class="text-indigo-200 text-center text-lg font-semibold">
+                    300,000,000 $CROAK
+                </p>
+            </div>
+            <div class="bg-indigo-900 rounded-xl p-8 flex flex-col items-center shadow-lg transform transition-transform duration-300 cursor-pointer stomp-item">
+                <img alt="Icon representing liquidity pool with water and frog coin" class="mb-6 w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/f91b6800-97f9-44f1-e14a-f044379f612e.jpg" width="100" />
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2 comic-font">
+                    Liquidity Pool
+                </h3>
+                <p class="text-indigo-200 text-center text-lg font-semibold">
+                    40% Locked
+                </p>
+            </div>
+            <div class="bg-indigo-900 rounded-xl p-8 flex flex-col items-center shadow-lg transform transition-transform duration-300 cursor-pointer stomp-item">
+                <img alt="Icon representing marketing wallet with megaphone and frog coin" class="mb-6 w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/02a6ccea-d50c-4a8f-4ac0-bbb8758c5bf2.jpg" width="100" />
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2 comic-font">
+                    Marketing Wallet
+                </h3>
+                <p class="text-indigo-200 text-center text-lg font-semibold">
+                    10% Allocation
+                </p>
+            </div>
+            <div class="bg-indigo-900 rounded-xl p-8 flex flex-col items-center shadow-lg transform transition-transform duration-300 cursor-pointer stomp-item">
+                <img alt="Icon representing team tokens with frog silhouette and coins" class="mb-6 w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/270b883d-bc7b-448c-65e4-4f85501d0dd4.jpg" width="100" />
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2 comic-font">
+                    Team Tokens
+                </h3>
+                <p class="text-indigo-200 text-center text-lg font-semibold">
+                    15% Locked 1 Year
+                </p>
+            </div>
+            <div class="bg-indigo-900 rounded-xl p-8 flex flex-col items-center shadow-lg transform transition-transform duration-300 cursor-pointer stomp-item">
+                <img alt="Icon representing charity fund with heart and frog coin" class="mb-6 w-24 h-24" height="100" src="https://storage.googleapis.com/a1aa/image/1495eb34-21b0-45a5-6aa9-e11028432dc6.jpg" width="100" />
+                <h3 class="text-2xl font-bold text-yellow-400 mb-2 comic-font">
+                    Charity Fund
+                </h3>
+                <p class="text-indigo-200 text-center text-lg font-semibold">
+                    5% Donation
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="bg-indigo-900 py-20 px-6 md:px-12 overflow-x-auto scrollbar-thin" id="roadmap">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-green-400 comic-font mb-12 text-center select-none drop-shadow-lg">
+            Roadmap - The Comic Book Journey
+        </h2>
+        <div class="flex space-x-8 min-w-[900px] md:min-w-full max-w-full">
+            <!-- Roadmap card 1 -->
+            <div class="bg-gradient-to-br from-green-600 to-green-400 rounded-3xl shadow-2xl p-8 w-72 flex-shrink-0 relative comic-font text-indigo-900">
+                <div class="absolute top-4 right-4 text-6xl font-extrabold select-none opacity-20">
+                    1
+                </div>
+                <h3 class="text-2xl font-bold mb-4">
+                    Q1 2024
+                </h3>
+                <ul class="list-disc list-inside space-y-2 text-indigo-900 font-semibold">
+                    <li>
+                        Launch $CROAK token on Binance Smart Chain
+                    </li>
+                    <li>
+                        Initial liquidity pool creation
+                    </li>
+                    <li>
+                        Community building &amp; social media blast
+                    </li>
+                </ul>
+            </div>
+            <!-- Roadmap card 2 -->
+            <div class="bg-gradient-to-br from-yellow-400 to-yellow-300 rounded-3xl shadow-2xl p-8 w-72 flex-shrink-0 relative comic-font text-indigo-900">
+                <div class="absolute top-4 right-4 text-6xl font-extrabold select-none opacity-20">
+                    2
+                </div>
+                <h3 class="text-2xl font-bold mb-4">
+                    Q2 2024
+                </h3>
+                <ul class="list-disc list-inside space-y-2 text-indigo-900 font-semibold">
+                    <li>
+                        Token burn event - 300M $CROAK
+                    </li>
+                    <li>
+                        Launch Toadzilla NFT collection
+                    </li>
+                    <li>
+                        Partnerships with meme communities
+                    </li>
+                </ul>
+            </div>
+            <!-- Roadmap card 3 -->
+            <div class="bg-gradient-to-br from-pink-500 to-pink-400 rounded-3xl shadow-2xl p-8 w-72 flex-shrink-0 relative comic-font text-indigo-900">
+                <div class="absolute top-4 right-4 text-6xl font-extrabold select-none opacity-20">
+                    3
+                </div>
+                <h3 class="text-2xl font-bold mb-4">
+                    Q3 2024
+                </h3>
+                <ul class="list-disc list-inside space-y-2 text-indigo-900 font-semibold">
+                    <li>
+                        Launch staking platform for $CROAK holders
+                    </li>
+                    <li>
+                        Community-driven charity donations
+                    </li>
+                    <li>
+                        Expand marketing &amp; influencer campaigns
+                    </li>
+                </ul>
+            </div>
+            <!-- Roadmap card 4 -->
+            <div class="bg-gradient-to-br from-purple-700 to-purple-500 rounded-3xl shadow-2xl p-8 w-72 flex-shrink-0 relative comic-font text-indigo-900">
+                <div class="absolute top-4 right-4 text-6xl font-extrabold select-none opacity-20">
+                    4
+                </div>
+                <h3 class="text-2xl font-bold mb-4">
+                    Q4 2024
+                </h3>
+                <ul class="list-disc list-inside space-y-2 text-indigo-900 font-semibold">
+                    <li>
+                        Launch Toadzilla game with $CROAK rewards
+                    </li>
+                    <li>
+                        Cross-chain expansion
+                    </li>
+                    <li>
+                        Major exchange listings
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- CROAK Button Section -->
+    <section class="bg-indigo-800 bg-opacity-90 py-20 px-6 flex flex-col items-center" id="croak">
+        <h2 class="text-5xl font-extrabold text-green-400 comic-font mb-10 select-none drop-shadow-lg">
+            Let’s Hear the CROAK!
+        </h2>
+        <button aria-label="Play CROAK sound" class="relative bg-green-500 hover:bg-green-600 active:bg-green-700 text-indigo-900 font-extrabold comic-font text-4xl px-16 py-6 rounded-full shadow-2xl flex items-center justify-center select-none focus:outline-none focus:ring-4 focus:ring-green-400 focus:ring-opacity-75"
+            id="croak-button">
+    CROAK
+    <i class="fas fa-frog ml-4 text-yellow-400 text-3xl">
+    </i>
+    <span class="absolute inset-0 rounded-full bg-green-400 opacity-0 pointer-events-none" id="stomp-effect">
+    </span>
+   </button>
+    </section>
+    <footer class="bg-indigo-900 py-8 text-center text-indigo-300 font-semibold comic-font select-none">
+        © 2024 Toadzilla Meme Coin. All rights reserved.
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // GSAP animations for hero section
+        const toadzilla = document.getElementById('toadzilla');
+        const building1 = document.getElementById('building1');
+        const building2 = document.getElementById('building2');
+        const building3 = document.getElementById('building3');
+        const crack1 = document.getElementById('crack1');
+        const crack2 = document.getElementById('crack2');
+        const crack3 = document.getElementById('crack3');
+
+        // Animate Toadzilla stomping and buildings shaking + cracks appearing
+        function stompAnimation() {
+            const tl = gsap.timeline({
+                defaults: {
+                    ease: "power2.inOut"
+                }
+            });
+
+            tl.to(toadzilla, {
+                    y: -20,
+                    duration: 0.3
+                })
+                .to(toadzilla, {
+                    y: 0,
+                    duration: 0.3,
+                    onComplete: () => {
+                        // Show cracks
+                        gsap.to([crack1, crack2, crack3], {
+                            opacity: 1,
+                            duration: 0.3
+                        });
+                        // Shake buildings
+                        gsap.to([building1, building2, building3], {
+                            x: 10,
+                            rotation: 2,
+                            duration: 0.1,
+                            yoyo: true,
+                            repeat: 5,
+                            ease: "power1.inOut",
+                        });
+                        // Hide cracks after a moment
+                        gsap.to([crack1, crack2, crack3], {
+                            opacity: 0,
+                            delay: 1,
+                            duration: 0.5
+                        });
+                    }
+                });
+
+            return tl;
+        }
+
+        // Loop stomp every 6 seconds
+        stompAnimation();
+        setInterval(stompAnimation, 6000);
+
+        // Tokenomics stomp effect on hover
+        const stompItems = document.querySelectorAll('.stomp-item');
+        stompItems.forEach((item) => {
+            item.addEventListener('mouseenter', () => {
+                gsap.to(item, {
+                    scale: 1.1,
+                    boxShadow: "0 0 20px 5px #22c55e",
+                    duration: 0.3,
+                    ease: "power2.out",
+                });
+                gsap.to(item, {
+                    x: 5,
+                    y: 5,
+                    rotation: 2,
+                    duration: 0.15,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: "power1.inOut",
+                });
+            });
+            item.addEventListener('mouseleave', () => {
+                gsap.to(item, {
+                    scale: 1,
+                    boxShadow: "0 0 10px 0 rgba(0,0,0,0.3)",
+                    x: 0,
+                    y: 0,
+                    rotation: 0,
+                    duration: 0.3,
+                    ease: "power2.out",
+                });
+            });
+        });
+
+        // CROAK button sound and stomp effect
+        const croakButton = document.getElementById('croak-button');
+        const stompEffect = document.getElementById('stomp-effect');
+
+        // Load CROAK sound
+        const croakSound = new Audio('https://actions.google.com/sounds/v1/animals/frog_croak.ogg');
+
+        croakButton.addEventListener('click', () => {
+            // Play sound
+            croakSound.currentTime = 0;
+            croakSound.play();
+
+            // Animate stomp effect
+            gsap.fromTo(
+                stompEffect, {
+                    opacity: 0,
+                    scale: 0.8
+                }, {
+                    opacity: 0.6,
+                    scale: 1.3,
+                    duration: 0.3,
+                    ease: "power2.out",
+                    yoyo: true,
+                    repeat: 1,
+                    onComplete: () => {
+                        gsap.to(stompEffect, {
+                            opacity: 0,
+                            duration: 0.2
+                        });
+                    },
+                }
+            );
+
+            // Button quick stomp scale
+            gsap.fromTo(
+                croakButton, {
+                    scale: 1
+                }, {
+                    scale: 0.9,
+                    duration: 0.1,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: "power1.inOut"
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>

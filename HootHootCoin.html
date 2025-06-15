@@ -1,0 +1,418 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        HootHootCoin ($OWL) - The Owl Token
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;family=Roboto+Mono&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a23;
+            color: #e0e7ff;
+        }
+        
+        .blink {
+            animation: blink-animation 4s steps(2, start) infinite;
+        }
+        
+        @keyframes blink-animation {
+            0%,
+            20%,
+            40%,
+            60%,
+            80%,
+            100% {
+                opacity: 1;
+            }
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                opacity: 0;
+            }
+        }
+        /* Constellation lines */
+        
+        .constellation-line {
+            stroke: #a3bffa;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.7;
+        }
+        /* Owl sound button cursor */
+        
+        .owl-hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-[#0a0a23] to-[#1a1a3d] min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="w-full bg-[#121233cc] backdrop-blur-md fixed top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a class="flex items-center space-x-3" href="#hero">
+                <img alt="HootHootCoin owl mascot logo, stylized owl face with big eyes and a coin" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/40ac6df8-6b45-42c9-ddb4-3dd914d15a2c.jpg" width="40" />
+                <span class="text-2xl font-bold text-indigo-400 tracking-wide select-none">
+      HootHootCoin
+     </span>
+                <span class="text-indigo-300 font-mono text-lg select-none">
+      ($OWL)
+     </span>
+            </a>
+            <ul class="hidden md:flex space-x-8 text-indigo-300 font-semibold">
+                <li>
+                    <a class="hover:text-indigo-400 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-indigo-400 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-indigo-400 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-indigo-400 transition" href="#nft-gallery">
+       NFT Gallery
+      </a>
+                </li>
+            </ul>
+            <button class="md:hidden text-indigo-300 focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-[#121233cc] backdrop-blur-md px-6 pb-4" id="mobile-menu">
+            <ul class="flex flex-col space-y-3 text-indigo-300 font-semibold">
+                <li>
+                    <a class="block py-2 hover:text-indigo-400 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="block py-2 hover:text-indigo-400 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="block py-2 hover:text-indigo-400 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="block py-2 hover:text-indigo-400 transition" href="#nft-gallery">
+       NFT Gallery
+      </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="flex flex-col md:flex-row items-center justify-center text-center md:text-left max-w-7xl mx-auto px-6 pt-32 pb-20 gap-10" id="hero">
+        <div aria-label="Owl mascot blinking eyes, interactive with owl sound on hover or focus" class="relative w-48 h-48 md:w-64 md:h-64 owl-hover" id="owl-mascot" tabindex="0">
+            <img alt="A cute stylized owl mascot face with big glowing eyes and a coin-shaped body, cartoon style" class="w-full h-full object-contain rounded-full shadow-lg" height="256" src="https://storage.googleapis.com/a1aa/image/13d35f64-ac97-4155-8c6a-92d29141a3b0.jpg"
+                width="256" />
+            <img alt="The same owl mascot face but with eyes closed, blinking" aria-hidden="true" class="w-full h-full object-contain rounded-full absolute top-0 left-0 blink pointer-events-none" height="256" src="https://storage.googleapis.com/a1aa/image/b8373003-5171-4d38-6bd9-405a972f8873.jpg"
+                width="256" />
+        </div>
+        <div class="max-w-xl space-y-6">
+            <h1 class="text-5xl font-extrabold text-indigo-400 leading-tight select-none">
+                HootHootCoin
+                <span class="text-indigo-300 font-mono">
+      ($OWL)
+     </span>
+            </h1>
+            <p class="text-indigo-200 text-lg font-light leading-relaxed">
+                The night’s favorite crypto token, soaring through the blockchain skies. Join the flock and let your assets take flight with HootHootCoin.
+            </p>
+            <a class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg transition" href="#tokenomics">
+     Explore Tokenomics
+    </a>
+        </div>
+    </section>
+    <!-- Tokenomics Section -->
+    <section aria-label="Tokenomics section with night sky theme" class="max-w-7xl mx-auto px-6 py-20 relative overflow-hidden" id="tokenomics">
+        <h2 class="text-4xl font-bold text-indigo-400 mb-12 text-center select-none">
+            Tokenomics
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="bg-[#1a1a3d] rounded-xl p-8 shadow-lg border border-indigo-700 hover:scale-[1.03] transition-transform cursor-default">
+                <h3 class="text-indigo-300 font-semibold text-xl mb-4">
+                    Total Supply
+                </h3>
+                <p class="text-indigo-200 text-lg font-mono">
+                    1,000,000,000 $OWL
+                </p>
+            </div>
+            <div class="bg-[#1a1a3d] rounded-xl p-8 shadow-lg border border-indigo-700 hover:scale-[1.03] transition-transform cursor-default">
+                <h3 class="text-indigo-300 font-semibold text-xl mb-4">
+                    Distribution
+                </h3>
+                <ul class="list-disc list-inside text-indigo-200 space-y-2 font-light">
+                    <li>
+                        50% Public Sale
+                    </li>
+                    <li>
+                        20% Team &amp; Advisors (locked)
+                    </li>
+                    <li>
+                        15% Staking Rewards
+                    </li>
+                    <li>
+                        10% NFT Holders Airdrop
+                    </li>
+                    <li>
+                        5% Marketing &amp; Partnerships
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-[#1a1a3d] rounded-xl p-8 shadow-lg border border-indigo-700 hover:scale-[1.03] transition-transform cursor-default">
+                <h3 class="text-indigo-300 font-semibold text-xl mb-4">
+                    Key Features
+                </h3>
+                <ul class="text-indigo-200 space-y-2 font-light">
+                    <li>
+                        <i class="fas fa-moon mr-2 text-indigo-400">
+       </i> Deflationary token with burn mechanism
+                    </li>
+                    <li>
+                        <i class="fas fa-feather-alt mr-2 text-indigo-400">
+       </i> Rewards for holders &amp; stakers
+                    </li>
+                    <li>
+                        <i class="fas fa-network-wired mr-2 text-indigo-400">
+       </i> Community-driven governance
+                    </li>
+                    <li>
+                        <i class="fas fa-shield-alt mr-2 text-indigo-400">
+       </i> Secure &amp; audited smart contracts
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <img alt="Illustration of a dark night sky with twinkling stars and a crescent moon, representing the night theme of HootHootCoin" aria-hidden="true" class="absolute bottom-0 right-0 w-64 opacity-20 pointer-events-none select-none" height="200" src="https://storage.googleapis.com/a1aa/image/69b4eece-1d4a-4934-0160-bd987403b216.jpg"
+            width="600" />
+    </section>
+    <!-- Roadmap Section -->
+    <section aria-label="Constellation style roadmap" class="max-w-7xl mx-auto px-6 py-20" id="roadmap">
+        <h2 class="text-4xl font-bold text-indigo-400 mb-12 text-center select-none">
+            Roadmap
+        </h2>
+        <div class="relative w-full max-w-5xl mx-auto">
+            <svg aria-hidden="true" class="w-full h-96" fill="none" viewbox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+     <!-- Constellation lines -->
+     <line class="constellation-line" x1="100" x2="250" y1="350" y2="250">
+     </line>
+     <line class="constellation-line" x1="250" x2="400" y1="250" y2="300">
+     </line>
+     <line class="constellation-line" x1="400" x2="550" y1="300" y2="200">
+     </line>
+     <line class="constellation-line" x1="550" x2="700" y1="200" y2="280">
+     </line>
+     <line class="constellation-line" x1="700" x2="850" y1="280" y2="150">
+     </line>
+     <line class="constellation-line" x1="850" x2="950" y1="150" y2="350">
+     </line>
+    </svg>
+            <!-- Roadmap points -->
+            <div class="absolute top-[320px] left-[80px] w-48 text-indigo-300 font-semibold text-center select-none">
+                <div class="w-6 h-6 bg-indigo-400 rounded-full mx-auto mb-2 shadow-lg">
+                </div>
+                <p class="text-lg font-bold">
+                    Q1 2024
+                </p>
+                <p class="text-indigo-200 font-light mt-1">
+                    Token launch &amp; initial exchange listings
+                </p>
+            </div>
+            <div class="absolute top-[220px] left-[230px] w-48 text-indigo-300 font-semibold text-center select-none">
+                <div class="w-6 h-6 bg-indigo-400 rounded-full mx-auto mb-2 shadow-lg">
+                </div>
+                <p class="text-lg font-bold">
+                    Q2 2024
+                </p>
+                <p class="text-indigo-200 font-light mt-1">
+                    Staking platform &amp; community governance
+                </p>
+            </div>
+            <div class="absolute top-[270px] left-[380px] w-48 text-indigo-300 font-semibold text-center select-none">
+                <div class="w-6 h-6 bg-indigo-400 rounded-full mx-auto mb-2 shadow-lg">
+                </div>
+                <p class="text-lg font-bold">
+                    Q3 2024
+                </p>
+                <p class="text-indigo-200 font-light mt-1">
+                    NFT collection launch &amp; airdrops
+                </p>
+            </div>
+            <div class="absolute top-[170px] left-[530px] w-48 text-indigo-300 font-semibold text-center select-none">
+                <div class="w-6 h-6 bg-indigo-400 rounded-full mx-auto mb-2 shadow-lg">
+                </div>
+                <p class="text-lg font-bold">
+                    Q4 2024
+                </p>
+                <p class="text-indigo-200 font-light mt-1">
+                    Partnerships &amp; cross-chain expansion
+                </p>
+            </div>
+            <div class="absolute top-[250px] left-[680px] w-48 text-indigo-300 font-semibold text-center select-none">
+                <div class="w-6 h-6 bg-indigo-400 rounded-full mx-auto mb-2 shadow-lg">
+                </div>
+                <p class="text-lg font-bold">
+                    Q1 2025
+                </p>
+                <p class="text-indigo-200 font-light mt-1">
+                    Mobile app &amp; wallet integration
+                </p>
+            </div>
+            <div class="absolute top-[120px] left-[830px] w-48 text-indigo-300 font-semibold text-center select-none">
+                <div class="w-6 h-6 bg-indigo-400 rounded-full mx-auto mb-2 shadow-lg">
+                </div>
+                <p class="text-lg font-bold">
+                    Q2 2025
+                </p>
+                <p class="text-indigo-200 font-light mt-1">
+                    DAO launch &amp; full decentralization
+                </p>
+            </div>
+            <div class="absolute top-[320px] left-[930px] w-48 text-indigo-300 font-semibold text-center select-none">
+                <div class="w-6 h-6 bg-indigo-400 rounded-full mx-auto mb-2 shadow-lg">
+                </div>
+                <p class="text-lg font-bold">
+                    Q3 2025
+                </p>
+                <p class="text-indigo-200 font-light mt-1">
+                    Global community events &amp; merch
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- NFT Branch Gallery Section -->
+    <section aria-label="NFT branch gallery" class="max-w-7xl mx-auto px-6 py-20" id="nft-gallery">
+        <h2 class="text-4xl font-bold text-indigo-400 mb-12 text-center select-none">
+            NFT Branch Gallery
+        </h2>
+        <p class="text-indigo-300 text-center max-w-3xl mx-auto mb-12 font-light">
+            Explore our exclusive collection of owl-themed NFTs, each representing a unique branch of the HootHootCoin ecosystem.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div aria-label="NFT Owl Branch #1: A majestic owl perched on a moonlit branch with glowing eyes" class="bg-[#1a1a3d] rounded-xl shadow-lg border border-indigo-700 overflow-hidden owl-hover" tabindex="0">
+                <img alt="NFT Owl Branch #1: A majestic owl perched on a moonlit branch with glowing eyes, digital art style" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/43214b3c-7242-4579-7c37-a0fe930ee090.jpg" width="400"
+                />
+                <div class="p-4 text-indigo-200 font-semibold text-center">
+                    Owl Branch #1
+                </div>
+            </div>
+            <div aria-label="NFT Owl Branch #2: A wise owl flying over a starry forest with sparkling feathers" class="bg-[#1a1a3d] rounded-xl shadow-lg border border-indigo-700 overflow-hidden owl-hover" tabindex="0">
+                <img alt="NFT Owl Branch #2: A wise owl flying over a starry forest with sparkling feathers, digital art style" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/3f21509d-c7f0-46e6-b44a-fef1c20ce2c3.jpg" width="400"
+                />
+                <div class="p-4 text-indigo-200 font-semibold text-center">
+                    Owl Branch #2
+                </div>
+            </div>
+            <div aria-label="NFT Owl Branch #3: A glowing owl silhouette against a cosmic nebula background" class="bg-[#1a1a3d] rounded-xl shadow-lg border border-indigo-700 overflow-hidden owl-hover" tabindex="0">
+                <img alt="NFT Owl Branch #3: A glowing owl silhouette against a cosmic nebula background, digital art style" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/ce4384c3-3500-483e-273b-f1a236fa0538.jpg" width="400"
+                />
+                <div class="p-4 text-indigo-200 font-semibold text-center">
+                    Owl Branch #3
+                </div>
+            </div>
+            <div aria-label="NFT Owl Branch #4: An owl with intricate feather patterns perched on a crystal branch" class="bg-[#1a1a3d] rounded-xl shadow-lg border border-indigo-700 overflow-hidden owl-hover" tabindex="0">
+                <img alt="NFT Owl Branch #4: An owl with intricate feather patterns perched on a crystal branch, digital art style" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/5fee6e75-7704-4be1-18c4-b17469ed1782.jpg"
+                    width="400" />
+                <div class="p-4 text-indigo-200 font-semibold text-center">
+                    Owl Branch #4
+                </div>
+            </div>
+            <div aria-label="NFT Owl Branch #5: A fierce owl with glowing eyes and lightning wings" class="bg-[#1a1a3d] rounded-xl shadow-lg border border-indigo-700 overflow-hidden owl-hover" tabindex="0">
+                <img alt="NFT Owl Branch #5: A fierce owl with glowing eyes and lightning wings, digital art style" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/386d994f-33a9-4b4e-1ec3-de523ab7f184.jpg" width="400" />
+                <div class="p-4 text-indigo-200 font-semibold text-center">
+                    Owl Branch #5
+                </div>
+            </div>
+            <div aria-label="NFT Owl Branch #6: A serene owl resting on a branch surrounded by glowing fireflies" class="bg-[#1a1a3d] rounded-xl shadow-lg border border-indigo-700 overflow-hidden owl-hover" tabindex="0">
+                <img alt="NFT Owl Branch #6: A serene owl resting on a branch surrounded by glowing fireflies, digital art style" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/e181f293-011a-4d2b-1e9b-bcb93af37c05.jpg" width="400"
+                />
+                <div class="p-4 text-indigo-200 font-semibold text-center">
+                    Owl Branch #6
+                </div>
+            </div>
+            <div aria-label="NFT Owl Branch #7: A playful owl with a crescent moon hat and twinkling stars" class="bg-[#1a1a3d] rounded-xl shadow-lg border border-indigo-700 overflow-hidden owl-hover" tabindex="0">
+                <img alt="NFT Owl Branch #7: A playful owl with a crescent moon hat and twinkling stars, digital art style" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/54ba85f3-1a93-4b5e-2593-2d4e7d14e283.jpg" width="400"
+                />
+                <div class="p-4 text-indigo-200 font-semibold text-center">
+                    Owl Branch #7
+                </div>
+            </div>
+            <div aria-label="NFT Owl Branch #8: A mysterious owl with glowing eyes perched on a branch of stars" class="bg-[#1a1a3d] rounded-xl shadow-lg border border-indigo-700 overflow-hidden owl-hover" tabindex="0">
+                <img alt="NFT Owl Branch #8: A mysterious owl with glowing eyes perched on a branch of stars, digital art style" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/6428de5d-b6a1-4c18-df26-4e2a9ea606cb.jpg" width="400"
+                />
+                <div class="p-4 text-indigo-200 font-semibold text-center">
+                    Owl Branch #8
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-[#121233cc] backdrop-blur-md py-8 mt-auto text-indigo-300 text-center font-light select-none">
+        <p>
+            © 2024 HootHootCoin. All rights reserved.
+        </p>
+        <p>
+            <a class="hover:text-indigo-400 transition" href="https://twitter.com/hoothootcoin" rel="noopener" target="_blank">
+                <i class="fab fa-twitter mr-2">
+     </i> Twitter
+            </a>
+            |
+            <a class="hover:text-indigo-400 transition ml-2" href="https://discord.gg/hoothootcoin" rel="noopener" target="_blank">
+                <i class="fab fa-discord mr-2">
+     </i> Discord
+            </a>
+        </p>
+    </footer>
+    <!-- Owl sound audio -->
+    <audio id="owl-sound" preload="auto" src="https://actions.google.com/sounds/v1/animals/owl_hoot.ogg">
+  </audio>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Owl sound on hover/focus
+        const owlMascot = document.getElementById('owl-mascot');
+        const owlSound = document.getElementById('owl-sound');
+
+        function playOwlSound() {
+            owlSound.currentTime = 0;
+            owlSound.play();
+        }
+
+        owlMascot.addEventListener('mouseenter', playOwlSound);
+        owlMascot.addEventListener('focus', playOwlSound);
+
+        // Also add owl sound on NFT gallery items hover/focus
+        const nftItems = document.querySelectorAll('.owl-hover');
+        nftItems.forEach((item) => {
+            item.addEventListener('mouseenter', playOwlSound);
+            item.addEventListener('focus', playOwlSound);
+        });
+    </script>
+</body>
+
+</html>

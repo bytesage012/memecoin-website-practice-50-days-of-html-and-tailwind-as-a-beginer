@@ -1,0 +1,386 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Solana Meme Coin
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-gradient-to-b from-purple-900 via-purple-700 to-purple-500 text-white min-h-screen flex flex-col">
+  <header class="bg-purple-900 shadow-md">
+   <div class="container mx-auto flex items-center justify-between px-6 py-4">
+    <div class="flex items-center space-x-3">
+     <img alt="Logo of Solana Meme Coin, a stylized purple and green coin with a smiling meme face" class="w-12 h-12 rounded-full" height="48" src="https://storage.googleapis.com/a1aa/image/c1b3cbb5-b203-49cb-ad07-31f2a1927dff.jpg" width="48"/>
+     <h1 class="text-2xl font-bold tracking-wide">
+      Solana Meme Coin
+     </h1>
+    </div>
+    <nav class="hidden md:flex space-x-8 font-semibold text-purple-200">
+     <a class="hover:text-white transition" href="#about">
+      About
+     </a>
+     <a class="hover:text-white transition" href="#tokenomics">
+      Tokenomics
+     </a>
+     <a class="hover:text-white transition" href="#roadmap">
+      Roadmap
+     </a>
+     <a class="hover:text-white transition" href="#team">
+      Team
+     </a>
+     <a class="hover:text-white transition" href="#faq">
+      FAQ
+     </a>
+     <a class="hover:text-white transition" href="#contact">
+      Contact
+     </a>
+    </nav>
+    <button aria-label="Toggle menu" class="md:hidden focus:outline-none text-purple-300 hover:text-white" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </div>
+   <nav class="hidden md:hidden bg-purple-800 px-6 py-4 space-y-4 font-semibold text-purple-200" id="mobile-menu">
+    <a class="block hover:text-white transition" href="#about">
+     About
+    </a>
+    <a class="block hover:text-white transition" href="#tokenomics">
+     Tokenomics
+    </a>
+    <a class="block hover:text-white transition" href="#roadmap">
+     Roadmap
+    </a>
+    <a class="block hover:text-white transition" href="#team">
+     Team
+    </a>
+    <a class="block hover:text-white transition" href="#faq">
+     FAQ
+    </a>
+    <a class="block hover:text-white transition" href="#contact">
+     Contact
+    </a>
+   </nav>
+  </header>
+  <main class="flex-grow">
+   <section class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between" id="hero">
+    <div class="md:w-1/2 text-center md:text-left space-y-6">
+     <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+      The Funniest Meme Coin on the Solana Blockchain
+     </h2>
+     <p class="text-purple-200 text-lg md:text-xl max-w-xl mx-auto md:mx-0">
+      Join the revolution of decentralized memes with blazing fast transactions and ultra low fees.
+          Powered by Solana, built for the community.
+     </p>
+     <div class="flex flex-col sm:flex-row sm:justify-center md:justify-start gap-4">
+      <a class="bg-green-400 hover:bg-green-500 text-purple-900 font-bold py-3 px-8 rounded-full shadow-lg transition" href="#buy">
+       Buy $SMC
+      </a>
+      <a class="border-2 border-green-400 hover:border-green-500 text-green-400 hover:text-green-500 font-semibold py-3 px-8 rounded-full shadow-lg transition flex items-center justify-center gap-2" href="https://solscan.io/token/SoMeMeCoinAddress" rel="noopener noreferrer" target="_blank">
+       <i class="fas fa-chart-line">
+       </i>
+       View on Solscan
+      </a>
+     </div>
+    </div>
+    <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
+     <img alt="Cartoon mascot of Solana Meme Coin, a cool smiling coin wearing sunglasses with a purple and green color scheme" class="w-80 h-80 object-contain" height="400" src="https://storage.googleapis.com/a1aa/image/b56903bc-ca7a-4ae9-a85d-2b55496e4d8d.jpg" width="400"/>
+    </div>
+   </section>
+   <section class="bg-purple-800 py-16 px-6 text-center container mx-auto rounded-lg max-w-5xl" id="about">
+    <h3 class="text-3xl font-bold mb-6">
+     About Solana Meme Coin
+    </h3>
+    <p class="text-purple-200 max-w-3xl mx-auto text-lg leading-relaxed">
+     Solana Meme Coin ($SMC) is a community-driven meme cryptocurrency built on the Solana blockchain.
+        Designed to combine fun, fast transactions, and a passionate community, $SMC aims to become the
+        go-to meme coin for Solana enthusiasts worldwide. With ultra-low fees and lightning-fast speeds,
+        $SMC is perfect for tipping, trading, and sharing laughs.
+    </p>
+   </section>
+   <section class="container mx-auto px-6 py-16 max-w-6xl" id="tokenomics">
+    <h3 class="text-3xl font-bold text-center mb-12">
+     Tokenomics
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+     <div class="bg-purple-700 rounded-lg p-8 shadow-lg">
+      <h4 class="text-2xl font-semibold mb-4">
+       Total Supply
+      </h4>
+      <p class="text-green-400 text-xl font-bold">
+       1,000,000,000 $SMC
+      </p>
+     </div>
+     <div class="bg-purple-700 rounded-lg p-8 shadow-lg">
+      <h4 class="text-2xl font-semibold mb-4">
+       Initial Liquidity
+      </h4>
+      <p class="text-green-400 text-xl font-bold">
+       500 SOL
+      </p>
+     </div>
+     <div class="bg-purple-700 rounded-lg p-8 shadow-lg">
+      <h4 class="text-2xl font-semibold mb-4">
+       Transaction Fee
+      </h4>
+      <p class="text-green-400 text-xl font-bold">
+       2% per transaction
+      </p>
+      <p class="text-purple-300 mt-2 text-sm">
+       1% redistributed to holders, 1% added to liquidity pool
+      </p>
+     </div>
+    </div>
+    <div class="mt-12 max-w-3xl mx-auto">
+     <img alt="Pie chart showing token distribution of Solana Meme Coin with colorful segments representing holders, liquidity, team, and marketing" class="mx-auto rounded-lg shadow-lg" height="300" src="https://storage.googleapis.com/a1aa/image/3ca1577e-cd9b-4d9b-afb0-92fe564f4599.jpg" width="600"/>
+    </div>
+   </section>
+   <section class="bg-purple-800 py-16 px-6 container mx-auto max-w-5xl rounded-lg" id="roadmap">
+    <h3 class="text-3xl font-bold text-center mb-12">
+     Roadmap
+    </h3>
+    <ol class="relative border-l border-green-400 max-w-3xl mx-auto space-y-10">
+     <li class="mb-10 ml-6">
+      <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-green-400 rounded-full ring-8 ring-purple-800">
+       <i class="fas fa-rocket text-purple-900">
+       </i>
+      </span>
+      <h4 class="text-xl font-semibold text-white">
+       Q2 2024 - Launch
+      </h4>
+      <p class="text-purple-300">
+       Token launch on Solana mainnet, initial liquidity pool creation, and community building.
+      </p>
+     </li>
+     <li class="mb-10 ml-6">
+      <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-green-400 rounded-full ring-8 ring-purple-800">
+       <i class="fas fa-users text-purple-900">
+       </i>
+      </span>
+      <h4 class="text-xl font-semibold text-white">
+       Q3 2024 - Community Growth
+      </h4>
+      <p class="text-purple-300">
+       Launch of social media campaigns, meme contests, and partnerships with Solana projects.
+      </p>
+     </li>
+     <li class="mb-10 ml-6">
+      <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-green-400 rounded-full ring-8 ring-purple-800">
+       <i class="fas fa-wallet text-purple-900">
+       </i>
+      </span>
+      <h4 class="text-xl font-semibold text-white">
+       Q4 2024 - Wallet Integration
+      </h4>
+      <p class="text-purple-300">
+       Integration with popular Solana wallets and launch of tipping features.
+      </p>
+     </li>
+     <li class="mb-10 ml-6">
+      <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-green-400 rounded-full ring-8 ring-purple-800">
+       <i class="fas fa-gamepad text-purple-900">
+       </i>
+      </span>
+      <h4 class="text-xl font-semibold text-white">
+       Q1 2025 - Meme Game Launch
+      </h4>
+      <p class="text-purple-300">
+       Release of a meme-themed blockchain game rewarding $SMC holders.
+      </p>
+     </li>
+     <li class="mb-10 ml-6">
+      <span class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-green-400 rounded-full ring-8 ring-purple-800">
+       <i class="fas fa-globe text-purple-900">
+       </i>
+      </span>
+      <h4 class="text-xl font-semibold text-white">
+       Q2 2025 - Cross-chain Expansion
+      </h4>
+      <p class="text-purple-300">
+       Explore cross-chain bridges and expand $SMC availability beyond Solana.
+      </p>
+     </li>
+    </ol>
+   </section>
+   <section class="container mx-auto px-6 py-16 max-w-6xl" id="team">
+    <h3 class="text-3xl font-bold text-center mb-12 text-white">
+     Meet the Team
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+     <div class="bg-purple-700 rounded-lg p-6 flex flex-col items-center shadow-lg">
+      <img alt="Portrait of a smiling young man with glasses, short dark hair, wearing a casual black t-shirt" class="rounded-full w-36 h-36 object-cover mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/6429b164-63b5-41a9-5f4e-f9dbab195fd8.jpg" width="150"/>
+      <h4 class="text-xl font-semibold text-white">
+       Alex "SolMeme" Johnson
+      </h4>
+      <p class="text-purple-300 text-center mt-2">
+       Founder &amp; Lead Developer
+      </p>
+      <div class="flex space-x-4 mt-4 text-green-400">
+       <a aria-label="Twitter" href="https://twitter.com/solmeme" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-twitter fa-lg hover:text-green-300 transition">
+        </i>
+       </a>
+       <a aria-label="GitHub" href="https://github.com/solmeme" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-github fa-lg hover:text-green-300 transition">
+        </i>
+       </a>
+      </div>
+     </div>
+     <div class="bg-purple-700 rounded-lg p-6 flex flex-col items-center shadow-lg">
+      <img alt="Portrait of a smiling young woman with long curly hair, wearing a purple hoodie" class="rounded-full w-36 h-36 object-cover mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/3aef7162-e6a8-4d6b-1778-9c5a678dc15a.jpg" width="150"/>
+      <h4 class="text-xl font-semibold text-white">
+       Maya "CryptoQueen" Lee
+      </h4>
+      <p class="text-purple-300 text-center mt-2">
+       Marketing &amp; Community Manager
+      </p>
+      <div class="flex space-x-4 mt-4 text-green-400">
+       <a aria-label="Twitter" href="https://twitter.com/cryptoqueen" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-twitter fa-lg hover:text-green-300 transition">
+        </i>
+       </a>
+       <a aria-label="LinkedIn" href="https://linkedin.com/in/cryptoqueen" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-linkedin fa-lg hover:text-green-300 transition">
+        </i>
+       </a>
+      </div>
+     </div>
+     <div class="bg-purple-700 rounded-lg p-6 flex flex-col items-center shadow-lg">
+      <img alt="Portrait of a smiling middle-aged man with beard and short hair, wearing a dark blue shirt" class="rounded-full w-36 h-36 object-cover mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/4147d6e0-4dc5-41cd-6eaa-969d6f89c0ff.jpg" width="150"/>
+      <h4 class="text-xl font-semibold text-white">
+       Carlos "BlockMaster" Diaz
+      </h4>
+      <p class="text-purple-300 text-center mt-2">
+       Blockchain Architect
+      </p>
+      <div class="flex space-x-4 mt-4 text-green-400">
+       <a aria-label="Twitter" href="https://twitter.com/blockmaster" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-twitter fa-lg hover:text-green-300 transition">
+        </i>
+       </a>
+       <a aria-label="GitHub" href="https://github.com/blockmaster" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-github fa-lg hover:text-green-300 transition">
+        </i>
+       </a>
+      </div>
+     </div>
+     <div class="bg-purple-700 rounded-lg p-6 flex flex-col items-center shadow-lg">
+      <img alt="Portrait of a smiling young woman with short hair, wearing a white t-shirt and purple jacket" class="rounded-full w-36 h-36 object-cover mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/3d10a70a-5d2b-479c-067f-8429ceaef325.jpg" width="150"/>
+      <h4 class="text-xl font-semibold text-white">
+       Lina "MemeGuru" Patel
+      </h4>
+      <p class="text-purple-300 text-center mt-2">
+       Creative Director
+      </p>
+      <div class="flex space-x-4 mt-4 text-green-400">
+       <a aria-label="Twitter" href="https://twitter.com/memeguru" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-twitter fa-lg hover:text-green-300 transition">
+        </i>
+       </a>
+       <a aria-label="Instagram" href="https://instagram.com/memeguru" rel="noopener noreferrer" target="_blank">
+        <i class="fab fa-instagram fa-lg hover:text-green-300 transition">
+        </i>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="bg-purple-800 py-16 px-6 container mx-auto max-w-5xl rounded-lg" id="faq">
+    <h3 class="text-3xl font-bold text-center mb-12">
+     Frequently Asked Questions
+    </h3>
+    <div class="space-y-6 text-purple-200">
+     <details class="bg-purple-700 rounded-lg p-5 shadow-inner">
+      <summary class="cursor-pointer font-semibold text-white text-lg">
+       What is Solana Meme Coin ($SMC)?
+      </summary>
+      <p class="mt-3 leading-relaxed">
+       $SMC is a meme cryptocurrency built on the Solana blockchain, designed for fast, low-cost transactions and a fun community experience.
+      </p>
+     </details>
+     <details class="bg-purple-700 rounded-lg p-5 shadow-inner">
+      <summary class="cursor-pointer font-semibold text-white text-lg">
+       How can I buy $SMC?
+      </summary>
+      <p class="mt-3 leading-relaxed">
+       You can buy $SMC on Solana-based decentralized exchanges like Raydium or Orca using SOL tokens.
+      </p>
+     </details>
+     <details class="bg-purple-700 rounded-lg p-5 shadow-inner">
+      <summary class="cursor-pointer font-semibold text-white text-lg">
+       What are the transaction fees?
+      </summary>
+      <p class="mt-3 leading-relaxed">
+       Each transaction has a 2% fee: 1% is redistributed to holders and 1% is added to the liquidity pool.
+      </p>
+     </details>
+     <details class="bg-purple-700 rounded-lg p-5 shadow-inner">
+      <summary class="cursor-pointer font-semibold text-white text-lg">
+       Is $SMC audited?
+      </summary>
+      <p class="mt-3 leading-relaxed">
+       Yes, the smart contract has been audited by a reputable third-party security firm to ensure safety and transparency.
+      </p>
+     </details>
+     <details class="bg-purple-700 rounded-lg p-5 shadow-inner">
+      <summary class="cursor-pointer font-semibold text-white text-lg">
+       How can I join the community?
+      </summary>
+      <p class="mt-3 leading-relaxed">
+       Join our Discord, Telegram, and follow us on Twitter to stay updated and participate in community events.
+      </p>
+     </details>
+    </div>
+   </section>
+   <section class="container mx-auto px-6 py-16 max-w-4xl text-center" id="contact">
+    <h3 class="text-3xl font-bold mb-8 text-white">
+     Get in Touch
+    </h3>
+    <form action="https://formspree.io/f/mayvlrwp" class="bg-purple-700 rounded-lg p-8 shadow-lg max-w-xl mx-auto" method="POST">
+     <div class="mb-6 text-left">
+      <label class="block mb-2 font-semibold text-purple-200" for="name">
+       Name
+      </label>
+      <input class="w-full px-4 py-3 rounded-md bg-purple-900 border border-purple-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400" id="name" name="name" placeholder="Your full name" required="" type="text"/>
+     </div>
+     <div class="mb-6 text-left">
+      <label class="block mb-2 font-semibold text-purple-200" for="email">
+       Email
+      </label>
+      <input class="w-full px-4 py-3 rounded-md bg-purple-900 border border-purple-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400" id="email" name="_replyto" placeholder="you@example.com" required="" type="email"/>
+     </div>
+     <div class="mb-6 text-left">
+      <label class="block mb-2 font-semibold text-purple-200" for="message">
+       Message
+      </label>
+      <textarea class="w-full px-4 py-3 rounded-md bg-purple-900 border border-purple-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400" id="message" name="message" placeholder="Write your message here..." required="" rows="5"></textarea>
+     </div>
+     <button class="w-full bg-green-400 hover:bg-green-500 text-purple-900 font-bold py-3 rounded-full transition" type="submit">
+      Send Message
+     </button>
+    </form>
+   </section>
+  </main>
+  <footer class="bg-purple-900 py-6 text-center text-purple-300 text-sm">
+   <p>
+    © 2024 Solana Meme Coin. All rights reserved. | Built on the Solana blockchain.
+   </p>
+  </footer>
+  <script>
+   const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+ </body>
+</html>

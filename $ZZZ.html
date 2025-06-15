@@ -1,0 +1,730 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        $ZZZ Memecoin - For Degens Who Never Sleep
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;family=Roboto+Mono&amp;display=swap" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Roboto Mono', monospace;
+        }
+        
+        .neon-text {
+            color: #39ff14;
+            text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #0f0, 0 0 80px #0f0;
+        }
+        
+        .neon-pink {
+            color: #ff00ff;
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #f0f, 0 0 80px #f0f;
+        }
+        
+        .neon-blue {
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #0ff, 0 0 80px #0ff;
+        }
+        /* Scrollbar for leaderboard */
+        
+         ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #39ff14;
+            border-radius: 4px;
+        }
+        /* Testimonial tweet animation */
+        
+        @keyframes slideUpFade {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            10%,
+            90% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+        
+        .tweet-slide {
+            animation: slideUpFade 12s ease-in-out infinite;
+        }
+        
+        .tweet-slide:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .tweet-slide:nth-child(2) {
+            animation-delay: 4s;
+        }
+        
+        .tweet-slide:nth-child(3) {
+            animation-delay: 8s;
+        }
+        /* Match-3 game grid */
+        
+        .game-tile {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .game-tile:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 5px #ffdd57);
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-neon-pink selection:text-black">
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col justify-center items-center bg-black relative overflow-hidden px-6 text-center">
+        <img alt="Neon purple glowing $ZZZ memecoin logo with stylized sleeping Z's and digital pixel effects" class="w-48 h-48 mb-8 drop-shadow-[0_0_15px_#ff00ff]" height="600" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f8ea360b-7cb9-4b1a-cf30-49de32fc9f54.jpg"
+            width="600" />
+        <h1 class="text-6xl md:text-8xl font-orbitron neon-pink mb-4 select-none">
+            $ZZZ
+        </h1>
+        <p class="text-xl md:text-2xl max-w-xl neon-text mb-8 font-semibold">
+            The memecoin for degens who never sleep —
+            <span class="text-neon-pink">
+     $ZZZ
+    </span> keeps you awake and winning.
+        </p>
+        <a class="inline-block px-8 py-4 rounded-full border-2 border-neon-pink text-neon-pink font-bold uppercase tracking-widest hover:bg-neon-pink hover:text-black transition" href="#tokenomics">
+    Enter Insomnia Mode
+   </a>
+        <img alt="Abstract neon blue glowing sleep cycle pattern with digital waves and stars, representing night and energy" aria-hidden="true" class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl opacity-20 select-none" height="1200"
+            loading="lazy" src="https://storage.googleapis.com/a1aa/image/7da61677-27cf-408e-71e9-5fc4b197615f.jpg" width="1200" />
+    </header>
+    <!-- Tokenomics Section -->
+    <section class="py-20 px-6 max-w-7xl mx-auto" id="tokenomics">
+        <h2 class="text-5xl font-orbitron neon-blue text-center mb-12 select-none">
+            Tokenomics — The Sleep Cycle
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
+            <div class="bg-[#111111] rounded-xl p-8 border-2 border-neon-blue shadow-neon-blue">
+                <h3 class="text-3xl font-bold neon-blue mb-4">
+                    Awake (25%)
+                </h3>
+                <p class="text-lg text-gray-300 mb-6">
+                    Liquidity &amp; Exchange — Keeping the market active and vibrant 24/7.
+                </p>
+                <img alt="Neon blue glowing icon representing awake cycle with a bright sun and digital rays" class="mx-auto" height="150" loading="lazy" src="https://storage.googleapis.com/a1aa/image/942fda80-2f4e-4867-995e-cd8d3d42894e.jpg" width="150" />
+            </div>
+            <div class="bg-[#111111] rounded-xl p-8 border-2 border-neon-pink shadow-neon-pink">
+                <h3 class="text-3xl font-bold neon-pink mb-4">
+                    REM (15%)
+                </h3>
+                <p class="text-lg text-gray-300 mb-6">
+                    Rewards &amp; Staking — Dream big with passive income while you hold.
+                </p>
+                <img alt="Neon pink glowing icon representing REM sleep cycle with crescent moon and stars" class="mx-auto" height="150" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6cf977b7-f5c9-486b-c149-f978fee1c7c5.jpg" width="150" />
+            </div>
+            <div class="bg-[#111111] rounded-xl p-8 border-2 border-neon-green shadow-neon-green">
+                <h3 class="text-3xl font-bold neon-text mb-4">
+                    Light Sleep (35%)
+                </h3>
+                <p class="text-lg text-gray-300 mb-6">
+                    Development &amp; Marketing — Fueling growth and spreading the $ZZZ hype.
+                </p>
+                <img alt="Neon green glowing icon representing light sleep cycle with gentle waves and digital sparkles" class="mx-auto" height="150" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d2c3e3f9-a6c3-4c66-3828-10b4a9207c70.jpg" width="150" />
+            </div>
+            <div class="bg-[#111111] rounded-xl p-8 border-2 border-neon-purple shadow-neon-purple">
+                <h3 class="text-3xl font-bold neon-purple mb-4">
+                    Deep Sleep (25%)
+                </h3>
+                <p class="text-lg text-gray-300 mb-6">
+                    Team &amp; Reserves — Locked tight for long-term project stability.
+                </p>
+                <img alt="Neon purple glowing icon representing deep sleep cycle with closed eyes and digital stars" class="mx-auto" height="150" loading="lazy" src="https://storage.googleapis.com/a1aa/image/9d49afbd-61be-432a-720f-f51a85b8582e.jpg" width="150" />
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="py-20 px-6 max-w-5xl mx-auto" id="roadmap">
+        <h2 class="text-5xl font-orbitron neon-pink text-center mb-16 select-none">
+            Roadmap — Enter Insomnia Mode
+        </h2>
+        <ol class="relative border-l-4 border-neon-pink max-w-3xl mx-auto space-y-12">
+            <li class="ml-8">
+                <span class="absolute -left-6 top-0 w-12 h-12 rounded-full bg-neon-pink flex items-center justify-center text-black font-bold text-xl select-none">
+      1
+     </span>
+                <h3 class="text-2xl neon-pink font-semibold mb-2">
+                    Phase 1: Insomnia Mode
+                </h3>
+                <p class="text-gray-300">
+                    Launch $ZZZ token, initial liquidity, and community building. No sleep, just hype.
+                </p>
+            </li>
+            <li class="ml-8">
+                <span class="absolute -left-6 top-0 w-12 h-12 rounded-full bg-neon-pink flex items-center justify-center text-black font-bold text-xl select-none">
+      2
+     </span>
+                <h3 class="text-2xl neon-pink font-semibold mb-2">
+                    Phase 2: Midnight Madness
+                </h3>
+                <p class="text-gray-300">
+                    Staking platform launch, partnerships, and first giveaways to keep degens awake.
+                </p>
+            </li>
+            <li class="ml-8">
+                <span class="absolute -left-6 top-0 w-12 h-12 rounded-full bg-neon-pink flex items-center justify-center text-black font-bold text-xl select-none">
+      3
+     </span>
+                <h3 class="text-2xl neon-pink font-semibold mb-2">
+                    Phase 3: Dreamless Expansion
+                </h3>
+                <p class="text-gray-300">
+                    Launch of the match-3 coffee game, leaderboard, and NFT airdrops for insomniacs.
+                </p>
+            </li>
+            <li class="ml-8">
+                <span class="absolute -left-6 top-0 w-12 h-12 rounded-full bg-neon-pink flex items-center justify-center text-black font-bold text-xl select-none">
+      4
+     </span>
+                <h3 class="text-2xl neon-pink font-semibold mb-2">
+                    Phase 4: Eternal Awake
+                </h3>
+                <p class="text-gray-300">
+                    Cross-chain expansion, DAO launch, and continuous community rewards.
+                </p>
+            </li>
+        </ol>
+    </section>
+    <!-- Night-mode-only Chart Section -->
+    <section class="py-20 px-6 max-w-5xl mx-auto" id="chart">
+        <h2 class="text-5xl font-orbitron neon-blue text-center mb-12 select-none">
+            Night Mode Chart — $ZZZ Price Action
+        </h2>
+        <div class="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden border-4 border-neon-blue shadow-neon-blue">
+            <img alt="Neon blue glowing night mode style candlestick chart showing $ZZZ price action with digital grid and glowing lines" class="w-full h-auto" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/8837c276-f197-4085-cb7a-f2e07af7f6ee.jpg"
+                width="900" />
+            <div aria-label="Chart info" class="absolute top-4 left-4 text-neon-blue font-mono text-sm select-none">
+                $ZZZ Price (Last 24h)
+            </div>
+        </div>
+    </section>
+    <!-- Animated Testimonial Tweets Section -->
+    <section class="py-20 px-6 max-w-3xl mx-auto relative h-48 overflow-hidden" id="testimonials">
+        <h2 class="text-5xl font-orbitron neon-pink text-center mb-12 select-none">
+            What Degens Say
+        </h2>
+        <div class="relative h-32">
+            <article aria-live="polite" class="tweet-slide absolute w-full bg-[#111111] border-2 border-neon-pink rounded-xl p-6 shadow-neon-pink flex items-center space-x-4">
+                <img alt="Profile picture of a neon pink glowing avatar with a mischievous smile and pixel art style" class="w-16 h-16 rounded-full flex-shrink-0" height="64" loading="lazy" src="https://storage.googleapis.com/a1aa/image/90411e96-a9af-429d-c200-9573066f51cd.jpg"
+                    width="64" />
+                <div>
+                    <p class="text-gray-300 italic">
+                        “$ZZZ keeps me up and stacking bags all night. No sleep, all gains!”
+                    </p>
+                    <p class="mt-2 text-neon-pink font-bold">
+                        @NightOwlDegen
+                    </p>
+                </div>
+            </article>
+            <article aria-live="polite" class="tweet-slide absolute w-full bg-[#111111] border-2 border-neon-pink rounded-xl p-6 shadow-neon-pink flex items-center space-x-4">
+                <img alt="Profile picture of a neon blue glowing avatar with sunglasses and a confident grin in pixel art style" class="w-16 h-16 rounded-full flex-shrink-0" height="64" loading="lazy" src="https://storage.googleapis.com/a1aa/image/31ade24a-552c-43bf-39c7-a44b9b15998a.jpg"
+                    width="64" />
+                <div>
+                    <p class="text-gray-300 italic">
+                        “Finally a coin that understands the grind. $ZZZ to the moon!”
+                    </p>
+                    <p class="mt-2 neon-blue font-bold">
+                        @SleeplessShark
+                    </p>
+                </div>
+            </article>
+            <article aria-live="polite" class="tweet-slide absolute w-full bg-[#111111] border-2 border-neon-pink rounded-xl p-6 shadow-neon-pink flex items-center space-x-4">
+                <img alt="Profile picture of a neon green glowing avatar with a wide smile and pixel art style" class="w-16 h-16 rounded-full flex-shrink-0" height="64" loading="lazy" src="https://storage.googleapis.com/a1aa/image/01f39c15-5042-4fa8-80d3-7697363bba3c.jpg"
+                    width="64" />
+                <div>
+                    <p class="text-gray-300 italic">
+                        “The match-3 coffee game is addictive. Perfect combo with $ZZZ hype.”
+                    </p>
+                    <p class="mt-2 neon-text font-bold">
+                        @CoffeeAddictDegen
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- Leaderboard Section -->
+    <section class="py-20 px-6 max-w-4xl mx-auto" id="leaderboard">
+        <h2 class="text-5xl font-orbitron neon-green text-center mb-12 select-none">
+            Leaderboard — Top Wallet Insomniacs
+        </h2>
+        <div class="overflow-x-auto rounded-xl border-4 border-neon-green shadow-neon-green bg-[#111111]">
+            <table class="min-w-full text-left text-gray-300">
+                <thead class="bg-[#222222]">
+                    <tr>
+                        <th class="px-6 py-4 text-neon-green font-mono text-lg uppercase tracking-wider">
+                            Rank
+                        </th>
+                        <th class="px-6 py-4 text-neon-green font-mono text-lg uppercase tracking-wider">
+                            Wallet
+                        </th>
+                        <th class="px-6 py-4 text-neon-green font-mono text-lg uppercase tracking-wider">
+                            $ZZZ Balance
+                        </th>
+                        <th class="px-6 py-4 text-neon-green font-mono text-lg uppercase tracking-wider">
+                            Last Active
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-[#222222] hover:bg-[#222222] transition">
+                        <td class="px-6 py-4 font-bold neon-green">
+                            1
+                        </td>
+                        <td class="px-6 py-4 font-mono truncate max-w-xs" title="0xA1b2C3d4E5f678901234567890abcdef12345678">
+                            0xA1b2C3d4E5f678901234567890abcdef12345678
+                        </td>
+                        <td class="px-6 py-4 font-bold neon-green">
+                            1,234,567 $ZZZ
+                        </td>
+                        <td class="px-6 py-4">
+                            Just now
+                        </td>
+                    </tr>
+                    <tr class="border-b border-[#222222] hover:bg-[#222222] transition">
+                        <td class="px-6 py-4 font-bold neon-green">
+                            2
+                        </td>
+                        <td class="px-6 py-4 font-mono truncate max-w-xs" title="0xB2c3D4e5F678901234567890abcdef1234567890">
+                            0xB2c3D4e5F678901234567890abcdef1234567890
+                        </td>
+                        <td class="px-6 py-4 font-bold neon-green">
+                            987,654 $ZZZ
+                        </td>
+                        <td class="px-6 py-4">
+                            5 minutes ago
+                        </td>
+                    </tr>
+                    <tr class="border-b border-[#222222] hover:bg-[#222222] transition">
+                        <td class="px-6 py-4 font-bold neon-green">
+                            3
+                        </td>
+                        <td class="px-6 py-4 font-mono truncate max-w-xs" title="0xC3d4E5f678901234567890abcdef1234567890ab">
+                            0xC3d4E5f678901234567890abcdef1234567890ab
+                        </td>
+                        <td class="px-6 py-4 font-bold neon-green">
+                            876,543 $ZZZ
+                        </td>
+                        <td class="px-6 py-4">
+                            12 minutes ago
+                        </td>
+                    </tr>
+                    <tr class="border-b border-[#222222] hover:bg-[#222222] transition">
+                        <td class="px-6 py-4 font-bold neon-green">
+                            4
+                        </td>
+                        <td class="px-6 py-4 font-mono truncate max-w-xs" title="0xD4e5F678901234567890abcdef1234567890abcd">
+                            0xD4e5F678901234567890abcdef1234567890abcd
+                        </td>
+                        <td class="px-6 py-4 font-bold neon-green">
+                            765,432 $ZZZ
+                        </td>
+                        <td class="px-6 py-4">
+                            30 minutes ago
+                        </td>
+                    </tr>
+                    <tr class="border-b border-[#222222] hover:bg-[#222222] transition">
+                        <td class="px-6 py-4 font-bold neon-green">
+                            5
+                        </td>
+                        <td class="px-6 py-4 font-mono truncate max-w-xs" title="0xE5f678901234567890abcdef1234567890abcde">
+                            0xE5f678901234567890abcdef1234567890abcde
+                        </td>
+                        <td class="px-6 py-4 font-bold neon-green">
+                            654,321 $ZZZ
+                        </td>
+                        <td class="px-6 py-4">
+                            45 minutes ago
+                        </td>
+                    </tr>
+                    <tr class="border-b border-[#222222] hover:bg-[#222222] transition">
+                        <td class="px-6 py-4 font-bold neon-green">
+                            6
+                        </td>
+                        <td class="px-6 py-4 font-mono truncate max-w-xs" title="0xF678901234567890abcdef1234567890abcdef1">
+                            0xF678901234567890abcdef1234567890abcdef1
+                        </td>
+                        <td class="px-6 py-4 font-bold neon-green">
+                            543,210 $ZZZ
+                        </td>
+                        <td class="px-6 py-4">
+                            1 hour ago
+                        </td>
+                    </tr>
+                    <tr class="border-b border-[#222222] hover:bg-[#222222] transition">
+                        <td class="px-6 py-4 font-bold neon-green">
+                            7
+                        </td>
+                        <td class="px-6 py-4 font-mono truncate max-w-xs" title="0x8901234567890abcdef1234567890abcdef1234">
+                            0x8901234567890abcdef1234567890abcdef1234
+                        </td>
+                        <td class="px-6 py-4 font-bold neon-green">
+                            432,109 $ZZZ
+                        </td>
+                        <td class="px-6 py-4">
+                            2 hours ago
+                        </td>
+                    </tr>
+                    <tr class="border-b border-[#222222] hover:bg-[#222222] transition">
+                        <td class="px-6 py-4 font-bold neon-green">
+                            8
+                        </td>
+                        <td class="px-6 py-4 font-mono truncate max-w-xs" title="0x901234567890abcdef1234567890abcdef12345">
+                            0x901234567890abcdef1234567890abcdef12345
+                        </td>
+                        <td class="px-6 py-4 font-bold neon-green">
+                            321,098 $ZZZ
+                        </td>
+                        <td class="px-6 py-4">
+                            3 hours ago
+                        </td>
+                    </tr>
+                    <tr class="border-b border-[#222222] hover:bg-[#222222] transition">
+                        <td class="px-6 py-4 font-bold neon-green">
+                            9
+                        </td>
+                        <td class="px-6 py-4 font-mono truncate max-w-xs" title="0x01234567890abcdef1234567890abcdef123456">
+                            0x01234567890abcdef1234567890abcdef123456
+                        </td>
+                        <td class="px-6 py-4 font-bold neon-green">
+                            210,987 $ZZZ
+                        </td>
+                        <td class="px-6 py-4">
+                            4 hours ago
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-[#222222] transition">
+                        <td class="px-6 py-4 font-bold neon-green">
+                            10
+                        </td>
+                        <td class="px-6 py-4 font-mono truncate max-w-xs" title="0x1234567890abcdef1234567890abcdef1234567">
+                            0x1234567890abcdef1234567890abcdef1234567
+                        </td>
+                        <td class="px-6 py-4 font-bold neon-green">
+                            109,876 $ZZZ
+                        </td>
+                        <td class="px-6 py-4">
+                            5 hours ago
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- Match-3 Coffee Game Section -->
+    <section class="py-20 px-6 max-w-4xl mx-auto" id="game">
+        <h2 class="text-5xl font-orbitron neon-pink text-center mb-12 select-none">
+            Match-3 Coffee Game — Stay Awake &amp; Win
+        </h2>
+        <p class="text-center text-gray-300 max-w-xl mx-auto mb-8">
+            Swap glowing coffee cups to match 3 or more and score points. The longer you play, the more $ZZZ you earn!
+        </p>
+        <div aria-label="Match-3 coffee game grid" class="grid grid-cols-7 gap-2 justify-center mx-auto w-fit select-none" id="game-grid" role="application" tabindex="0">
+            <!-- 7x7 grid = 49 tiles -->
+            <!-- We'll create 49 tiles with random coffee cup colors -->
+        </div>
+        <div class="mt-8 text-center">
+            <button aria-label="Reset game" class="px-6 py-3 rounded-full border-2 border-neon-pink text-neon-pink font-bold uppercase tracking-widest hover:bg-neon-pink hover:text-black transition" id="reset-game">
+     Reset Game
+    </button>
+        </div>
+        <p aria-atomic="true" aria-live="polite" class="mt-6 text-center text-gray-400 font-mono" id="game-score">
+            Score: 0
+        </p>
+    </section>
+    <script>
+        // Match-3 Coffee Game Logic
+        (() => {
+            const gameGrid = document.getElementById('game-grid');
+            const resetBtn = document.getElementById('reset-game');
+            const scoreDisplay = document.getElementById('game-score');
+            const rows = 7;
+            const cols = 7;
+            const totalTiles = rows * cols;
+            const coffeeTypes = [{
+                color: '#ff6f61',
+                name: 'Espresso',
+                emoji: '☕'
+            }, {
+                color: '#f7c59f',
+                name: 'Latte',
+                emoji: '🥛'
+            }, {
+                color: '#6f4e37',
+                name: 'Mocha',
+                emoji: '🍫'
+            }, {
+                color: '#d2691e',
+                name: 'Cappuccino',
+                emoji: '🍂'
+            }, {
+                color: '#c0a080',
+                name: 'Macchiato',
+                emoji: '🌰'
+            }, ];
+
+            let tiles = [];
+            let score = 0;
+            let selectedTile = null;
+
+            function createTile(index) {
+                const tile = document.createElement('div');
+                tile.classList.add('game-tile');
+                tile.style.backgroundColor = '#222';
+                tile.style.display = 'flex';
+                tile.style.alignItems = 'center';
+                tile.style.justifyContent = 'center';
+                tile.style.fontSize = '28px';
+                tile.style.userSelect = 'none';
+                tile.style.boxShadow = '0 0 8px #ffdd57';
+                tile.setAttribute('data-index', index);
+                tile.setAttribute('role', 'button');
+                tile.setAttribute('tabindex', '0');
+                tile.setAttribute('aria-label', 'Coffee cup tile');
+                tile.style.border = '2px solid transparent';
+                return tile;
+            }
+
+            function randomCoffee() {
+                return coffeeTypes[Math.floor(Math.random() * coffeeTypes.length)];
+            }
+
+            function fillGrid() {
+                tiles = [];
+                gameGrid.innerHTML = '';
+                for (let i = 0; i < totalTiles; i++) {
+                    const tile = createTile(i);
+                    const coffee = randomCoffee();
+                    tile.style.backgroundColor = coffee.color;
+                    tile.textContent = coffee.emoji;
+                    tile.dataset.coffee = coffee.name;
+                    gameGrid.appendChild(tile);
+                    tiles.push(tile);
+                }
+            }
+
+            function swapTiles(i1, i2) {
+                const tempCoffee = tiles[i1].dataset.coffee;
+                const tempColor = tiles[i1].style.backgroundColor;
+                const tempEmoji = tiles[i1].textContent;
+
+                tiles[i1].dataset.coffee = tiles[i2].dataset.coffee;
+                tiles[i1].style.backgroundColor = tiles[i2].style.backgroundColor;
+                tiles[i1].textContent = tiles[i2].textContent;
+
+                tiles[i2].dataset.coffee = tempCoffee;
+                tiles[i2].style.backgroundColor = tempColor;
+                tiles[i2].textContent = tempEmoji;
+            }
+
+            function areAdjacent(i1, i2) {
+                const r1 = Math.floor(i1 / cols);
+                const c1 = i1 % cols;
+                const r2 = Math.floor(i2 / cols);
+                const c2 = i2 % cols;
+                return (
+                    (r1 === r2 && Math.abs(c1 - c2) === 1) ||
+                    (c1 === c2 && Math.abs(r1 - r2) === 1)
+                );
+            }
+
+            function checkMatches() {
+                let matches = new Set();
+
+                // Check rows
+                for (let r = 0; r < rows; r++) {
+                    let count = 1;
+                    for (let c = 1; c < cols; c++) {
+                        const current = tiles[r * cols + c].dataset.coffee;
+                        const prev = tiles[r * cols + c - 1].dataset.coffee;
+                        if (current === prev) {
+                            count++;
+                        } else {
+                            if (count >= 3) {
+                                for (let k = 0; k < count; k++) {
+                                    matches.add(r * cols + c - 1 - k);
+                                }
+                            }
+                            count = 1;
+                        }
+                    }
+                    if (count >= 3) {
+                        for (let k = 0; k < count; k++) {
+                            matches.add(r * cols + cols - 1 - k);
+                        }
+                    }
+                }
+
+                // Check columns
+                for (let c = 0; c < cols; c++) {
+                    let count = 1;
+                    for (let r = 1; r < rows; r++) {
+                        const current = tiles[r * cols + c].dataset.coffee;
+                        const prev = tiles[(r - 1) * cols + c].dataset.coffee;
+                        if (current === prev) {
+                            count++;
+                        } else {
+                            if (count >= 3) {
+                                for (let k = 0; k < count; k++) {
+                                    matches.add((r - 1 - k) * cols + c);
+                                }
+                            }
+                            count = 1;
+                        }
+                    }
+                    if (count >= 3) {
+                        for (let k = 0; k < count; k++) {
+                            matches.add((rows - 1 - k) * cols + c);
+                        }
+                    }
+                }
+
+                return Array.from(matches);
+            }
+
+            function removeMatches(matches) {
+                matches.forEach((idx) => {
+                    tiles[idx].dataset.coffee = '';
+                    tiles[idx].style.backgroundColor = '#111';
+                    tiles[idx].textContent = '';
+                });
+                score += matches.length * 10;
+                scoreDisplay.textContent = `Score: ${score}`;
+            }
+
+            function dropTiles() {
+                for (let c = 0; c < cols; c++) {
+                    let emptySpots = 0;
+                    for (let r = rows - 1; r >= 0; r--) {
+                        const idx = r * cols + c;
+                        if (tiles[idx].dataset.coffee === '') {
+                            emptySpots++;
+                        } else if (emptySpots > 0) {
+                            const targetIdx = (r + emptySpots) * cols + c;
+                            tiles[targetIdx].dataset.coffee = tiles[idx].dataset.coffee;
+                            tiles[targetIdx].style.backgroundColor = tiles[idx].style.backgroundColor;
+                            tiles[targetIdx].textContent = tiles[idx].textContent;
+
+                            tiles[idx].dataset.coffee = '';
+                            tiles[idx].style.backgroundColor = '#111';
+                            tiles[idx].textContent = '';
+                        }
+                    }
+                    // Fill empty spots at top
+                    for (let r = 0; r < emptySpots; r++) {
+                        const idx = r * cols + c;
+                        const coffee = randomCoffee();
+                        tiles[idx].dataset.coffee = coffee.name;
+                        tiles[idx].style.backgroundColor = coffee.color;
+                        tiles[idx].textContent = coffee.emoji;
+                    }
+                }
+            }
+
+            function processMatches() {
+                const matches = checkMatches();
+                if (matches.length > 0) {
+                    removeMatches(matches);
+                    setTimeout(() => {
+                        dropTiles();
+                        setTimeout(processMatches, 300);
+                    }, 300);
+                }
+            }
+
+            function onTileClick(e) {
+                const tile = e.currentTarget;
+                const idx = Number(tile.dataset.index);
+                if (!selectedTile) {
+                    selectedTile = idx;
+                    tile.style.borderColor = '#ff00ff';
+                    tile.style.transform = 'scale(1.2)';
+                } else if (selectedTile === idx) {
+                    tile.style.borderColor = 'transparent';
+                    tile.style.transform = 'scale(1)';
+                    selectedTile = null;
+                } else {
+                    if (areAdjacent(selectedTile, idx)) {
+                        swapTiles(selectedTile, idx);
+                        const matches = checkMatches();
+                        if (matches.length > 0) {
+                            tiles[selectedTile].style.borderColor = 'transparent';
+                            tiles[selectedTile].style.transform = 'scale(1)';
+                            selectedTile = null;
+                            processMatches();
+                        } else {
+                            // Swap back if no match
+                            swapTiles(selectedTile, idx);
+                            tiles[selectedTile].style.borderColor = 'transparent';
+                            tiles[selectedTile].style.transform = 'scale(1)';
+                            selectedTile = null;
+                        }
+                    } else {
+                        tiles[selectedTile].style.borderColor = 'transparent';
+                        tiles[selectedTile].style.transform = 'scale(1)';
+                        selectedTile = idx;
+                        tile.style.borderColor = '#ff00ff';
+                        tile.style.transform = 'scale(1.2)';
+                    }
+                }
+            }
+
+            function onTileKeyDown(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    e.currentTarget.click();
+                }
+            }
+
+            function addTileListeners() {
+                tiles.forEach((tile) => {
+                    tile.addEventListener('click', onTileClick);
+                    tile.addEventListener('keydown', onTileKeyDown);
+                });
+            }
+
+            function resetGame() {
+                score = 0;
+                scoreDisplay.textContent = `Score: ${score}`;
+                fillGrid();
+                addTileListeners();
+                selectedTile = null;
+                processMatches();
+            }
+
+            resetBtn.addEventListener('click', resetGame);
+
+            // Initialize game on load
+            resetGame();
+        })();
+    </script>
+</body>
+
+</html>

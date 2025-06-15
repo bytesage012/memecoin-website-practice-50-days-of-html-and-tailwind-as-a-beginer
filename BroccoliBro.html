@@ -1,0 +1,351 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        BroccoliBro ($BROCC) - Healthy Meme Coin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&amp;family=Roboto&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0fdf4;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Green energy leaf animation */
+        
+        .leaf-spin {
+            animation: spin 8s linear infinite;
+            transform-origin: center;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        /* Pulse animation for badges */
+        
+        .pulse-badge {
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-green-600 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a class="flex items-center space-x-3" href="#">
+                <img alt="BroccoliBro logo - green broccoli cartoon with a friendly face" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/6733c3be-46b0-4e91-c5e8-9af31cc977bc.jpg" width="40" />
+                <span class="text-2xl font-bold tracking-wide">
+      BroccoliBro
+     </span>
+                <span class="text-sm font-mono bg-green-800 px-2 py-0.5 rounded-md">
+      $BROCC
+     </span>
+            </a>
+            <ul class="hidden md:flex space-x-8 font-semibold text-green-100">
+                <li>
+                    <a class="hover:text-white transition" href="#about">
+       About
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-white transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-white transition" href="#community">
+       Community
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-white transition" href="#join">
+       Join the Garden
+      </a>
+                </li>
+            </ul>
+            <button aria-label="Toggle menu" class="md:hidden focus:outline-none focus:ring-2 focus:ring-green-300" id="mobile-menu-button">
+     <i class="fas fa-bars text-2xl">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-green-700" id="mobile-menu">
+            <ul class="flex flex-col space-y-3 px-6 py-4 font-semibold text-green-100">
+                <li>
+                    <a class="block hover:text-white transition" href="#about">
+       About
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-white transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-white transition" href="#community">
+       Community
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-white transition" href="#join">
+       Join the Garden
+      </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="relative bg-gradient-to-b from-green-200 to-green-50 overflow-hidden" id="about">
+        <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-10">
+            <div class="max-w-xl text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-bold text-green-900 leading-tight">
+                    BroccoliBro
+                    <span class="text-green-700">
+       ($BROCC)
+      </span>
+                </h1>
+                <p class="mt-6 text-lg text-green-800 font-medium">
+                    The healthy meme coin that powers your fitness journey with green energy and veggie vibes.
+                </p>
+                <a class="inline-block mt-8 px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-lg transition" href="#join">
+      Join the Garden
+     </a>
+            </div>
+            <div class="w-full max-w-md">
+                <img alt="BroccoliBro fitness broccoli cartoon character wearing a headband and lifting dumbbells in a gym environment" class="w-full rounded-xl shadow-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/fcf011fb-5e4c-405f-7a9e-0495f3bf9609.jpg"
+                    width="400" />
+            </div>
+        </div>
+        <!-- Animated green energy leaves swirling on bottom right -->
+        <svg aria-hidden="true" class="absolute bottom-0 right-0 w-48 h-48 leaf-spin opacity-40" fill="none" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <path d="M32 2C40 10 48 18 48 28C48 38 40 46 32 54C24 46 16 38 16 28C16 18 24 10 32 2Z" fill="#a7f3d0" stroke="#22c55e" stroke-width="3">
+    </path>
+    <path d="M32 10C36 14 40 18 40 24C40 30 36 34 32 38C28 34 24 30 24 24C24 18 28 14 32 10Z" fill="#bbf7d0" stroke="#16a34a" stroke-width="2">
+    </path>
+   </svg>
+    </header>
+    <!-- Tokenomics Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20" id="tokenomics">
+        <h2 class="text-4xl font-bold text-green-900 text-center mb-12">
+            Tokenomics
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- Tokenomics Card 1 -->
+            <div class="bg-green-50 border border-green-200 rounded-2xl p-8 shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition">
+                <img alt="Broccoli icon representing total supply of BroccoliBro token" class="w-20 h-20 mb-4" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7e27c8fe-f745-4baa-479d-f651bf277c4e.jpg" width="100" />
+                <h3 class="text-2xl font-semibold text-green-800 mb-2">
+                    Total Supply
+                </h3>
+                <p class="text-green-700 font-mono text-lg">
+                    1,000,000,000 $BROCC
+                </p>
+            </div>
+            <!-- Tokenomics Card 2 -->
+            <div class="bg-green-50 border border-green-200 rounded-2xl p-8 shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition">
+                <img alt="Carrot icon representing liquidity pool allocation for BroccoliBro token" class="w-20 h-20 mb-4" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3ef60ce3-2f37-4c17-b62a-ccbee4448c79.jpg" width="100" />
+                <h3 class="text-2xl font-semibold text-green-800 mb-2">
+                    Liquidity Pool
+                </h3>
+                <p class="text-green-700 font-mono text-lg">
+                    40% Locked for 1 Year
+                </p>
+            </div>
+            <!-- Tokenomics Card 3 -->
+            <div class="bg-green-50 border border-green-200 rounded-2xl p-8 shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition">
+                <img alt="Tomato icon representing community rewards allocation for BroccoliBro token" class="w-20 h-20 mb-4" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/94b587d4-e91d-4ae6-0a70-88eb4e839162.jpg" width="100" />
+                <h3 class="text-2xl font-semibold text-green-800 mb-2">
+                    Community Rewards
+                </h3>
+                <p class="text-green-700 font-mono text-lg">
+                    25% Distributed to Holders
+                </p>
+            </div>
+            <!-- Tokenomics Card 4 -->
+            <div class="bg-green-50 border border-green-200 rounded-2xl p-8 shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition">
+                <img alt="Seedling icon representing development fund allocation for BroccoliBro token" class="w-20 h-20 mb-4" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/0e28ed5e-548f-429a-41dd-7d9d0d257de9.jpg" width="100" />
+                <h3 class="text-2xl font-semibold text-green-800 mb-2">
+                    Development Fund
+                </h3>
+                <p class="text-green-700 font-mono text-lg">
+                    20% For Growth &amp; Marketing
+                </p>
+            </div>
+            <!-- Tokenomics Card 5 -->
+            <div class="bg-green-50 border border-green-200 rounded-2xl p-8 shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition">
+                <img alt="Eggplant icon representing team allocation for BroccoliBro token" class="w-20 h-20 mb-4" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7342ab7e-0eab-488a-b605-34af24a379a0.jpg" width="100" />
+                <h3 class="text-2xl font-semibold text-green-800 mb-2">
+                    Team Allocation
+                </h3>
+                <p class="text-green-700 font-mono text-lg">
+                    10% Vested Over 2 Years
+                </p>
+            </div>
+            <!-- Tokenomics Card 6 -->
+            <div class="bg-green-50 border border-green-200 rounded-2xl p-8 shadow-lg flex flex-col items-center text-center hover:shadow-2xl transition">
+                <img alt="Corn icon representing charity donations allocation for BroccoliBro token" class="w-20 h-20 mb-4" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/eee402ae-1134-482c-5886-a3fc80ba3638.jpg" width="100" />
+                <h3 class="text-2xl font-semibold text-green-800 mb-2">
+                    Charity Donations
+                </h3>
+                <p class="text-green-700 font-mono text-lg">
+                    5% To Fitness &amp; Green Causes
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Community Section -->
+    <section class="bg-green-100 py-20 px-6" id="community">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-green-900 mb-12">
+                Community Garden
+            </h2>
+            <p class="max-w-3xl mx-auto text-green-800 text-lg mb-12">
+                Join a thriving community of fitness enthusiasts and green energy supporters. Earn badges by participating, sharing, and growing with BroccoliBro.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 max-w-5xl mx-auto">
+                <!-- Badge 1 -->
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center space-y-4 hover:shadow-xl transition">
+                    <img alt="Gold medal badge with a broccoli leaf emblem for BroccoliBro community" class="w-20 h-20 pulse-badge" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/0f8588fc-3476-4cf7-d56d-d0993d9f5fe6.jpg" width="80" />
+                    <h3 class="text-green-900 font-semibold">
+                        Fitness Fanatic
+                    </h3>
+                    <p class="text-green-700 text-sm">
+                        Completed 30 days workout challenge
+                    </p>
+                </div>
+                <!-- Badge 2 -->
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center space-y-4 hover:shadow-xl transition">
+                    <img alt="Green leaf badge symbolizing eco-friendly contributor in BroccoliBro community" class="w-20 h-20 pulse-badge" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/bd441e6e-7c92-43f1-f8e2-c4f21ff1bb09.jpg" width="80" />
+                    <h3 class="text-green-900 font-semibold">
+                        Green Guardian
+                    </h3>
+                    <p class="text-green-700 text-sm">
+                        Shared 50+ green energy posts
+                    </p>
+                </div>
+                <!-- Badge 3 -->
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center space-y-4 hover:shadow-xl transition">
+                    <img alt="Strong arm flexing badge representing community workout leader in BroccoliBro" class="w-20 h-20 pulse-badge" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/49b0e8be-cc66-40b4-eda1-d6d4e66bbd51.jpg" width="80" />
+                    <h3 class="text-green-900 font-semibold">
+                        Workout Leader
+                    </h3>
+                    <p class="text-green-700 text-sm">
+                        Hosted 5+ community workouts
+                    </p>
+                </div>
+                <!-- Badge 4 -->
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center space-y-4 hover:shadow-xl transition">
+                    <img alt="Sunflower badge symbolizing positive community spirit in BroccoliBro" class="w-20 h-20 pulse-badge" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/fc4d513f-2d0a-4181-7773-d641a16f746f.jpg" width="80" />
+                    <h3 class="text-green-900 font-semibold">
+                        Sunshine
+                    </h3>
+                    <p class="text-green-700 text-sm">
+                        Welcomed 20+ new members
+                    </p>
+                </div>
+                <!-- Badge 5 -->
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center space-y-4 hover:shadow-xl transition">
+                    <img alt="Earth globe badge representing environmental advocate in BroccoliBro community" class="w-20 h-20 pulse-badge" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/92c9329f-a0ac-480e-63c6-b4ea94d7e1ef.jpg" width="80" />
+                    <h3 class="text-green-900 font-semibold">
+                        Eco Advocate
+                    </h3>
+                    <p class="text-green-700 text-sm">
+                        Planted 100+ trees with donations
+                    </p>
+                </div>
+                <!-- Badge 6 -->
+                <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center space-y-4 hover:shadow-xl transition">
+                    <img alt="BroccoliBro mascot badge representing top community contributor" class="w-20 h-20 pulse-badge" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1b99bd9d-f6a4-4c22-80bb-297e1375cfa3.jpg" width="80" />
+                    <h3 class="text-green-900 font-semibold">
+                        BroccoliBro MVP
+                    </h3>
+                    <p class="text-green-700 text-sm">
+                        Top contributor &amp; ambassador
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Join the Garden CTA Section -->
+    <section class="bg-gradient-to-r from-green-600 to-green-500 text-white py-20 px-6" id="join">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+            <div class="text-center md:text-left max-w-xl">
+                <h2 class="text-4xl font-bold mb-4">
+                    Join the Garden
+                </h2>
+                <p class="text-lg font-medium mb-6">
+                    Become part of the healthiest meme coin community. Stake, earn, and grow with BroccoliBro.
+                </p>
+                <a class="inline-flex items-center justify-center gap-3 bg-white text-green-700 font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-green-100 transition" href="https://t.me/BroccoliBroCommunity" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-telegram-plane text-2xl">
+      </i> Join Our Telegram
+                </a>
+            </div>
+            <div class="w-full max-w-sm">
+                <img alt="Illustration of BroccoliBro community garden with broccoli characters exercising and green plants growing" class="rounded-xl shadow-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/b70ecae7-6acd-4888-2b2f-a9e932330457.jpg"
+                    width="400" />
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-green-700 text-green-100 py-8 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-sm">
+                © 2024 BroccoliBro. All rights reserved.
+            </p>
+            <div class="flex space-x-6 text-xl">
+                <a aria-label="Twitter" class="hover:text-white transition" href="https://twitter.com/BroccoliBro" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-twitter">
+      </i>
+                </a>
+                <a aria-label="Telegram" class="hover:text-white transition" href="https://t.me/BroccoliBroCommunity" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-telegram-plane">
+      </i>
+                </a>
+                <a aria-label="Discord" class="hover:text-white transition" href="https://discord.gg/BroccoliBro" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-discord">
+      </i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        WaffleCoin ($SYRUP) - Get Syrupy!
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        /* Syrup drip animation */
+        
+        @keyframes drip {
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(6px);
+                opacity: 0.7;
+            }
+        }
+        
+        .drip {
+            animation: drip 2s infinite ease-in-out;
+        }
+        /* Waffle mascot bounce */
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .bounce {
+            animation: bounce 3s infinite ease-in-out;
+        }
+        /* Syrup bottle fill animation */
+        
+        @keyframes fillSyrup {
+            0% {
+                height: 0%;
+            }
+            100% {
+                height: var(--fill-height);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-yellow-50 via-yellow-100 to-yellow-200 text-yellow-900 min-h-screen flex flex-col">
+    <!-- Sticky Header with Syrup Drip -->
+    <header class="sticky top-0 z-50 bg-yellow-300 shadow-md">
+        <div class="relative max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img alt="WaffleCoin logo, a golden waffle with syrup dripping" class="w-12 h-12 rounded-full shadow-lg" height="48" src="https://storage.googleapis.com/a1aa/image/f87cc224-2936-4bad-7bb2-907b29d23276.jpg" width="48" />
+                <h1 class="text-3xl font-pacifico text-yellow-900 select-none">
+                    WaffleCoin
+                </h1>
+                <span class="text-yellow-800 font-semibold text-lg tracking-wide">
+      $SYRUP
+     </span>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-semibold text-yellow-900">
+                <a class="hover:text-yellow-700 transition" href="#roadmap">
+      Roadmap
+     </a>
+                <a class="hover:text-yellow-700 transition" href="#tokenomics">
+      Tokenomics
+     </a>
+                <a class="hover:text-yellow-700 transition" href="#get-syrupy">
+      Get Syrupy
+     </a>
+            </nav>
+            <button aria-label="Toggle menu" class="md:hidden text-yellow-900 focus:outline-none focus:ring-2 focus:ring-yellow-700" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </div>
+        <!-- Syrup Drip SVG -->
+        <div class="relative w-full h-12 overflow-visible">
+            <svg class="absolute bottom-0 left-0 w-full h-12" fill="none" viewbox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
+     <path d="M0 48V24c40 0 80 24 120 24s80-24 120-24 80 24 120 24 80-24 120-24 80 24 120 24 80-24 120-24 80 24 120 24 80-24 120-24v24H0z" fill="#D97706">
+     </path>
+     <circle class="drip" cx="200" cy="48" fill="#B45309" r="6">
+     </circle>
+     <circle class="drip" cx="360" cy="48" fill="#B45309" r="5" style="animation-delay: 0.3s">
+     </circle>
+     <circle class="drip" cx="520" cy="48" fill="#B45309" r="7" style="animation-delay: 0.6s">
+     </circle>
+     <circle class="drip" cx="680" cy="48" fill="#B45309" r="4" style="animation-delay: 0.9s">
+     </circle>
+     <circle class="drip" cx="840" cy="48" fill="#B45309" r="6" style="animation-delay: 1.2s">
+     </circle>
+     <circle class="drip" cx="1000" cy="48" fill="#B45309" r="5" style="animation-delay: 1.5s">
+     </circle>
+     <circle class="drip" cx="1160" cy="48" fill="#B45309" r="7" style="animation-delay: 1.8s">
+     </circle>
+     <circle class="drip" cx="1320" cy="48" fill="#B45309" r="4" style="animation-delay: 2.1s">
+     </circle>
+    </svg>
+        </div>
+    </header>
+    <!-- Mobile Menu -->
+    <nav class="md:hidden bg-yellow-200 text-yellow-900 font-semibold space-y-2 px-6 py-4 hidden" id="mobile-menu">
+        <a class="block py-2 border-b border-yellow-300" href="#roadmap">
+    Roadmap
+   </a>
+        <a class="block py-2 border-b border-yellow-300" href="#tokenomics">
+    Tokenomics
+   </a>
+        <a class="block py-2" href="#get-syrupy">
+    Get Syrupy
+   </a>
+    </nav>
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-12 space-y-20">
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+            <div class="flex-1 text-center md:text-left">
+                <h2 class="text-5xl md:text-6xl font-pacifico text-yellow-900 mb-4 select-none">
+                    Welcome to WaffleCoin
+                </h2>
+                <p class="text-yellow-800 text-lg md:text-xl max-w-xl mx-auto md:mx-0 leading-relaxed">
+                    The sweetest crypto on the blockchain. Powered by syrup, driven by waffles. Join the $SYRUP revolution and get your stack dripping with delicious gains.
+                </p>
+                <a class="inline-block mt-8 px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-yellow-50 font-bold rounded-full shadow-lg transition" href="#get-syrupy">
+      Get Syrupy
+     </a>
+            </div>
+            <div class="flex-1 flex justify-center md:justify-end">
+                <img alt="Animated waffle mascot with syrup dripping down, smiling and bouncing" class="w-72 h-72 bounce select-none" draggable="false" height="320" src="https://storage.googleapis.com/a1aa/image/a5a41d42-aaa8-4a99-f489-971db16fec20.jpg" width="320" />
+            </div>
+        </section>
+        <!-- Roadmap Section -->
+        <section class="space-y-12" id="roadmap">
+            <h3 class="text-4xl font-pacifico text-yellow-900 text-center mb-8 select-none">
+                Roadmap
+            </h3>
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Vertical line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-yellow-400">
+                </div>
+                <!-- Roadmap items stacked -->
+                <div class="space-y-16">
+                    <div class="flex flex-col md:flex-row items-center md:items-start md:justify-start md:space-x-8 relative">
+                        <div class="z-10 bg-yellow-400 border-4 border-yellow-600 rounded-full w-12 h-12 flex items-center justify-center text-yellow-900 font-bold text-lg select-none">
+                            1
+                        </div>
+                        <div class="bg-yellow-100 rounded-lg p-6 shadow-lg max-w-md md:max-w-xl">
+                            <h4 class="text-2xl font-semibold text-yellow-900 mb-2">
+                                Q1 2024 - Launch &amp; Awareness
+                            </h4>
+                            <p class="text-yellow-800 leading-relaxed">
+                                Launch $SYRUP token, deploy smart contracts, and start community building with giveaways and social campaigns.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center md:items-start md:justify-end md:space-x-8 relative">
+                        <div class="z-10 bg-yellow-400 border-4 border-yellow-600 rounded-full w-12 h-12 flex items-center justify-center text-yellow-900 font-bold text-lg select-none order-1 md:order-none">
+                            2
+                        </div>
+                        <div class="bg-yellow-100 rounded-lg p-6 shadow-lg max-w-md md:max-w-xl order-2 md:order-none">
+                            <h4 class="text-2xl font-semibold text-yellow-900 mb-2">
+                                Q2 2024 - Partnerships &amp; Listings
+                            </h4>
+                            <p class="text-yellow-800 leading-relaxed">
+                                Secure exchange listings, partner with breakfast brands, and launch the WaffleCoin merch store.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center md:items-start md:justify-start md:space-x-8 relative">
+                        <div class="z-10 bg-yellow-400 border-4 border-yellow-600 rounded-full w-12 h-12 flex items-center justify-center text-yellow-900 font-bold text-lg select-none">
+                            3
+                        </div>
+                        <div class="bg-yellow-100 rounded-lg p-6 shadow-lg max-w-md md:max-w-xl">
+                            <h4 class="text-2xl font-semibold text-yellow-900 mb-2">
+                                Q3 2024 - DApp &amp; Staking
+                            </h4>
+                            <p class="text-yellow-800 leading-relaxed">
+                                Launch the WaffleCoin DApp with staking rewards, syrup drip bonuses, and community governance.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row items-center md:items-start md:justify-end md:space-x-8 relative">
+                        <div class="z-10 bg-yellow-400 border-4 border-yellow-600 rounded-full w-12 h-12 flex items-center justify-center text-yellow-900 font-bold text-lg select-none order-1 md:order-none">
+                            4
+                        </div>
+                        <div class="bg-yellow-100 rounded-lg p-6 shadow-lg max-w-md md:max-w-xl order-2 md:order-none">
+                            <h4 class="text-2xl font-semibold text-yellow-900 mb-2">
+                                Q4 2024 - Expansion &amp; NFTs
+                            </h4>
+                            <p class="text-yellow-800 leading-relaxed">
+                                Expand ecosystem with NFT collectibles, syrup-themed games, and cross-chain integrations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tokenomics Section -->
+        <section class="space-y-12" id="tokenomics">
+            <h3 class="text-4xl font-pacifico text-yellow-900 text-center mb-8 select-none">
+                Tokenomics
+            </h3>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+                <!-- Syrup Bottle 1 -->
+                <div class="flex flex-col items-center space-y-4">
+                    <img alt="Syrup bottle shaped container with amber syrup inside representing total supply of WaffleCoin tokens" class="w-24 h-52 object-contain" height="220" src="https://storage.googleapis.com/a1aa/image/07b8563e-0a54-48a3-8bb5-d62ceaa661de.jpg" width="100"
+                    />
+                    <div class="relative w-12 h-40 bg-yellow-200 rounded-b-3xl border-4 border-yellow-500 overflow-hidden">
+                        <div class="absolute bottom-0 left-0 w-full bg-yellow-600" style="--fill-height: 100%; animation: fillSyrup 2s forwards;">
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-semibold text-yellow-900">
+                        Total Supply
+                    </h4>
+                    <p class="text-yellow-800 font-mono text-lg">
+                        1,000,000,000 $SYRUP
+                    </p>
+                </div>
+                <!-- Syrup Bottle 2 -->
+                <div class="flex flex-col items-center space-y-4">
+                    <img alt="Syrup bottle shaped container with amber syrup inside representing liquidity pool allocation" class="w-24 h-52 object-contain" height="220" src="https://storage.googleapis.com/a1aa/image/287f28de-cf77-4cee-cb8a-644c20e1f6fd.jpg" width="100"
+                    />
+                    <div class="relative w-12 h-40 bg-yellow-200 rounded-b-3xl border-4 border-yellow-500 overflow-hidden">
+                        <div class="absolute bottom-0 left-0 w-full bg-yellow-600" style="--fill-height: 70%; animation: fillSyrup 2s forwards 0.3s;">
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-semibold text-yellow-900">
+                        Liquidity Pool
+                    </h4>
+                    <p class="text-yellow-800 font-mono text-lg">
+                        700,000,000 $SYRUP (70%)
+                    </p>
+                </div>
+                <!-- Syrup Bottle 3 -->
+                <div class="flex flex-col items-center space-y-4">
+                    <img alt="Syrup bottle shaped container with amber syrup inside representing team allocation of tokens" class="w-24 h-52 object-contain" height="220" src="https://storage.googleapis.com/a1aa/image/3a5a2351-a1d3-49bc-4b4a-fd37170ee38a.jpg" width="100"
+                    />
+                    <div class="relative w-12 h-40 bg-yellow-200 rounded-b-3xl border-4 border-yellow-500 overflow-hidden">
+                        <div class="absolute bottom-0 left-0 w-full bg-yellow-600" style="--fill-height: 15%; animation: fillSyrup 2s forwards 0.6s;">
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-semibold text-yellow-900">
+                        Team Allocation
+                    </h4>
+                    <p class="text-yellow-800 font-mono text-lg">
+                        150,000,000 $SYRUP (15%)
+                    </p>
+                </div>
+                <!-- Syrup Bottle 4 -->
+                <div class="flex flex-col items-center space-y-4">
+                    <img alt="Syrup bottle shaped container with amber syrup inside representing marketing allocation of tokens" class="w-24 h-52 object-contain" height="220" src="https://storage.googleapis.com/a1aa/image/25dd0463-534a-4850-43e0-c3c34dc0d090.jpg" width="100"
+                    />
+                    <div class="relative w-12 h-40 bg-yellow-200 rounded-b-3xl border-4 border-yellow-500 overflow-hidden">
+                        <div class="absolute bottom-0 left-0 w-full bg-yellow-600" style="--fill-height: 15%; animation: fillSyrup 2s forwards 0.9s;">
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-semibold text-yellow-900">
+                        Marketing
+                    </h4>
+                    <p class="text-yellow-800 font-mono text-lg">
+                        150,000,000 $SYRUP (15%)
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Call to Action Section -->
+        <section class="bg-yellow-400 rounded-3xl shadow-lg py-16 px-8 max-w-4xl mx-auto text-center text-yellow-900 select-none" id="get-syrupy">
+            <h3 class="text-5xl font-pacifico mb-6">
+                Ready to Get Syrupy?
+            </h3>
+            <p class="text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+                Join the WaffleCoin community and start stacking your $SYRUP tokens today. Sweet rewards and syrupy gains await!
+            </p>
+            <a class="inline-flex items-center gap-3 bg-yellow-700 hover:bg-yellow-800 text-yellow-50 font-bold text-2xl px-12 py-5 rounded-full shadow-xl transition" href="#">
+                <i class="fas fa-syringe fa-spin">
+     </i> Get Syrupy
+            </a>
+        </section>
+    </main>
+    <footer class="bg-yellow-300 text-yellow-900 py-6 text-center font-semibold select-none">
+        © 2024 WaffleCoin. All rights reserved.
+    </footer>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

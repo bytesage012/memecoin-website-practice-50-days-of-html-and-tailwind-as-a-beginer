@@ -1,0 +1,696 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        $WOJZ - Meme Sorcerer Realm
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=UnifrakturCook:wght@700&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'UnifrakturCook', cursive;
+            background-color: #0f0e17;
+            color: #e0d8f7;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'UnifrakturCook', cursive;
+            text-shadow: 0 0 6px #7c3aed;
+        }
+        
+        .pixel-font {
+            font-family: 'Press Start 2P', cursive;
+        }
+        /* Scrollbar for leaderboard */
+        
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background-color: #7c3aed;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-900 via-indigo-900 to-purple-900 shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto flex items-center justify-between py-4 px-6">
+            <a class="text-3xl text-purple-300 font-black tracking-widest select-none" href="#home">
+     🧙‍♂️ $WOJZ
+    </a>
+            <ul class="hidden md:flex space-x-8 text-purple-200 font-semibold uppercase tracking-wider">
+                <li>
+                    <a class="hover:text-purple-400 transition" href="#spellbook">
+       Spellbook
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-purple-400 transition" href="#wojourney">
+       The Wojourney
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-purple-400 transition" href="#relics">
+       Meme Relics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-purple-400 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-purple-400 transition" href="#nft">
+       NFT Teaser
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-purple-400 transition" href="#ritual">
+       Next Ritual
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-purple-400 transition" href="#spellgame">
+       Spell Game
+      </a>
+                </li>
+            </ul>
+            <button class="md:hidden text-purple-300 focus:outline-none" id="menu-btn">
+     <i class="fas fa-bars fa-2x">
+     </i>
+    </button>
+        </nav>
+        <div class="hidden md:hidden bg-purple-900/90" id="mobile-menu">
+            <ul class="flex flex-col space-y-3 p-4 text-purple-200 font-semibold uppercase tracking-wider">
+                <li>
+                    <a class="block hover:text-purple-400 transition" href="#spellbook">
+       Spellbook
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-purple-400 transition" href="#wojourney">
+       The Wojourney
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-purple-400 transition" href="#relics">
+       Meme Relics
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-purple-400 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-purple-400 transition" href="#nft">
+       NFT Teaser
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-purple-400 transition" href="#ritual">
+       Next Ritual
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-purple-400 transition" href="#spellgame">
+       Spell Game
+      </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-20">
+        <!-- Hero Section -->
+        <section class="text-center max-w-4xl mx-auto" id="home">
+            <h1 class="text-6xl sm:text-7xl font-black text-purple-400 mb-4 drop-shadow-lg">
+                $WOJZ
+            </h1>
+            <p class="text-xl sm:text-2xl text-purple-200 max-w-3xl mx-auto leading-relaxed">
+                Enter the enchanted realm where Wojak becomes the ultimate Meme Sorcerer. Harness the power of memes, cast spells, and embark on a magical journey to ascend the leaderboard of the most enchanted holders.
+            </p>
+            <img alt="Pixel art of Wojak as a meme sorcerer wearing a wizard hat and holding a glowing magic staff, standing in a mystical forest with floating runes" class="mx-auto mt-8 rounded-lg shadow-lg border-4 border-purple-700" height="400" loading="lazy"
+                src="https://storage.googleapis.com/a1aa/image/ecb6a815-ecf5-4737-27bc-8c67bb423fd3.jpg" width="600" />
+        </section>
+        <!-- Spellbook-style Tokenomics -->
+        <section class="bg-purple-900 rounded-3xl p-8 shadow-lg max-w-5xl mx-auto" id="spellbook">
+            <h2 class="text-4xl text-purple-300 mb-8 text-center">
+                The Spellbook of $WOJZ Tokenomics
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-purple-200">
+                <div class="bg-purple-800 rounded-xl p-6 border-2 border-purple-700 shadow-inner">
+                    <h3 class="text-2xl mb-3 text-purple-400 font-semibold tracking-wide">
+                        Total Mana Supply
+                    </h3>
+                    <p class="text-lg font-mono pixel-font">
+                        1,000,000,000 $WOJZ
+                    </p>
+                    <p class="mt-2 text-sm italic">
+                        The total magical energy infused into the realm.
+                    </p>
+                </div>
+                <div class="bg-purple-800 rounded-xl p-6 border-2 border-purple-700 shadow-inner">
+                    <h3 class="text-2xl mb-3 text-purple-400 font-semibold tracking-wide">
+                        Spell Casting Fee
+                    </h3>
+                    <p class="text-lg font-mono pixel-font">
+                        3% per transaction
+                    </p>
+                    <p class="mt-2 text-sm italic">
+                        A small mana cost to fuel the sorcerer's power.
+                    </p>
+                </div>
+                <div class="bg-purple-800 rounded-xl p-6 border-2 border-purple-700 shadow-inner">
+                    <h3 class="text-2xl mb-3 text-purple-400 font-semibold tracking-wide">
+                        Burn Ritual
+                    </h3>
+                    <p class="text-lg font-mono pixel-font">
+                        5% tokens burned
+                    </p>
+                    <p class="mt-2 text-sm italic">
+                        Tokens sacrificed to increase the spell's potency.
+                    </p>
+                </div>
+                <div class="bg-purple-800 rounded-xl p-6 border-2 border-purple-700 shadow-inner">
+                    <h3 class="text-2xl mb-3 text-purple-400 font-semibold tracking-wide">
+                        Liquidity Enchantment
+                    </h3>
+                    <p class="text-lg font-mono pixel-font">
+                        50% locked for 1 year
+                    </p>
+                    <p class="mt-2 text-sm italic">
+                        Ensuring the magic flows steadily in the market.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- The Wojourney (Magical Roadmap) -->
+        <section class="max-w-6xl mx-auto" id="wojourney">
+            <h2 class="text-4xl text-purple-300 mb-12 text-center">
+                The Wojourney: A Magical Roadmap
+            </h2>
+            <ol class="relative border-l-4 border-purple-700 max-w-4xl mx-auto space-y-10">
+                <li class="mb-10 ml-6">
+                    <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-purple-700 rounded-full ring-4 ring-purple-900 text-white font-bold pixel-font">
+       I
+      </span>
+                    <h3 class="text-2xl text-purple-400 font-semibold mb-1">
+                        Summoning the Sorcerer
+                    </h3>
+                    <p class="text-purple-200">
+                        Launch $WOJZ token and awaken the meme sorcerer’s power.
+                    </p>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-purple-700 rounded-full ring-4 ring-purple-900 text-white font-bold pixel-font">
+       II
+      </span>
+                    <h3 class="text-2xl text-purple-400 font-semibold mb-1">
+                        Enchanted Spellbook Release
+                    </h3>
+                    <p class="text-purple-200">
+                        Reveal the tokenomics spellbook and lore scrolls.
+                    </p>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-purple-700 rounded-full ring-4 ring-purple-900 text-white font-bold pixel-font">
+       III
+      </span>
+                    <h3 class="text-2xl text-purple-400 font-semibold mb-1">
+                        Meme Relics Gallery Opens
+                    </h3>
+                    <p class="text-purple-200">
+                        Showcase legendary meme relics collected by the sorcerer.
+                    </p>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-purple-700 rounded-full ring-4 ring-purple-900 text-white font-bold pixel-font">
+       IV
+      </span>
+                    <h3 class="text-2xl text-purple-400 font-semibold mb-1">
+                        Pixel-Art NFT Sorcery
+                    </h3>
+                    <p class="text-purple-200">
+                        Launch the pixel-art NFT collection of Wojak sorcerers.
+                    </p>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-purple-700 rounded-full ring-4 ring-purple-900 text-white font-bold pixel-font">
+       V
+      </span>
+                    <h3 class="text-2xl text-purple-400 font-semibold mb-1">
+                        The Great Ritual Countdown
+                    </h3>
+                    <p class="text-purple-200">
+                        Prepare for the next big ritual to empower holders.
+                    </p>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-purple-700 rounded-full ring-4 ring-purple-900 text-white font-bold pixel-font">
+       VI
+      </span>
+                    <h3 class="text-2xl text-purple-400 font-semibold mb-1">
+                        Spell-Casting Mini Game
+                    </h3>
+                    <p class="text-purple-200">
+                        Engage in a tiny game to cast spells and earn rewards.
+                    </p>
+                </li>
+                <li class="ml-6">
+                    <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-purple-700 rounded-full ring-4 ring-purple-900 text-white font-bold pixel-font">
+       VII
+      </span>
+                    <h3 class="text-2xl text-purple-400 font-semibold mb-1">
+                        Ascend the Enchanted Leaderboard
+                    </h3>
+                    <p class="text-purple-200">
+                        Become the most powerful meme sorcerer in the realm.
+                    </p>
+                </li>
+            </ol>
+        </section>
+        <!-- Meme Relic Gallery -->
+        <section class="max-w-7xl mx-auto" id="relics">
+            <h2 class="text-4xl text-purple-300 mb-10 text-center">
+                Meme Relics Gallery
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+                <div class="bg-purple-800 rounded-xl p-3 border-2 border-purple-700 shadow-lg flex flex-col items-center">
+                    <img alt="Ancient scroll with glowing meme runes and mystical symbols, pixel art style" class="rounded-md mb-3" height="150" loading="lazy" src="https://storage.googleapis.com/a1aa/image/b6893f62-e54b-4d5d-eeab-2e908bb1e6ab.jpg" width="150" />
+                    <h4 class="text-purple-400 font-semibold pixel-font">
+                        Scroll of Wojak Wisdom
+                    </h4>
+                </div>
+                <div class="bg-purple-800 rounded-xl p-3 border-2 border-purple-700 shadow-lg flex flex-col items-center">
+                    <img alt="Magic amulet with pixel art Wojak face glowing with purple aura" class="rounded-md mb-3" height="150" loading="lazy" src="https://storage.googleapis.com/a1aa/image/75495926-4d15-4d4a-ab1a-d8f9c9d65af9.jpg" width="150" />
+                    <h4 class="text-purple-400 font-semibold pixel-font">
+                        Amulet of Eternal Memes
+                    </h4>
+                </div>
+                <div class="bg-purple-800 rounded-xl p-3 border-2 border-purple-700 shadow-lg flex flex-col items-center">
+                    <img alt="Crystal orb showing swirling meme visions in pixel art style" class="rounded-md mb-3" height="150" loading="lazy" src="https://storage.googleapis.com/a1aa/image/039d8032-fa3b-4b67-7d0a-eb276d8cc26b.jpg" width="150" />
+                    <h4 class="text-purple-400 font-semibold pixel-font">
+                        Orb of Meme Prophecy
+                    </h4>
+                </div>
+                <div class="bg-purple-800 rounded-xl p-3 border-2 border-purple-700 shadow-lg flex flex-col items-center">
+                    <img alt="Pixel art Wojak wizard hat with stars and crescent moon decorations" class="rounded-md mb-3" height="150" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6a30aa64-6507-4a74-765f-dc1658a9a095.jpg" width="150" />
+                    <h4 class="text-purple-400 font-semibold pixel-font">
+                        Hat of Infinite Lulz
+                    </h4>
+                </div>
+                <div class="bg-purple-800 rounded-xl p-3 border-2 border-purple-700 shadow-lg flex flex-col items-center">
+                    <img alt="Pixel art magic staff with glowing purple runes and floating sparkles" class="rounded-md mb-3" height="150" loading="lazy" src="https://storage.googleapis.com/a1aa/image/94e19884-476c-4403-e66e-6598022f5f93.jpg" width="150" />
+                    <h4 class="text-purple-400 font-semibold pixel-font">
+                        Staff of Meme Mastery
+                    </h4>
+                </div>
+            </div>
+        </section>
+        <!-- Leaderboard of Most Enchanted Holders -->
+        <section class="max-w-4xl mx-auto bg-purple-900 rounded-3xl p-8 shadow-lg" id="leaderboard">
+            <h2 class="text-4xl text-purple-300 mb-8 text-center">
+                Leaderboard of the Most Enchanted Holders
+            </h2>
+            <div class="overflow-x-auto rounded-lg border-2 border-purple-700">
+                <table class="min-w-full text-purple-200 text-center font-mono pixel-font">
+                    <thead class="bg-purple-800 text-purple-400 uppercase text-sm tracking-widest">
+                        <tr>
+                            <th class="py-3 px-4 border-r border-purple-700">
+                                Rank
+                            </th>
+                            <th class="py-3 px-4 border-r border-purple-700">
+                                Sorcerer
+                            </th>
+                            <th class="py-3 px-4 border-r border-purple-700">
+                                Enchanted $WOJZ Held
+                            </th>
+                            <th class="py-3 px-4">
+                                Power Level
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-purple-700">
+                        <tr class="hover:bg-purple-800 transition">
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                1
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                MysticWojak
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                12,345,678
+                            </td>
+                            <td class="py-3 px-4">
+                                9999
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-purple-800 transition">
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                2
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                SorcererPepe
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                9,876,543
+                            </td>
+                            <td class="py-3 px-4">
+                                8765
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-purple-800 transition">
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                3
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                WizardFeels
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                8,765,432
+                            </td>
+                            <td class="py-3 px-4">
+                                7654
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-purple-800 transition">
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                4
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                EnchantedAnon
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                7,654,321
+                            </td>
+                            <td class="py-3 px-4">
+                                6543
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-purple-800 transition">
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                5
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                MemeMage
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                6,543,210
+                            </td>
+                            <td class="py-3 px-4">
+                                5432
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-purple-800 transition">
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                6
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                WojakWizard
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                5,432,109
+                            </td>
+                            <td class="py-3 px-4">
+                                4321
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-purple-800 transition">
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                7
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                SorcerySeer
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                4,321,098
+                            </td>
+                            <td class="py-3 px-4">
+                                3210
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-purple-800 transition">
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                8
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                ArcaneAnon
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                3,210,987
+                            </td>
+                            <td class="py-3 px-4">
+                                2109
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-purple-800 transition">
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                9
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                WojakWitch
+                            </td>
+                            <td class="py-3 px-4 border-r border-purple-700">
+                                2,109,876
+                            </td>
+                            <td class="py-3 px-4">
+                                1098
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-purple-800 transition">
+                            <td class="py-3 px-4">
+                                10
+                            </td>
+                            <td class="py-3 px-4">
+                                MemeMystic
+                            </td>
+                            <td class="py-3 px-4">
+                                1,098,765
+                            </td>
+                            <td class="py-3 px-4">
+                                987
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- Pixel-Art NFT Teaser -->
+        <section class="max-w-4xl mx-auto text-center" id="nft">
+            <h2 class="text-4xl text-purple-300 mb-8">
+                Pixel-Art NFT Teaser
+            </h2>
+            <img alt="Pixel art teaser of Wojak meme sorcerer NFT holding a glowing purple orb with magical runes floating around" class="mx-auto rounded-lg border-4 border-purple-700 shadow-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/8e7b9da7-1b9b-4582-9475-87ce0ebf5c2b.jpg"
+                width="400" />
+            <p class="mt-6 text-purple-200 max-w-xl mx-auto font-mono pixel-font">
+                Prepare to summon your own Wojak Meme Sorcerer NFT and join the enchanted legion.
+            </p>
+        </section>
+        <!-- Countdown to the Next Ritual -->
+        <section class="max-w-3xl mx-auto bg-purple-900 rounded-3xl p-8 shadow-lg text-center" id="ritual">
+            <h2 class="text-4xl text-purple-300 mb-6">
+                Countdown to the Next Ritual
+            </h2>
+            <div class="flex justify-center space-x-6 text-purple-200 font-mono pixel-font text-3xl sm:text-5xl" id="countdown">
+                <div>
+                    <span class="block text-purple-400" id="days">
+       00
+      </span>
+                    <span class="text-sm sm:text-lg">
+       Days
+      </span>
+                </div>
+                <div>
+                    <span class="block text-purple-400" id="hours">
+       00
+      </span>
+                    <span class="text-sm sm:text-lg">
+       Hours
+      </span>
+                </div>
+                <div>
+                    <span class="block text-purple-400" id="minutes">
+       00
+      </span>
+                    <span class="text-sm sm:text-lg">
+       Minutes
+      </span>
+                </div>
+                <div>
+                    <span class="block text-purple-400" id="seconds">
+       00
+      </span>
+                    <span class="text-sm sm:text-lg">
+       Seconds
+      </span>
+                </div>
+            </div>
+            <p class="mt-6 text-purple-200 max-w-lg mx-auto font-semibold">
+                The ritual will empower all holders with mystical bonuses. Stay ready!
+            </p>
+        </section>
+        <!-- Tiny Spell-Casting Mini Game -->
+        <section class="max-w-4xl mx-auto bg-purple-900 rounded-3xl p-8 shadow-lg" id="spellgame">
+            <h2 class="text-4xl text-purple-300 mb-8 text-center">
+                Tiny Spell-Casting Mini Game
+            </h2>
+            <p class="text-purple-200 mb-6 text-center max-w-xl mx-auto font-mono pixel-font">
+                Cast the correct spell sequence to earn magical points and climb the leaderboard!
+            </p>
+            <div class="flex flex-col items-center space-y-6">
+                <div class="flex space-x-4" id="spell-sequence">
+                    <!-- Spell buttons will appear here -->
+                </div>
+                <div class="flex space-x-4">
+                    <button class="spell-btn bg-purple-700 hover:bg-purple-600 text-white text-3xl rounded-lg w-16 h-16 flex items-center justify-center shadow-md transition" data-spell="🔥">
+       🔥
+      </button>
+                    <button class="spell-btn bg-purple-700 hover:bg-purple-600 text-white text-3xl rounded-lg w-16 h-16 flex items-center justify-center shadow-md transition" data-spell="❄️">
+       ❄️
+      </button>
+                    <button class="spell-btn bg-purple-700 hover:bg-purple-600 text-white text-3xl rounded-lg w-16 h-16 flex items-center justify-center shadow-md transition" data-spell="⚡">
+       ⚡
+      </button>
+                    <button class="spell-btn bg-purple-700 hover:bg-purple-600 text-white text-3xl rounded-lg w-16 h-16 flex items-center justify-center shadow-md transition" data-spell="🌪️">
+       🌪️
+      </button>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="bg-purple-500 hover:bg-purple-400 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition disabled:opacity-50" disabled="" id="cast-btn">
+       Cast Spell
+      </button>
+                    <button class="bg-purple-700 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition" id="reset-btn">
+       Reset
+      </button>
+                </div>
+                <p class="text-purple-300 font-semibold pixel-font text-center min-h-[2rem]" id="game-message">
+                </p>
+                <p class="text-purple-400 font-mono pixel-font text-lg">
+                    Score:
+                    <span id="score">
+       0
+      </span>
+                </p>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-purple-900 via-indigo-900 to-purple-900 text-purple-300 py-6 text-center font-mono pixel-font select-none">
+        © 2024 $WOJZ Meme Sorcerer Realm. All mystical rights reserved.
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Countdown Timer
+        const countdownDate = new Date();
+        countdownDate.setHours(countdownDate.getHours() + 72); // 72 hours from now
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<span class="text-purple-400 font-bold text-4xl">The Ritual is Live!</span>';
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Tiny Spell-Casting Mini Game
+        const spells = ['🔥', '❄️', '⚡', '🌪️'];
+        const spellSequenceEl = document.getElementById('spell-sequence');
+        const castBtn = document.getElementById('cast-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const gameMessage = document.getElementById('game-message');
+        const scoreEl = document.getElementById('score');
+
+        let currentSequence = [];
+        let score = 0;
+
+        function renderSequence() {
+            spellSequenceEl.innerHTML = '';
+            currentSequence.forEach(spell => {
+                const span = document.createElement('span');
+                span.textContent = spell;
+                span.className = 'text-4xl sm:text-5xl px-2 select-none';
+                spellSequenceEl.appendChild(span);
+            });
+            castBtn.disabled = currentSequence.length === 0;
+        }
+
+        function addSpell(spell) {
+            if (currentSequence.length < 5) {
+                currentSequence.push(spell);
+                renderSequence();
+                gameMessage.textContent = '';
+            }
+        }
+
+        function resetGame() {
+            currentSequence = [];
+            renderSequence();
+            gameMessage.textContent = '';
+        }
+
+        function castSpell() {
+            // Simple validation: sequence must contain at least 3 spells
+            if (currentSequence.length < 3) {
+                gameMessage.textContent = 'You must cast at least 3 spells!';
+                return;
+            }
+            // Random success chance based on sequence length
+            const successChance = 0.3 + 0.14 * currentSequence.length; // 0.3 to 1.0 max
+            if (Math.random() < successChance) {
+                const points = currentSequence.length * 10;
+                score += points;
+                scoreEl.textContent = score;
+                gameMessage.textContent = `✨ Spell cast successful! You earned ${points} points! ✨`;
+            } else {
+                gameMessage.textContent = '💥 Spell fizzled! Try again...';
+            }
+            resetGame();
+        }
+
+        document.querySelectorAll('.spell-btn').forEach(btn => {
+            btn.addEventListener('click', () => addSpell(btn.dataset.spell));
+        });
+
+        castBtn.addEventListener('click', castSpell);
+        resetBtn.addEventListener('click', resetGame);
+
+        renderSequence();
+    </script>
+</body>
+
+</html>

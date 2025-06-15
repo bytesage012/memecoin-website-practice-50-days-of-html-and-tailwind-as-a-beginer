@@ -1,0 +1,383 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        CaptainCorn ($POPCRN) - Pirate Style Meme Coin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&amp;family=Press+Start+2P&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Pirata One', cursive;
+            background-color: #0b121a;
+            color: #f9d71c;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Pirata One', cursive;
+        }
+        
+        .floating-corn {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            animation: floatUpDown 6s ease-in-out infinite;
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        .floating-corn:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .floating-corn:nth-child(2) {
+            left: 30%;
+            animation-delay: 2s;
+            width: 45px;
+            height: 45px;
+        }
+        
+        .floating-corn:nth-child(3) {
+            left: 50%;
+            animation-delay: 4s;
+            width: 55px;
+            height: 55px;
+        }
+        
+        .floating-corn:nth-child(4) {
+            left: 70%;
+            animation-delay: 1s;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .floating-corn:nth-child(5) {
+            left: 85%;
+            animation-delay: 3s;
+            width: 40px;
+            height: 40px;
+        }
+        
+        @keyframes floatUpDown {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+                opacity: 1;
+            }
+        }
+        /* Scrollbar styling for roadmap horizontal scroll */
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="relative overflow-x-hidden">
+    <!-- Floating Corn Kernels -->
+    <img alt="Floating golden corn kernel with pirate hat illustration" class="floating-corn top-[80vh]" height="60" src="https://storage.googleapis.com/a1aa/image/a6825c9d-3da2-4248-6680-fb1a27d5fc0b.jpg" style="left:10%" width="60" />
+    <img alt="Floating golden corn kernel with eyepatch illustration" class="floating-corn top-[75vh]" height="45" src="https://storage.googleapis.com/a1aa/image/d5fe8692-72b5-4c97-75cb-f9ee8f4a72dc.jpg" style="left:30%" width="45" />
+    <img alt="Floating golden corn kernel with pirate sword illustration" class="floating-corn top-[78vh]" height="55" src="https://storage.googleapis.com/a1aa/image/3c1c3cb2-1412-4758-9fe9-e44610d7410f.jpg" style="left:50%" width="55" />
+    <img alt="Floating golden corn kernel with pirate flag illustration" class="floating-corn top-[82vh]" height="50" src="https://storage.googleapis.com/a1aa/image/0cee7133-007f-4ef5-50f1-5c69907fd353.jpg" style="left:70%" width="50" />
+    <img alt="Floating golden corn kernel with treasure chest illustration" class="floating-corn top-[79vh]" height="40" src="https://storage.googleapis.com/a1aa/image/16bde472-001d-4f3a-8aea-cf15b3f2b080.jpg" style="left:85%" width="40" />
+    <!-- Navbar -->
+    <nav class="bg-yellow-500 bg-opacity-90 fixed w-full z-30 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a class="flex items-center space-x-3" href="#home">
+                <img alt="CaptainCorn pirate corn mascot logo with pirate hat and eyepatch" class="w-12 h-12" height="48" src="https://storage.googleapis.com/a1aa/image/a709c620-e91b-4298-6c46-e28bd64b96cd.jpg" width="48" />
+                <span class="text-3xl font-bold text-yellow-900 tracking-widest select-none">
+      CaptainCorn
+     </span>
+                <span class="text-yellow-800 font-mono font-bold text-lg">
+      $POPCRN
+     </span>
+            </a>
+            <ul class="hidden md:flex space-x-8 text-yellow-900 font-semibold tracking-wide">
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#about">
+       About
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#set-sail">
+       Set Sail
+      </a>
+                </li>
+            </ul>
+            <button class="md:hidden text-yellow-900 focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars fa-2x">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-yellow-400 bg-opacity-90" id="mobile-menu">
+            <ul class="flex flex-col space-y-3 p-4 text-yellow-900 font-semibold tracking-wide">
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#about">
+       About
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#set-sail">
+       Set Sail
+      </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="pt-28 pb-20 bg-gradient-to-b from-yellow-400 via-yellow-300 to-yellow-200 relative overflow-hidden" id="home">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-6xl md:text-7xl font-extrabold text-yellow-900 drop-shadow-lg select-none">
+                    CaptainCorn
+                </h1>
+                <p class="mt-4 text-xl md:text-2xl font-semibold text-yellow-800 tracking-wide select-none">
+                    The Pirate-Style Meme Coin
+                    <span class="text-yellow-900 font-black">
+       $POPCRN
+      </span>
+                </p>
+                <p class="mt-6 text-yellow-900 max-w-md leading-relaxed font-semibold select-none">
+                    Join the crew and sail the crypto seas with the golden kernel token that’s plundering the blockchain!
+                </p>
+                <a class="inline-block mt-8 px-10 py-4 bg-yellow-700 hover:bg-yellow-800 text-yellow-100 font-bold text-xl rounded-full shadow-lg transition select-none" href="#set-sail">
+      Set Sail →
+     </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img alt="Pirate corn mascot with eyepatch, pirate hat, and a mischievous smile holding a golden coin" class="w-72 h-72 md:w-96 md:h-96 drop-shadow-2xl" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/74e4380b-b1e8-4199-0a9b-63c78285a3b9.jpg"
+                    width="400" />
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="max-w-7xl mx-auto px-6 py-16" id="about">
+        <h2 class="text-4xl text-yellow-900 font-bold mb-8 text-center select-none">
+            About CaptainCorn
+        </h2>
+        <div class="flex flex-col md:flex-row items-center gap-10">
+            <img alt="Golden kernel treasure chest overflowing with pirate coins and sparkling gems" class="w-72 h-72 rounded-xl shadow-lg mx-auto md:mx-0" height="320" loading="lazy" src="https://storage.googleapis.com/a1aa/image/732eff60-6f36-4277-79d6-774759590de4.jpg"
+                width="320" />
+            <div class="md:w-1/2 text-yellow-900 font-semibold leading-relaxed text-lg select-none">
+                <p>
+                    CaptainCorn ($POPCRN) is the ultimate pirate-themed meme coin sailing the crypto seas! Our mascot, a mischievous pirate corn kernel, leads the crew on a treasure hunt for riches and fun.
+                </p>
+                <p class="mt-4">
+                    With a golden kernel tokenomics model, a treasure map roadmap, and a community of buccaneers ready to set sail, $POPCRN is your ticket to adventure and potential fortune.
+                </p>
+                <p class="mt-4">
+                    Join us as we plunder the blockchain and bring the spirit of the high seas to the world of crypto!
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="bg-yellow-400 bg-opacity-90 py-16" id="tokenomics">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl text-yellow-900 font-bold mb-12 text-center select-none">
+                Golden Kernel Tokenomics
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-yellow-900 font-semibold select-none">
+                <div class="bg-yellow-200 bg-opacity-70 rounded-2xl p-8 shadow-lg flex flex-col items-center">
+                    <img alt="Golden treasure chest filled with gold coins illustration" class="mb-6" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/12148b0f-9439-47a2-d22e-dae773fda876.jpg" width="100" />
+                    <h3 class="text-2xl font-bold mb-2">
+                        Total Supply
+                    </h3>
+                    <p class="text-lg">
+                        1,000,000,000 $POPCRN
+                    </p>
+                </div>
+                <div class="bg-yellow-200 bg-opacity-70 rounded-2xl p-8 shadow-lg flex flex-col items-center">
+                    <img alt="Pirate anchor symbol representing locked liquidity illustration" class="mb-6" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/45b9d651-6378-4cb8-f98b-4080781750ed.jpg" width="100" />
+                    <h3 class="text-2xl font-bold mb-2">
+                        Liquidity Locked
+                    </h3>
+                    <p class="text-lg">
+                        100% Locked for 1 Year
+                    </p>
+                </div>
+                <div class="bg-yellow-200 bg-opacity-70 rounded-2xl p-8 shadow-lg flex flex-col items-center">
+                    <img alt="Golden corn kernel token illustration shining bright" class="mb-6" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/99f19d20-e401-43ef-2f29-fad60f21aa43.jpg" width="100" />
+                    <h3 class="text-2xl font-bold mb-2">
+                        Reflection
+                    </h3>
+                    <p class="text-lg">
+                        5% of every transaction redistributed to holders
+                    </p>
+                </div>
+            </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12 text-yellow-900 font-semibold select-none">
+                <div class="bg-yellow-200 bg-opacity-70 rounded-2xl p-8 shadow-lg flex flex-col items-center">
+                    <img alt="Pirate flag symbol representing marketing and development funds illustration" class="mb-6" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/8a645d95-a805-418f-87f7-9fd616ef6141.jpg" width="100" />
+                    <h3 class="text-2xl font-bold mb-2">
+                        Marketing &amp; Dev
+                    </h3>
+                    <p class="text-lg">
+                        4% to keep the ship sailing strong
+                    </p>
+                </div>
+                <div class="bg-yellow-200 bg-opacity-70 rounded-2xl p-8 shadow-lg flex flex-col items-center">
+                    <img alt="Pirate corn mascot holding a treasure map illustration" class="mb-6" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/40eeac84-b86c-4454-c96d-8e86afb04db2.jpg" width="100" />
+                    <h3 class="text-2xl font-bold mb-2">
+                        Burn
+                    </h3>
+                    <p class="text-lg">
+                        1% burned to increase scarcity
+                    </p>
+                </div>
+                <div class="bg-yellow-200 bg-opacity-70 rounded-2xl p-8 shadow-lg flex flex-col items-center">
+                    <img alt="Golden coin with sparkles illustration" class="mb-6" height="100" loading="lazy" src="https://storage.googleapis.com/a1aa/image/fb9790c7-621e-421b-1a76-d362e832ec61.jpg" width="100" />
+                    <h3 class="text-2xl font-bold mb-2">
+                        Buy &amp; Sell Tax
+                    </h3>
+                    <p class="text-lg">
+                        10% total tax on transactions
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="max-w-7xl mx-auto px-6 py-16" id="roadmap">
+        <h2 class="text-4xl text-yellow-900 font-bold mb-12 text-center select-none">
+            Treasure Map Roadmap
+        </h2>
+        <div class="overflow-x-auto scrollbar-hide">
+            <ul class="flex space-x-10 min-w-[900px]">
+                <li class="bg-yellow-400 bg-opacity-80 rounded-3xl p-8 shadow-lg flex flex-col items-center w-64 select-none">
+                    <img alt="Treasure map rolled up with pirate compass illustration" class="mb-4" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/0953dc24-d635-4b8f-dfcd-1bd3ddf906b3.jpg" width="80" />
+                    <h3 class="text-2xl font-bold mb-2 text-yellow-900">
+                        Q1 2024
+                    </h3>
+                    <p class="text-yellow-900 font-semibold text-center">
+                        Launch $POPCRN token and deploy smart contract on Ethereum.
+                    </p>
+                </li>
+                <li class="bg-yellow-400 bg-opacity-80 rounded-3xl p-8 shadow-lg flex flex-col items-center w-64 select-none">
+                    <img alt="Pirate flag waving on a ship mast illustration" class="mb-4" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/dc075841-9ec4-44a9-56aa-3ba409c286dc.jpg" width="80" />
+                    <h3 class="text-2xl font-bold mb-2 text-yellow-900">
+                        Q2 2024
+                    </h3>
+                    <p class="text-yellow-900 font-semibold text-center">
+                        Community building, social media campaigns, and liquidity locked.
+                    </p>
+                </li>
+                <li class="bg-yellow-400 bg-opacity-80 rounded-3xl p-8 shadow-lg flex flex-col items-center w-64 select-none">
+                    <img alt="Pile of gold coins and treasure chest illustration" class="mb-4" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/365b5edb-b088-495f-ffca-a8dc584bc837.jpg" width="80" />
+                    <h3 class="text-2xl font-bold mb-2 text-yellow-900">
+                        Q3 2024
+                    </h3>
+                    <p class="text-yellow-900 font-semibold text-center">
+                        Launch staking platform and distribute first reflections to holders.
+                    </p>
+                </li>
+                <li class="bg-yellow-400 bg-opacity-80 rounded-3xl p-8 shadow-lg flex flex-col items-center w-64 select-none">
+                    <img alt="Golden coin with sparkles and pirate sword illustration" class="mb-4" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/bc6635e1-b0fc-411e-600f-a2ceaa86721b.jpg" width="80" />
+                    <h3 class="text-2xl font-bold mb-2 text-yellow-900">
+                        Q4 2024
+                    </h3>
+                    <p class="text-yellow-900 font-semibold text-center">
+                        Listing on major DEXs and launch NFT pirate corn collectibles.
+                    </p>
+                </li>
+                <li class="bg-yellow-400 bg-opacity-80 rounded-3xl p-8 shadow-lg flex flex-col items-center w-64 select-none">
+                    <img alt="Pirate ship sailing on the ocean with treasure map illustration" class="mb-4" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/fa73e0d0-e503-4210-8f05-a8fc04d06182.jpg" width="80" />
+                    <h3 class="text-2xl font-bold mb-2 text-yellow-900">
+                        Q1 2025
+                    </h3>
+                    <p class="text-yellow-900 font-semibold text-center">
+                        Expand partnerships and launch CaptainCorn merchandise store.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Set Sail (CTA) Section -->
+    <section class="bg-yellow-700 bg-opacity-90 py-20 flex flex-col items-center text-yellow-100 select-none" id="set-sail">
+        <h2 class="text-5xl font-extrabold mb-6 tracking-widest">
+            Ready to Set Sail?
+        </h2>
+        <p class="max-w-xl text-center text-yellow-200 font-semibold mb-10 leading-relaxed">
+            Join the CaptainCorn crew and buy $POPCRN now! Embark on a pirate adventure with golden kernels, treasure hunts, and crypto riches.
+        </p>
+        <a aria-label="Buy CaptainCorn token now" class="inline-flex items-center gap-4 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 font-bold text-3xl px-12 py-5 rounded-full shadow-xl transition" href="https://app.uniswap.org/#/swap?outputCurrency=0x0000000000000000000000000000000000000000"
+            rel="noopener noreferrer" target="_blank">
+            <i class="fas fa-ship fa-lg">
+    </i> Set Sail
+        </a>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-yellow-900 py-8 text-yellow-300 select-none">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center space-x-3">
+                <img alt="CaptainCorn pirate corn mascot logo small" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/14e5c866-ed57-42fa-712a-ad11b8f8bd85.jpg" width="40" />
+                <span class="font-bold text-lg">
+      CaptainCorn © 2024
+     </span>
+            </div>
+            <div class="flex space-x-6 text-yellow-400">
+                <a aria-label="Twitter" href="https://twitter.com/CaptainCorn" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-twitter fa-lg hover:text-yellow-200 transition">
+      </i>
+                </a>
+                <a aria-label="Telegram" href="https://t.me/CaptainCorn" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-telegram fa-lg hover:text-yellow-200 transition">
+      </i>
+                </a>
+                <a aria-label="Discord" href="https://discord.gg/CaptainCorn" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-discord fa-lg hover:text-yellow-200 transition">
+      </i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

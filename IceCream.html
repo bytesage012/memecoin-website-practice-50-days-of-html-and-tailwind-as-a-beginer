@@ -1,0 +1,398 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        IceCream Inu - $SCOOP
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Quicksand:wght@400;600&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #fffaf6;
+            overflow-x: hidden;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Pacifico', cursive;
+        }
+        /* Sprinkle hover effect */
+        
+        .sprinkle {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .sprinkle span {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1));
+        }
+        
+        .sprinkle:hover span {
+            opacity: 1;
+            animation: sprinkle-float 1.2s ease forwards;
+        }
+        
+        @keyframes sprinkle-float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20px) scale(0.5);
+                opacity: 0;
+            }
+        }
+        /* Melting transition */
+        
+        .melting-transition {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .melting-transition::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(180deg, transparent 0%, #fffaf6 100%);
+            pointer-events: none;
+            animation: melt-drop 3s ease-in-out infinite;
+            z-index: 10;
+        }
+        
+        @keyframes melt-drop {
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(10px);
+                opacity: 1;
+            }
+        }
+        /* Drip effect container */
+        
+        #drip-container {
+            position: fixed;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: visible;
+            z-index: 9999;
+        }
+        
+        .drip {
+            position: absolute;
+            width: 12px;
+            height: 20px;
+            background: linear-gradient(180deg, #f9c6c9 0%, #f7a1a4 100%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            filter: drop-shadow(0 0 2px rgba(255 182 193 / 0.7));
+            animation: drip-fall linear forwards;
+            opacity: 0.9;
+        }
+        
+        @keyframes drip-fall {
+            0% {
+                transform: translateY(0) scaleX(1);
+                opacity: 0.9;
+            }
+            80% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(100vh) scaleX(0.6);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="relative text-gray-800 selection:bg-pink-300 selection:text-white">
+    <!-- Drip container for JS drips -->
+    <div id="drip-container">
+    </div>
+    <!-- Header -->
+    <header class="bg-pink-100 shadow-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a class="flex items-center space-x-3" href="#home">
+                <img alt="Ice cream cone icon with pastel pink scoop and waffle cone" class="w-12 h-12" height="48" src="https://storage.googleapis.com/a1aa/image/65a3127c-710a-4e94-7f67-1fd536654c82.jpg" width="48" />
+                <h1 class="text-3xl text-pink-600 font-bold tracking-wide select-none">
+                    IceCream Inu
+                </h1>
+            </a>
+            <ul class="hidden md:flex space-x-8 text-pink-700 font-semibold">
+                <li>
+                    <a class="hover:text-pink-900 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-pink-900 transition" href="#melting">
+       Melting Section
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-pink-900 transition" href="#claim">
+       Claim Your Scoop
+      </a>
+                </li>
+            </ul>
+            <button aria-label="Toggle menu" class="md:hidden text-pink-600 focus:outline-none" id="mobile-menu-btn">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </nav>
+        <div class="hidden md:hidden bg-pink-50 px-6 pb-4 space-y-3 text-pink-700 font-semibold" id="mobile-menu">
+            <a class="block hover:text-pink-900 transition" href="#tokenomics">
+     Tokenomics
+    </a>
+            <a class="block hover:text-pink-900 transition" href="#melting">
+     Melting Section
+    </a>
+            <a class="block hover:text-pink-900 transition" href="#claim">
+     Claim Your Scoop
+    </a>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative bg-pink-50 pt-20 pb-32 px-6 text-center overflow-hidden" id="home">
+        <img alt="Pastel pink and white stylized ice cream scoop with a Shiba Inu dog face smiling, logo for IceCream Inu" class="mx-auto w-48 h-48 rounded-full shadow-lg mb-8" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e8a5b2b5-14df-407f-4295-fa455772d98f.jpg"
+            width="300" />
+        <h2 class="text-5xl md:text-6xl font-pacifico text-pink-600 mb-4 select-none">
+            Welcome to IceCream Inu
+        </h2>
+        <p class="max-w-xl mx-auto text-pink-700 text-lg md:text-xl font-semibold mb-10">
+            The sweetest crypto scoop in the blockchain! Join the $SCOOP revolution and enjoy the tastiest tokenomics.
+        </p>
+        <a class="inline-block bg-pink-400 hover:bg-pink-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transition transform hover:scale-105" href="#claim">
+    Claim Your Scoop NFT 🍦
+   </a>
+        <!-- Sprinkles floating around hero text -->
+        <div aria-hidden="true" class="absolute inset-0 pointer-events-none">
+            <span class="sprinkle" style="top: 15%; left: 20%;">
+     <span class="bg-pink-300" style="top:0; left:0;">
+     </span>
+            </span>
+            <span class="sprinkle" style="top: 30%; left: 40%;">
+     <span class="bg-pink-400" style="top:0; left:0;">
+     </span>
+            </span>
+            <span class="sprinkle" style="top: 50%; left: 70%;">
+     <span class="bg-pink-200" style="top:0; left:0;">
+     </span>
+            </span>
+            <span class="sprinkle" style="top: 65%; left: 25%;">
+     <span class="bg-pink-300" style="top:0; left:0;">
+     </span>
+            </span>
+            <span class="sprinkle" style="top: 80%; left: 55%;">
+     <span class="bg-pink-400" style="top:0; left:0;">
+     </span>
+            </span>
+        </div>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20 bg-pink-100 rounded-t-3xl shadow-lg melting-transition" id="tokenomics">
+        <h2 class="text-4xl text-pink-700 font-pacifico mb-12 text-center select-none">
+            Scooped Tokenomics
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Chart 1: Distribution Pie -->
+            <div class="bg-white rounded-3xl p-8 shadow-md flex flex-col items-center">
+                <h3 class="text-2xl font-semibold text-pink-600 mb-6 select-none">
+                    Token Distribution
+                </h3>
+                <img alt="Pastel pink and white pie chart showing token distribution with labeled slices for liquidity, team, marketing, and community rewards" class="w-56 h-56" height="250" loading="lazy" src="https://storage.googleapis.com/a1aa/image/cfb2314a-2e46-4458-6f7d-2ed3746ea77f.jpg"
+                    width="250" />
+                <ul class="mt-6 text-pink-700 font-semibold space-y-2 text-center">
+                    <li>
+                        Liquidity: 40%
+                    </li>
+                    <li>
+                        Team: 20%
+                    </li>
+                    <li>
+                        Marketing: 15%
+                    </li>
+                    <li>
+                        Community Rewards: 25%
+                    </li>
+                </ul>
+            </div>
+            <!-- Chart 2: Bar Chart -->
+            <div class="bg-white rounded-3xl p-8 shadow-md flex flex-col items-center">
+                <h3 class="text-2xl font-semibold text-pink-600 mb-6 select-none">
+                    Token Burn Over Time
+                </h3>
+                <img alt="Pastel pink and white bar chart showing token burn over 6 months with increasing bars and melting drip effect on top" class="w-56 h-56" height="250" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4adca0b5-4c57-4112-1247-630e37d2dbcb.jpg"
+                    width="250" />
+                <p class="mt-6 text-pink-700 font-semibold text-center max-w-xs">
+                    Watch the $SCOOP supply melt away as tokens are burned monthly.
+                </p>
+            </div>
+            <!-- Chart 3: Line Chart -->
+            <div class="bg-white rounded-3xl p-8 shadow-md flex flex-col items-center">
+                <h3 class="text-2xl font-semibold text-pink-600 mb-6 select-none">
+                    Community Growth
+                </h3>
+                <img alt="Pastel pink and white line chart showing steady community growth over 12 months with scoop-shaped data points" class="w-56 h-56" height="250" loading="lazy" src="https://storage.googleapis.com/a1aa/image/a7a15ed4-d2c4-4c78-804d-85cb8d889fff.jpg"
+                    width="250" />
+                <p class="mt-6 text-pink-700 font-semibold text-center max-w-xs">
+                    Our community is growing as fast as a scoop melts on a sunny day!
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Melting Section -->
+    <section class="relative max-w-7xl mx-auto px-6 py-20 bg-pink-50 rounded-b-3xl shadow-lg melting-transition mt-16" id="melting">
+        <h2 class="text-4xl text-pink-700 font-pacifico mb-12 text-center select-none">
+            Melting Section Transitions
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="bg-white rounded-3xl p-8 shadow-md flex flex-col items-center relative overflow-hidden">
+                <img alt="Pastel pink ice cream scoop melting with drips falling down, stylized cartoon style" class="w-40 h-40 mb-6" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/87ba2dcc-1b17-4361-578b-5177a127502d.jpg" width="200" />
+                <h3 class="text-2xl font-semibold text-pink-600 mb-2 select-none">
+                    Sweet Rewards
+                </h3>
+                <p class="text-pink-700 font-semibold text-center">
+                    Earn rewards that drip into your wallet like melting ice cream.
+                </p>
+            </div>
+            <div class="bg-white rounded-3xl p-8 shadow-md flex flex-col items-center relative overflow-hidden">
+                <img alt="Pastel pink ice cream scoop melting with drips falling down, stylized cartoon style" class="w-40 h-40 mb-6" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/87ba2dcc-1b17-4361-578b-5177a127502d.jpg" width="200" />
+                <h3 class="text-2xl font-semibold text-pink-600 mb-2 select-none">
+                    Community Love
+                </h3>
+                <p class="text-pink-700 font-semibold text-center">
+                    Our community sticks together like sprinkles on a scoop.
+                </p>
+            </div>
+            <div class="bg-white rounded-3xl p-8 shadow-md flex flex-col items-center relative overflow-hidden">
+                <img alt="Pastel pink ice cream scoop melting with drips falling down, stylized cartoon style" class="w-40 h-40 mb-6" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/87ba2dcc-1b17-4361-578b-5177a127502d.jpg" width="200" />
+                <h3 class="text-2xl font-semibold text-pink-600 mb-2 select-none">
+                    Token Utility
+                </h3>
+                <p class="text-pink-700 font-semibold text-center">
+                    Use $SCOOP tokens to unlock exclusive flavors and NFTs.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Claim Your Scoop NFT CTA -->
+    <section class="bg-pink-200 py-20 px-6 text-center rounded-3xl max-w-4xl mx-auto mt-20 shadow-lg relative overflow-hidden" id="claim">
+        <h2 class="text-5xl font-pacifico text-pink-700 mb-6 select-none">
+            Claim Your Scoop NFT
+        </h2>
+        <p class="text-pink-800 font-semibold max-w-xl mx-auto mb-10">
+            Join the exclusive IceCream Inu NFT club and get your unique $SCOOP scoop! Limited edition, pastel-themed, and dripping with sweetness.
+        </p>
+        <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-4 px-12 rounded-full shadow-lg transition transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-pink-300" id="claim-btn">
+    Claim Now 🍦
+   </button>
+        <img alt="Pastel pink ice cream scoop NFT with a smiling Shiba Inu face wearing sunglasses and sprinkles on top" class="absolute -bottom-12 right-8 w-36 h-36 drop-shadow-lg select-none pointer-events-none" height="150" loading="lazy" src="https://storage.googleapis.com/a1aa/image/41747119-d1d5-4c3a-6204-8ecfbd2f351b.jpg"
+            width="150" />
+    </section>
+    <!-- Footer -->
+    <footer class="bg-pink-100 mt-32 py-8 text-center text-pink-700 font-semibold select-none">
+        <p>
+            © 2024 IceCream Inu. All rights reserved.
+        </p>
+        <p class="mt-2">
+            Follow us on
+            <a class="hover:text-pink-900 transition" href="https://twitter.com" rel="noopener" target="_blank">
+                <i class="fab fa-twitter">
+     </i> Twitter
+            </a>
+            |
+            <a class="hover:text-pink-900 transition" href="https://discord.com" rel="noopener" target="_blank">
+                <i class="fab fa-discord">
+     </i> Discord
+            </a>
+        </p>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Sprinkle hover effect enhancement: create multiple sprinkles on hover
+        document.querySelectorAll('.sprinkle').forEach((sprinkle) => {
+            sprinkle.addEventListener('mouseenter', () => {
+                for (let i = 0; i < 5; i++) {
+                    const dot = document.createElement('span');
+                    dot.classList.add('bg-pink-300');
+                    dot.style.top = `${Math.random() * 10}px`;
+                    dot.style.left = `${Math.random() * 10}px`;
+                    dot.style.backgroundColor = ['#f9c6c9', '#f7a1a4', '#ffb6c1', '#ff9fc1', '#ffc1d3'][Math.floor(Math.random() * 5)];
+                    dot.style.position = 'absolute';
+                    dot.style.width = '6px';
+                    dot.style.height = '6px';
+                    dot.style.borderRadius = '50%';
+                    dot.style.opacity = '1';
+                    dot.style.pointerEvents = 'none';
+                    dot.style.animation = 'sprinkle-float 1.2s ease forwards';
+                    sprinkle.appendChild(dot);
+                    setTimeout(() => {
+                        dot.remove();
+                    }, 1200);
+                }
+            });
+        });
+
+        // Drip effect JS
+        const dripContainer = document.getElementById('drip-container');
+
+        function createDrip() {
+            const drip = document.createElement('div');
+            drip.classList.add('drip');
+            drip.style.left = Math.random() * window.innerWidth + 'px';
+            drip.style.animationDuration = 3 + Math.random() * 2 + 's';
+            drip.style.background = `linear-gradient(180deg, ${
+        ['#f9c6c9', '#f7a1a4', '#ffb6c1', '#ff9fc1', '#ffc1d3'][Math.floor(Math.random() * 5)]
+      } 0%, #f7a1a4 100%)`;
+            dripContainer.appendChild(drip);
+
+            drip.addEventListener('animationend', () => {
+                drip.remove();
+            });
+        }
+
+        // Create drips at random intervals
+        setInterval(() => {
+            if (Math.random() < 0.4) {
+                createDrip();
+            }
+        }, 300);
+
+        // Claim button interaction
+        const claimBtn = document.getElementById('claim-btn');
+        claimBtn.addEventListener('click', () => {
+            alert('Thank you for claiming your scoop! Your NFT will be delivered shortly 🍦');
+        });
+    </script>
+</body>
+
+</html>

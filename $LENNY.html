@@ -1,0 +1,549 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        $LENNY - Meme Revival Token
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'VT323', monospace, monospace;
+            background-color: #0f0f0f;
+            color: #33ff33;
+        }
+        /* ASCII animation flicker */
+        
+        .ascii-flicker {
+            animation: flicker 1.5s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+                text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33, 0 0 20px #33ff33, 0 0 40px #0f0;
+            }
+            100% {
+                opacity: 0.7;
+                text-shadow: 0 0 2px #33ff33, 0 0 5px #33ff33, 0 0 10px #33ff33;
+            }
+        }
+        /* Terminal style scroll */
+        
+        .terminal-scroll {
+            max-height: 300px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #33ff33 transparent;
+        }
+        
+        .terminal-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .terminal-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .terminal-scroll::-webkit-scrollbar-thumb {
+            background-color: #33ff33;
+            border-radius: 10px;
+            border: 2px solid transparent;
+        }
+        /* blinking cursor */
+        
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: #33ff33;
+            animation: blink 1s steps(2, start) infinite;
+            margin-left: 2px;
+            vertical-align: bottom;
+            height: 1.2em;
+        }
+        
+        @keyframes blink {
+            0%,
+            50% {
+                opacity: 1;
+            }
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+        /* monospace for leaderboard */
+        
+        .leaderboard td,
+        .leaderboard th {
+            font-family: 'VT323', monospace;
+        }
+        /* Meme generator textarea monospace */
+        
+        #meme-text {
+            font-family: 'VT323', monospace;
+            background-color: #111;
+            color: #33ff33;
+            border: 2px solid #33ff33;
+            resize: none;
+        }
+        /* Typing minigame input */
+        
+        #typing-input {
+            font-family: 'VT323', monospace;
+            background-color: #111;
+            color: #33ff33;
+            border: 2px solid #33ff33;
+            padding: 0.5rem;
+            width: 100%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-black bg-opacity-90 fixed w-full z-30 top-0 border-b border-green-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 text-green-400 text-2xl font-bold select-none">
+                    $LENNY
+                </div>
+                <div class="hidden md:flex space-x-8 font-semibold text-green-400">
+                    <a class="hover:text-green-300 transition" href="#hero">
+       Home
+      </a>
+                    <a class="hover:text-green-300 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                    <a class="hover:text-green-300 transition" href="#roadmap">
+       Roadmap
+      </a>
+                    <a class="hover:text-green-300 transition" href="#meme-generator">
+       Meme Generator
+      </a>
+                    <a class="hover:text-green-300 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                    <a class="hover:text-green-300 transition" href="#typing-minigame">
+       Typing Minigame
+      </a>
+                </div>
+                <div class="md:hidden">
+                    <button aria-label="Toggle menu" class="text-green-400 focus:outline-none focus:ring-2 focus:ring-green-400" id="menu-btn">
+       <i class="fas fa-bars fa-lg">
+       </i>
+      </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:hidden bg-black bg-opacity-95 border-t border-green-600" id="mobile-menu">
+            <a class="block px-4 py-2 text-green-400 hover:bg-green-900 transition" href="#hero">
+     Home
+    </a>
+            <a class="block px-4 py-2 text-green-400 hover:bg-green-900 transition" href="#tokenomics">
+     Tokenomics
+    </a>
+            <a class="block px-4 py-2 text-green-400 hover:bg-green-900 transition" href="#roadmap">
+     Roadmap
+    </a>
+            <a class="block px-4 py-2 text-green-400 hover:bg-green-900 transition" href="#meme-generator">
+     Meme Generator
+    </a>
+            <a class="block px-4 py-2 text-green-400 hover:bg-green-900 transition" href="#leaderboard">
+     Leaderboard
+    </a>
+            <a class="block px-4 py-2 text-green-400 hover:bg-green-900 transition" href="#typing-minigame">
+     Typing Minigame
+    </a>
+        </div>
+    </nav>
+    <main class="flex-grow pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Hero Section -->
+        <section class="text-center py-16" id="hero">
+            <h1 class="text-6xl md:text-8xl font-bold ascii-flicker select-none leading-none">
+                ( ͡° ͜ʖ ͡°)
+            </h1>
+            <pre class="ascii-flicker mt-6 text-green-400 text-lg md:text-xl max-w-xl mx-auto whitespace-pre-wrap leading-tight">
+  ╔══════════════════════════════════════════════╗
+  ║                                              ║
+  ║   Welcome to $LENNY - The Meme Revival Token ║
+  ║                                              ║
+  ║   Bringing back the classic Lenny face meme  ║
+  ║   with a retro terminal vibe and fun games!  ║
+  ║                                              ║
+  ╚══════════════════════════════════════════════╝
+      </pre>
+            <img alt="Pixel art of the classic Lenny face ( ͡° ͜ʖ ͡°) in green on black background, retro pixel style" class="mx-auto mt-8 w-48 h-auto select-none" draggable="false" height="200" src="https://storage.googleapis.com/a1aa/image/9371a7b1-23b7-4aff-2dda-bbe361a351cf.jpg"
+                width="400" />
+        </section>
+        <!-- Tokenomics Section -->
+        <section class="my-20" id="tokenomics">
+            <h2 class="text-4xl font-bold mb-6 border-b border-green-600 pb-2 select-none">
+                Tokenomics
+            </h2>
+            <div class="bg-black bg-opacity-90 rounded-lg p-6 font-mono text-green-400 terminal-scroll max-h-[320px]">
+                <pre>
+$ cat tokenomics.txt
+
+Token Name: $LENNY
+Symbol: LENNY
+Total Supply: 1,000,000,000 LENNY
+Decimals: 18
+
+Distribution:
+  - 50% Liquidity Pool
+  - 20% Community &amp; Marketing
+  - 15% Team &amp; Advisors (locked)
+  - 10% Staking Rewards
+  - 5% Development Fund
+
+Tax:
+  - 2% Reflection to holders
+  - 3% Liquidity pool auto-add
+  - 1% Marketing wallet
+
+Contract Address: 0xLennyFaceToken0000000000000000000000000
+
+$ echo "HODL and enjoy the memes!"
+        </pre>
+            </div>
+        </section>
+        <!-- Roadmap Section -->
+        <section class="my-20" id="roadmap">
+            <h2 class="text-4xl font-bold mb-6 border-b border-green-600 pb-2 select-none">
+                Roadmap
+            </h2>
+            <div class="space-y-6 font-mono text-green-400 bg-black bg-opacity-90 rounded-lg p-6 max-w-3xl mx-auto">
+                <div class="flex items-start space-x-4">
+                    <div class="text-green-600 font-bold min-w-[100px] select-none">
+                        Phase 1
+                    </div>
+                    <div>
+                        <p>
+                            Launch $LENNY token on Ethereum mainnet
+                        </p>
+                        <p>
+                            Initial liquidity pool creation &amp; listing
+                        </p>
+                        <p>
+                            Community building &amp; social media hype
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="text-green-600 font-bold min-w-[100px] select-none">
+                        Phase 2
+                    </div>
+                    <div>
+                        <p>
+                            Return of ¯\_(ツ)_/¯
+                        </p>
+                        <p>
+                            Launch Lenny typing speed minigame
+                        </p>
+                        <p>
+                            On-page meme generator release
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="text-green-600 font-bold min-w-[100px] select-none">
+                        Phase 3
+                    </div>
+                    <div>
+                        <p>
+                            Leaderboard &amp; rewards for top smug holders
+                        </p>
+                        <p>
+                            Partnerships with meme communities
+                        </p>
+                        <p>
+                            Further gamification &amp; NFT integration
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Meme Generator Section -->
+        <section class="my-20 max-w-4xl mx-auto" id="meme-generator">
+            <h2 class="text-4xl font-bold mb-6 border-b border-green-600 pb-2 select-none">
+                Meme Generator
+            </h2>
+            <div class="bg-black bg-opacity-90 rounded-lg p-6 text-green-400 font-mono">
+                <label class="block mb-2 select-none" for="meme-text">
+      Enter your meme text:
+     </label>
+                <textarea class="w-full mb-4 p-3 text-green-400 placeholder-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 rounded resize-none" id="meme-text" placeholder="Type your meme text here..." rows="4"></textarea>
+                <button class="bg-green-600 hover:bg-green-700 transition px-6 py-2 rounded font-bold select-none" id="generate-meme">
+      Generate Meme
+     </button>
+                <div aria-live="polite" class="mt-6 bg-black border border-green-600 rounded p-4 whitespace-pre-wrap text-xl leading-relaxed min-h-[120px] select-text" id="meme-output">
+                </div>
+            </div>
+        </section>
+        <!-- Leaderboard Section -->
+        <section class="my-20 max-w-4xl mx-auto" id="leaderboard">
+            <h2 class="text-4xl font-bold mb-6 border-b border-green-600 pb-2 select-none">
+                Top Smug Holders Leaderboard
+            </h2>
+            <div class="overflow-x-auto rounded-lg bg-black bg-opacity-90 border border-green-600">
+                <table class="w-full text-green-400 leaderboard">
+                    <thead class="border-b border-green-600">
+                        <tr>
+                            <th class="text-left px-4 py-3">
+                                Rank
+                            </th>
+                            <th class="text-left px-4 py-3">
+                                Holder Address
+                            </th>
+                            <th class="text-right px-4 py-3">
+                                LENNY Tokens
+                            </th>
+                            <th class="text-center px-4 py-3">
+                                Smug Level
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-green-700 hover:bg-green-900/20 transition">
+                            <td class="px-4 py-3">
+                                1
+                            </td>
+                            <td class="px-4 py-3 font-bold">
+                                0xLennyMaster0000000000000000000000000001
+                            </td>
+                            <td class="px-4 py-3 text-right">
+                                150,000,000
+                            </td>
+                            <td class="px-4 py-3 text-center">
+                                😏😏😏😏😏
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-900/20 transition">
+                            <td class="px-4 py-3">
+                                2
+                            </td>
+                            <td class="px-4 py-3 font-bold">
+                                0xSmugHolder0000000000000000000000000002
+                            </td>
+                            <td class="px-4 py-3 text-right">
+                                120,000,000
+                            </td>
+                            <td class="px-4 py-3 text-center">
+                                😏😏😏😏
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-900/20 transition">
+                            <td class="px-4 py-3">
+                                3
+                            </td>
+                            <td class="px-4 py-3 font-bold">
+                                0xLennyFanatic000000000000000000000000003
+                            </td>
+                            <td class="px-4 py-3 text-right">
+                                90,000,000
+                            </td>
+                            <td class="px-4 py-3 text-center">
+                                😏😏😏
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-900/20 transition">
+                            <td class="px-4 py-3">
+                                4
+                            </td>
+                            <td class="px-4 py-3 font-bold">
+                                0xMemeLord0000000000000000000000000000004
+                            </td>
+                            <td class="px-4 py-3 text-right">
+                                60,000,000
+                            </td>
+                            <td class="px-4 py-3 text-center">
+                                😏😏
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-900/20 transition">
+                            <td class="px-4 py-3">
+                                5
+                            </td>
+                            <td class="px-4 py-3 font-bold">
+                                0xClassicLenny0000000000000000000000000005
+                            </td>
+                            <td class="px-4 py-3 text-right">
+                                30,000,000
+                            </td>
+                            <td class="px-4 py-3 text-center">
+                                😏
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- Typing Speed Minigame Section -->
+        <section class="my-20 max-w-3xl mx-auto" id="typing-minigame">
+            <h2 class="text-4xl font-bold mb-6 border-b border-green-600 pb-2 select-none">
+                Lenny Typing Speed Minigame
+            </h2>
+            <div class="bg-black bg-opacity-90 rounded-lg p-6 text-green-400 font-mono select-none">
+                <p class="mb-4 text-lg">
+                    Type the following Lenny face as fast and accurately as you can:
+                </p>
+                <pre aria-label="Text to type" class="bg-black border border-green-600 rounded p-4 text-2xl select-text" id="typing-text">
+( ͡° ͜ʖ ͡°)
+¯\_(ツ)_/¯
+( ͡~ ͜ʖ ͡°)
+( ͡ಠ ʖ̯ ͡ಠ)
+( ͡° ʖ̯ ͡°)
+        </pre>
+                <input aria-label="Typing input" autocomplete="off" class="mt-4" id="typing-input" placeholder="Start typing here..." spellcheck="false" type="text" />
+                <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:space-x-6">
+                    <div>
+                        <span class="font-bold">
+        Time:
+       </span>
+                        <span id="time-elapsed">
+        0.00
+       </span> seconds
+                    </div>
+                    <div>
+                        <span class="font-bold">
+        Accuracy:
+       </span>
+                        <span id="accuracy">
+        100%
+       </span>
+                    </div>
+                    <div>
+                        <span class="font-bold">
+        WPM:
+       </span>
+                        <span id="wpm">
+        0
+       </span>
+                    </div>
+                    <button class="ml-auto mt-4 sm:mt-0 bg-green-600 hover:bg-green-700 transition px-4 py-2 rounded font-bold select-none" id="restart-btn">
+       Restart
+      </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-black bg-opacity-90 border-t border-green-600 text-green-400 text-center py-6 select-none">
+        © 2024 $LENNY Meme Revival Token. All rights reserved.
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Meme Generator
+        const memeTextArea = document.getElementById('meme-text');
+        const generateBtn = document.getElementById('generate-meme');
+        const memeOutput = document.getElementById('meme-output');
+
+        // Classic Lenny face meme template with text above and below
+        function generateMeme(text) {
+            const topText = text.toUpperCase();
+            const bottomText = text.toLowerCase();
+            // Create a meme with Lenny face and text above and below
+            return `
+${topText}
+
+( ͡° ͜ʖ ͡°)
+
+${bottomText}
+      `.trim();
+        }
+
+        generateBtn.addEventListener('click', () => {
+            const text = memeTextArea.value.trim();
+            if (!text) {
+                memeOutput.textContent = 'Please enter some text to generate a meme.';
+                return;
+            }
+            memeOutput.textContent = generateMeme(text);
+        });
+
+        // Typing Speed Minigame
+        const typingTextEl = document.getElementById('typing-text');
+        const typingInput = document.getElementById('typing-input');
+        const timeElapsedEl = document.getElementById('time-elapsed');
+        const accuracyEl = document.getElementById('accuracy');
+        const wpmEl = document.getElementById('wpm');
+        const restartBtn = document.getElementById('restart-btn');
+
+        // The text to type (multiple lines)
+        const typingText = `( ͡° ͜ʖ ͡°)
+¯\\_(ツ)_/¯
+( ͡~ ͜ʖ ͡°)
+( ͡ಠ ʖ̯ ͡ಠ)
+( ͡° ʖ̯ ͡°)`;
+
+        let startTime = null;
+        let timerInterval = null;
+
+        function resetGame() {
+            typingInput.value = '';
+            timeElapsedEl.textContent = '0.00';
+            accuracyEl.textContent = '100%';
+            wpmEl.textContent = '0';
+            startTime = null;
+            clearInterval(timerInterval);
+            typingInput.disabled = false;
+            typingInput.focus();
+        }
+
+        function calculateAccuracy(input, target) {
+            let correct = 0;
+            for (let i = 0; i < input.length; i++) {
+                if (input[i] === target[i]) correct++;
+            }
+            return input.length === 0 ? 100 : (correct / input.length) * 100;
+        }
+
+        function calculateWPM(input, timeSeconds) {
+            // Words per minute = (characters / 5) / (time in minutes)
+            if (timeSeconds === 0) return 0;
+            const wordsTyped = input.length / 5;
+            return Math.round(wordsTyped / (timeSeconds / 60));
+        }
+
+        typingInput.addEventListener('input', () => {
+            const input = typingInput.value;
+            if (!startTime) {
+                startTime = Date.now();
+                timerInterval = setInterval(() => {
+                    const elapsed = (Date.now() - startTime) / 1000;
+                    timeElapsedEl.textContent = elapsed.toFixed(2);
+                    const accuracy = calculateAccuracy(typingInput.value, typingText);
+                    accuracyEl.textContent = accuracy.toFixed(2) + '%';
+                    const wpm = calculateWPM(typingInput.value, elapsed);
+                    wpmEl.textContent = wpm;
+                }, 100);
+            }
+
+            // Check if completed
+            if (input === typingText) {
+                clearInterval(timerInterval);
+                typingInput.disabled = true;
+            }
+        });
+
+        restartBtn.addEventListener('click', () => {
+            resetGame();
+        });
+
+        // Initialize game on page load
+        resetGame();
+    </script>
+</body>
+
+</html>

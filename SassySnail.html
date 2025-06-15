@@ -1,0 +1,370 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        SassySnail ($SLIME) - Meme Coin Launch
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive, sans-serif;
+        }
+        /* Slime trail effect on buttons */
+        
+        .slime-trail {
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+        
+        .slime-trail::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -50%;
+            width: 200%;
+            height: 150%;
+            background: radial-gradient(circle at center, #7ee787 20%, transparent 70%);
+            filter: blur(12px);
+            opacity: 0.6;
+            transform: translateX(0) translateY(-50%) rotate(25deg);
+            transition: transform 0.5s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .slime-trail:hover::before {
+            transform: translateX(50%) translateY(-50%) rotate(25deg);
+            opacity: 1;
+        }
+        
+        .slime-trail>* {
+            position: relative;
+            z-index: 1;
+        }
+        /* Scroll indicator animation */
+        
+        @keyframes scrollIndicatorAnim {
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(8px);
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-green-200 via-green-100 to-green-300 min-h-screen flex flex-col">
+    <!-- Sticky Navbar -->
+    <nav class="sticky top-0 z-50 bg-green-400 bg-opacity-90 backdrop-blur-md shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+            <a class="text-3xl font-extrabold text-white flex items-center space-x-2 select-none" href="#home">
+                <img alt="Cartoonish green snail with a sassy expression, shell decorated with slime drops" class="w-10 h-10" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1e1daced-9251-4678-8332-f3359a83f573.jpg" width="40" />
+                <span>
+      SassySnail
+     </span>
+            </a>
+            <ul class="hidden md:flex space-x-8 text-white font-semibold tracking-wide">
+                <li>
+                    <a class="hover:text-yellow-300 transition" href="#about">
+       About
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-300 transition" href="#token">
+       Token Tracker
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-300 transition" href="#countdown">
+       Launch Timer
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-300 transition" href="#join">
+       Join
+      </a>
+                </li>
+            </ul>
+            <button aria-label="Toggle menu" class="md:hidden text-white focus:outline-none" id="mobile-menu-btn">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="w-full h-1 bg-green-600 relative overflow-hidden">
+            <div class="absolute top-0 left-0 h-1 w-20 bg-yellow-400 rounded-full" id="scroll-indicator" style="animation: scrollIndicatorAnim 2s ease-in-out infinite">
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="hidden bg-green-300 bg-opacity-90 backdrop-blur-md shadow-md md:hidden" id="mobile-menu">
+        <ul class="flex flex-col space-y-3 p-4 text-green-900 font-semibold tracking-wide">
+            <li>
+                <a class="block hover:text-yellow-600 transition" href="#about">
+      About
+     </a>
+            </li>
+            <li>
+                <a class="block hover:text-yellow-600 transition" href="#token">
+      Token Tracker
+     </a>
+            </li>
+            <li>
+                <a class="block hover:text-yellow-600 transition" href="#countdown">
+      Launch Timer
+     </a>
+            </li>
+            <li>
+                <a class="block hover:text-yellow-600 transition" href="#join">
+      Join
+     </a>
+            </li>
+        </ul>
+    </div>
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-12 space-y-20">
+        <!-- Hero Section -->
+        <section class="text-center" id="home">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-green-900 drop-shadow-lg mb-4 select-none">
+                SassySnail
+                <span class="text-yellow-400">
+      ($SLIME)
+     </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-green-800 max-w-3xl mx-auto mb-8">
+                The slimeiest, sassiest meme coin on the blockchain! Join the race to the moon with $SLIME.
+            </p>
+            <a class="inline-block slime-trail bg-green-700 hover:bg-green-900 text-yellow-300 font-bold py-4 px-10 rounded-full shadow-lg transition" href="#countdown">
+     Get Ready to Race!
+    </a>
+        </section>
+        <!-- About Section -->
+        <section class="max-w-4xl mx-auto text-green-900 space-y-6" id="about">
+            <h2 class="text-4xl font-extrabold text-center mb-6 select-none">
+                About SassySnail
+            </h2>
+            <p class="text-lg leading-relaxed">
+                SassySnail is a playful meme coin with a twist — it’s all about fun, community, and a little bit of sass. Our snail might be slow, but our launch is fast and furious! Powered by slime and attitude, $SLIME is here to slime its way into your heart and your
+                wallet.
+            </p>
+            <p class="text-lg leading-relaxed">
+                Join the slime trail and be part of a community that loves memes, crypto, and a good race. Whether you’re a crypto newbie or a blockchain pro, SassySnail welcomes you with open slime trails.
+            </p>
+            <div class="flex justify-center mt-8">
+                <img alt="Cartoonish green snail with a sassy expression leaving a glowing slime trail behind on a bright colorful background" class="rounded-xl shadow-lg" height="250" loading="lazy" src="https://storage.googleapis.com/a1aa/image/83d9f7dd-d7df-459e-6f94-052cad3f52c3.jpg"
+                    width="400" />
+            </div>
+        </section>
+        <!-- Token Tracker Section -->
+        <section class="bg-green-100 rounded-3xl p-8 max-w-5xl mx-auto shadow-lg relative overflow-visible" id="token">
+            <h2 class="text-4xl font-extrabold text-green-900 text-center mb-8 select-none">
+                Token Tracker
+            </h2>
+            <div class="flex flex-col md:flex-row justify-around items-center space-y-8 md:space-y-0 md:space-x-12">
+                <!-- Cartoonish Token Icon -->
+                <div class="flex flex-col items-center space-y-4">
+                    <img alt="Cartoonish shiny green coin with a slime drip and a snail shell emblem in the center" class="w-28 h-28 rounded-full shadow-xl" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6d37c768-6dc0-4a1e-c4bb-05971530057e.jpg"
+                        width="120" />
+                    <span class="text-green-800 font-bold text-xl select-none">
+       $SLIME
+      </span>
+                </div>
+                <!-- Token Stats -->
+                <div class="space-y-6 w-full max-w-md bg-green-200 rounded-2xl p-6 shadow-inner">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-green-900 text-lg select-none">
+        Total Supply:
+       </span>
+                        <span class="font-bold text-green-700 text-lg select-none" id="total-supply">
+        1,000,000,000 $SLIME
+       </span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-green-900 text-lg select-none">
+        Circulating Supply:
+       </span>
+                        <span class="font-bold text-green-700 text-lg select-none" id="circulating-supply">
+        750,000,000 $SLIME
+       </span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-green-900 text-lg select-none">
+        Market Cap:
+       </span>
+                        <span class="font-bold text-green-700 text-lg select-none" id="market-cap">
+        $3,750,000
+       </span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-green-900 text-lg select-none">
+        Price:
+       </span>
+                        <span class="font-bold text-green-700 text-lg select-none" id="price">
+        $0.005
+       </span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-green-900 text-lg select-none">
+        Holders:
+       </span>
+                        <span class="font-bold text-green-700 text-lg select-none" id="holders">
+        12,345
+       </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-green-800 font-semibold select-none">
+                <i class="fas fa-tachometer-alt fa-spin mr-2">
+     </i> Tracking $SLIME stats live and slimey!
+            </div>
+        </section>
+        <!-- Countdown Section -->
+        <section class="max-w-4xl mx-auto bg-green-50 rounded-3xl p-10 shadow-lg text-center select-none" id="countdown">
+            <h2 class="text-4xl font-extrabold text-green-900 mb-6">
+                Race Timer: Launch Countdown
+            </h2>
+            <p class="text-lg text-green-800 mb-8">
+                The slime race starts soon! Get ready to join the slime trail and race to the moon.
+            </p>
+            <div aria-live="polite" class="flex justify-center space-x-8 text-green-900 font-extrabold text-5xl md:text-6xl" id="countdown-timer">
+                <div>
+                    <span class="block" id="days">
+       00
+      </span>
+                    <span class="text-lg font-semibold">
+       Days
+      </span>
+                </div>
+                <div>
+                    <span class="block" id="hours">
+       00
+      </span>
+                    <span class="text-lg font-semibold">
+       Hours
+      </span>
+                </div>
+                <div>
+                    <span class="block" id="minutes">
+       00
+      </span>
+                    <span class="text-lg font-semibold">
+       Minutes
+      </span>
+                </div>
+                <div>
+                    <span class="block" id="seconds">
+       00
+      </span>
+                    <span class="text-lg font-semibold">
+       Seconds
+      </span>
+                </div>
+            </div>
+            <div class="mt-6 text-yellow-600 font-extrabold text-2xl hidden" id="launch-message">
+                🚀 The race has launched! Welcome to the slime trail! 🐌💨
+            </div>
+        </section>
+        <!-- Join Section -->
+        <section class="max-w-3xl mx-auto text-center space-y-6" id="join">
+            <h2 class="text-4xl font-extrabold text-green-900 select-none">
+                Join the SassySnail Community
+            </h2>
+            <p class="text-green-800 text-lg">
+                Follow us on social media and be the first to get updates, memes, and exclusive $SLIME drops!
+            </p>
+            <div class="flex justify-center space-x-8 text-green-900 text-3xl">
+                <a aria-label="Twitter" class="hover:text-yellow-400 transition slime-trail" href="https://twitter.com" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-twitter">
+      </i>
+                </a>
+                <a aria-label="Discord" class="hover:text-yellow-400 transition slime-trail" href="https://discord.com" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-discord">
+      </i>
+                </a>
+                <a aria-label="Telegram" class="hover:text-yellow-400 transition slime-trail" href="https://telegram.org" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-telegram-plane">
+      </i>
+                </a>
+            </div>
+            <a class="inline-block slime-trail bg-green-700 hover:bg-green-900 text-yellow-300 font-bold py-3 px-8 rounded-full shadow-lg transition mt-6" href="#countdown">
+     Get Ready to Race!
+    </a>
+        </section>
+    </main>
+    <footer class="bg-green-400 bg-opacity-90 text-green-900 text-center py-6 select-none">
+        <p>
+            © 2024 SassySnail Meme Coin. All slime rights reserved.
+        </p>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll indicator movement synced with scroll
+        const scrollIndicator = document.getElementById('scroll-indicator');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = docHeight > 0 ? scrollTop / docHeight : 0;
+            const maxTranslate = document.body.clientWidth - scrollIndicator.clientWidth;
+            scrollIndicator.style.left = `${scrollPercent * maxTranslate}px`;
+        });
+
+        // Countdown Timer
+        // Set launch date/time (example: 3 days from now)
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 3);
+        launchDate.setHours(12, 0, 0, 0); // Launch at 12:00:00 local time
+
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+        const launchMessage = document.getElementById('launch-message');
+        const countdownTimer = document.getElementById('countdown-timer');
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = launchDate - now;
+
+            if (diff <= 0) {
+                // Launch time reached
+                countdownTimer.style.display = 'none';
+                launchMessage.classList.remove('hidden');
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            daysEl.textContent = days.toString().padStart(2, '0');
+            hoursEl.textContent = hours.toString().padStart(2, '0');
+            minutesEl.textContent = minutes.toString().padStart(2, '0');
+            secondsEl.textContent = seconds.toString().padStart(2, '0');
+        }
+
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Optional: Animate slime trail on all slime-trail buttons on hover with JS (enhance effect)
+        // Already handled by CSS, so no JS needed here.
+    </script>
+</body>
+
+</html>

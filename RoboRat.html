@@ -1,0 +1,368 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        RoboRat $CHEEZ
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet" />
+    <style>
+        /* Glitch text effect */
+        
+        .glitch {
+            position: relative;
+            color: #00ffea;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            letter-spacing: 0.05em;
+            animation: flicker 3s infinite;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c8;
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00fff9;
+            animation: glitch-anim2 3s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            10% {
+                clip: rect(10px, 900px, 50px, 0);
+                transform: translate(-2px, -2px);
+            }
+            20% {
+                clip: rect(0, 900px, 0, 0);
+                transform: translate(0);
+            }
+            30% {
+                clip: rect(20px, 900px, 60px, 0);
+                transform: translate(-1px, 1px);
+            }
+            40% {
+                clip: rect(0, 900px, 0, 0);
+                transform: translate(0);
+            }
+            100% {
+                clip: rect(0, 900px, 0, 0);
+            }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(0, 900px, 0, 0);
+            }
+            15% {
+                clip: rect(15px, 900px, 55px, 0);
+                transform: translate(2px, 2px);
+            }
+            25% {
+                clip: rect(0, 900px, 0, 0);
+                transform: translate(0);
+            }
+            35% {
+                clip: rect(5px, 900px, 45px, 0);
+                transform: translate(1px, -1px);
+            }
+            45% {
+                clip: rect(0, 900px, 0, 0);
+                transform: translate(0);
+            }
+            100% {
+                clip: rect(0, 900px, 0, 0);
+            }
+        }
+        /* Flicker animation for icons */
+        
+        .flicker {
+            animation: flickerIcon 3s infinite;
+            color: #00ffea;
+        }
+        
+        @keyframes flickerIcon {
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                opacity: 1;
+                text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 40px #00ffea;
+            }
+            20%,
+            22%,
+            24%,
+            55% {
+                opacity: 0.4;
+                text-shadow: none;
+            }
+        }
+        /* Circuit style lines */
+        
+        .circuit-line {
+            stroke: #00ffea;
+            stroke-width: 2;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            filter: drop-shadow(0 0 3px #00ffea);
+        }
+        /* Pie chart slice animation */
+        
+        .slice {
+            transition: transform 0.3s ease;
+            transform-origin: center;
+        }
+        
+        .slice:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 8px #ffde59);
+            cursor: pointer;
+        }
+        /* Cyber sewer background overlay */
+        
+        .cyber-sewer-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            opacity: 0.15;
+            filter: brightness(0.3) contrast(1.2);
+        }
+    </style>
+</head>
+
+<body class="bg-black text-cyan-400 font-mono min-h-screen flex flex-col">
+    <!-- Cyber Sewer Background -->
+    <div aria-hidden="true" class="cyber-sewer-bg">
+        <img alt="Dark cyber sewer background with neon blue and green glowing circuit pipes, metallic textures, and dripping water reflections" class="w-full h-full object-cover" height="1080" loading="lazy" src="https://storage.googleapis.com/a1aa/image/03c88513-d378-4841-6e91-4fc616204095.jpg"
+            width="1920" />
+    </div>
+    <!-- Header -->
+    <header class="py-8 px-6 flex flex-col items-center">
+        <h1 class="glitch mb-2" data-text="RoboRat $CHEEZ">
+            RoboRat $CHEEZ
+        </h1>
+        <p class="text-sm text-cyan-300 tracking-widest uppercase">
+            The Cyber Cheese Token
+        </p>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-6 space-y-20 max-w-7xl">
+        <!-- Token Distribution Pie Chart -->
+        <section aria-labelledby="distribution-title" class="max-w-4xl mx-auto">
+            <h2 class="glitch text-4xl mb-8 text-center" data-text="Token Distribution" id="distribution-title">
+                Token Distribution
+            </h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                <svg aria-label="Pie chart showing RoboRat $CHEEZ token distribution" class="w-72 h-72" role="img" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" fill="#111" r="90">
+      </circle>
+      <!-- Slices -->
+      <circle aria-label="40% Liquidity Pool" class="slice" cx="100" cy="100" fill="transparent" r="90" stroke="#ffde59" stroke-dasharray="72 108" stroke-dashoffset="0" stroke-width="180">
+      </circle>
+      <circle aria-label="30% Community Rewards" class="slice" cx="100" cy="100" fill="transparent" r="90" stroke="#00ffea" stroke-dasharray="54 126" stroke-dashoffset="-72" stroke-width="180">
+      </circle>
+      <circle aria-label="20% Team &amp; Advisors" class="slice" cx="100" cy="100" fill="transparent" r="90" stroke="#ff00c8" stroke-dasharray="36 144" stroke-dashoffset="-126" stroke-width="180">
+      </circle>
+      <circle aria-label="10% Marketing &amp; Development" class="slice" cx="100" cy="100" fill="transparent" r="90" stroke="#ff6f59" stroke-dasharray="18 162" stroke-dashoffset="-162" stroke-width="180">
+      </circle>
+      <circle cx="100" cy="100" fill="#000" r="60">
+      </circle>
+     </svg>
+                <ul class="text-cyan-300 space-y-4 text-lg max-w-xs">
+                    <li class="flex items-center gap-3">
+                        <span class="w-5 h-5 rounded-full bg-yellow-400 inline-block border-2 border-black">
+       </span>
+                        <span>
+        40% Liquidity Pool
+       </span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-5 h-5 rounded-full bg-cyan-400 inline-block border-2 border-black">
+       </span>
+                        <span>
+        30% Community Rewards
+       </span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-5 h-5 rounded-full bg-pink-500 inline-block border-2 border-black">
+       </span>
+                        <span>
+        20% Team &amp; Advisors
+       </span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-5 h-5 rounded-full bg-red-400 inline-block border-2 border-black">
+       </span>
+                        <span>
+        10% Marketing &amp; Development
+       </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Circuit-style Roadmap -->
+        <section aria-labelledby="roadmap-title" class="max-w-5xl mx-auto">
+            <h2 class="glitch text-4xl mb-12 text-center" data-text="Roadmap" id="roadmap-title">
+                Roadmap
+            </h2>
+            <svg aria-label="Circuit style roadmap with milestones" class="w-full max-w-full h-auto" role="img" viewbox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+     <!-- Circuit lines -->
+     <path class="circuit-line" d="M50 350 L200 350 L200 250 L350 250 L350 150 L500 150 L500 250 L650 250 L650 350 L800 350">
+     </path>
+     <circle cx="50" cy="350" fill="#00ffea" filter="url(#glow)" r="20">
+     </circle>
+     <circle cx="200" cy="350" fill="#00ffea" filter="url(#glow)" r="20">
+     </circle>
+     <circle cx="200" cy="250" fill="#00ffea" filter="url(#glow)" r="20">
+     </circle>
+     <circle cx="350" cy="250" fill="#00ffea" filter="url(#glow)" r="20">
+     </circle>
+     <circle cx="350" cy="150" fill="#00ffea" filter="url(#glow)" r="20">
+     </circle>
+     <circle cx="500" cy="150" fill="#00ffea" filter="url(#glow)" r="20">
+     </circle>
+     <circle cx="500" cy="250" fill="#00ffea" filter="url(#glow)" r="20">
+     </circle>
+     <circle cx="650" cy="250" fill="#00ffea" filter="url(#glow)" r="20">
+     </circle>
+     <circle cx="650" cy="350" fill="#00ffea" filter="url(#glow)" r="20">
+     </circle>
+     <circle cx="800" cy="350" fill="#00ffea" filter="url(#glow)" r="20">
+     </circle>
+     <!-- Milestone icons and text -->
+     <g aria-label="Milestone 1: Token Launch" class="flicker">
+      <text dy="-30" fill="#00ffea" font-family="Share Tech Mono" font-size="14" text-anchor="middle" x="50" y="350">
+       Token Launch
+      </text>
+      <text dy="5" fill="#00ffea" font-family="Share Tech Mono" font-size="24" text-anchor="middle" x="50" y="350">
+       🚀
+      </text>
+     </g>
+     <g aria-label="Milestone 2: Liquidity Pool" class="flicker">
+      <text dy="-30" fill="#00ffea" font-family="Share Tech Mono" font-size="14" text-anchor="middle" x="200" y="350">
+       Liquidity Pool
+      </text>
+      <text dy="5" fill="#00ffea" font-family="Share Tech Mono" font-size="24" text-anchor="middle" x="200" y="350">
+       💧
+      </text>
+     </g>
+     <g aria-label="Milestone 3: Community Rewards" class="flicker">
+      <text dy="-30" fill="#00ffea" font-family="Share Tech Mono" font-size="14" text-anchor="middle" x="200" y="250">
+       Community Rewards
+      </text>
+      <text dy="5" fill="#00ffea" font-family="Share Tech Mono" font-size="24" text-anchor="middle" x="200" y="250">
+       🎁
+      </text>
+     </g>
+     <g aria-label="Milestone 4: Team &amp; Advisors" class="flicker">
+      <text dy="-30" fill="#00ffea" font-family="Share Tech Mono" font-size="14" text-anchor="middle" x="350" y="250">
+       Team &amp; Advisors
+      </text>
+      <text dy="5" fill="#00ffea" font-family="Share Tech Mono" font-size="24" text-anchor="middle" x="350" y="250">
+       🧑‍💻
+      </text>
+     </g>
+     <g aria-label="Milestone 5: Marketing &amp; Development" class="flicker">
+      <text dy="-30" fill="#00ffea" font-family="Share Tech Mono" font-size="14" text-anchor="middle" x="350" y="150">
+       Marketing &amp; Dev
+      </text>
+      <text dy="5" fill="#00ffea" font-family="Share Tech Mono" font-size="24" text-anchor="middle" x="350" y="150">
+       📢
+      </text>
+     </g>
+     <g aria-label="Milestone 6: Exchange Listings" class="flicker">
+      <text dy="-30" fill="#00ffea" font-family="Share Tech Mono" font-size="14" text-anchor="middle" x="500" y="150">
+       Exchange Listings
+      </text>
+      <text dy="5" fill="#00ffea" font-family="Share Tech Mono" font-size="24" text-anchor="middle" x="500" y="150">
+       💱
+      </text>
+     </g>
+     <g aria-label="Milestone 7: NFT Integration" class="flicker">
+      <text dy="-30" fill="#00ffea" font-family="Share Tech Mono" font-size="14" text-anchor="middle" x="500" y="250">
+       NFT Integration
+      </text>
+      <text dy="5" fill="#00ffea" font-family="Share Tech Mono" font-size="24" text-anchor="middle" x="500" y="250">
+       🖼️
+      </text>
+     </g>
+     <g aria-label="Milestone 8: DAO Governance" class="flicker">
+      <text dy="-30" fill="#00ffea" font-family="Share Tech Mono" font-size="14" text-anchor="middle" x="650" y="250">
+       DAO Governance
+      </text>
+      <text dy="5" fill="#00ffea" font-family="Share Tech Mono" font-size="24" text-anchor="middle" x="650" y="250">
+       ⚙️
+      </text>
+     </g>
+     <g aria-label="Milestone 9: Cross-chain Expansion" class="flicker">
+      <text dy="-30" fill="#00ffea" font-family="Share Tech Mono" font-size="14" text-anchor="middle" x="650" y="350">
+       Cross-chain Expansion
+      </text>
+      <text dy="5" fill="#00ffea" font-family="Share Tech Mono" font-size="24" text-anchor="middle" x="650" y="350">
+       🔗
+      </text>
+     </g>
+     <g aria-label="Milestone 10: Full Maze Launch" class="flicker">
+      <text dy="-30" fill="#00ffea" font-family="Share Tech Mono" font-size="14" text-anchor="middle" x="800" y="350">
+       Full Maze Launch
+      </text>
+      <text dy="5" fill="#00ffea" font-family="Share Tech Mono" font-size="24" text-anchor="middle" x="800" y="350">
+       🧀
+      </text>
+     </g>
+     <defs>
+      <filter color-interpolation-filters="sRGB" height="200%" id="glow" width="200%" x="-50%" y="-50%">
+       <fedropshadow dx="0" dy="0" flood-color="#00ffea" flood-opacity="0.8" stddeviation="3">
+       </fedropshadow>
+      </filter>
+     </defs>
+    </svg>
+        </section>
+        <!-- Enter the Maze CTA -->
+        <section class="text-center">
+            <button aria-label="Enter the Maze" class="relative inline-flex items-center justify-center px-10 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold text-xl tracking-widest uppercase font-orbitron overflow-hidden group" type="button">
+     <span class="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 opacity-30 blur-md transition-all duration-500 group-hover:opacity-70">
+     </span>
+     <span class="relative z-10 glitch" data-text="Enter the Maze">
+      Enter the Maze
+     </span>
+     <i class="fas fa-mouse-pointer ml-4 flicker relative z-10">
+     </i>
+    </button>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="py-6 text-center text-cyan-600 text-sm font-share-tech-mono">
+        <p>
+            © 2024 RoboRat. All rights reserved.
+        </p>
+    </footer>
+</body>
+
+</html>

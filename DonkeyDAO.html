@@ -1,0 +1,366 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        DonkeyDAO - $HOOF
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Open+Sans&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #fef6e4;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+        /* Hay bale shape */
+        
+        .hay-bale {
+            background: linear-gradient(135deg, #d9b44a 0%, #f0d86b 100%);
+            border-radius: 1.5rem;
+            box-shadow: inset 0 4px 0 #b38b1f, inset 0 -4px 0 #b38b1f, 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 3px solid #b38b1f;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hay-bale::before,
+        .hay-bale::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 6px;
+            background: repeating-linear-gradient( 45deg, #b38b1f, #b38b1f 4px, #d9b44a 4px, #d9b44a 8px);
+            left: 0;
+            border-radius: 1.5rem;
+        }
+        
+        .hay-bale::before {
+            top: 12px;
+        }
+        
+        .hay-bale::after {
+            bottom: 12px;
+        }
+        /* Braying animation */
+        
+        @keyframes brayShake {
+            0%,
+            100% {
+                transform: translateX(0) rotate(0deg);
+            }
+            20% {
+                transform: translateX(-5px) rotate(-5deg);
+            }
+            40% {
+                transform: translateX(5px) rotate(5deg);
+            }
+            60% {
+                transform: translateX(-5px) rotate(-5deg);
+            }
+            80% {
+                transform: translateX(5px) rotate(5deg);
+            }
+        }
+        
+        .bray-animate {
+            animation: brayShake 0.6s ease-in-out;
+        }
+        /* Stable wood planks */
+        
+        .wood-plank {
+            background: linear-gradient(90deg, #7a5230 0%, #a36f3a 100%);
+            box-shadow: inset 0 2px 0 #c9a66b, inset 0 -2px 0 #5a3e1a;
+            border-radius: 0.5rem;
+            border: 2px solid #5a3e1a;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .wood-plank::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: repeating-linear-gradient( 45deg, #5a3e1a, #5a3e1a 6px, #7a5230 6px, #7a5230 12px);
+            transform: translateY(-50%);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Header / Navbar -->
+    <header class="bg-yellow-300 shadow-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img alt="Cartoon donkey head with big ears and goofy smile, bright colors" class="w-12 h-12" height="48" src="https://storage.googleapis.com/a1aa/image/8f5d2a50-d036-4190-296a-d907f76e13b5.jpg" width="48" />
+                <h1 class="text-3xl text-brown-900 font-fredoka text-yellow-900 select-none">
+                    DonkeyDAO
+                    <span class="text-green-700 font-bold">
+       $HOOF
+      </span>
+                </h1>
+            </div>
+            <ul class="hidden md:flex space-x-8 font-semibold text-yellow-900">
+                <li>
+                    <a class="hover:text-green-800 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-800 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-800 transition" href="#join">
+       Join Us
+      </a>
+                </li>
+            </ul>
+            <button aria-label="Make donkey bray" class="ml-4 bg-green-700 hover:bg-green-800 text-yellow-100 px-4 py-2 rounded shadow-md flex items-center space-x-2 focus:outline-none focus:ring-4 focus:ring-green-400" id="brayBtn">
+     <i class="fas fa-drumstick-bite fa-lg">
+     </i>
+     <span>
+      Bray!
+     </span>
+    </button>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="bg-yellow-100 py-16 px-6 text-center max-w-5xl mx-auto">
+        <img alt="A cheerful cartoon donkey wearing a farmer's hat with a blockchain symbol, standing in front of a wooden stable" class="mx-auto mb-6 w-48 h-48 rounded-full shadow-lg" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1ecf982e-a591-45ee-1860-de4456b89897.jpg"
+            width="200" />
+        <h2 class="text-4xl font-fredoka text-yellow-900 mb-4">
+            Welcome to DonkeyDAO
+        </h2>
+        <p class="text-lg max-w-xl mx-auto text-yellow-800">
+            The only DAO where the donkeys run the stable! Stake your $HOOF tokens, complete barn tasks, and help us build the most stubbornly fun community on the blockchain.
+        </p>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="max-w-6xl mx-auto px-6 py-16" id="roadmap">
+        <h2 class="text-4xl font-fredoka text-yellow-900 mb-12 text-center">
+            Roadmap: Barn Tasks
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="wood-plank p-6 text-yellow-900 shadow-lg">
+                <h3 class="text-2xl font-bold mb-3 flex items-center space-x-3">
+                    <i class="fas fa-tractor fa-lg text-green-700">
+      </i>
+                    <span>
+       Plow the Field
+      </span>
+                </h3>
+                <p>
+                    Prepare the ground by launching our $HOOF token on the blockchain. Get ready to sow the seeds of decentralization!
+                </p>
+            </div>
+            <div class="wood-plank p-6 text-yellow-900 shadow-lg">
+                <h3 class="text-2xl font-bold mb-3 flex items-center space-x-3">
+                    <i class="fas fa-seedling fa-lg text-green-700">
+      </i>
+                    <span>
+       Plant the Hay
+      </span>
+                </h3>
+                <p>
+                    Distribute tokens to early supporters and start building our loyal herd of donkeys.
+                </p>
+            </div>
+            <div class="wood-plank p-6 text-yellow-900 shadow-lg">
+                <h3 class="text-2xl font-bold mb-3 flex items-center space-x-3">
+                    <i class="fas fa-drum fa-lg text-green-700">
+      </i>
+                    <span>
+       Bray Loud &amp; Proud
+      </span>
+                </h3>
+                <p>
+                    Launch our community platform with fun braying sounds and donkey-themed governance.
+                </p>
+            </div>
+            <div class="wood-plank p-6 text-yellow-900 shadow-lg">
+                <h3 class="text-2xl font-bold mb-3 flex items-center space-x-3">
+                    <i class="fas fa-barn fa-lg text-green-700">
+      </i>
+                    <span>
+       Build the Stable
+      </span>
+                </h3>
+                <p>
+                    Develop the DonkeyDAO dApp with staking, voting, and hay bale rewards.
+                </p>
+            </div>
+            <div class="wood-plank p-6 text-yellow-900 shadow-lg">
+                <h3 class="text-2xl font-bold mb-3 flex items-center space-x-3">
+                    <i class="fas fa-haykal fa-lg text-green-700">
+      </i>
+                    <span>
+       Hay Bale Tokenomics
+      </span>
+                </h3>
+                <p>
+                    Finalize tokenomics and distribute hay bales (rewards) to loyal donkeys.
+                </p>
+            </div>
+            <div class="wood-plank p-6 text-yellow-900 shadow-lg">
+                <h3 class="text-2xl font-bold mb-3 flex items-center space-x-3">
+                    <i class="fas fa-flag-checkered fa-lg text-green-700">
+      </i>
+                    <span>
+       Race to the Moon
+      </span>
+                </h3>
+                <p>
+                    Launch marketing campaigns and community events to take $HOOF to the moon!
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="bg-yellow-200 py-16 px-6" id="tokenomics">
+        <h2 class="text-4xl font-fredoka text-yellow-900 mb-12 text-center">
+            Tokenomics: Hay Bales
+        </h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+            <div class="hay-bale p-8 text-yellow-900 shadow-lg flex flex-col items-center justify-center">
+                <img alt="A golden hay bale with a leaf icon on it, symbolizing farming rewards" class="mb-4" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/72a95ec5-6a2a-40ad-6af5-dcc0ba248a82.jpg" width="80" />
+                <h3 class="text-2xl font-bold mb-2">
+                    40% Farming Rewards
+                </h3>
+                <p class="text-center">
+                    Generous hay bales for staking and liquidity providers to keep the stable thriving.
+                </p>
+            </div>
+            <div class="hay-bale p-8 text-yellow-900 shadow-lg flex flex-col items-center justify-center">
+                <img alt="A golden hay bale with a hammer and wrench icon, symbolizing development fund" class="mb-4" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7d88fdcf-d6f8-449f-4245-349bad6978bf.jpg" width="80" />
+                <h3 class="text-2xl font-bold mb-2">
+                    20% Development Fund
+                </h3>
+                <p class="text-center">
+                    Keeping the stable in top shape with continuous upgrades and new features.
+                </p>
+            </div>
+            <div class="hay-bale p-8 text-yellow-900 shadow-lg flex flex-col items-center justify-center">
+                <img alt="A golden hay bale with a party popper icon, symbolizing community &amp; marketing" class="mb-4" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5f2365e5-220f-437a-e553-4f80f1d37fa3.jpg" width="80" />
+                <h3 class="text-2xl font-bold mb-2">
+                    15% Community &amp; Marketing
+                </h3>
+                <p class="text-center">
+                    Fueling the bray to spread the word and grow our stubbornly awesome herd.
+                </p>
+            </div>
+            <div class="hay-bale p-8 text-yellow-900 shadow-lg flex flex-col items-center justify-center">
+                <img alt="A golden hay bale with a hoof print icon, symbolizing team allocation" class="mb-4" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d3ca6d17-adf4-45bf-5267-6c32ead2103d.jpg" width="80" />
+                <h3 class="text-2xl font-bold mb-2">
+                    15% Team Allocation
+                </h3>
+                <p class="text-center">
+                    Rewarding the hardworking donkeys behind the scenes.
+                </p>
+            </div>
+            <div class="hay-bale p-8 text-yellow-900 shadow-lg flex flex-col items-center justify-center">
+                <img alt="A golden hay bale with a shield icon, symbolizing security &amp; audits" class="mb-4" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/906e250d-3697-47d4-27f4-3e76377acaa5.jpg" width="80" />
+                <h3 class="text-2xl font-bold mb-2">
+                    10% Security &amp; Audits
+                </h3>
+                <p class="text-center">
+                    Ensuring the stable is safe from wolves and foxes lurking around.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Join Section -->
+    <section class="max-w-4xl mx-auto px-6 py-16 text-center" id="join">
+        <h2 class="text-4xl font-fredoka text-yellow-900 mb-6">
+            Join the DonkeyDAO Herd!
+        </h2>
+        <p class="mb-8 text-yellow-800 max-w-xl mx-auto">
+            Ready to bray loud and proud? Stake your $HOOF tokens, vote on barn tasks, and earn your share of the hay bales. The stable door is always open!
+        </p>
+        <button class="bg-green-700 hover:bg-green-800 text-yellow-100 px-8 py-4 rounded-lg text-xl font-semibold shadow-lg focus:outline-none focus:ring-4 focus:ring-green-400 inline-flex items-center space-x-3" id="joinBtn">
+    <i class="fas fa-horse fa-lg">
+    </i>
+    <span>
+     Stake $HOOF &amp; Bray!
+    </span>
+   </button>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-yellow-300 text-yellow-900 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p class="text-sm">
+                © 2024 DonkeyDAO. All stubborn rights reserved.
+            </p>
+            <div class="flex space-x-6 text-yellow-900">
+                <a aria-label="Twitter" class="hover:text-green-700 transition" href="https://twitter.com/DonkeyDAO" rel="noopener" target="_blank">
+                    <i class="fab fa-twitter fa-lg">
+      </i>
+                </a>
+                <a aria-label="Discord" class="hover:text-green-700 transition" href="https://discord.gg/DonkeyDAO" rel="noopener" target="_blank">
+                    <i class="fab fa-discord fa-lg">
+      </i>
+                </a>
+                <a aria-label="GitHub" class="hover:text-green-700 transition" href="https://github.com/DonkeyDAO" rel="noopener" target="_blank">
+                    <i class="fab fa-github fa-lg">
+      </i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- Bray Sound and Animation Script -->
+    <script>
+        // Create audio element for braying sound
+        const braySound = new Audio('https://actions.google.com/sounds/v1/animals/donkey_bray.ogg');
+        braySound.volume = 0.5;
+
+        // Buttons that trigger bray
+        const brayBtn = document.getElementById('brayBtn');
+        const joinBtn = document.getElementById('joinBtn');
+
+        function playBrayAnimation(button) {
+            // Play sound
+            braySound.currentTime = 0;
+            braySound.play();
+
+            // Animate button with shake
+            button.classList.add('bray-animate');
+            setTimeout(() => {
+                button.classList.remove('bray-animate');
+            }, 600);
+
+            // Animate donkey image in hero (bounce)
+            const heroImg = document.querySelector('section > img');
+            if (heroImg) {
+                heroImg.animate([{
+                    transform: 'translateY(0)'
+                }, {
+                    transform: 'translateY(-20px)'
+                }, {
+                    transform: 'translateY(0)'
+                }], {
+                    duration: 600,
+                    easing: 'ease-in-out'
+                });
+            }
+        }
+
+        brayBtn.addEventListener('click', () => playBrayAnimation(brayBtn));
+        joinBtn.addEventListener('click', () => playBrayAnimation(joinBtn));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,667 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        $DRIP - Luxurious Drip Token
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a0a;
+            color: #f0f0f0;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Flashy drip animation for hero text */
+        
+        @keyframes dripGlow {
+            0%,
+            100% {
+                text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 40px #00fff7, 0 0 80px #00fff7;
+                color: #00fff7;
+            }
+            50% {
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff, 0 0 120px #ff00ff;
+                color: #ff00ff;
+            }
+        }
+        
+        .drip-glow {
+            animation: dripGlow 3s ease-in-out infinite;
+        }
+        /* Token brand closet scroll horizontal */
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Swap widget input focus */
+        
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 8px #00fff7;
+            border-color: #00fff7;
+        }
+        /* Meme gallery hover zoom */
+        
+        .meme-img:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 0 15px #ff00ff;
+            border-radius: 0.5rem;
+        }
+        /* Leaderboard scroll */
+        
+        .leaderboard-scroll {
+            max-height: 320px;
+            overflow-y: auto;
+        }
+        /* Fashion show mini game animations */
+        
+        @keyframes runwayWalk {
+            0% {
+                transform: translateX(-100%) scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                transform: translateX(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100%) scale(0.8);
+                opacity: 0;
+            }
+        }
+        
+        .runway-model {
+            animation: runwayWalk 6s linear infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-black via-gray-900 to-black text-gray-100">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-black bg-opacity-80 backdrop-blur-md z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a class="text-3xl font-playfair font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600 hover:from-purple-600 hover:to-cyan-400 transition" href="#hero">
+     $DRIP
+    </a>
+            <ul class="hidden md:flex space-x-8 font-semibold text-gray-300">
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#swap">
+       Swap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#memes">
+       Meme Gallery
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#fashion-show">
+       Fashion Show
+      </a>
+                </li>
+            </ul>
+            <button class="md:hidden text-cyan-400 focus:outline-none" id="mobile-menu-btn">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-black bg-opacity-90" id="mobile-menu">
+            <ul class="flex flex-col space-y-4 p-6 font-semibold text-gray-300">
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#swap">
+       Swap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#memes">
+       Meme Gallery
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-cyan-400 transition" href="#fashion-show">
+       Fashion Show
+      </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 pb-12 relative overflow-hidden" id="hero">
+        <img alt="Luxurious golden liquid dripping and splashing in an abstract artistic style with shiny reflections" class="absolute top-0 left-1/2 -translate-x-1/2 w-72 opacity-20 animate-pulse" height="600" src="https://storage.googleapis.com/a1aa/image/8a7a967e-6271-4ac8-13fc-8c4444e546a3.jpg"
+            style="animation-duration: 6s;" width="600" />
+        <h1 class="text-6xl md:text-8xl font-playfair font-extrabold drip-glow select-none leading-tight max-w-4xl">
+            $DRIP
+        </h1>
+        <p class="mt-6 max-w-xl text-lg md:text-xl text-gray-300 font-semibold tracking-wide">
+            The most luxurious drip-inspired token on the blockchain.
+            <br/> Where fashion meets crypto in a flashy, unstoppable flow.
+        </p>
+        <a class="mt-10 inline-block bg-gradient-to-r from-cyan-400 to-purple-600 hover:from-purple-600 hover:to-cyan-400 text-black font-bold py-4 px-10 rounded-full shadow-lg transition-transform transform hover:scale-105" href="#swap">
+    Swap $DRIP Now
+   </a>
+        <img alt="Close-up of a luxurious golden chain necklace dripping with liquid gold, sparkling under bright lights" class="absolute bottom-0 right-0 w-48 md:w-72 opacity-30 animate-bounce-slow" height="400" src="https://storage.googleapis.com/a1aa/image/49e2fa9c-76c5-415f-9f91-6cc3ad2a7e25.jpg"
+            style="animation-duration: 8s;" width="400" />
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20" id="tokenomics">
+        <h2 class="text-5xl font-playfair font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400">
+            Tokenomics Closet
+        </h2>
+        <p class="text-center max-w-3xl mx-auto mb-12 text-gray-400 font-semibold">
+            $DRIP tokenomics styled like a closet full of the most exclusive brands. Each allocation is a designer piece in your crypto wardrobe.
+        </p>
+        <div class="flex overflow-x-auto scrollbar-hide space-x-8 px-2 py-4">
+            <!-- Brand Closet Item 1 -->
+            <div class="min-w-[220px] bg-gradient-to-tr from-purple-900 via-purple-700 to-purple-900 rounded-3xl shadow-2xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform cursor-pointer">
+                <img alt="Luxurious Gucci logo embroidered jacket hanging in a high-end closet with velvet background" class="rounded-xl mb-4 shadow-lg" height="160" src="https://storage.googleapis.com/a1aa/image/8e68491f-e35a-4a83-f44e-0741d2a58eb4.jpg" width="160"
+                />
+                <h3 class="text-xl font-bold mb-1 text-purple-300">
+                    Gucci Allocation
+                </h3>
+                <p class="text-sm text-gray-300 mb-2">
+                    25% of total supply
+                </p>
+                <p class="text-xs text-gray-400">
+                    Reserved for collaborations and exclusive drops.
+                </p>
+            </div>
+            <!-- Brand Closet Item 2 -->
+            <div class="min-w-[220px] bg-gradient-to-tr from-cyan-900 via-cyan-700 to-cyan-900 rounded-3xl shadow-2xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform cursor-pointer">
+                <img alt="Iconic Louis Vuitton monogram bag displayed on a polished wooden shelf in a luxury closet" class="rounded-xl mb-4 shadow-lg" height="160" src="https://storage.googleapis.com/a1aa/image/806e4a50-e044-4caa-5474-79c1f6ae36e4.jpg" width="160" />
+                <h3 class="text-xl font-bold mb-1 text-cyan-300">
+                    Louis Vuitton Vault
+                </h3>
+                <p class="text-sm text-gray-300 mb-2">
+                    20% of total supply
+                </p>
+                <p class="text-xs text-gray-400">
+                    Locked for long-term holders and staking rewards.
+                </p>
+            </div>
+            <!-- Brand Closet Item 3 -->
+            <div class="min-w-[220px] bg-gradient-to-tr from-pink-900 via-pink-700 to-pink-900 rounded-3xl shadow-2xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform cursor-pointer">
+                <img alt="Pair of Balenciaga sneakers displayed on a glass shelf with neon pink lighting in a luxury closet" class="rounded-xl mb-4 shadow-lg" height="160" src="https://storage.googleapis.com/a1aa/image/5ec0a831-c79b-4c99-fd63-40b16a97d04c.jpg" width="160"
+                />
+                <h3 class="text-xl font-bold mb-1 text-pink-300">
+                    Balenciaga Sneakers
+                </h3>
+                <p class="text-sm text-gray-300 mb-2">
+                    15% of total supply
+                </p>
+                <p class="text-xs text-gray-400">
+                    Allocated for community giveaways and events.
+                </p>
+            </div>
+            <!-- Brand Closet Item 4 -->
+            <div class="min-w-[220px] bg-gradient-to-tr from-yellow-900 via-yellow-700 to-yellow-900 rounded-3xl shadow-2xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform cursor-pointer">
+                <img alt="Luxurious Rolex gold watch displayed on a velvet cushion inside a high-end closet" class="rounded-xl mb-4 shadow-lg" height="160" src="https://storage.googleapis.com/a1aa/image/b19906da-2a67-4c7c-2a37-ea6e3bc83bbc.jpg" width="160" />
+                <h3 class="text-xl font-bold mb-1 text-yellow-300">
+                    Rolex Reserve
+                </h3>
+                <p class="text-sm text-gray-300 mb-2">
+                    10% of total supply
+                </p>
+                <p class="text-xs text-gray-400">
+                    Reserved for team and advisors with vesting.
+                </p>
+            </div>
+            <!-- Brand Closet Item 5 -->
+            <div class="min-w-[220px] bg-gradient-to-tr from-green-900 via-green-700 to-green-900 rounded-3xl shadow-2xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform cursor-pointer">
+                <img alt="Elegant Chanel classic handbag displayed on a glass shelf with green ambient lighting in a luxury closet" class="rounded-xl mb-4 shadow-lg" height="160" src="https://storage.googleapis.com/a1aa/image/59e27c8e-cbf4-47ac-fd8b-d6208e345e47.jpg"
+                    width="160" />
+                <h3 class="text-xl font-bold mb-1 text-green-300">
+                    Chanel Community
+                </h3>
+                <p class="text-sm text-gray-300 mb-2">
+                    20% of total supply
+                </p>
+                <p class="text-xs text-gray-400">
+                    For community rewards, liquidity, and marketing.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="bg-gradient-to-r from-purple-900 via-black to-cyan-900 py-20 px-6" id="roadmap">
+        <h2 class="text-5xl font-playfair font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600">
+            Roadmap to Ultimate Drip
+        </h2>
+        <div class="max-w-5xl mx-auto space-y-12">
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-8">
+                <div class="md:w-1/3 text-center md:text-left">
+                    <div class="inline-block bg-gradient-to-r from-purple-600 to-cyan-400 text-black font-bold px-5 py-2 rounded-full shadow-lg">
+                        Q2 2024
+                    </div>
+                </div>
+                <div class="md:w-2/3 bg-gray-900 bg-opacity-70 rounded-3xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2">
+                        Launch $DRIP Token
+                    </h3>
+                    <p class="text-gray-300">
+                        Initial token launch with liquidity pool and staking platform.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-8">
+                <div class="md:w-1/3 text-center md:text-left">
+                    <div class="inline-block bg-gradient-to-r from-purple-600 to-cyan-400 text-black font-bold px-5 py-2 rounded-full shadow-lg">
+                        Q3 2024
+                    </div>
+                </div>
+                <div class="md:w-2/3 bg-gray-900 bg-opacity-70 rounded-3xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2">
+                        Collaborate with Gucci Ape
+                    </h3>
+                    <p class="text-gray-300">
+                        Exclusive NFT drop and fashion collab with Gucci Ape community.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-8">
+                <div class="md:w-1/3 text-center md:text-left">
+                    <div class="inline-block bg-gradient-to-r from-purple-600 to-cyan-400 text-black font-bold px-5 py-2 rounded-full shadow-lg">
+                        Q4 2024
+                    </div>
+                </div>
+                <div class="md:w-2/3 bg-gray-900 bg-opacity-70 rounded-3xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2">
+                        Launch Fashion Show Mini Game
+                    </h3>
+                    <p class="text-gray-300">
+                        Interactive runway game to win $DRIP and exclusive NFTs.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-8">
+                <div class="md:w-1/3 text-center md:text-left">
+                    <div class="inline-block bg-gradient-to-r from-purple-600 to-cyan-400 text-black font-bold px-5 py-2 rounded-full shadow-lg">
+                        Q1 2025
+                    </div>
+                </div>
+                <div class="md:w-2/3 bg-gray-900 bg-opacity-70 rounded-3xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2">
+                        Expand Meme Gallery &amp; Leaderboard
+                    </h3>
+                    <p class="text-gray-300">
+                        Add community voting and rewards for the most stylish wallets.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-8">
+                <div class="md:w-1/3 text-center md:text-left">
+                    <div class="inline-block bg-gradient-to-r from-purple-600 to-cyan-400 text-black font-bold px-5 py-2 rounded-full shadow-lg">
+                        Q2 2025
+                    </div>
+                </div>
+                <div class="md:w-2/3 bg-gray-900 bg-opacity-70 rounded-3xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-2">
+                        Collaborate with Louis Vuitton Ape
+                    </h3>
+                    <p class="text-gray-300">
+                        Next-level fashion collab with Louis Vuitton Ape NFT holders.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Swap Widget Section -->
+    <section class="max-w-4xl mx-auto px-6 py-20" id="swap">
+        <h2 class="text-4xl font-playfair font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600">
+            Swap $DRIP Token
+        </h2>
+        <div class="bg-gradient-to-tr from-purple-900 via-black to-cyan-900 rounded-3xl p-10 shadow-2xl">
+            <form class="space-y-8" onsubmit="event.preventDefault(); alert('Swap functionality coming soon!');">
+                <div>
+                    <label class="block mb-2 font-semibold text-gray-300" for="from-token">
+       From
+      </label>
+                    <select class="w-full rounded-lg bg-gray-800 text-gray-200 p-3 focus:ring-2 focus:ring-cyan-400" id="from-token">
+       <option value="eth">
+        ETH - Ethereum
+       </option>
+       <option value="usdc">
+        USDC - USD Coin
+       </option>
+       <option value="wbtc">
+        WBTC - Wrapped Bitcoin
+       </option>
+      </select>
+                    <input class="mt-3 w-full rounded-lg bg-gray-800 text-gray-200 p-3 placeholder-gray-500 focus:ring-2 focus:ring-cyan-400" min="0" placeholder="Amount" required="" step="any" type="number" />
+                </div>
+                <div class="text-center text-4xl text-cyan-400">
+                    <i class="fas fa-arrow-down">
+      </i>
+                </div>
+                <div>
+                    <label class="block mb-2 font-semibold text-gray-300" for="to-token">
+       To
+      </label>
+                    <select class="w-full rounded-lg bg-gray-800 text-gray-200 p-3 focus:ring-2 focus:ring-purple-600" id="to-token">
+       <option selected="" value="drip">
+        $DRIP - Drip Token
+       </option>
+      </select>
+                    <input class="mt-3 w-full rounded-lg bg-gray-800 text-gray-200 p-3 placeholder-gray-500 focus:ring-2 focus:ring-purple-600" min="0" placeholder="Amount" readonly="" step="any" type="number" />
+                </div>
+                <button class="w-full bg-gradient-to-r from-cyan-400 to-purple-600 hover:from-purple-600 hover:to-cyan-400 text-black font-bold py-4 rounded-full shadow-lg transition-transform transform hover:scale-105" type="submit">
+      Swap Now
+     </button>
+            </form>
+        </div>
+    </section>
+    <!-- Meme Gallery Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20 bg-gradient-to-r from-black via-gray-900 to-black rounded-3xl shadow-2xl" id="memes">
+        <h2 class="text-4xl font-playfair font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400">
+            Meme Meme Gallery
+        </h2>
+        <p class="text-center max-w-3xl mx-auto mb-12 text-gray-400 font-semibold">
+            The freshest $DRIP memes from the community dripping with style and humor.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            <img alt="A stylish meme featuring a cartoon character wearing gold chains and sunglasses dripping with liquid gold" class="meme-img rounded-xl shadow-lg cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/0c2ccceb-41f3-46fa-ed69-38dd2280e377.jpg"
+                width="400" />
+            <img alt="A luxury car covered in flashy bling and $DRIP logos in a meme style" class="meme-img rounded-xl shadow-lg cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/451ce1ff-530c-4a1f-3d0a-a968b9daa664.jpg" width="400" />
+            <img alt="Meme showing a fashion runway catwalk with crypto characters dripping in gold" class="meme-img rounded-xl shadow-lg cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/4eded3db-5b26-4605-403c-2f9ce7fb3b83.jpg" width="400"
+            />
+            <img alt="Meme of diamond-studded shoes sparkling with $DRIP logos" class="meme-img rounded-xl shadow-lg cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/84ede7b9-6cdb-4aff-5492-87a368cdd451.jpg" width="400" />
+            <img alt="Meme featuring a gold watch and chains dripping with liquid gold and $DRIP branding" class="meme-img rounded-xl shadow-lg cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/ed06c2a5-f042-42aa-31bd-29b64c93d8c7.jpg" width="400"
+            />
+            <img alt="Meme showing crypto fashion icons wearing flashy $DRIP accessories and clothes" class="meme-img rounded-xl shadow-lg cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/c604da0d-a115-4998-2471-02db6d2f7372.jpg" width="400"
+            />
+            <img alt="Meme with bling bling crypto coins and flashy $DRIP text" class="meme-img rounded-xl shadow-lg cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/271815b8-b821-4d2c-926c-f2a8ca647d6a.jpg" width="400" />
+            <img alt="Meme featuring gold chains and diamonds sparkling with $DRIP branding" class="meme-img rounded-xl shadow-lg cursor-pointer" height="400" src="https://storage.googleapis.com/a1aa/image/8550b7c6-78d4-4f93-d021-8625e99fe28d.jpg" width="400" />
+        </div>
+    </section>
+    <!-- Leaderboard Section -->
+    <section class="max-w-4xl mx-auto px-6 py-20" id="leaderboard">
+        <h2 class="text-4xl font-playfair font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600">
+            Most Stylish Wallets Leaderboard
+        </h2>
+        <div class="bg-gradient-to-tr from-purple-900 via-black to-cyan-900 rounded-3xl p-8 shadow-2xl leaderboard-scroll">
+            <table class="w-full text-left text-gray-300">
+                <thead>
+                    <tr class="border-b border-gray-700">
+                        <th class="py-3 px-4 text-lg font-semibold">
+                            Rank
+                        </th>
+                        <th class="py-3 px-4 text-lg font-semibold">
+                            Wallet
+                        </th>
+                        <th class="py-3 px-4 text-lg font-semibold">
+                            Drip Score
+                        </th>
+                        <th class="py-3 px-4 text-lg font-semibold">
+                            Style Level
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-gray-800 hover:bg-purple-900/30 transition">
+                        <td class="py-3 px-4 font-bold text-purple-400">
+                            1
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-[180px]" title="0xA1B2C3D4E5F678901234567890ABCDEF12345678">
+                            0xA1B2C3D4E5F678901234567890ABCDEF12345678
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-cyan-400">
+                            9876
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-yellow-400">
+                            Diamond Drip
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-800 hover:bg-purple-900/30 transition">
+                        <td class="py-3 px-4 font-bold text-purple-400">
+                            2
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-[180px]" title="0xB2C3D4E5F678901234567890ABCDEF1234567890">
+                            0xB2C3D4E5F678901234567890ABCDEF1234567890
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-cyan-400">
+                            8765
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-yellow-400">
+                            Platinum Drip
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-800 hover:bg-purple-900/30 transition">
+                        <td class="py-3 px-4 font-bold text-purple-400">
+                            3
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-[180px]" title="0xC3D4E5F678901234567890ABCDEF1234567890AB">
+                            0xC3D4E5F678901234567890ABCDEF1234567890AB
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-cyan-400">
+                            7654
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-yellow-400">
+                            Gold Drip
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-800 hover:bg-purple-900/30 transition">
+                        <td class="py-3 px-4 font-bold text-purple-400">
+                            4
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-[180px]" title="0xD4E5F678901234567890ABCDEF1234567890ABCD">
+                            0xD4E5F678901234567890ABCDEF1234567890ABCD
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-cyan-400">
+                            6543
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-yellow-400">
+                            Silver Drip
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-800 hover:bg-purple-900/30 transition">
+                        <td class="py-3 px-4 font-bold text-purple-400">
+                            5
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-[180px]" title="0xE5F678901234567890ABCDEF1234567890ABCDE1">
+                            0xE5F678901234567890ABCDEF1234567890ABCDE1
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-cyan-400">
+                            5432
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-yellow-400">
+                            Bronze Drip
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-800 hover:bg-purple-900/30 transition">
+                        <td class="py-3 px-4 font-bold text-purple-400">
+                            6
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-[180px]" title="0xF678901234567890ABCDEF1234567890ABCDE123">
+                            0xF678901234567890ABCDEF1234567890ABCDE123
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-cyan-400">
+                            4321
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-yellow-400">
+                            Starter Drip
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-800 hover:bg-purple-900/30 transition">
+                        <td class="py-3 px-4 font-bold text-purple-400">
+                            7
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-[180px]" title="0x1234567890ABCDEF1234567890ABCDEF12345678">
+                            0x1234567890ABCDEF1234567890ABCDEF12345678
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-cyan-400">
+                            3210
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-yellow-400">
+                            New Drip
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-800 hover:bg-purple-900/30 transition">
+                        <td class="py-3 px-4 font-bold text-purple-400">
+                            8
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-[180px]" title="0x234567890ABCDEF1234567890ABCDEF123456789">
+                            0x234567890ABCDEF1234567890ABCDEF123456789
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-cyan-400">
+                            2109
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-yellow-400">
+                            Rookie Drip
+                        </td>
+                    </tr>
+                    <tr class="border-b border-gray-800 hover:bg-purple-900/30 transition">
+                        <td class="py-3 px-4 font-bold text-purple-400">
+                            9
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-[180px]" title="0x34567890ABCDEF1234567890ABCDEF1234567890">
+                            0x34567890ABCDEF1234567890ABCDEF1234567890
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-cyan-400">
+                            1098
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-yellow-400">
+                            Casual Drip
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-purple-900/30 transition">
+                        <td class="py-3 px-4 font-bold text-purple-400">
+                            10
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-[180px]" title="0x4567890ABCDEF1234567890ABCDEF12345678901">
+                            0x4567890ABCDEF1234567890ABCDEF12345678901
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-cyan-400">
+                            987
+                        </td>
+                        <td class="py-3 px-4 font-semibold text-yellow-400">
+                            Fresh Drip
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- Fashion Show Mini Game Section -->
+    <section class="max-w-6xl mx-auto px-6 py-20 bg-gradient-to-r from-cyan-900 via-black to-purple-900 rounded-3xl shadow-2xl" id="fashion-show">
+        <h2 class="text-4xl font-playfair font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400">
+            Fashion Show Mini Game
+        </h2>
+        <p class="text-center max-w-4xl mx-auto mb-12 text-gray-300 font-semibold">
+            Watch the runway models drip in style! Click the models to collect $DRIP points and unlock exclusive NFTs.
+        </p>
+        <div class="relative h-64 overflow-hidden rounded-3xl bg-gradient-to-tr from-black via-gray-900 to-black shadow-lg">
+            <img alt="Runway model walking in a gold drip outfit with flashy accessories and sunglasses" class="runway-model absolute top-1/2 left-0 -translate-y-1/2 cursor-pointer" height="300" id="model1" src="https://storage.googleapis.com/a1aa/image/fb1c9276-76f3-4a8a-1fa7-a3dbef165eff.jpg"
+                style="animation-delay: 0s;" width="150" />
+            <img alt="Runway model walking in a diamond drip attire sparkling with crystals and chains" class="runway-model absolute top-1/2 left-0 -translate-y-1/2 cursor-pointer" height="300" id="model2" src="https://storage.googleapis.com/a1aa/image/4192b77d-b7e7-40f9-a905-835ae8b498a7.jpg"
+                style="animation-delay: 2s;" width="150" />
+            <img alt="Runway model walking in platinum drip gear with futuristic fashion elements" class="runway-model absolute top-1/2 left-0 -translate-y-1/2 cursor-pointer" height="300" id="model3" src="https://storage.googleapis.com/a1aa/image/41703479-7ff7-4e8b-c424-b97ef943cc8c.jpg"
+                style="animation-delay: 4s;" width="150" />
+        </div>
+        <div class="mt-8 text-center text-lg font-semibold text-cyan-400" id="drip-points-display">
+            $DRIP Points: 0
+        </div>
+    </section>
+    <footer class="bg-black bg-opacity-90 py-8 mt-20 text-center text-gray-500 font-semibold">
+        © 2024 $DRIP Token. All rights reserved.
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Swap widget amount auto-calculation (mock)
+        const fromAmountInput = document.querySelector('#swap form input[type="number"]:not([readonly])');
+        const toAmountInput = document.querySelector('#swap form input[readonly]');
+        const fromTokenSelect = document.getElementById('from-token');
+        const toTokenSelect = document.getElementById('to-token');
+
+        function updateSwap() {
+            const fromAmount = parseFloat(fromAmountInput.value);
+            if (isNaN(fromAmount) || fromAmount <= 0) {
+                toAmountInput.value = '';
+                return;
+            }
+            // Mock conversion rate: 1 fromToken = 100 $DRIP
+            // Different tokens could have different rates, but simplified here
+            let rate = 100;
+            if (fromTokenSelect.value === 'eth') rate = 100;
+            else if (fromTokenSelect.value === 'usdc') rate = 100;
+            else if (fromTokenSelect.value === 'wbtc') rate = 100;
+
+            toAmountInput.value = (fromAmount * rate).toFixed(2);
+        }
+
+        fromAmountInput.addEventListener('input', updateSwap);
+        fromTokenSelect.addEventListener('change', updateSwap);
+
+        // Fashion Show Mini Game Logic
+        let dripPoints = 0;
+        const dripPointsDisplay = document.getElementById('drip-points-display');
+        const models = ['model1', 'model2', 'model3'];
+
+        models.forEach((id) => {
+            const model = document.getElementById(id);
+            model.addEventListener('click', () => {
+                dripPoints += 10;
+                dripPointsDisplay.textContent = `$DRIP Points: ${dripPoints}`;
+                // Flash effect on click
+                model.classList.add('brightness-150');
+                setTimeout(() => {
+                    model.classList.remove('brightness-150');
+                }, 300);
+            });
+        });
+    </script>
+</body>
+
+</html>

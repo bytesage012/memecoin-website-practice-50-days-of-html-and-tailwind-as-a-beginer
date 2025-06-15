@@ -1,0 +1,736 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        $FRT - The Fart-Powered Memecoin on BSC
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+        /* Scrollbar for leaderboard */
+        
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background-color: #a3a3a3;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-yellow-100 via-yellow-50 to-yellow-100 text-gray-900 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="w-full bg-yellow-400 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a class="text-3xl text-yellow-900 font-bold tracking-widest select-none" href="#hero">
+     $FRT
+    </a>
+            <ul class="hidden md:flex space-x-8 text-yellow-900 font-semibold">
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#meme-generator">
+       Meme Generator
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#gas-meter">
+       Gas Meter
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#swap">
+       Swap
+      </a>
+                </li>
+            </ul>
+            <button class="md:hidden text-yellow-900 focus:outline-none" id="nav-toggle">
+     <i class="fas fa-bars fa-2x">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-yellow-300" id="nav-menu">
+            <ul class="flex flex-col space-y-3 px-6 py-4 text-yellow-900 font-semibold">
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#meme-generator">
+       Meme Generator
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#gas-meter">
+       Gas Meter
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#swap">
+       Swap
+      </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="flex-grow flex flex-col justify-center items-center text-center px-6 py-20 bg-yellow-200 relative overflow-hidden" id="hero">
+        <img alt="Cartoon fart cloud with a silly face and wavy gas lines around it, bright yellow and green colors" aria-hidden="true" class="absolute top-0 right-0 w-48 opacity-30 animate-float" height="400" src="https://storage.googleapis.com/a1aa/image/23011169-9417-4252-55fa-7b218ec87eb8.jpg"
+            style="animation-duration: 6s;" width="600" />
+        <h1 class="text-5xl md:text-7xl font-extrabold text-yellow-900 drop-shadow-lg mb-6 leading-tight max-w-4xl">
+            $FRT
+            <br/> The Loudest Fart-Powered Memecoin on BSC
+        </h1>
+        <p class="text-yellow-800 text-lg md:text-xl max-w-3xl mb-10 font-semibold drop-shadow">
+            Powered by pure gas, fueled by memes, and ready to blow your mind (and your wallet)!
+        </p>
+        <a aria-label="Gas Now - Swap $FRT tokens" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-yellow-100 font-bold text-2xl px-12 py-4 rounded-full shadow-lg transition transform hover:scale-105 active:scale-95 select-none" href="#swap">
+    Gas Now
+    <i class="fas fa-wind ml-3">
+    </i>
+   </a>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="bg-yellow-50 py-20 px-6" id="tokenomics">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-yellow-900 text-center mb-12 tracking-wide">
+                Tokenomics Digestive Cycle
+            </h2>
+            <div class="relative max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-16">
+                <!-- Cycle container -->
+                <div class="relative w-80 h-80 md:w-96 md:h-96">
+                    <!-- Circle background -->
+                    <img alt="Illustration of a digestive cycle diagram with arrows connecting different stages, styled with cartoonish intestines and gas bubbles" aria-hidden="true" class="w-full h-full object-contain" height="384" src="https://storage.googleapis.com/a1aa/image/7865b07f-96eb-48b6-39a1-30fbbd04a296.jpg"
+                        width="384" />
+                    <!-- Overlay tokenomics points positioned around the circle -->
+                    <div class="absolute top-4 left-1/2 transform -translate-x-1/2 text-center w-28">
+                        <div class="bg-yellow-300 rounded-full p-3 shadow-lg border-4 border-yellow-400">
+                            <i class="fas fa-coins text-yellow-700 text-3xl mb-2">
+        </i>
+                            <p class="font-semibold text-yellow-900 text-sm">
+                                Total Supply
+                                <br/> 1,000,000,000 $FRT
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 right-4 transform -translate-y-1/2 text-center w-28">
+                        <div class="bg-yellow-300 rounded-full p-3 shadow-lg border-4 border-yellow-400">
+                            <i class="fas fa-hand-holding-usd text-yellow-700 text-3xl mb-2">
+        </i>
+                            <p class="font-semibold text-yellow-900 text-sm">
+                                Liquidity
+                                <br/> 50%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center w-28">
+                        <div class="bg-yellow-300 rounded-full p-3 shadow-lg border-4 border-yellow-400">
+                            <i class="fas fa-users text-yellow-700 text-3xl mb-2">
+        </i>
+                            <p class="font-semibold text-yellow-900 text-sm">
+                                Community
+                                <br/> 30%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 left-4 transform -translate-y-1/2 text-center w-28">
+                        <div class="bg-yellow-300 rounded-full p-3 shadow-lg border-4 border-yellow-400">
+                            <i class="fas fa-burn text-yellow-700 text-3xl mb-2">
+        </i>
+                            <p class="font-semibold text-yellow-900 text-sm">
+                                Burn
+                                <br/> 10%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-28">
+                        <div class="bg-yellow-400 rounded-full p-4 shadow-xl border-4 border-yellow-600 animate-pulse">
+                            <i class="fas fa-wind text-yellow-900 text-4xl mb-2">
+        </i>
+                            <p class="font-extrabold text-yellow-900 text-sm">
+                                Gas Rewards
+                                <br/> 10%
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-md text-yellow-900 font-semibold text-lg leading-relaxed">
+                    <p>
+                        $FRT’s tokenomics are designed like a digestive cycle — every transaction fuels the gas that powers the ecosystem. 50% of tokens are locked in liquidity to keep the fart flowing strong. 30% go to the community for memes, contests, and giveaways. 10% are
+                        burned to keep the supply tight, and 10% are reserved for gas rewards, incentivizing holders to keep the gas meter high.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="bg-yellow-200 py-20 px-6" id="roadmap">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-yellow-900 text-center mb-12 tracking-wide">
+                Roadmap: Silent but Deadly Phases
+            </h2>
+            <div class="space-y-12 max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8">
+                    <div class="flex-shrink-0 w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center text-yellow-900 font-extrabold text-xl shadow-lg">
+                        1
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-yellow-900 mb-2">
+                            Phase 1: Ignition
+                        </h3>
+                        <p class="text-yellow-800 leading-relaxed">
+                            Launch $FRT on Binance Smart Chain with initial liquidity and community giveaways. Start building hype with meme contests and social media blasts.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8">
+                    <div class="flex-shrink-0 w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center text-yellow-900 font-extrabold text-xl shadow-lg">
+                        2
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-yellow-900 mb-2">
+                            Phase 2: Silent but Deadly
+                        </h3>
+                        <p class="text-yellow-800 leading-relaxed">
+                            Deploy the live gas meter widget and launch the fart-powered leaderboard. Reward top holders with exclusive NFTs and gas bonuses.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8">
+                    <div class="flex-shrink-0 w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center text-yellow-900 font-extrabold text-xl shadow-lg">
+                        3
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-yellow-900 mb-2">
+                            Phase 3: Gas Explosion
+                        </h3>
+                        <p class="text-yellow-800 leading-relaxed">
+                            Integrate the Jupiter-like swap widget for seamless $FRT trading. Launch the meme generator and host viral meme battles with prizes.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8">
+                    <div class="flex-shrink-0 w-20 h-20 rounded-full bg-yellow-400 flex items-center justify-center text-yellow-900 font-extrabold text-xl shadow-lg">
+                        4
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-yellow-900 mb-2">
+                            Phase 4: Full Release
+                        </h3>
+                        <p class="text-yellow-800 leading-relaxed">
+                            Expand partnerships, launch mobile apps, and introduce new gas-powered DeFi features. Keep the community engaged with continuous rewards and events.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Meme Generator Section -->
+    <section class="bg-yellow-50 py-20 px-6" id="meme-generator">
+        <div class="max-w-7xl mx-auto text-yellow-900">
+            <h2 class="text-4xl font-bold text-center mb-12 tracking-wide">
+                Meme Generator
+            </h2>
+            <div class="max-w-4xl mx-auto bg-yellow-100 rounded-xl shadow-lg p-8 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8">
+                <div class="w-full md:w-1/2 flex flex-col items-center">
+                    <img alt="Placeholder image for meme generator showing a blank canvas with text 'Upload or Select Image to Meme'" class="rounded-lg shadow-md w-full object-cover max-h-72" height="300" id="meme-image" src="https://storage.googleapis.com/a1aa/image/d38737b8-8b5b-47dd-6b9f-b01310f316dd.jpg"
+                        width="400" />
+                    <input accept="image/*" aria-label="Upload image for meme generator" class="mt-4 text-yellow-900" id="image-upload" type="file" />
+                </div>
+                <div class="w-full md:w-1/2 flex flex-col space-y-4">
+                    <input aria-label="Top text for meme" class="p-3 rounded border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 font-bold text-yellow-900" id="top-text" placeholder="Top Text" type="text" />
+                    <input aria-label="Bottom text for meme" class="p-3 rounded border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 font-bold text-yellow-900" id="bottom-text" placeholder="Bottom Text" type="text" />
+                    <button aria-label="Generate meme button" class="bg-yellow-600 hover:bg-yellow-700 text-yellow-100 font-bold py-3 rounded shadow-lg transition transform hover:scale-105 active:scale-95 select-none" id="generate-meme">
+       Generate Meme
+       <i class="fas fa-smile-beam ml-2">
+       </i>
+      </button>
+                    <a aria-label="Download generated meme" class="hidden mt-2 text-yellow-700 font-semibold underline text-center" download="frt-meme.png" href="#" id="download-meme">
+       Download Meme
+      </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Live Gas Meter Widget Section -->
+    <section class="bg-yellow-200 py-20 px-6" id="gas-meter">
+        <div class="max-w-7xl mx-auto text-yellow-900">
+            <h2 class="text-4xl font-bold text-center mb-12 tracking-wide">
+                Live Gas Meter
+            </h2>
+            <div class="max-w-md mx-auto bg-yellow-100 rounded-xl shadow-lg p-10 flex flex-col items-center space-y-6">
+                <i class="fas fa-wind fa-6x text-yellow-700 animate-pulse">
+     </i>
+                <div class="text-center">
+                    <p class="text-6xl font-extrabold" id="gas-level">
+                        0.00 GWEI
+                    </p>
+                    <p class="text-yellow-800 font-semibold tracking-wide">
+                        Current Binance Smart Chain Gas Price
+                    </p>
+                </div>
+                <button aria-label="Refresh gas price" class="bg-yellow-600 hover:bg-yellow-700 text-yellow-100 font-bold py-3 px-8 rounded shadow-lg transition transform hover:scale-105 active:scale-95 select-none" id="refresh-gas">
+      Refresh
+      <i class="fas fa-sync-alt ml-2">
+      </i>
+     </button>
+            </div>
+        </div>
+    </section>
+    <!-- Fart-Powered Leaderboard Section -->
+    <section class="bg-yellow-50 py-20 px-6" id="leaderboard">
+        <div class="max-w-7xl mx-auto text-yellow-900">
+            <h2 class="text-4xl font-bold text-center mb-12 tracking-wide">
+                Fart-Powered Leaderboard
+            </h2>
+            <div class="max-w-4xl mx-auto bg-yellow-100 rounded-xl shadow-lg p-6 overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-yellow-300 text-yellow-900 font-bold uppercase text-sm">
+                            <th class="py-3 px-4 border border-yellow-400 rounded-tl-lg">
+                                Rank
+                            </th>
+                            <th class="py-3 px-4 border border-yellow-400">
+                                Holder
+                            </th>
+                            <th class="py-3 px-4 border border-yellow-400">
+                                Gas Powered Score
+                            </th>
+                            <th class="py-3 px-4 border border-yellow-400 rounded-tr-lg">
+                                $FRT Held
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-yellow-900 font-semibold">
+                        <tr class="bg-yellow-50 hover:bg-yellow-200 transition">
+                            <td class="py-3 px-4 border border-yellow-400">
+                                1
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400 truncate max-w-xs" title="0xA1b2C3d4E5F678901234567890abcdef12345678">
+                                0xA1b2C3d4E5F678901234567890abcdef12345678
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                9,876
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                150,000,000
+                            </td>
+                        </tr>
+                        <tr class="bg-yellow-50 hover:bg-yellow-200 transition">
+                            <td class="py-3 px-4 border border-yellow-400">
+                                2
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400 truncate max-w-xs" title="0xB2c3D4e5F678901234567890abcdef1234567890">
+                                0xB2c3D4e5F678901234567890abcdef1234567890
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                8,432
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                120,000,000
+                            </td>
+                        </tr>
+                        <tr class="bg-yellow-50 hover:bg-yellow-200 transition">
+                            <td class="py-3 px-4 border border-yellow-400">
+                                3
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400 truncate max-w-xs" title="0xC3d4E5f678901234567890abcdef1234567890ab">
+                                0xC3d4E5f678901234567890abcdef1234567890ab
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                7,210
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                100,000,000
+                            </td>
+                        </tr>
+                        <tr class="bg-yellow-50 hover:bg-yellow-200 transition">
+                            <td class="py-3 px-4 border border-yellow-400">
+                                4
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400 truncate max-w-xs" title="0xD4e5F678901234567890abcdef1234567890abcd">
+                                0xD4e5F678901234567890abcdef1234567890abcd
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                6,543
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                85,000,000
+                            </td>
+                        </tr>
+                        <tr class="bg-yellow-50 hover:bg-yellow-200 transition">
+                            <td class="py-3 px-4 border border-yellow-400">
+                                5
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400 truncate max-w-xs" title="0xE5f678901234567890abcdef1234567890abcde1">
+                                0xE5f678901234567890abcdef1234567890abcde1
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                5,987
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                75,000,000
+                            </td>
+                        </tr>
+                        <tr class="bg-yellow-50 hover:bg-yellow-200 transition">
+                            <td class="py-3 px-4 border border-yellow-400">
+                                6
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400 truncate max-w-xs" title="0xF678901234567890abcdef1234567890abcde12">
+                                0xF678901234567890abcdef1234567890abcde12
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                5,432
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                70,000,000
+                            </td>
+                        </tr>
+                        <tr class="bg-yellow-50 hover:bg-yellow-200 transition">
+                            <td class="py-3 px-4 border border-yellow-400">
+                                7
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400 truncate max-w-xs" title="0x8901234567890abcdef1234567890abcde12345">
+                                0x8901234567890abcdef1234567890abcde12345
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                4,987
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                65,000,000
+                            </td>
+                        </tr>
+                        <tr class="bg-yellow-50 hover:bg-yellow-200 transition">
+                            <td class="py-3 px-4 border border-yellow-400">
+                                8
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400 truncate max-w-xs" title="0x901234567890abcdef1234567890abcde123456">
+                                0x901234567890abcdef1234567890abcde123456
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                4,543
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                60,000,000
+                            </td>
+                        </tr>
+                        <tr class="bg-yellow-50 hover:bg-yellow-200 transition">
+                            <td class="py-3 px-4 border border-yellow-400">
+                                9
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400 truncate max-w-xs" title="0x01234567890abcdef1234567890abcde1234567">
+                                0x01234567890abcdef1234567890abcde1234567
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                4,210
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                55,000,000
+                            </td>
+                        </tr>
+                        <tr class="bg-yellow-50 hover:bg-yellow-200 transition rounded-bl-lg rounded-br-lg">
+                            <td class="py-3 px-4 border border-yellow-400">
+                                10
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400 truncate max-w-xs" title="0x1234567890abcdef1234567890abcde12345678">
+                                0x1234567890abcdef1234567890abcde12345678
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                3,987
+                            </td>
+                            <td class="py-3 px-4 border border-yellow-400">
+                                50,000,000
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- Jupiter-like Swap Widget Section -->
+    <section class="bg-yellow-100 py-20 px-6" id="swap">
+        <div class="max-w-7xl mx-auto text-yellow-900">
+            <h2 class="text-4xl font-bold text-center mb-12 tracking-wide">
+                Swap $FRT Tokens
+            </h2>
+            <div class="max-w-md mx-auto bg-yellow-50 rounded-xl shadow-lg p-8">
+                <form aria-label="Token swap form" class="space-y-6" id="swap-form">
+                    <div>
+                        <label class="block font-semibold mb-2" for="from-token">
+        From
+       </label>
+                        <select aria-required="true" class="w-full p-3 rounded border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 font-semibold text-yellow-900" id="from-token" name="from-token">
+        <option value="bnb">
+         BNB
+        </option>
+        <option value="busd">
+         BUSD
+        </option>
+        <option value="usdt">
+         USDT
+        </option>
+       </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-2" for="from-amount">
+        Amount
+       </label>
+                        <input aria-required="true" class="w-full p-3 rounded border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 font-semibold text-yellow-900" id="from-amount" min="0" name="from-amount" placeholder="0.0" step="any" type="number"
+                        />
+                    </div>
+                    <div class="flex justify-center">
+                        <button aria-label="Switch tokens" class="text-yellow-700 hover:text-yellow-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded-full p-2 transform hover:rotate-180 transition" id="swap-switch" type="button">
+        <i class="fas fa-exchange-alt fa-2x">
+        </i>
+       </button>
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-2" for="to-token">
+        To
+       </label>
+                        <select aria-required="true" class="w-full p-3 rounded border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 font-semibold text-yellow-900" disabled="" id="to-token" name="to-token">
+        <option value="frt">
+         $FRT
+        </option>
+       </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-2" for="to-amount">
+        You Receive
+       </label>
+                        <input aria-readonly="true" class="w-full p-3 rounded border border-yellow-400 bg-yellow-200 font-semibold text-yellow-900" disabled="" id="to-amount" name="to-amount" placeholder="0.0 $FRT" type="text" />
+                    </div>
+                    <button aria-label="Swap tokens" class="w-full bg-yellow-600 hover:bg-yellow-700 text-yellow-100 font-bold py-4 rounded shadow-lg transition transform hover:scale-105 active:scale-95 select-none" type="submit">
+       Swap Now
+       <i class="fas fa-wind ml-2">
+       </i>
+      </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-yellow-400 text-yellow-900 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 text-center text-sm font-semibold select-none">
+            © 2024 $FRT Memecoin. Powered by pure gas and memes. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        // Navbar toggle for mobile
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        // Meme Generator Logic
+        const imageUpload = document.getElementById('image-upload');
+        const memeImage = document.getElementById('meme-image');
+        const topTextInput = document.getElementById('top-text');
+        const bottomTextInput = document.getElementById('bottom-text');
+        const generateMemeBtn = document.getElementById('generate-meme');
+        const downloadMemeLink = document.getElementById('download-meme');
+
+        let uploadedImage = null;
+
+        imageUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                uploadedImage = new Image();
+                uploadedImage.src = event.target.result;
+                uploadedImage.onload = () => {
+                    memeImage.src = uploadedImage.src;
+                    downloadMemeLink.classList.add('hidden');
+                };
+            };
+            reader.readAsDataURL(file);
+        });
+
+        generateMemeBtn.addEventListener('click', () => {
+            if (!uploadedImage) {
+                alert('Please upload an image first!');
+                return;
+            }
+            const topText = topTextInput.value.toUpperCase();
+            const bottomText = bottomTextInput.value.toUpperCase();
+
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = uploadedImage.width;
+            canvas.height = uploadedImage.height;
+
+            // Draw image
+            ctx.drawImage(uploadedImage, 0, 0);
+
+            // Text styles
+            const fontSize = Math.floor(canvas.height / 10);
+            ctx.font = `bold ${fontSize}px Impact, Arial Black, sans-serif`;
+            ctx.fillStyle = 'white';
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = fontSize / 15;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+
+            // Draw top text
+            if (topText) {
+                const x = canvas.width / 2;
+                const y = fontSize / 8;
+                ctx.fillText(topText, x, y);
+                ctx.strokeText(topText, x, y);
+            }
+
+            // Draw bottom text
+            if (bottomText) {
+                ctx.textBaseline = 'bottom';
+                const x = canvas.width / 2;
+                const y = canvas.height - fontSize / 8;
+                ctx.fillText(bottomText, x, y);
+                ctx.strokeText(bottomText, x, y);
+            }
+
+            // Update meme image with canvas data
+            memeImage.src = canvas.toDataURL('image/png');
+            downloadMemeLink.href = memeImage.src;
+            downloadMemeLink.classList.remove('hidden');
+        });
+
+        // Live Gas Meter Widget Logic
+        const gasLevelEl = document.getElementById('gas-level');
+        const refreshGasBtn = document.getElementById('refresh-gas');
+
+        async function fetchGasPrice() {
+            try {
+                // Binance Smart Chain gas price API (using bscscan public API)
+                // Since no API key, fallback to a public gas price API or simulate
+                // We'll simulate with random values between 5 and 20 GWEI for demo
+                // Replace with real API if available
+                const simulatedGas = (Math.random() * 15 + 5).toFixed(2);
+                gasLevelEl.textContent = `${simulatedGas} GWEI`;
+            } catch (error) {
+                gasLevelEl.textContent = 'N/A';
+            }
+        }
+
+        refreshGasBtn.addEventListener('click', () => {
+            gasLevelEl.textContent = 'Loading...';
+            fetchGasPrice();
+        });
+
+        // Initial fetch
+        fetchGasPrice();
+
+        // Swap Widget Logic (Simulated)
+        const swapForm = document.getElementById('swap-form');
+        const fromTokenSelect = document.getElementById('from-token');
+        const fromAmountInput = document.getElementById('from-amount');
+        const toAmountInput = document.getElementById('to-amount');
+        const swapSwitchBtn = document.getElementById('swap-switch');
+
+        // Fixed simulated exchange rates for demo
+        const rates = {
+            bnb: 1000, // 1 BNB = 1000 FRT
+            busd: 1, // 1 BUSD = 1 FRT
+            usdt: 1 // 1 USDT = 1 FRT
+        };
+
+        function updateToAmount() {
+            const fromToken = fromTokenSelect.value;
+            const fromAmount = parseFloat(fromAmountInput.value);
+            if (isNaN(fromAmount) || fromAmount <= 0) {
+                toAmountInput.value = '';
+                return;
+            }
+            const rate = rates[fromToken] || 0;
+            const toAmount = fromAmount * rate;
+            toAmountInput.value = `${toAmount.toLocaleString(undefined, {maximumFractionDigits: 2})} $FRT`;
+        }
+
+        fromAmountInput.addEventListener('input', updateToAmount);
+        fromTokenSelect.addEventListener('change', updateToAmount);
+
+        swapSwitchBtn.addEventListener('click', () => {
+            // For this widget, "to-token" is always $FRT, so just reset from-token to next option
+            const tokens = Object.keys(rates);
+            let currentIndex = tokens.indexOf(fromTokenSelect.value);
+            currentIndex = (currentIndex + 1) % tokens.length;
+            fromTokenSelect.value = tokens[currentIndex];
+            updateToAmount();
+        });
+
+        swapForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fromToken = fromTokenSelect.value.toUpperCase();
+            const fromAmount = fromAmountInput.value;
+            if (!fromAmount || parseFloat(fromAmount) <= 0) {
+                alert('Please enter a valid amount to swap.');
+                return;
+            }
+            alert(`Swapping ${fromAmount} ${fromToken} for $FRT tokens... (Simulated)`);
+        });
+    </script>
+    <style>
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .animate-float {
+            animation-name: float;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+    </style>
+</body>
+
+</html>

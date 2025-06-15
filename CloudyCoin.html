@@ -1,0 +1,299 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        CloudyCoin ($FLUFFY)
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Comfortaa', cursive;
+            background: #e6f0ff;
+            overflow-x: hidden;
+        }
+        /* Floating cloud animation */
+        
+        @keyframes floatCloud {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-15px) translateX(10px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+        
+        .float-cloud {
+            animation: floatCloud 6s ease-in-out infinite;
+        }
+        
+        .float-cloud-delay-1 {
+            animation-delay: 1.5s;
+        }
+        
+        .float-cloud-delay-2 {
+            animation-delay: 3s;
+        }
+        
+        .float-cloud-delay-3 {
+            animation-delay: 4.5s;
+        }
+        /* Gentle fade-in scroll animation */
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="relative min-h-screen text-blue-900">
+    <!-- Floating clouds top -->
+    <img alt="Soft fluffy white cloud floating gently in a serene blue sky with subtle shadows" aria-hidden="true" class="float-cloud absolute top-8 left-4 w-36 h-20 select-none pointer-events-none" height="90" src="https://storage.googleapis.com/a1aa/image/3312ba89-1192-43aa-23c3-b6e5c7bb18bc.jpg"
+        width="150" />
+    <img alt="Small white cloud with soft edges floating gently in a calm blue sky" aria-hidden="true" class="float-cloud float-cloud-delay-1 absolute top-16 right-6 w-28 h-16 select-none pointer-events-none" height="70" src="https://storage.googleapis.com/a1aa/image/3e58614c-40d4-4f11-3f82-6c663a932d39.jpg"
+        width="120" />
+    <img alt="Large fluffy white cloud with soft shadows floating gently in a bright blue sky" aria-hidden="true" class="float-cloud float-cloud-delay-2 absolute top-24 left-1/2 -translate-x-1/2 w-44 h-24 select-none pointer-events-none" height="100" src="https://storage.googleapis.com/a1aa/image/9c4a9e59-b8a5-4168-1732-7138e61e58e7.jpg"
+        width="180" />
+    <img alt="Medium fluffy white cloud drifting gently in a serene blue sky" aria-hidden="true" class="float-cloud float-cloud-delay-3 absolute top-32 right-20 w-32 h-20 select-none pointer-events-none" height="80" src="https://storage.googleapis.com/a1aa/image/baa60d33-169b-4cd0-a714-c112a8be4282.jpg"
+        width="130" />
+    <header class="relative z-10 bg-white bg-opacity-70 backdrop-blur-md shadow-md">
+        <nav class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img alt="CloudyCoin fluffy white cloud mascot with a happy smiling face and soft blue eyes" class="w-12 h-12 rounded-full" height="48" src="https://storage.googleapis.com/a1aa/image/3327a56c-3263-4e82-7898-9295e9c49d97.jpg" width="48" />
+                <h1 class="text-3xl font-bold tracking-wide text-blue-800 select-none">
+                    CloudyCoin
+                    <span class="text-blue-500 font-extrabold">
+       $FLUFFY
+      </span>
+                </h1>
+            </div>
+            <ul class="hidden md:flex space-x-10 text-blue-700 font-semibold">
+                <li>
+                    <a class="hover:text-blue-500 transition" href="#about">
+       About
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-blue-500 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-blue-500 transition" href="#mascot">
+       Mascot
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-blue-500 transition" href="#contact">
+       Contact
+      </a>
+                </li>
+            </ul>
+            <button aria-label="Toggle menu" class="md:hidden text-blue-700 focus:outline-none" id="menu-btn">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </nav>
+        <ul class="md:hidden bg-white bg-opacity-90 backdrop-blur-md shadow-inner flex flex-col space-y-4 px-6 py-4 max-w-xs mx-auto rounded-b-lg hidden text-blue-700 font-semibold" id="mobile-menu">
+            <li>
+                <a class="block hover:text-blue-500 transition" href="#about">
+      About
+     </a>
+            </li>
+            <li>
+                <a class="block hover:text-blue-500 transition" href="#tokenomics">
+      Tokenomics
+     </a>
+            </li>
+            <li>
+                <a class="block hover:text-blue-500 transition" href="#mascot">
+      Mascot
+     </a>
+            </li>
+            <li>
+                <a class="block hover:text-blue-500 transition" href="#contact">
+      Contact
+     </a>
+            </li>
+        </ul>
+    </header>
+    <main class="relative z-10 max-w-7xl mx-auto px-6 py-16 space-y-24">
+        <!-- Hero Section -->
+        <section class="text-center max-w-3xl mx-auto fade-in" id="about">
+            <h2 class="text-5xl font-extrabold text-blue-900 mb-6">
+                Welcome to CloudyCoin
+            </h2>
+            <p class="text-xl text-blue-700 leading-relaxed">
+                Embrace the soft, fluffy future of crypto with
+                <span class="font-bold text-blue-500">
+      $FLUFFY
+     </span> . Our cloud-themed token brings serenity, security, and a gentle touch to your portfolio.
+            </p>
+            <img alt="Serene blue sky with soft white clouds drifting gently, symbolizing calm and trust" class="mx-auto mt-10 rounded-xl shadow-lg" height="300" src="https://storage.googleapis.com/a1aa/image/40449d4b-c4f9-4449-0114-634d780d5fd5.jpg" width="600"
+            />
+        </section>
+        <!-- Tokenomics Section -->
+        <section class="max-w-5xl mx-auto fade-in" id="tokenomics">
+            <h3 class="text-4xl font-extrabold text-blue-900 mb-10 text-center">
+                Tokenomics
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
+                <div class="bg-white bg-opacity-80 rounded-3xl p-8 shadow-lg flex flex-col items-center space-y-4">
+                    <i class="fas fa-cloud-rain fa-3x text-blue-400">
+      </i>
+                    <h4 class="text-2xl font-bold text-blue-800">
+                        Total Supply
+                    </h4>
+                    <p class="text-blue-700 text-lg">
+                        1,000,000,000 $FLUFFY
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-80 rounded-3xl p-8 shadow-lg flex flex-col items-center space-y-4">
+                    <i class="fas fa-cloud-rain fa-3x text-blue-400">
+      </i>
+                    <h4 class="text-2xl font-bold text-blue-800">
+                        Liquidity Pool
+                    </h4>
+                    <p class="text-blue-700 text-lg">
+                        40% Locked for 1 Year
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-80 rounded-3xl p-8 shadow-lg flex flex-col items-center space-y-4">
+                    <i class="fas fa-cloud-rain fa-3x text-blue-400">
+      </i>
+                    <h4 class="text-2xl font-bold text-blue-800">
+                        Community Rewards
+                    </h4>
+                    <p class="text-blue-700 text-lg">
+                        30% Distributed via Airdrops &amp; Staking
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-80 rounded-3xl p-8 shadow-lg flex flex-col items-center space-y-4">
+                    <i class="fas fa-cloud-rain fa-3x text-blue-400">
+      </i>
+                    <h4 class="text-2xl font-bold text-blue-800">
+                        Development Fund
+                    </h4>
+                    <p class="text-blue-700 text-lg">
+                        20% Reserved for Growth &amp; Marketing
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-80 rounded-3xl p-8 shadow-lg flex flex-col items-center space-y-4">
+                    <i class="fas fa-cloud-rain fa-3x text-blue-400">
+      </i>
+                    <h4 class="text-2xl font-bold text-blue-800">
+                        Team Allocation
+                    </h4>
+                    <p class="text-blue-700 text-lg">
+                        10% Vested Over 2 Years
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-80 rounded-3xl p-8 shadow-lg flex flex-col items-center space-y-4">
+                    <i class="fas fa-cloud-rain fa-3x text-blue-400">
+      </i>
+                    <h4 class="text-2xl font-bold text-blue-800">
+                        Transaction Tax
+                    </h4>
+                    <p class="text-blue-700 text-lg">
+                        2% Redistributed to Holders
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Mascot Section -->
+        <section class="max-w-4xl mx-auto fade-in flex flex-col md:flex-row items-center md:space-x-12 space-y-10 md:space-y-0" id="mascot">
+            <img alt="CloudyCoin fluffy white cloud mascot with a big smile, soft blue eyes, and a playful expression, floating gently on a light blue background" class="w-72 h-72 rounded-full shadow-lg" height="320" src="https://storage.googleapis.com/a1aa/image/84bb2470-1f91-4dcf-d787-3afc88109c99.jpg"
+                width="320" />
+            <div>
+                <h3 class="text-4xl font-extrabold text-blue-900 mb-6">
+                    Meet Fluffy, Our Mascot
+                </h3>
+                <p class="text-blue-700 text-lg leading-relaxed">
+                    Fluffy embodies the spirit of CloudyCoin — soft, approachable, and full of potential. This cheerful cloud mascot guides our community through the skies of crypto, bringing joy and trust to every transaction.
+                </p>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="max-w-3xl mx-auto fade-in bg-white bg-opacity-80 rounded-3xl p-10 shadow-lg" id="contact">
+            <h3 class="text-4xl font-extrabold text-blue-900 mb-8 text-center">
+                Get in Touch
+            </h3>
+            <form action="#" class="space-y-6" method="POST" novalidate="">
+                <div>
+                    <label class="block text-blue-800 font-semibold mb-2" for="name">
+       Name
+      </label>
+                    <input class="w-full rounded-lg border border-blue-300 px-4 py-3 text-blue-900 placeholder-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400" id="name" name="name" placeholder="Your name" required="" type="text" />
+                </div>
+                <div>
+                    <label class="block text-blue-800 font-semibold mb-2" for="email">
+       Email
+      </label>
+                    <input class="w-full rounded-lg border border-blue-300 px-4 py-3 text-blue-900 placeholder-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400" id="email" name="email" placeholder="you@example.com" required="" type="email" />
+                </div>
+                <div>
+                    <label class="block text-blue-800 font-semibold mb-2" for="message">
+       Message
+      </label>
+                    <textarea class="w-full rounded-lg border border-blue-300 px-4 py-3 text-blue-900 placeholder-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400" id="message" name="message" placeholder="Write your message here..." required="" rows="4"></textarea>
+                </div>
+                <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg shadow-md transition" type="submit">
+      Send Message
+     </button>
+            </form>
+        </section>
+    </main>
+    <!-- Floating clouds bottom -->
+    <img alt="Soft fluffy white cloud floating gently near the bottom left corner on a serene blue background" aria-hidden="true" class="float-cloud absolute bottom-8 left-6 w-32 h-18 select-none pointer-events-none" height="80" src="https://storage.googleapis.com/a1aa/image/65fd0c09-18f7-406f-4d7d-748a1fc672f0.jpg"
+        width="140" />
+    <img alt="Medium fluffy white cloud drifting gently near the bottom right corner on a calm blue background" aria-hidden="true" class="float-cloud float-cloud-delay-1 absolute bottom-12 right-10 w-40 h-22 select-none pointer-events-none" height="90" src="https://storage.googleapis.com/a1aa/image/0236928d-6aa6-443f-8915-bc97c4b9f442.jpg"
+        width="160" />
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll fade-in animation
+        const faders = document.querySelectorAll('.fade-in');
+
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+
+</html>

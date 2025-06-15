@@ -1,0 +1,656 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        $MOO - Cow-Powered DeFi on Ethereum
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+        /* Milking animation */
+        
+        @keyframes milk-squirt {
+            0% {
+                height: 0;
+                opacity: 0;
+            }
+            50% {
+                height: 60px;
+                opacity: 1;
+            }
+            100% {
+                height: 0;
+                opacity: 0;
+            }
+        }
+        
+        .milk-squirt {
+            animation: milk-squirt 1.5s ease-in-out infinite;
+            background: #fef3c7;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            width: 12px;
+            margin: 0 auto;
+            filter: drop-shadow(0 0 2px #fbbf24);
+        }
+        /* Cream pie chart slice */
+        
+        .slice-cream {
+            background-color: #fef3c7;
+        }
+        
+        .slice-butter {
+            background-color: #fbbf24;
+        }
+        
+        .slice-milk {
+            background-color: #dbeafe;
+        }
+        /* Milking mini game styles */
+        
+        .milk-bucket {
+            width: 120px;
+            height: 140px;
+            background: linear-gradient(180deg, #fef3c7 0%, #fbbf24 100%);
+            border-radius: 0 0 40% 40% / 0 0 30% 30%;
+            box-shadow: inset 0 0 10px #fbbf24;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .milk-level {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: #fef3c7;
+            transition: height 0.3s ease;
+            border-radius: 0 0 40% 40% / 0 0 30% 30%;
+        }
+        /* Swap widget input */
+        
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-green-50 to-green-100 text-gray-900 min-h-screen flex flex-col">
+    <header class="bg-green-800 text-green-50 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex flex-wrap items-center justify-between p-4">
+            <a class="text-3xl font-fredoka flex items-center space-x-2" href="#hero">
+                <img alt="Cartoon cow head with big eyes and a bell" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/ee6f56d8-323a-4b24-41be-dbd4c16e1f06.jpg" width="40" />
+                <span>
+      $MOO
+     </span>
+            </a>
+            <ul class="flex space-x-6 text-lg font-semibold">
+                <li>
+                    <a class="hover:text-yellow-300 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-300 transition" href="#roadmap">
+       Udder Domination
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-300 transition" href="#gallery">
+       Meme Pasture
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-300 transition" href="#milking-game">
+       Milking Game
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-300 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-300 transition" href="#swap">
+       Swap
+      </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="flex-grow container mx-auto px-4 py-10 space-y-20 max-w-7xl">
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center gap-10 md:gap-20" id="hero">
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-fredoka text-green-900 mb-4 leading-tight">
+                    Welcome to
+                    <span class="text-yellow-400">
+       $MOO
+      </span>
+                    <br/> The Cow-Powered DeFi on Ethereum
+                </h1>
+                <p class="text-lg md:text-xl text-green-800 max-w-xl mx-auto md:mx-0 mb-8">
+                    Milk your gains with the freshest yield farming, udderly hilarious memes, and a community that’s all about that cream.
+                </p>
+                <a class="inline-block bg-yellow-400 hover:bg-yellow-500 text-green-900 font-bold py-3 px-8 rounded-full shadow-lg transition" href="#swap">
+      Start Milking $MOO
+     </a>
+            </div>
+            <div class="flex-1 flex justify-center md:justify-end relative">
+                <!-- Cow SVG with milking animation -->
+                <div class="relative w-64 h-64">
+                    <img alt="Cartoon cow standing side view with big eyes and a golden bell around neck on green pasture" class="w-64 h-64 object-contain" height="256" src="https://storage.googleapis.com/a1aa/image/95d6861a-7174-4137-d30f-ffe2eba14b27.jpg" width="256" />
+                    <!-- Udder with milking animation -->
+                    <div aria-hidden="true" class="absolute bottom-16 left-1/2 -translate-x-1/2 w-12 h-16 bg-pink-300 rounded-full flex flex-col items-center justify-end overflow-visible">
+                        <div class="milk-squirt">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tokenomics Section -->
+        <section class="space-y-8" id="tokenomics">
+            <h2 class="text-4xl font-fredoka text-green-900 text-center mb-6">
+                Moo-Tokenomics
+            </h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                <!-- Cream Pie Chart -->
+                <div class="relative w-64 h-64">
+                    <svg class="w-64 h-64 mx-auto" viewbox="0 0 32 32">
+       <circle cx="16" cy="16" fill="#fef3c7" r="16">
+       </circle>
+       <path d="M16 16 L16 0 A16 16 0 0 1 30.784 10.784 Z" fill="#fbbf24">
+       </path>
+       <path d="M16 16 L30.784 10.784 A16 16 0 0 1 16 32 Z" fill="#dbeafe">
+       </path>
+      </svg>
+                    <div class="absolute inset-0 flex flex-col justify-center items-center pointer-events-none">
+                        <span class="text-2xl font-bold text-green-900">
+        100M $MOO
+       </span>
+                        <span class="text-sm text-green-700">
+        Total Supply
+       </span>
+                    </div>
+                </div>
+                <!-- Tokenomics details -->
+                <div class="max-w-md space-y-6 text-green-900 font-semibold text-lg">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-6 h-6 rounded-full bg-yellow-400">
+                        </div>
+                        <p>
+                            40% Cream (Liquidity &amp; Farming Rewards)
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-6 h-6 rounded-full bg-yellow-600">
+                        </div>
+                        <p>
+                            35% Butter (Team &amp; Development)
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-6 h-6 rounded-full bg-blue-300">
+                        </div>
+                        <p>
+                            25% Milk (Community &amp; Marketing)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Roadmap Section -->
+        <section class="space-y-10" id="roadmap">
+            <h2 class="text-4xl font-fredoka text-green-900 text-center mb-6">
+                Udder Domination Roadmap
+            </h2>
+            <ol class="border-l-4 border-yellow-400 max-w-4xl mx-auto space-y-10">
+                <li class="pl-8 relative">
+                    <span class="absolute -left-5 top-0 w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-green-900 font-bold text-lg">
+       1
+      </span>
+                    <h3 class="text-2xl font-bold mb-1">
+                        Pasture Preparation
+                    </h3>
+                    <p class="text-green-800 max-w-xl">
+                        Launch $MOO token on Ethereum mainnet with liquidity pools and initial farming rewards.
+                    </p>
+                </li>
+                <li class="pl-8 relative">
+                    <span class="absolute -left-5 top-0 w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-green-900 font-bold text-lg">
+       2
+      </span>
+                    <h3 class="text-2xl font-bold mb-1">
+                        Udderly Milking Mini Game
+                    </h3>
+                    <p class="text-green-800 max-w-xl">
+                        Release interactive milking mini game to earn bonus $MOO tokens and leaderboard rewards.
+                    </p>
+                </li>
+                <li class="pl-8 relative">
+                    <span class="absolute -left-5 top-0 w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-green-900 font-bold text-lg">
+       3
+      </span>
+                    <h3 class="text-2xl font-bold mb-1">
+                        Meme Pasture Gallery
+                    </h3>
+                    <p class="text-green-800 max-w-xl">
+                        Community-driven meme pasture gallery with NFT integration and contests.
+                    </p>
+                </li>
+                <li class="pl-8 relative">
+                    <span class="absolute -left-5 top-0 w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-green-900 font-bold text-lg">
+       4
+      </span>
+                    <h3 class="text-2xl font-bold mb-1">
+                        Cowbell Countdown &amp; Token Burn
+                    </h3>
+                    <p class="text-green-800 max-w-xl">
+                        Launch cowbell countdown timer to the next $MOO token burn event for scarcity and hype.
+                    </p>
+                </li>
+                <li class="pl-8 relative">
+                    <span class="absolute -left-5 top-0 w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center text-green-900 font-bold text-lg">
+       5
+      </span>
+                    <h3 class="text-2xl font-bold mb-1">
+                        Wallet Leaderboard &amp; Swap Widget
+                    </h3>
+                    <p class="text-green-800 max-w-xl">
+                        Integrate wallet leaderboard and seamless swap widget for easy $MOO trading and community competition.
+                    </p>
+                </li>
+            </ol>
+        </section>
+        <!-- Meme Pasture Gallery -->
+        <section class="space-y-8" id="gallery">
+            <h2 class="text-4xl font-fredoka text-green-900 text-center mb-6">
+                Meme Pasture Gallery
+            </h2>
+            <div aria-label="Gallery of cow-themed memes and DeFi parody images" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                <img alt="Funny cartoon cow wearing sunglasses and holding Ethereum coin with dollar signs in background" class="rounded-lg shadow-lg object-cover w-full h-60" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/635e1f8b-ad10-4a8e-fb31-228e624fc20b.jpg"
+                    width="400" />
+                <img alt="Meme of a cow sitting on a pile of gold coins with Ethereum logo on pasture" class="rounded-lg shadow-lg object-cover w-full h-60" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/accc9e3c-af5f-4cc1-c8cd-d79ce7fe8d06.jpg"
+                    width="400" />
+                <img alt="Cartoon cow farmer milking a giant Ethereum token with a big smile" class="rounded-lg shadow-lg object-cover w-full h-60" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ce9c20ff-a741-4222-daf6-00b5654c1a96.jpg" width="400"
+                />
+                <img alt="Cow wearing a crown standing on a hill of DeFi tokens with a sunset background" class="rounded-lg shadow-lg object-cover w-full h-60" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f0a254e2-c916-4319-fc88-0b97e093e449.jpg"
+                    width="400" />
+                <img alt="Funny cow with a bell jumping over Ethereum logo with stars and sparkles" class="rounded-lg shadow-lg object-cover w-full h-60" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/cf233f1c-19e2-456c-0dab-6640ee3d1325.jpg"
+                    width="400" />
+                <img alt="Cartoon cow holding a smartphone showing $MOO token price chart going up" class="rounded-lg shadow-lg object-cover w-full h-60" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/44de2a83-3b0b-44b7-e20e-67942e6f4a31.jpg"
+                    width="400" />
+                <img alt="Cow with sunglasses and gold chain standing next to Ethereum logo with neon lights" class="rounded-lg shadow-lg object-cover w-full h-60" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4d543d46-36eb-4572-9f9d-f57ed51c3dec.jpg"
+                    width="400" />
+                <img alt="Cartoon cow riding a rocket with Ethereum logo blasting off into space" class="rounded-lg shadow-lg object-cover w-full h-60" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/acab2209-2f77-47e2-09c7-0745fe98eb66.jpg"
+                    width="400" />
+            </div>
+        </section>
+        <!-- Cowbell Countdown to Burn -->
+        <section aria-live="polite" class="bg-yellow-400 rounded-xl p-8 max-w-3xl mx-auto text-green-900 text-center shadow-lg" id="countdown">
+            <h2 class="text-4xl font-fredoka mb-4">
+                Cowbell Countdown to Next $MOO Burn
+            </h2>
+            <div aria-label="Countdown timer" class="text-6xl font-bold font-mono tracking-widest" id="countdown-timer">
+                00:00:00:00
+            </div>
+            <p class="mt-4 text-lg font-semibold">
+                Time left until the next token burn event
+            </p>
+            <div class="mt-6">
+                <img alt="Golden cowbell with a clapper ringing and sound waves around it" class="mx-auto w-24 h-24 animate-bounce" height="100" src="https://storage.googleapis.com/a1aa/image/4c61955c-0830-4eb4-dfcb-fd9b8ae476df.jpg" width="100" />
+            </div>
+        </section>
+        <!-- Milking Mini Game -->
+        <section class="space-y-8 max-w-3xl mx-auto" id="milking-game">
+            <h2 class="text-4xl font-fredoka text-green-900 text-center mb-6">
+                Milking Mini Game
+            </h2>
+            <p class="text-center text-green-800 mb-4">
+                Click the udder to milk and fill your bucket! Earn bonus $MOO tokens based on how full your bucket gets.
+            </p>
+            <div class="flex flex-col items-center space-y-6">
+                <div class="relative w-48 h-48">
+                    <img alt="Closeup cartoon cow udder with pink teats and shiny highlights" aria-label="Udder to click for milking" aria-pressed="false" class="w-48 h-48 object-contain cursor-pointer select-none" height="192" id="udder" role="button" src="https://storage.googleapis.com/a1aa/image/cb8a68e5-72e5-4824-952f-c88d57f721cd.jpg"
+                        tabindex="0" width="192" />
+                    <div aria-label="Milk bucket showing current milk level" class="milk-bucket absolute -right-32 bottom-0 flex flex-col items-center justify-end">
+                        <div class="milk-level" id="milk-level" style="height: 0%;">
+                        </div>
+                        <img alt="Yellow milk bucket with rounded bottom and shiny highlights" class="absolute bottom-0 left-0 w-full h-full object-contain pointer-events-none" height="140" src="https://storage.googleapis.com/a1aa/image/ee9816d8-28d9-45fb-26b9-3662cec58f1f.jpg"
+                            width="120" />
+                    </div>
+                </div>
+                <button aria-label="Reset milking bucket" class="bg-green-800 text-yellow-400 font-bold py-2 px-6 rounded-full shadow hover:bg-green-900 transition" id="milk-reset">
+      Empty Bucket
+     </button>
+                <p aria-live="polite" class="text-green-900 font-semibold" id="milk-status">
+                    Milk collected: 0%
+                </p>
+            </div>
+        </section>
+        <!-- Wallet Leaderboard -->
+        <section class="space-y-8 max-w-4xl mx-auto" id="leaderboard">
+            <h2 class="text-4xl font-fredoka text-green-900 text-center mb-6">
+                Wallet Leaderboard
+            </h2>
+            <table class="w-full text-left border-collapse shadow-lg rounded-lg overflow-hidden">
+                <thead class="bg-yellow-400 text-green-900 font-bold text-lg">
+                    <tr>
+                        <th class="py-3 px-4">
+                            Rank
+                        </th>
+                        <th class="py-3 px-4">
+                            Wallet Address
+                        </th>
+                        <th class="py-3 px-4">
+                            $MOO Balance
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-green-50 text-green-900 font-semibold">
+                    <tr class="border-b border-green-200 hover:bg-yellow-100 transition">
+                        <td class="py-3 px-4">
+                            1
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs" title="0xA1B2C3D4E5F678901234567890ABCDEF12345678">
+                            0xA1B2C3D4E5F678901234567890ABCDEF12345678
+                        </td>
+                        <td class="py-3 px-4">
+                            1,250,000 $MOO
+                        </td>
+                    </tr>
+                    <tr class="border-b border-green-200 hover:bg-yellow-100 transition">
+                        <td class="py-3 px-4">
+                            2
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs" title="0xB2C3D4E5F678901234567890ABCDEF1234567890">
+                            0xB2C3D4E5F678901234567890ABCDEF1234567890
+                        </td>
+                        <td class="py-3 px-4">
+                            980,000 $MOO
+                        </td>
+                    </tr>
+                    <tr class="border-b border-green-200 hover:bg-yellow-100 transition">
+                        <td class="py-3 px-4">
+                            3
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs" title="0xC3D4E5F678901234567890ABCDEF1234567890AB">
+                            0xC3D4E5F678901234567890ABCDEF1234567890AB
+                        </td>
+                        <td class="py-3 px-4">
+                            750,000 $MOO
+                        </td>
+                    </tr>
+                    <tr class="border-b border-green-200 hover:bg-yellow-100 transition">
+                        <td class="py-3 px-4">
+                            4
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs" title="0xD4E5F678901234567890ABCDEF1234567890ABCD">
+                            0xD4E5F678901234567890ABCDEF1234567890ABCD
+                        </td>
+                        <td class="py-3 px-4">
+                            620,000 $MOO
+                        </td>
+                    </tr>
+                    <tr class="border-b border-green-200 hover:bg-yellow-100 transition">
+                        <td class="py-3 px-4">
+                            5
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs" title="0xE5F678901234567890ABCDEF1234567890ABCDE1">
+                            0xE5F678901234567890ABCDEF1234567890ABCDE1
+                        </td>
+                        <td class="py-3 px-4">
+                            500,000 $MOO
+                        </td>
+                    </tr>
+                    <tr class="border-b border-green-200 hover:bg-yellow-100 transition">
+                        <td class="py-3 px-4">
+                            6
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs" title="0xF678901234567890ABCDEF1234567890ABCDE123">
+                            0xF678901234567890ABCDEF1234567890ABCDE123
+                        </td>
+                        <td class="py-3 px-4">
+                            450,000 $MOO
+                        </td>
+                    </tr>
+                    <tr class="border-b border-green-200 hover:bg-yellow-100 transition">
+                        <td class="py-3 px-4">
+                            7
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs" title="0x78901234567890ABCDEF1234567890ABCDE12345">
+                            0x78901234567890ABCDEF1234567890ABCDE12345
+                        </td>
+                        <td class="py-3 px-4">
+                            400,000 $MOO
+                        </td>
+                    </tr>
+                    <tr class="border-b border-green-200 hover:bg-yellow-100 transition">
+                        <td class="py-3 px-4">
+                            8
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs" title="0x8901234567890ABCDEF1234567890ABCDE123456">
+                            0x8901234567890ABCDEF1234567890ABCDE123456
+                        </td>
+                        <td class="py-3 px-4">
+                            350,000 $MOO
+                        </td>
+                    </tr>
+                    <tr class="border-b border-green-200 hover:bg-yellow-100 transition">
+                        <td class="py-3 px-4">
+                            9
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs" title="0x901234567890ABCDEF1234567890ABCDE1234567">
+                            0x901234567890ABCDEF1234567890ABCDE1234567
+                        </td>
+                        <td class="py-3 px-4">
+                            300,000 $MOO
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-yellow-100 transition">
+                        <td class="py-3 px-4">
+                            10
+                        </td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs" title="0x01234567890ABCDEF1234567890ABCDE12345678">
+                            0x01234567890ABCDEF1234567890ABCDE12345678
+                        </td>
+                        <td class="py-3 px-4">
+                            250,000 $MOO
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- Swap Widget -->
+        <section aria-label="Swap widget for exchanging Ethereum and $MOO tokens" class="bg-green-50 rounded-xl p-8 max-w-3xl mx-auto shadow-lg space-y-6" id="swap">
+            <h2 class="text-4xl font-fredoka text-green-900 text-center mb-4">
+                Swap $MOO Tokens
+            </h2>
+            <form aria-describedby="swap-info" aria-live="polite" class="space-y-6" id="swap-form">
+                <div>
+                    <label class="block text-green-900 font-semibold mb-1" for="from-token">
+       From Token
+      </label>
+                    <select aria-required="true" class="w-full border border-green-300 rounded-md p-2 text-green-900 font-semibold" id="from-token" name="from-token">
+       <option value="ETH">
+        Ethereum (ETH)
+       </option>
+       <option value="MOO">
+        $MOO Token
+       </option>
+      </select>
+                </div>
+                <div>
+                    <label class="block text-green-900 font-semibold mb-1" for="from-amount">
+       Amount
+      </label>
+                    <input aria-required="true" class="w-full border border-green-300 rounded-md p-2 text-green-900 font-semibold" id="from-amount" min="0" name="from-amount" placeholder="0.0" step="any" type="number" />
+                </div>
+                <div>
+                    <label class="block text-green-900 font-semibold mb-1" for="to-token">
+       To Token
+      </label>
+                    <select aria-required="true" class="w-full border border-green-300 rounded-md p-2 text-green-900 font-semibold" id="to-token" name="to-token">
+       <option value="MOO">
+        $MOO Token
+       </option>
+       <option value="ETH">
+        Ethereum (ETH)
+       </option>
+      </select>
+                </div>
+                <div>
+                    <label class="block text-green-900 font-semibold mb-1" for="to-amount">
+       Estimated Amount
+      </label>
+                    <input aria-readonly="true" class="w-full border border-green-300 rounded-md p-2 bg-green-100 text-green-900 font-semibold" id="to-amount" name="to-amount" readonly="" type="text" />
+                </div>
+                <button class="w-full bg-yellow-400 hover:bg-yellow-500 text-green-900 font-bold py-3 rounded-full shadow-lg transition" type="submit">
+      Swap Now
+     </button>
+            </form>
+            <p class="text-green-700 text-sm text-center" id="swap-info">
+                *This is a parody swap widget. No real transactions will occur.
+            </p>
+        </section>
+    </main>
+    <footer class="bg-green-800 text-green-50 py-6 mt-20 text-center font-semibold">
+        <p>
+            © 2024 $MOO DeFi Parody. Udderly fun and not financial advice.
+        </p>
+    </footer>
+    <script>
+        // Cowbell countdown timer (set to a fixed future date/time)
+        const countdownElement = document.getElementById('countdown-timer');
+        // Set burn date 3 days from now
+        const burnDate = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000);
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = burnDate - now;
+            if (diff <= 0) {
+                countdownElement.textContent = '00:00:00:00';
+                return;
+            }
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+            countdownElement.textContent = [
+                days.toString().padStart(2, '0'),
+                hours.toString().padStart(2, '0'),
+                minutes.toString().padStart(2, '0'),
+                seconds.toString().padStart(2, '0'),
+            ].join(':');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Milking mini game logic
+        const udder = document.getElementById('udder');
+        const milkLevel = document.getElementById('milk-level');
+        const milkStatus = document.getElementById('milk-status');
+        const milkReset = document.getElementById('milk-reset');
+
+        let milkPercent = 0;
+        const milkIncrement = 10; // each click adds 10%
+
+        function updateMilkUI() {
+            milkLevel.style.height = milkPercent + '%';
+            milkStatus.textContent = `Milk collected: ${milkPercent}%`;
+            udder.setAttribute('aria-pressed', milkPercent > 0 ? 'true' : 'false');
+        }
+
+        udder.addEventListener('click', () => {
+            if (milkPercent < 100) {
+                milkPercent += milkIncrement;
+                if (milkPercent > 100) milkPercent = 100;
+                updateMilkUI();
+            }
+        });
+
+        udder.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                udder.click();
+            }
+        });
+
+        milkReset.addEventListener('click', () => {
+            milkPercent = 0;
+            updateMilkUI();
+        });
+
+        updateMilkUI();
+
+        // Swap widget logic (parody, fixed rates)
+        const swapForm = document.getElementById('swap-form');
+        const fromTokenSelect = document.getElementById('from-token');
+        const toTokenSelect = document.getElementById('to-token');
+        const fromAmountInput = document.getElementById('from-amount');
+        const toAmountInput = document.getElementById('to-amount');
+
+        // Fake exchange rates
+        // 1 ETH = 10000 MOO
+        // 1 MOO = 0.0001 ETH
+        function calculateSwap() {
+            const fromToken = fromTokenSelect.value;
+            const toToken = toTokenSelect.value;
+            const fromAmount = parseFloat(fromAmountInput.value);
+            if (isNaN(fromAmount) || fromAmount <= 0) {
+                toAmountInput.value = '';
+                return;
+            }
+            if (fromToken === toToken) {
+                toAmountInput.value = fromAmount.toFixed(6);
+                return;
+            }
+            let toAmount = 0;
+            if (fromToken === 'ETH' && toToken === 'MOO') {
+                toAmount = fromAmount * 10000;
+            } else if (fromToken === 'MOO' && toToken === 'ETH') {
+                toAmount = fromAmount * 0.0001;
+            }
+            toAmountInput.value = toAmount.toFixed(6);
+        }
+
+        fromTokenSelect.addEventListener('change', () => {
+            // Swap toToken if same as fromToken
+            if (toTokenSelect.value === fromTokenSelect.value) {
+                toTokenSelect.value = fromTokenSelect.value === 'ETH' ? 'MOO' : 'ETH';
+            }
+            calculateSwap();
+        });
+        toTokenSelect.addEventListener('change', () => {
+            // Swap fromToken if same as toToken
+            if (toTokenSelect.value === fromTokenSelect.value) {
+                fromTokenSelect.value = toTokenSelect.value === 'ETH' ? 'MOO' : 'ETH';
+            }
+            calculateSwap();
+        });
+        fromAmountInput.addEventListener('input', calculateSwap);
+
+        swapForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert(
+                'This is a parody swap widget. No real transactions will occur.\n\n' +
+                `Swapping ${fromAmountInput.value} ${fromTokenSelect.value} to approximately ${toAmountInput.value} ${toTokenSelect.value}.`
+            );
+        });
+    </script>
+</body>
+
+</html>

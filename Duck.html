@@ -1,0 +1,456 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Duck Dynasty Coin ($QUACK)
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #d0f0fd;
+            overflow-x: hidden;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+        /* Pond ripple animation background */
+        
+        .pond {
+            position: relative;
+            overflow: hidden;
+            background: #a0d8ef;
+        }
+        
+        .ripple {
+            position: absolute;
+            border: 3px solid #7ec8e3;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: rippleAnim 6s linear infinite;
+            pointer-events: none;
+        }
+        
+        .ripple:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 40%;
+            left: 30%;
+            animation-delay: 0s;
+        }
+        
+        .ripple:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            top: 60%;
+            left: 50%;
+            animation-delay: 2s;
+        }
+        
+        .ripple:nth-child(3) {
+            width: 250px;
+            height: 250px;
+            top: 50%;
+            left: 70%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes rippleAnim {
+            0% {
+                transform: scale(0.7);
+                opacity: 0.4;
+            }
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+            }
+        }
+        /* Floating ducks animation */
+        
+        .floating-duck {
+            position: absolute;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            will-change: transform;
+        }
+        
+        .duck1 {
+            width: 80px;
+            top: 15%;
+            left: 10%;
+            animation-name: float1;
+            animation-duration: 6s;
+        }
+        
+        .duck2 {
+            width: 60px;
+            top: 30%;
+            left: 80%;
+            animation-name: float2;
+            animation-duration: 8s;
+        }
+        
+        .duck3 {
+            width: 70px;
+            top: 50%;
+            left: 40%;
+            animation-name: float3;
+            animation-duration: 7s;
+        }
+        
+        .duck4 {
+            width: 50px;
+            top: 70%;
+            left: 75%;
+            animation-name: float4;
+            animation-duration: 9s;
+        }
+        
+        .duck5 {
+            width: 65px;
+            top: 80%;
+            left: 20%;
+            animation-name: float5;
+            animation-duration: 10s;
+        }
+        
+        @keyframes float1 {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            100% {
+                transform: translateY(-15px) translateX(10px);
+            }
+        }
+        
+        @keyframes float2 {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            100% {
+                transform: translateY(-20px) translateX(-15px);
+            }
+        }
+        
+        @keyframes float3 {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            100% {
+                transform: translateY(-10px) translateX(20px);
+            }
+        }
+        
+        @keyframes float4 {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            100% {
+                transform: translateY(-18px) translateX(12px);
+            }
+        }
+        
+        @keyframes float5 {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            100% {
+                transform: translateY(-12px) translateX(-10px);
+            }
+        }
+        /* Tokenomics splash transitions */
+        
+        .tokenomics-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .tokenomics-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        
+        .tokenomics-item .splash {
+            position: absolute;
+            border-radius: 50%;
+            background: #4ade80;
+            opacity: 0.4;
+            pointer-events: none;
+            transform: scale(0);
+            animation: splashAnim 0.6s forwards;
+        }
+        
+        @keyframes splashAnim {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        /* Roadmap lily pad layout */
+        
+        .roadmap-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .lilypad {
+            background: #6bbf59;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            padding: 1rem;
+            text-align: center;
+            user-select: none;
+        }
+        
+        .lilypad::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #4a8c2f;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+        
+        .lilypad.left::before {
+            right: -10px;
+        }
+        
+        .lilypad.right::before {
+            left: -10px;
+        }
+        
+        .roadmap-line {
+            position: absolute;
+            height: 4px;
+            background: #4a8c2f;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+        /* Responsive lily pad layout */
+        
+        @media (min-width: 768px) {
+            .roadmap-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 2fr 1fr;
+                gap: 3rem 2rem;
+                position: relative;
+            }
+            .lilypad:nth-child(odd) {
+                justify-self: start;
+                grid-row: 1;
+            }
+            .lilypad:nth-child(even) {
+                justify-self: end;
+                grid-row: 2;
+            }
+            .roadmap-line-1 {
+                width: calc(100% - 160px);
+                left: 140px;
+                top: 25%;
+            }
+            .roadmap-line-2 {
+                width: calc(100% - 160px);
+                left: 0;
+                top: 75%;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .roadmap-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+            }
+            .lilypad {
+                width: 120px;
+                height: 120px;
+            }
+            .lilypad::before {
+                display: none;
+            }
+            .roadmap-line {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-gray-900">
+    <!-- Hero Section -->
+    <section class="relative pond min-h-screen flex flex-col justify-center items-center px-6 text-center overflow-hidden">
+        <h1 class="text-5xl md:text-7xl font-bold text-green-800 drop-shadow-lg mb-6">
+            Duck Dynasty Coin
+        </h1>
+        <p class="text-xl md:text-2xl text-green-700 mb-8 font-semibold">
+            $QUACK - The Water-Themed Meme Coin Taking Over the Pond!
+        </p>
+        <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition" href="#tokenomics">
+    Dive In
+   </a>
+        <!-- Pond Ripple Animations -->
+        <span class="ripple">
+   </span>
+        <span class="ripple">
+   </span>
+        <span class="ripple">
+   </span>
+        <!-- Floating Ducks -->
+        <img alt="A cute yellow cartoon duck floating gently on water with a happy expression, wings slightly spread" class="floating-duck duck1" draggable="false" height="80" src="https://storage.googleapis.com/a1aa/image/7d7cd74f-b8bf-49d8-d45a-917542b33adc.jpg"
+            width="80" />
+        <img alt="A small orange cartoon duck with a playful smile floating on water, ripples around it" class="floating-duck duck2" draggable="false" height="60" src="https://storage.googleapis.com/a1aa/image/1193b00d-e7cb-4a4b-ab06-f5e76f2205ab.jpg" width="60"
+        />
+        <img alt="A bright yellow cartoon duck with a tilted head floating on a pond, water reflections visible" class="floating-duck duck3" draggable="false" height="70" src="https://storage.googleapis.com/a1aa/image/4c430f7a-b2f2-45b8-64aa-72321ff5cf19.jpg"
+            width="70" />
+        <img alt="A small golden cartoon duck with a cheeky grin floating on water, small splashes around" class="floating-duck duck4" draggable="false" height="50" src="https://storage.googleapis.com/a1aa/image/2bae5fee-e7c3-443c-caf6-e8a08a8c1964.jpg" width="50"
+        />
+        <img alt="A medium-sized yellow cartoon duck with bright eyes floating on a calm pond, gentle ripples" class="floating-duck duck5" draggable="false" height="65" src="https://storage.googleapis.com/a1aa/image/7d8817a6-055a-494f-59aa-3c9da1a8673e.jpg" width="65"
+        />
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="py-20 bg-gradient-to-b from-green-100 to-green-50 px-6" id="tokenomics">
+        <div class="max-w-6xl mx-auto text-center mb-12">
+            <h2 class="text-4xl font-bold text-green-800 mb-4">
+                Tokenomics
+            </h2>
+            <p class="text-green-700 max-w-3xl mx-auto text-lg">
+                Discover how $QUACK is designed to make waves in the crypto pond.
+            </p>
+        </div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="tokenomics-item relative bg-white p-8 shadow-lg" data-percent="40%">
+                <h3 class="text-2xl font-bold text-green-700 mb-2">
+                    Liquidity Pool
+                </h3>
+                <p class="text-green-600 text-lg font-semibold">
+                    40%
+                </p>
+            </div>
+            <div class="tokenomics-item relative bg-white p-8 shadow-lg" data-percent="25%">
+                <h3 class="text-2xl font-bold text-green-700 mb-2">
+                    Marketing
+                </h3>
+                <p class="text-green-600 text-lg font-semibold">
+                    25%
+                </p>
+            </div>
+            <div class="tokenomics-item relative bg-white p-8 shadow-lg" data-percent="20%">
+                <h3 class="text-2xl font-bold text-green-700 mb-2">
+                    Development
+                </h3>
+                <p class="text-green-600 text-lg font-semibold">
+                    20%
+                </p>
+            </div>
+            <div class="tokenomics-item relative bg-white p-8 shadow-lg" data-percent="15%">
+                <h3 class="text-2xl font-bold text-green-700 mb-2">
+                    Community Rewards
+                </h3>
+                <p class="text-green-600 text-lg font-semibold">
+                    15%
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="py-20 px-6 bg-green-50" id="roadmap">
+        <div class="max-w-6xl mx-auto text-center mb-12">
+            <h2 class="text-4xl font-bold text-green-800 mb-4">
+                Roadmap
+            </h2>
+            <p class="text-green-700 max-w-3xl mx-auto text-lg">
+                Our journey across the pond, step by step.
+            </p>
+        </div>
+        <div class="roadmap-container">
+            <div class="roadmap-grid">
+                <div aria-label="Q1 2024: Launch and Initial Marketing" class="lilypad left" tabindex="0">
+                    <h3 class="text-xl mb-2">
+                        Q1 2024
+                    </h3>
+                    <p>
+                        Launch $QUACK token and start initial marketing campaigns.
+                    </p>
+                </div>
+                <div aria-label="Q2 2024: Exchange Listings &amp; Partnerships" class="lilypad right" tabindex="0">
+                    <h3 class="text-xl mb-2">
+                        Q2 2024
+                    </h3>
+                    <p>
+                        Get listed on major exchanges and form strategic partnerships.
+                    </p>
+                </div>
+                <div aria-label="Q3 2024: Community Growth &amp; NFT Drops" class="lilypad left" tabindex="0">
+                    <h3 class="text-xl mb-2">
+                        Q3 2024
+                    </h3>
+                    <p>
+                        Expand community and launch exclusive $QUACK NFT collections.
+                    </p>
+                </div>
+                <div aria-label="Q4 2024: Staking &amp; Governance" class="lilypad right" tabindex="0">
+                    <h3 class="text-xl mb-2">
+                        Q4 2024
+                    </h3>
+                    <p>
+                        Introduce staking platform and community governance features.
+                    </p>
+                </div>
+            </div>
+            <div class="roadmap-line roadmap-line-1">
+            </div>
+            <div class="roadmap-line roadmap-line-2">
+            </div>
+        </div>
+    </section>
+    <script>
+        // Tokenomics splash effect on click
+        document.querySelectorAll('.tokenomics-item').forEach(item => {
+            item.addEventListener('click', e => {
+                const rect = item.getBoundingClientRect();
+                const splash = document.createElement('span');
+                splash.classList.add('splash');
+                const size = Math.max(rect.width, rect.height);
+                splash.style.width = splash.style.height = size + 'px';
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                splash.style.left = x + 'px';
+                splash.style.top = y + 'px';
+                item.appendChild(splash);
+                splash.addEventListener('animationend', () => {
+                    splash.remove();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

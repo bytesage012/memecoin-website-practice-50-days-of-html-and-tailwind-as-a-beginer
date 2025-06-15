@@ -1,0 +1,615 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        $SNACC - The Ultimate Memecoin for Snackers &amp; Lazy Legends
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Open+Sans&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+        /* Whac-A-Mole styles */
+        
+        .mole-hole {
+            width: 80px;
+            height: 80px;
+            background: #d9cba3;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: inset 0 5px 10px #a88c4a;
+            user-select: none;
+        }
+        
+        .mole {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: bottom 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .mole.up {
+            bottom: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-yellow-50 text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-yellow-300 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <a class="text-3xl text-yellow-900 font-bold tracking-widest flex items-center space-x-2" href="#hero">
+                <img alt="Potato emoji icon representing $SNACC logo" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/61368900-8fc2-4d7d-300c-b98b12963306.jpg" width="40" />
+                <span>
+      $SNACC
+     </span>
+            </a>
+            <ul class="hidden md:flex space-x-8 font-semibold text-yellow-900">
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#snackonomics">
+       Snackonomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#roadmap">
+       Mission: Crunch Possible
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#memes">
+       Meme Gallery
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#airdrop">
+       Airdrop Timer
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-yellow-700 transition" href="#whac-a-mole">
+       Whac-A-Mole
+      </a>
+                </li>
+            </ul>
+            <button class="md:hidden text-yellow-900 focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-yellow-200" id="mobile-menu">
+            <ul class="flex flex-col space-y-2 p-4 font-semibold text-yellow-900">
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#snackonomics">
+       Snackonomics
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#roadmap">
+       Mission: Crunch Possible
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#memes">
+       Meme Gallery
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#airdrop">
+       Airdrop Timer
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-yellow-700 transition" href="#whac-a-mole">
+       Whac-A-Mole
+      </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="bg-yellow-100 py-16 px-6 sm:px-12 md:px-20 flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl mx-auto gap-10" id="hero">
+        <div class="max-w-xl text-center md:text-left">
+            <h1 class="text-5xl sm:text-6xl text-yellow-900 mb-4 leading-tight">
+                Welcome to
+                <span class="text-yellow-600">
+      $SNACC
+     </span>
+            </h1>
+            <p class="text-lg sm:text-xl text-yellow-800 mb-6">
+                The memecoin that rewards your snacking and laziness. Crunch, chill, and earn!
+            </p>
+            <a class="inline-block bg-yellow-600 hover:bg-yellow-700 text-yellow-100 font-bold py-3 px-8 rounded-full shadow-lg transition" href="#snackonomics">
+     Get Your $SNACC
+    </a>
+        </div>
+        <div class="w-full max-w-md">
+            <img alt="Cool potato character wearing sunglasses holding a bag of chips with a fun snack theme background" class="rounded-xl shadow-lg mx-auto" height="400" src="https://storage.googleapis.com/a1aa/image/52c80113-d9aa-4f07-aa74-42e88c5af04e.jpg" width="400"
+            />
+        </div>
+    </section>
+    <!-- Snackonomics Section -->
+    <section class="bg-yellow-200 py-16 px-6 sm:px-12 md:px-20 max-w-7xl mx-auto" id="snackonomics">
+        <h2 class="text-4xl text-yellow-900 font-bold text-center mb-12">
+            Funny Snackonomics
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="bg-yellow-50 rounded-xl p-6 shadow-md flex flex-col items-center text-center">
+                <img alt="Golden crispy french fries icon representing snack rewards" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/c511e3f9-3d9b-486f-7d91-ce189d9cf681.jpg" width="80" />
+                <h3 class="text-xl font-semibold text-yellow-800 mb-2">
+                    Snack Rewards
+                </h3>
+                <p class="text-yellow-700">
+                    Earn $SNACC tokens every time you snack. The crunchier, the better!
+                </p>
+            </div>
+            <div class="bg-yellow-50 rounded-xl p-6 shadow-md flex flex-col items-center text-center">
+                <img alt="Lazy couch potato icon representing laziness rewards" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/27145bd8-8432-403b-b25a-1f0e52c8472a.jpg" width="80" />
+                <h3 class="text-xl font-semibold text-yellow-800 mb-2">
+                    Laziness Bonus
+                </h3>
+                <p class="text-yellow-700">
+                    Get bonus tokens for every hour spent chilling and doing nothing.
+                </p>
+            </div>
+            <div class="bg-yellow-50 rounded-xl p-6 shadow-md flex flex-col items-center text-center">
+                <img alt="Burger icon representing tasty token burns" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/91cf86fd-ebd2-4ad1-979c-7c98bb7f9880.jpg" width="80" />
+                <h3 class="text-xl font-semibold text-yellow-800 mb-2">
+                    Tasty Token Burns
+                </h3>
+                <p class="text-yellow-700">
+                    We burn tokens to keep $SNACC spicy and valuable.
+                </p>
+            </div>
+            <div class="bg-yellow-50 rounded-xl p-6 shadow-md flex flex-col items-center text-center">
+                <img alt="Potato icon representing the total supply of $SNACC" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/57aa659d-e0c1-4280-2478-5cafbc354f22.jpg" width="80" />
+                <h3 class="text-xl font-semibold text-yellow-800 mb-2">
+                    Total Supply
+                </h3>
+                <p class="text-yellow-700">
+                    1,000,000,000 $SNACC - Enough to feed every snack lover.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="bg-yellow-100 py-16 px-6 sm:px-12 md:px-20 max-w-7xl mx-auto" id="roadmap">
+        <h2 class="text-4xl text-yellow-900 font-bold text-center mb-12">
+            Mission: Crunch Possible
+        </h2>
+        <ol class="relative border-l-4 border-yellow-600 max-w-3xl mx-auto space-y-10">
+            <li class="mb-10 ml-6">
+                <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-yellow-600 rounded-full ring-8 ring-yellow-100 text-yellow-50 font-bold">
+      1
+     </span>
+                <h3 class="text-xl font-semibold text-yellow-800 mb-2">
+                    Q2 2024 - Launch &amp; Snack Rewards
+                </h3>
+                <p class="text-yellow-700">
+                    Launch $SNACC token and start rewarding snackers worldwide.
+                </p>
+            </li>
+            <li class="mb-10 ml-6">
+                <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-yellow-600 rounded-full ring-8 ring-yellow-100 text-yellow-50 font-bold">
+      2
+     </span>
+                <h3 class="text-xl font-semibold text-yellow-800 mb-2">
+                    Q3 2024 - Laziness Bonus &amp; Leaderboard
+                </h3>
+                <p class="text-yellow-700">
+                    Introduce laziness bonuses and launch the top snackers leaderboard.
+                </p>
+            </li>
+            <li class="mb-10 ml-6">
+                <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-yellow-600 rounded-full ring-8 ring-yellow-100 text-yellow-50 font-bold">
+      3
+     </span>
+                <h3 class="text-xl font-semibold text-yellow-800 mb-2">
+                    Q4 2024 - Meme Gallery &amp; Community Events
+                </h3>
+                <p class="text-yellow-700">
+                    Launch meme gallery and host snack-themed community contests.
+                </p>
+            </li>
+            <li class="mb-10 ml-6">
+                <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-yellow-600 rounded-full ring-8 ring-yellow-100 text-yellow-50 font-bold">
+      4
+     </span>
+                <h3 class="text-xl font-semibold text-yellow-800 mb-2">
+                    Q1 2025 - Snack Airdrops &amp; Mini Games
+                </h3>
+                <p class="text-yellow-700">
+                    Start regular snack airdrops and launch the Whac-A-Mole mini game.
+                </p>
+            </li>
+            <li class="mb-10 ml-6">
+                <span class="absolute -left-5 flex items-center justify-center w-10 h-10 bg-yellow-600 rounded-full ring-8 ring-yellow-100 text-yellow-50 font-bold">
+      5
+     </span>
+                <h3 class="text-xl font-semibold text-yellow-800 mb-2">
+                    Q2 2025 - Expansion &amp; Partnerships
+                </h3>
+                <p class="text-yellow-700">
+                    Expand $SNACC ecosystem and partner with snack brands worldwide.
+                </p>
+            </li>
+        </ol>
+    </section>
+    <!-- Leaderboard Section -->
+    <section class="bg-yellow-200 py-16 px-6 sm:px-12 md:px-20 max-w-7xl mx-auto" id="leaderboard">
+        <h2 class="text-4xl text-yellow-900 font-bold text-center mb-12">
+            Top Snackers Leaderboard
+        </h2>
+        <div class="overflow-x-auto rounded-lg shadow-lg bg-yellow-50">
+            <table class="min-w-full text-left text-yellow-900">
+                <thead class="bg-yellow-300 font-semibold text-yellow-900">
+                    <tr>
+                        <th class="px-6 py-3">
+                            Rank
+                        </th>
+                        <th class="px-6 py-3">
+                            Snacker
+                        </th>
+                        <th class="px-6 py-3">
+                            Snacks Consumed
+                        </th>
+                        <th class="px-6 py-3">
+                            $SNACC Earned
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-100 transition">
+                        <td class="px-6 py-4 font-bold">
+                            1
+                        </td>
+                        <td class="px-6 py-4 flex items-center space-x-3">
+                            <img alt="Avatar of PotatoKing, a top snacker with a potato hat" class="rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/8b9ab9dd-d99f-4a63-a05f-2f7b1ee6f742.jpg" width="40" />
+                            <span>
+         PotatoKing
+        </span>
+                        </td>
+                        <td class="px-6 py-4">
+                            1,234
+                        </td>
+                        <td class="px-6 py-4">
+                            12,340 $SNACC
+                        </td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-100 transition">
+                        <td class="px-6 py-4 font-bold">
+                            2
+                        </td>
+                        <td class="px-6 py-4 flex items-center space-x-3">
+                            <img alt="Avatar of FryLover, a top snacker with french fries icon" class="rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/4ead3467-c990-45f3-8036-324c5c213c4b.jpg" width="40" />
+                            <span>
+         FryLover
+        </span>
+                        </td>
+                        <td class="px-6 py-4">
+                            1,100
+                        </td>
+                        <td class="px-6 py-4">
+                            11,000 $SNACC
+                        </td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-100 transition">
+                        <td class="px-6 py-4 font-bold">
+                            3
+                        </td>
+                        <td class="px-6 py-4 flex items-center space-x-3">
+                            <img alt="Avatar of BurgerBoss, a top snacker with burger icon" class="rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/2190e025-f8b0-492d-fb05-d86c53f83e9a.jpg" width="40" />
+                            <span>
+         BurgerBoss
+        </span>
+                        </td>
+                        <td class="px-6 py-4">
+                            980
+                        </td>
+                        <td class="px-6 py-4">
+                            9,800 $SNACC
+                        </td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-100 transition">
+                        <td class="px-6 py-4 font-bold">
+                            4
+                        </td>
+                        <td class="px-6 py-4 flex items-center space-x-3">
+                            <img alt="Avatar of PizzaPal, a top snacker with pizza slice icon" class="rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/49d934a1-9988-44e7-1484-f745999d546e.jpg" width="40" />
+                            <span>
+         PizzaPal
+        </span>
+                        </td>
+                        <td class="px-6 py-4">
+                            870
+                        </td>
+                        <td class="px-6 py-4">
+                            8,700 $SNACC
+                        </td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-100 transition">
+                        <td class="px-6 py-4 font-bold">
+                            5
+                        </td>
+                        <td class="px-6 py-4 flex items-center space-x-3">
+                            <img alt="Avatar of DonutDude, a top snacker with donut icon" class="rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/fafb3d12-f857-4146-d63b-ddcab4e0e866.jpg" width="40" />
+                            <span>
+         DonutDude
+        </span>
+                        </td>
+                        <td class="px-6 py-4">
+                            750
+                        </td>
+                        <td class="px-6 py-4">
+                            7,500 $SNACC
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- Meme Gallery Section -->
+    <section class="bg-yellow-100 py-16 px-6 sm:px-12 md:px-20 max-w-7xl mx-auto" id="memes">
+        <h2 class="text-4xl text-yellow-900 font-bold text-center mb-12">
+            Snack Meme Gallery
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <img alt="Funny potato meme showing a potato lounging with snacks and a humorous quote about snacking" class="rounded-lg shadow-md" height="300" src="https://storage.googleapis.com/a1aa/image/755d3600-c4ef-499e-1704-5680f0a65419.jpg" width="400" />
+            <img alt="Meme of a lazy person surrounded by chips and snacks with a funny caption about procrastination" class="rounded-lg shadow-md" height="300" src="https://storage.googleapis.com/a1aa/image/a447b67f-990c-474f-f9d4-64ab5c94202d.jpg" width="400" />
+            <img alt="Cartoon potato character attacking a mountain of snacks in a funny exaggerated style meme" class="rounded-lg shadow-md" height="300" src="https://storage.googleapis.com/a1aa/image/59e4e406-f4b0-4f97-fd35-a8c9fc8e57e0.jpg" width="400" />
+            <img alt="Meme featuring a lazy cat sleeping on snacks with a caption about snack goals and relaxation" class="rounded-lg shadow-md" height="300" src="https://storage.googleapis.com/a1aa/image/a3c42f32-983e-43ce-742b-f69ff55eed51.jpg" width="400" />
+            <img alt="Crunchy snack meme with bold funny text about the joy of snacking and laziness" class="rounded-lg shadow-md" height="300" src="https://storage.googleapis.com/a1aa/image/60aea839-6dfc-4789-f760-5034fdd32b92.jpg" width="400" />
+            <img alt="Potato superhero meme holding snacks and saving the day with humor" class="rounded-lg shadow-md" height="300" src="https://storage.googleapis.com/a1aa/image/ec85400e-6111-4efb-c2fa-3d7231d3299f.jpg" width="400" />
+            <img alt="Meme showing a clock with snack time highlighted and a funny lazy person waiting" class="rounded-lg shadow-md" height="300" src="https://storage.googleapis.com/a1aa/image/30b41d10-f1f0-4ab8-7c42-7e5e55dca818.jpg" width="400" />
+            <img alt="Cartoon characters enjoying snacks with a funny caption about snack life" class="rounded-lg shadow-md" height="300" src="https://storage.googleapis.com/a1aa/image/607a6ef9-2265-43ed-9d16-954c07d92763.jpg" width="400" />
+        </div>
+    </section>
+    <!-- Countdown Timer Section -->
+    <section class="bg-yellow-200 py-16 px-6 sm:px-12 md:px-20 max-w-7xl mx-auto text-center" id="airdrop">
+        <h2 class="text-4xl text-yellow-900 font-bold mb-8">
+            Next Snack Airdrop In:
+        </h2>
+        <div class="flex justify-center space-x-8 text-yellow-900 font-bold text-5xl sm:text-6xl font-mono" id="countdown">
+            <div>
+                <span id="days">
+      00
+     </span>
+                <div class="text-lg font-normal mt-1">
+                    Days
+                </div>
+            </div>
+            <div>
+                <span id="hours">
+      00
+     </span>
+                <div class="text-lg font-normal mt-1">
+                    Hours
+                </div>
+            </div>
+            <div>
+                <span id="minutes">
+      00
+     </span>
+                <div class="text-lg font-normal mt-1">
+                    Minutes
+                </div>
+            </div>
+            <div>
+                <span id="seconds">
+      00
+     </span>
+                <div class="text-lg font-normal mt-1">
+                    Seconds
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Whac-A-Mole Mini Game Section -->
+    <section class="bg-yellow-100 py-16 px-6 sm:px-12 md:px-20 max-w-7xl mx-auto" id="whac-a-mole">
+        <h2 class="text-4xl text-yellow-900 font-bold text-center mb-8">
+            Whac-A-Mole: Snack Edition
+        </h2>
+        <p class="text-yellow-800 text-center max-w-xl mx-auto mb-8">
+            Hit the potato moles popping out of their holes to earn $SNACC points! Ready, set, crunch!
+        </p>
+        <div class="max-w-md mx-auto">
+            <div class="grid grid-cols-3 gap-6 justify-center" id="game">
+                <div aria-label="Mole hole 1" class="mole-hole" data-index="0">
+                </div>
+                <div aria-label="Mole hole 2" class="mole-hole" data-index="1">
+                </div>
+                <div aria-label="Mole hole 3" class="mole-hole" data-index="2">
+                </div>
+                <div aria-label="Mole hole 4" class="mole-hole" data-index="3">
+                </div>
+                <div aria-label="Mole hole 5" class="mole-hole" data-index="4">
+                </div>
+                <div aria-label="Mole hole 6" class="mole-hole" data-index="5">
+                </div>
+                <div aria-label="Mole hole 7" class="mole-hole" data-index="6">
+                </div>
+                <div aria-label="Mole hole 8" class="mole-hole" data-index="7">
+                </div>
+                <div aria-label="Mole hole 9" class="mole-hole" data-index="8">
+                </div>
+            </div>
+            <div class="mt-8 text-center text-yellow-900 font-bold text-2xl">
+                Score:
+                <span id="score">
+      0
+     </span>
+            </div>
+            <div class="mt-6 flex justify-center space-x-4">
+                <button class="bg-yellow-600 hover:bg-yellow-700 text-yellow-100 font-bold py-2 px-6 rounded-full shadow-lg transition" id="start-btn">
+      Start Game
+     </button>
+                <button class="bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-bold py-2 px-6 rounded-full shadow-lg transition" disabled="" id="reset-btn">
+      Reset
+     </button>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-yellow-300 py-8 mt-16 text-center text-yellow-900 font-semibold">
+        © 2024 $SNACC. Snack responsibly, earn generously.
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Countdown Timer
+        const countdownDate = new Date();
+        countdownDate.setHours(countdownDate.getHours() + 48); // Next airdrop in 48 hours
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Whac-A-Mole Game Logic
+        const holes = document.querySelectorAll('.mole-hole');
+        let score = 0;
+        let activeMoleIndex = null;
+        let gameInterval = null;
+        let moleTimeout = null;
+        let gameRunning = false;
+
+        function randomHole() {
+            let idx;
+            do {
+                idx = Math.floor(Math.random() * holes.length);
+            } while (idx === activeMoleIndex);
+            return idx;
+        }
+
+        function showMole() {
+            if (!gameRunning) return;
+            if (activeMoleIndex !== null) {
+                const oldHole = holes[activeMoleIndex];
+                const oldMole = oldHole.querySelector('.mole');
+                if (oldMole) oldHole.removeChild(oldMole);
+            }
+            activeMoleIndex = randomHole();
+            const hole = holes[activeMoleIndex];
+            const mole = document.createElement('img');
+            mole.src = 'https://placehold.co/60x60/png?text=🥔';
+            mole.alt = 'Potato mole popping out of hole';
+            mole.classList.add('mole', 'up');
+            hole.appendChild(mole);
+
+            moleTimeout = setTimeout(() => {
+                if (hole.contains(mole)) {
+                    hole.removeChild(mole);
+                    activeMoleIndex = null;
+                }
+            }, 1200);
+        }
+
+        function startGame() {
+            if (gameRunning) return;
+            gameRunning = true;
+            score = 0;
+            document.getElementById('score').textContent = score;
+            document.getElementById('start-btn').disabled = true;
+            document.getElementById('reset-btn').disabled = false;
+            showMole();
+            gameInterval = setInterval(showMole, 1500);
+        }
+
+        function resetGame() {
+            gameRunning = false;
+            clearInterval(gameInterval);
+            clearTimeout(moleTimeout);
+            holes.forEach(hole => {
+                const mole = hole.querySelector('.mole');
+                if (mole) hole.removeChild(mole);
+            });
+            activeMoleIndex = null;
+            score = 0;
+            document.getElementById('score').textContent = score;
+            document.getElementById('start-btn').disabled = false;
+            document.getElementById('reset-btn').disabled = true;
+        }
+
+        holes.forEach(hole => {
+            hole.addEventListener('click', () => {
+                if (!gameRunning) return;
+                const mole = hole.querySelector('.mole.up');
+                if (mole) {
+                    score++;
+                    document.getElementById('score').textContent = score;
+                    hole.removeChild(mole);
+                    activeMoleIndex = null;
+                }
+            });
+        });
+
+        document.getElementById('start-btn').addEventListener('click', startGame);
+        document.getElementById('reset-btn').addEventListener('click', resetGame);
+    </script>
+</body>
+
+</html>

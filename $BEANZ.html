@@ -1,0 +1,435 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        $BEANZ - Taco Tuesday Memecoin
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #fff8f0;
+            color: #4b342f;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        /* Custom scrollbar for leaderboard */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #fef6e4;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #d97706;
+            border-radius: 10px;
+            border: 2px solid #fef6e4;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-yellow-400 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+            <a class="text-3xl text-white font-fredoka font-bold flex items-center space-x-2" href="#">
+                <img alt="Taco Tuesday $BEANZ logo - a smiling burrito with sunglasses" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/30c74ef6-0714-4c01-fcf2-77487f226f47.jpg" width="40" />
+                <span>$BEANZ</span>
+            </a>
+            <ul class="hidden md:flex space-x-8 text-yellow-900 font-semibold text-lg">
+                <li><a class="hover:text-yellow-700 transition" href="#hero">Home</a></li>
+                <li><a class="hover:text-yellow-700 transition" href="#tokenomics">Tokenomics</a></li>
+                <li><a class="hover:text-yellow-700 transition" href="#roadmap">Roadmap</a></li>
+                <li><a class="hover:text-yellow-700 transition" href="#game">Mini Game</a></li>
+                <li><a class="hover:text-yellow-700 transition" href="#memes">Memes</a></li>
+                <li><a class="hover:text-yellow-700 transition" href="#leaderboard">Leaderboard</a></li>
+                <li><a class="hover:text-yellow-700 transition" href="#countdown">Countdown</a></li>
+            </ul>
+            <button class="md:hidden text-yellow-900 focus:outline-none" id="mobile-menu-btn">
+                <i class="fas fa-bars fa-2x"></i>
+            </button>
+        </div>
+        <div class="hidden md:hidden bg-yellow-300" id="mobile-menu">
+            <ul class="flex flex-col space-y-3 p-4 text-yellow-900 font-semibold text-lg">
+                <li><a class="block hover:text-yellow-700 transition" href="#hero">Home</a></li>
+                <li><a class="block hover:text-yellow-700 transition" href="#tokenomics">Tokenomics</a></li>
+                <li><a class="block hover:text-yellow-700 transition" href="#roadmap">Roadmap</a></li>
+                <li><a class="block hover:text-yellow-700 transition" href="#game">Mini Game</a></li>
+                <li><a class="block hover:text-yellow-700 transition" href="#memes">Memes</a></li>
+                <li><a class="block hover:text-yellow-700 transition" href="#leaderboard">Leaderboard</a></li>
+                <li><a class="block hover:text-yellow-700 transition" href="#countdown">Countdown</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="bg-yellow-50 flex flex-col md:flex-row items-center justify-center max-w-7xl mx-auto px-6 py-16 gap-10" id="hero">
+        <div class="flex-1 text-center md:text-left">
+            <h1 class="text-5xl md:text-6xl font-fredoka text-yellow-700 mb-4 leading-tight">
+                $BEANZ
+                <span class="text-yellow-900">Taco Tuesday</span> Memecoin
+            </h1>
+            <p class="text-yellow-800 text-lg md:text-xl max-w-xl mx-auto md:mx-0 mb-8">
+                Spice up your crypto portfolio with the hottest memecoin on the block! Join the fiesta with $BEANZ and dance your way to the moon 🌯🚀
+            </p>
+            <a class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition" href="#tokenomics">Get $BEANZ Now</a>
+        </div>
+        <div class="flex-1 flex justify-center">
+            <img alt="A dancing burrito wearing a sombrero and sunglasses" class="w-full h-auto max-w-xs md:max-w-md animate-bounce" loading="lazy" src="https://storage.googleapis.com/a1aa/image/bd2e0336-bda6-42c2-a268-4d8934276df5.jpg" />
+        </div>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="bg-yellow-100 py-16 px-6 max-w-7xl mx-auto" id="tokenomics">
+        <h2 class="text-4xl font-fredoka text-yellow-800 text-center mb-12">Tokenomics in a Tortilla Wrap</h2>
+        <div class="relative max-w-4xl mx-auto">
+            <img alt="A large tortilla wrap illustration with tokenomics data" class="w-full rounded-xl shadow-lg" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2b3c498f-0ed2-4fa1-4020-30b6daa23221.jpg" />
+            <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center px-8 py-6 text-yellow-900 font-semibold text-lg space-y-4 select-none pointer-events-none">
+                <div class="flex justify-between w-full max-w-3xl">
+                    <span>🔥 Total Supply:</span>
+                    <span>1,000,000,000 $BEANZ</span>
+                </div>
+                <div class="flex justify-between w-full max-w-3xl">
+                    <span>🌮 Liquidity Pool:</span>
+                    <span>40%</span>
+                </div>
+                <div class="flex justify-between w-full max-w-3xl">
+                    <span>🌶️ Marketing:</span>
+                    <span>20%</span>
+                </div>
+                <div class="flex justify-between w-full max-w-3xl">
+                    <span>🫘 Holders Rewards:</span>
+                    <span>25%</span>
+                </div>
+                <div class="flex justify-between w-full max-w-3xl">
+                    <span>🌯 Dev & Team:</span>
+                    <span>10%</span>
+                </div>
+                <div class="flex justify-between w-full max-w-3xl">
+                    <span>🎉 Community Events:</span>
+                    <span>5%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="bg-yellow-50 py-16 px-6 max-w-7xl mx-auto" id="roadmap">
+        <h2 class="text-4xl font-fredoka text-yellow-800 text-center mb-12">Roadmap to Taco Glory</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+            <div class="bg-yellow-200 rounded-xl p-6 shadow-lg border-4 border-yellow-400">
+                <h3 class="text-2xl font-bold text-yellow-900 mb-3">🌶️ Salsa Surge</h3>
+                <ul class="list-disc list-inside text-yellow-900 space-y-2">
+                    <li>Launch $BEANZ token on PancakeSwap</li>
+                    <li>Initial marketing blitz with spicy memes</li>
+                    <li>Community giveaways & contests</li>
+                </ul>
+            </div>
+            <div class="bg-yellow-200 rounded-xl p-6 shadow-lg border-4 border-yellow-400">
+                <h3 class="text-2xl font-bold text-yellow-900 mb-3">🥑 Guac Gains</h3>
+                <ul class="list-disc list-inside text-yellow-900 space-y-2">
+                    <li>Holder rewards program activation</li>
+                    <li>Launch burrito-building mini game</li>
+                    <li>Partnerships with TacoDAO & influencers</li>
+                </ul>
+            </div>
+            <div class="bg-yellow-200 rounded-xl p-6 shadow-lg border-4 border-yellow-400">
+                <h3 class="text-2xl font-bold text-yellow-900 mb-3">🌮 Fiesta Finale</h3>
+                <ul class="list-disc list-inside text-yellow-900 space-y-2">
+                    <li>DAO launch & governance voting</li>
+                    <li>Exclusive NFT burrito skins</li>
+                    <li>Major Taco Tuesday event & merch drop</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Burrito-Building Mini Game Section -->
+    <section class="bg-yellow-100 py-16 px-6 max-w-7xl mx-auto" id="game">
+        <h2 class="text-4xl font-fredoka text-yellow-800 text-center mb-12">Build Your Burrito!</h2>
+        <div class="max-w-4xl mx-auto bg-yellow-50 rounded-xl shadow-lg p-8">
+            <p class="text-yellow-900 mb-6 text-center font-semibold">Click ingredients to add them to your burrito. Build the spiciest, most delicious burrito and share your creation!</p>
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Ingredients panel -->
+                <div class="flex-1 bg-yellow-200 rounded-lg p-4 shadow-inner">
+                    <h3 class="font-bold text-yellow-900 mb-4 text-center">Ingredients</h3>
+                    <div class="grid grid-cols-3 gap-4">
+                        <button class="ingredient-btn bg-yellow-300 rounded-lg p-2 flex flex-col items-center cursor-pointer hover:bg-yellow-400 transition" data-ingredient="Tortilla">
+                            <img alt="Soft warm tortilla flatbread ingredient" class="mb-2" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6308a77e-b338-4d78-8f17-860e9f01364f.jpg" width="80" />
+                            <span class="text-yellow-900 font-semibold">Tortilla</span>
+                        </button>
+                        <button class="ingredient-btn bg-yellow-300 rounded-lg p-2 flex flex-col items-center cursor-pointer hover:bg-yellow-400 transition" data-ingredient="Beans">
+                            <img alt="Cooked pinto beans ingredient" class="mb-2" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/122e816f-6c50-42d5-5c40-ab965fb09226.jpg" width="80" />
+                            <span class="text-yellow-900 font-semibold">Beans</span>
+                        </button>
+                        <button class="ingredient-btn bg-yellow-300 rounded-lg p-2 flex flex-col items-center cursor-pointer hover:bg-yellow-400 transition" data-ingredient="Cheese">
+                            <img alt="Shredded cheddar cheese ingredient" class="mb-2" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/33bb6fa5-011d-42b0-47da-421ca383b35e.jpg" width="80" />
+                            <span class="text-yellow-900 font-semibold">Cheese</span>
+                        </button>
+                        <button class="ingredient-btn bg-yellow-300 rounded-lg p-2 flex flex-col items-center cursor-pointer hover:bg-yellow-400 transition" data-ingredient="Salsa">
+                            <img alt="Fresh tomato salsa ingredient" class="mb-2" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c2fd4b97-907d-4b2f-d0cb-b277e78d18a7.jpg" width="80" />
+                            <span class="text-yellow-900 font-semibold">Salsa</span>
+                        </button>
+                        <button class="ingredient-btn bg-yellow-300 rounded-lg p-2 flex flex-col items-center cursor-pointer hover:bg-yellow-400 transition" data-ingredient="Guacamole">
+                            <img alt="Creamy guacamole avocado spread ingredient" class="mb-2" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4cf79424-eae7-4efa-c337-b8590b9aa0c3.jpg" width="80" />
+                            <span class="text-yellow-900 font-semibold">Guacamole</span>
+                        </button>
+                        <button class="ingredient-btn bg-yellow-300 rounded-lg p-2 flex flex-col items-center cursor-pointer hover:bg-yellow-400 transition" data-ingredient="Lettuce">
+                            <img alt="Fresh green lettuce leaves ingredient" class="mb-2" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/aeeffad5-fb84-45bc-bfa0-71966d4d8041.jpg" width="80" />
+                            <span class="text-yellow-900 font-semibold">Lettuce</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Burrito display -->
+                <div class="flex-1 bg-yellow-200 rounded-lg p-4 shadow-inner flex flex-col items-center">
+                    <h3 class="font-bold text-yellow-900 mb-4 text-center">Your Burrito</h3>
+                    <div aria-label="Burrito ingredient stack" class="w-48 min-h-[320px] bg-yellow-50 rounded-lg border-4 border-yellow-400 shadow-inner flex flex-col-reverse items-center overflow-y-auto p-2" id="burrito-stack">
+                        <p class="text-yellow-700 italic mt-4">Add ingredients by clicking above!</p>
+                    </div>
+                    <button class="mt-6 bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-full shadow transition" id="clear-burrito">Clear Burrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Meme GIFs Section -->
+    <section class="bg-yellow-50 py-16 px-6 max-w-7xl mx-auto" id="memes">
+        <h2 class="text-4xl font-fredoka text-yellow-800 text-center mb-12">$BEANZ Meme Fiesta</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <img alt="Animated GIF of a funny burrito dancing" class="rounded-xl shadow-lg w-full h-auto" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1ea086f6-096c-42c2-6bfe-6187d1ed4c46.jpg" />
+            <img alt="Animated GIF showing a spicy bean character" class="rounded-xl shadow-lg w-full h-auto" loading="lazy" src="https://storage.googleapis.com/a1aa/image/a9f8568e-23f3-45cc-d04d-c689e3b497bd.jpg" />
+            <img alt="Animated GIF of a group of tacos celebrating" class="rounded-xl shadow-lg w-full h-auto" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c0abc72e-50e7-48b7-a4ce-346ec33d6254.jpg" />
+            <img alt="Animated GIF of a bean shaped like a rocket" class="rounded-xl shadow-lg w-full h-auto" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f4a211f4-f8d8-4490-d846-ea7d056e36a4.jpg" />
+            <img alt="Animated GIF of guacamole bowl flexing muscles" class="rounded-xl shadow-lg w-full h-auto" loading="lazy" src="https://storage.googleapis.com/a1aa/image/016aa00b-e9c6-4745-4706-6d07ef470a64.jpg" />
+            <img alt="Animated GIF showing handshake between two tacos" class="rounded-xl shadow-lg w-full h-auto" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e3dc0656-6a4d-4ebe-55f8-4006595cf3bc.jpg" />
+        </div>
+    </section>
+        <!-- Holder Leaderboard Section -->
+    <section class="bg-yellow-100 py-16 px-6 max-w-7xl mx-auto" id="leaderboard">
+        <h2 class="text-4xl font-fredoka text-yellow-800 text-center mb-12">Top $BEANZ Holders</h2>
+        <div class="max-w-4xl mx-auto bg-yellow-50 rounded-xl shadow-lg p-6 overflow-auto max-h-[400px]">
+            <table class="w-full text-yellow-900 text-left border-collapse">
+                <thead>
+                    <tr class="border-b-2 border-yellow-400">
+                        <th class="py-3 px-4 text-lg font-semibold">Rank</th>
+                        <th class="py-3 px-4 text-lg font-semibold">Wallet</th>
+                        <th class="py-3 px-4 text-lg font-semibold">Holdings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-200 transition">
+                        <td class="py-3 px-4 font-bold">1</td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs">0xA1b2C3d4E5F678901234567890abcdef12345678</td>
+                        <td class="py-3 px-4 font-semibold">150,000,000 $BEANZ</td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-200 transition">
+                        <td class="py-3 px-4 font-bold">2</td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs">0xB2c3D4e5F678901234567890abcdef1234567890</td>
+                        <td class="py-3 px-4 font-semibold">120,000,000 $BEANZ</td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-200 transition">
+                        <td class="py-3 px-4 font-bold">3</td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs">0xC3d4E5f678901234567890abcdef1234567890ab</td>
+                        <td class="py-3 px-4 font-semibold">95,000,000 $BEANZ</td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-200 transition">
+                        <td class="py-3 px-4 font-bold">4</td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs">0xD4e5F678901234567890abcdef1234567890abcd</td>
+                        <td class="py-3 px-4 font-semibold">80,000,000 $BEANZ</td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-200 transition">
+                        <td class="py-3 px-4 font-bold">5</td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs">0xE5f678901234567890abcdef1234567890abcde1</td>
+                        <td class="py-3 px-4 font-semibold">70,000,000 $BEANZ</td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-200 transition">
+                        <td class="py-3 px-4 font-bold">6</td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs">0xF678901234567890abcdef1234567890abcde123</td>
+                        <td class="py-3 px-4 font-semibold">65,000,000 $BEANZ</td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-200 transition">
+                        <td class="py-3 px-4 font-bold">7</td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs">0x78901234567890abcdef1234567890abcde12345</td>
+                        <td class="py-3 px-4 font-semibold">60,000,000 $BEANZ</td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-200 transition">
+                        <td class="py-3 px-4 font-bold">8</td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs">0x8901234567890abcdef1234567890abcde123456</td>
+                        <td class="py-3 px-4 font-semibold">55,000,000 $BEANZ</td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-200 transition">
+                        <td class="py-3 px-4 font-bold">9</td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs">0x901234567890abcdef1234567890abcde1234567</td>
+                        <td class="py-3 px-4 font-semibold">50,000,000 $BEANZ</td>
+                    </tr>
+                    <tr class="border-b border-yellow-300 hover:bg-yellow-200 transition">
+                        <td class="py-3 px-4 font-bold">10</td>
+                        <td class="py-3 px-4 font-mono truncate max-w-xs">0x01234567890abcdef1234567890abcde12345678</td>
+                        <td class="py-3 px-4 font-semibold">45,000,000 $BEANZ</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- Countdown Section -->
+    <section class="bg-yellow-50 py-16 px-6 max-w-7xl mx-auto text-center" id="countdown">
+        <h2 class="text-4xl font-fredoka text-yellow-800 mb-8">Countdown to TacoDAO Collab</h2>
+        <div aria-atomic="true" aria-live="polite" class="inline-flex space-x-6 bg-yellow-200 rounded-xl p-8 shadow-lg font-bold text-yellow-900 text-5xl font-mono select-none" id="countdown-timer">
+            <div>
+                <div class="text-6xl" id="days">00</div>
+                <div class="text-xl mt-1">Days</div>
+            </div>
+            <div>
+                <div class="text-6xl" id="hours">00</div>
+                <div class="text-xl mt-1">Hours</div>
+            </div>
+            <div>
+                <div class="text-6xl" id="minutes">00</div>
+                <div class="text-xl mt-1">Minutes</div>
+            </div>
+            <div>
+                <div class="text-6xl" id="seconds">00</div>
+                <div class="text-xl mt-1">Seconds</div>
+            </div>
+        </div>
+        <p class="mt-6 text-yellow-700 text-lg max-w-xl mx-auto">Get ready for the ultimate TacoDAO collaboration! The fiesta begins soon.</p>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-yellow-400 text-yellow-900 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm md:text-base">© 2024 $BEANZ Memecoin. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a aria-label="Twitter" class="hover:text-yellow-700 transition" href="https://twitter.com" rel="noopener" target="_blank">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a aria-label="Discord" class="hover:text-yellow-700 transition" href="https://discord.com" rel="noopener" target="_blank">
+                    <i class="fab fa-discord fa-lg"></i>
+                </a>
+                <a aria-label="Telegram" class="hover:text-yellow-700 transition" href="https://t.me" rel="noopener" target="_blank">
+                    <i class="fab fa-telegram fa-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Burrito-building mini game logic
+        const ingredientButtons = document.querySelectorAll('.ingredient-btn');
+        const burritoStack = document.getElementById('burrito-stack');
+        const clearBtn = document.getElementById('clear-burrito');
+
+        // Keep track of ingredients added
+        let burritoIngredients = [];
+
+        function renderBurrito() {
+            burritoStack.innerHTML = '';
+            if (burritoIngredients.length === 0) {
+                const p = document.createElement('p');
+                p.className = 'text-yellow-700 italic mt-4';
+                p.textContent = 'Add ingredients by clicking above!';
+                burritoStack.appendChild(p);
+                return;
+            }
+            // Show ingredients stacked bottom to top
+            burritoIngredients.forEach((ingredient) => {
+                const div = document.createElement('div');
+                div.className = 'w-40 h-12 mb-1 rounded-lg shadow-md flex items-center justify-center text-yellow-900 font-semibold text-lg select-none';
+                // Different background colors for each ingredient
+                switch (ingredient) {
+                    case 'Tortilla':
+                        div.style.backgroundColor = '#fef3c7'; // light yellow
+                        div.textContent = '🌯 Tortilla';
+                        break;
+                    case 'Beans':
+                        div.style.backgroundColor = '#a16207'; // brown
+                        div.classList.add('text-yellow-100');
+                        div.textContent = '🫘 Beans';
+                        break;
+                    case 'Cheese':
+                        div.style.backgroundColor = '#fde68a'; // cheese yellow
+                        div.textContent = '🧀 Cheese';
+                        break;
+                    case 'Salsa':
+                        div.style.backgroundColor = '#dc2626'; // red
+                        div.classList.add('text-yellow-100');
+                        div.textContent = '🌶️ Salsa';
+                        break;
+                    case 'Guacamole':
+                        div.style.backgroundColor = '#4d7c0f'; // green
+                        div.classList.add('text-yellow-100');
+                        div.textContent = '🥑 Guacamole';
+                        break;
+                    case 'Lettuce':
+                        div.style.backgroundColor = '#65a30d'; // lighter green
+                        div.classList.add('text-yellow-100');
+                        div.textContent = '🥬 Lettuce';
+                        break;
+                    default:
+                        div.textContent = ingredient;
+                }
+                burritoStack.appendChild(div);
+            });
+        }
+
+        ingredientButtons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const ingredient = btn.getAttribute('data-ingredient');
+                // Add ingredient to stack
+                burritoIngredients.push(ingredient);
+                renderBurrito();
+            });
+        });
+
+        clearBtn.addEventListener('click', () => {
+            burritoIngredients = [];
+            renderBurrito();
+        });
+
+        // Initialize burrito display
+        renderBurrito();
+
+        // Countdown timer logic
+        // Set target date for TacoDAO collab (e.g., 30 days from now)
+        const countdownTarget = new Date();
+        countdownTarget.setDate(countdownTarget.getDate() + 30);
+        countdownTarget.setHours(20, 0, 0, 0); // 8 PM target time
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = countdownTarget - now;
+
+            if (diff <= 0) {
+                document.getElementById('countdown-timer').textContent = '🎉 TacoDAO Collab is LIVE! 🎉';
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>

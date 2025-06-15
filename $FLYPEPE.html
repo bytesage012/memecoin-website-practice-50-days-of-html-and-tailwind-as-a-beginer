@@ -1,0 +1,962 @@
+<html class="scroll-smooth" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   $FLYPEPE - Pepe Takes Flight
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Roboto', sans-serif;
+      background: #0f172a;
+      color: #e0e7ff;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Press Start 2P', cursive;
+    }
+    /* Scrollbar for leaderboard */
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background-color: #6366f1;
+      border-radius: 3px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  </style>
+ </head>
+ <body class="min-h-screen flex flex-col">
+  <!-- Header / Navbar -->
+  <header class="bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-900 shadow-lg sticky top-0 z-50">
+   <nav class="container mx-auto flex flex-wrap items-center justify-between p-4">
+    <a class="flex items-center space-x-3 text-indigo-300 hover:text-indigo-100" href="#home">
+     <img alt="Jetpack flying Pepe cartoon icon with goggles and scarf" class="w-12 h-12" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/9b9bb949-3f89-4c2f-e81c-cbb0d2398d0a.jpg" width="48"/>
+     <span class="text-2xl font-bold tracking-wide">
+      $FLYPEPE
+     </span>
+    </a>
+    <ul class="hidden md:flex space-x-8 text-indigo-200 font-semibold text-sm uppercase tracking-widest">
+     <li>
+      <a class="hover:text-indigo-100 transition" href="#launchpad">
+       Launchpad
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-100 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-100 transition" href="#roadmap">
+       Roadmap
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-100 transition" href="#live-charts">
+       Live Charts
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-100 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-100 transition" href="#meme-generator">
+       Meme Generator
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-100 transition" href="#merch">
+       NFT Merch
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-100 transition" href="#countdown">
+       Countdown
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-100 transition" href="#minigame">
+       Mini Game
+      </a>
+     </li>
+    </ul>
+    <button class="md:hidden text-indigo-300 hover:text-indigo-100 focus:outline-none" id="menu-btn">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </nav>
+   <div class="hidden md:hidden bg-indigo-900/90" id="mobile-menu">
+    <ul class="flex flex-col p-4 space-y-3 text-indigo-200 font-semibold text-sm uppercase tracking-widest">
+     <li>
+      <a class="block hover:text-indigo-100 transition" href="#launchpad">
+       Launchpad
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-100 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-100 transition" href="#roadmap">
+       Roadmap
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-100 transition" href="#live-charts">
+       Live Charts
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-100 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-100 transition" href="#meme-generator">
+       Meme Generator
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-100 transition" href="#merch">
+       NFT Merch
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-100 transition" href="#countdown">
+       Countdown
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-100 transition" href="#minigame">
+       Mini Game
+      </a>
+     </li>
+    </ul>
+   </div>
+  </header>
+  <main class="flex-grow container mx-auto px-4 py-10 space-y-20">
+   <!-- Hero / Launchpad CTA -->
+   <section class="text-center max-w-4xl mx-auto" id="launchpad">
+    <img alt="Cartoon Pepe the Frog wearing a jetpack flying high above clouds with a bright blue sky background" class="mx-auto rounded-lg shadow-lg mb-8" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/bae9a8da-e5d4-465e-1258-db61aa6a1055.jpg" width="400"/>
+    <h1 class="text-5xl md:text-6xl font-bold text-indigo-400 mb-6 tracking-wide">
+     $FLYPEPE Launchpad
+    </h1>
+    <p class="text-indigo-200 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+     Join Pepe as he takes flight with $FLYPEPE — the aviation-themed meme token ready to soar to the moon!
+    </p>
+    <a class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transition" href="https://example.com/launchpad" rel="noopener noreferrer" target="_blank">
+     Take Off Now
+     <i class="fas fa-rocket ml-3">
+     </i>
+    </a>
+   </section>
+   <!-- Tokenomics -->
+   <section class="max-w-5xl mx-auto bg-indigo-900 rounded-xl p-8 shadow-lg" id="tokenomics">
+    <h2 class="text-4xl font-bold text-indigo-300 mb-8 text-center tracking-wide">
+     Aviation-Themed Tokenomics
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-indigo-200">
+     <div class="bg-indigo-800 rounded-lg p-6 flex flex-col items-center shadow-md hover:shadow-indigo-500 transition">
+      <i class="fas fa-plane-departure fa-3x mb-4 text-indigo-400">
+      </i>
+      <h3 class="text-xl font-semibold mb-2">
+       Total Supply
+      </h3>
+      <p class="text-lg font-mono">
+       1,000,000,000 $FLYPEPE
+      </p>
+     </div>
+     <div class="bg-indigo-800 rounded-lg p-6 flex flex-col items-center shadow-md hover:shadow-indigo-500 transition">
+      <i class="fas fa-fighter-jet fa-3x mb-4 text-indigo-400">
+      </i>
+      <h3 class="text-xl font-semibold mb-2">
+       Burn Mechanism
+      </h3>
+      <p class="text-lg font-mono">
+       2% of every transaction is burned to keep supply tight
+      </p>
+     </div>
+     <div class="bg-indigo-800 rounded-lg p-6 flex flex-col items-center shadow-md hover:shadow-indigo-500 transition">
+      <i class="fas fa-parachute-box fa-3x mb-4 text-indigo-400">
+      </i>
+      <h3 class="text-xl font-semibold mb-2">
+       Rewards
+      </h3>
+      <p class="text-lg font-mono">
+       3% redistributed to holders as “Flight Dividends”
+      </p>
+     </div>
+    </div>
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-indigo-200">
+     <div class="bg-indigo-800 rounded-lg p-6 flex flex-col items-center shadow-md hover:shadow-indigo-500 transition">
+      <i class="fas fa-tachometer-alt fa-3x mb-4 text-indigo-400">
+      </i>
+      <h3 class="text-xl font-semibold mb-2">
+       Liquidity Pool
+      </h3>
+      <p class="text-lg font-mono">
+       5% locked to ensure smooth flight on exchanges
+      </p>
+     </div>
+     <div class="bg-indigo-800 rounded-lg p-6 flex flex-col items-center shadow-md hover:shadow-indigo-500 transition">
+      <i class="fas fa-user-astronaut fa-3x mb-4 text-indigo-400">
+      </i>
+      <h3 class="text-xl font-semibold mb-2">
+       Team Allocation
+      </h3>
+      <p class="text-lg font-mono">
+       5% reserved for development &amp; marketing
+      </p>
+     </div>
+     <div class="bg-indigo-800 rounded-lg p-6 flex flex-col items-center shadow-md hover:shadow-indigo-500 transition">
+      <i class="fas fa-globe fa-3x mb-4 text-indigo-400">
+      </i>
+      <h3 class="text-xl font-semibold mb-2">
+       Community Fund
+      </h3>
+      <p class="text-lg font-mono">
+       3% for giveaways, events &amp; partnerships
+      </p>
+     </div>
+    </div>
+   </section>
+   <!-- Roadmap -->
+   <section class="max-w-6xl mx-auto" id="roadmap">
+    <h2 class="text-4xl font-bold text-indigo-300 mb-12 text-center tracking-wide">
+     Roadmap: Sky is the Meme
+    </h2>
+    <div class="relative border-l-4 border-indigo-500 max-w-4xl mx-auto">
+     <div class="mb-10 ml-8">
+      <div class="absolute -left-6 top-0 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+       <i class="fas fa-cloud fa-lg text-indigo-200">
+       </i>
+      </div>
+      <h3 class="text-2xl font-semibold text-indigo-400 mb-2">
+       Phase 1: Pre-Flight Checks
+      </h3>
+      <p class="text-indigo-200">
+       Token launch, website release, community building, and initial exchange listings.
+      </p>
+     </div>
+     <div class="mb-10 ml-8">
+      <div class="absolute -left-6 top-0 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+       <i class="fas fa-rocket fa-lg text-indigo-200">
+       </i>
+      </div>
+      <h3 class="text-2xl font-semibold text-indigo-400 mb-2">
+       Phase 2: Takeoff
+      </h3>
+      <p class="text-indigo-200">
+       Launchpad events, meme contests, and first NFT aviator merch drop.
+      </p>
+     </div>
+     <div class="mb-10 ml-8">
+      <div class="absolute -left-6 top-0 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+       <i class="fas fa-map-marked-alt fa-lg text-indigo-200">
+       </i>
+      </div>
+      <h3 class="text-2xl font-semibold text-indigo-400 mb-2">
+       Phase 3: Cruising Altitude
+      </h3>
+      <p class="text-indigo-200">
+       Live air traffic-themed charts, leaderboard launch, and flight meme generator release.
+      </p>
+     </div>
+     <div class="mb-10 ml-8">
+      <div class="absolute -left-6 top-0 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+       <i class="fas fa-gamepad fa-lg text-indigo-200">
+       </i>
+      </div>
+      <h3 class="text-2xl font-semibold text-indigo-400 mb-2">
+       Phase 4: Jetpack Mode
+      </h3>
+      <p class="text-indigo-200">
+       Pixel-style flying mini game launch, NFT merch expansion, and community airdrops.
+      </p>
+     </div>
+     <div class="mb-10 ml-8">
+      <div class="absolute -left-6 top-0 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+       <i class="fas fa-globe-americas fa-lg text-indigo-200">
+       </i>
+      </div>
+      <h3 class="text-2xl font-semibold text-indigo-400 mb-2">
+       Phase 5: Moon Landing
+      </h3>
+      <p class="text-indigo-200">
+       Cross-chain expansion, partnerships, and global community events.
+      </p>
+     </div>
+    </div>
+   </section>
+   <!-- Live Charts -->
+   <section class="max-w-6xl mx-auto" id="live-charts">
+    <h2 class="text-4xl font-bold text-indigo-300 mb-8 text-center tracking-wide">
+     Air Traffic-Themed Live Charts
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+     <div class="bg-indigo-900 rounded-xl shadow-lg p-4">
+      <h3 class="text-indigo-400 font-semibold mb-4 flex items-center space-x-2">
+       <i class="fas fa-chart-line">
+       </i>
+       <span>
+        $FLYPEPE Price Chart
+       </span>
+      </h3>
+      <iframe loading="lazy" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_1&amp;symbol=BINANCE:FLYPEPEUSDT&amp;interval=60&amp;hidesidetoolbar=1&amp;symboledit=1&amp;saveimage=1&amp;toolbarbg=f1f3f6&amp;studies=[]&amp;theme=dark&amp;style=1&amp;timezone=Etc%2FUTC&amp;withdateranges=1&amp;hideideas=1&amp;studies_overrides={}&amp;overrides={}&amp;enabled_features=[]&amp;disabled_features=[]&amp;locale=en" style="width: 100%; height: 350px; border: none; border-radius: 0.5rem;" title="$FLYPEPE Price Chart">
+      </iframe>
+     </div>
+     <div class="bg-indigo-900 rounded-xl shadow-lg p-4">
+      <h3 class="text-indigo-400 font-semibold mb-4 flex items-center space-x-2">
+       <i class="fas fa-plane">
+       </i>
+       <span>
+        Air Traffic Volume
+       </span>
+      </h3>
+      <iframe loading="lazy" src="https://widget.coinlib.io/widget?type=chart&amp;theme=dark&amp;coin_id=12345&amp;pref_coin_id=1505" style="width: 100%; height: 350px; border: none; border-radius: 0.5rem;" title="Air Traffic Volume Chart">
+      </iframe>
+     </div>
+    </div>
+   </section>
+   <!-- Leaderboard -->
+   <section class="max-w-4xl mx-auto bg-indigo-900 rounded-xl p-8 shadow-lg" id="leaderboard">
+    <h2 class="text-4xl font-bold text-indigo-300 mb-8 text-center tracking-wide">
+     Top Flyers Leaderboard
+    </h2>
+    <div class="overflow-x-auto">
+     <table class="w-full text-indigo-200 table-auto border-collapse border border-indigo-700 rounded-lg">
+      <thead class="bg-indigo-800 text-indigo-300 uppercase text-sm tracking-widest">
+       <tr>
+        <th class="border border-indigo-700 px-4 py-3 text-left">
+         Rank
+        </th>
+        <th class="border border-indigo-700 px-4 py-3 text-left">
+         Pilot
+        </th>
+        <th class="border border-indigo-700 px-4 py-3 text-left">
+         Flight Score
+        </th>
+        <th class="border border-indigo-700 px-4 py-3 text-left">
+         Jetpack Level
+        </th>
+        <th class="border border-indigo-700 px-4 py-3 text-left">
+         Country
+        </th>
+       </tr>
+      </thead>
+      <tbody class="divide-y divide-indigo-700">
+       <tr class="hover:bg-indigo-800 transition">
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         1
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 flex items-center space-x-3">
+         <img alt="Avatar of pilot Pepe with aviator goggles and scarf" class="w-10 h-10 rounded-full" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7cb9ebc2-a384-4de8-7d23-5e2ca6c77518.jpg" width="40"/>
+         <span>
+          PepeFlyer
+         </span>
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         9876
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         Jetpack X
+        </td>
+        <td class="border border-indigo-700 px-4 py-3">
+         USA
+        </td>
+       </tr>
+       <tr class="hover:bg-indigo-800 transition">
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         2
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 flex items-center space-x-3">
+         <img alt="Avatar of pilot Pepe with pilot helmet and headset" class="w-10 h-10 rounded-full" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2c6d6a79-8a20-4065-d4c1-c18b53a95b5e.jpg" width="40"/>
+         <span>
+          JetPepe
+         </span>
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         8765
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         Jetpack IX
+        </td>
+        <td class="border border-indigo-700 px-4 py-3">
+         Germany
+        </td>
+       </tr>
+       <tr class="hover:bg-indigo-800 transition">
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         3
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 flex items-center space-x-3">
+         <img alt="Avatar of pilot Pepe wearing a scarf and aviator sunglasses" class="w-10 h-10 rounded-full" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e55db6e2-457e-425f-fe2d-ea563fcc0a1b.jpg" width="40"/>
+         <span>
+          FlyHighPepe
+         </span>
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         7654
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         Jetpack VIII
+        </td>
+        <td class="border border-indigo-700 px-4 py-3">
+         Japan
+        </td>
+       </tr>
+       <tr class="hover:bg-indigo-800 transition">
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         4
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 flex items-center space-x-3">
+         <img alt="Avatar of pilot Pepe with a pilot cap and big smile" class="w-10 h-10 rounded-full" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e4fcd13c-8b81-4c39-6a55-ca31ae262b99.jpg" width="40"/>
+         <span>
+          JetSetPepe
+         </span>
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         6543
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         Jetpack VII
+        </td>
+        <td class="border border-indigo-700 px-4 py-3">
+         Brazil
+        </td>
+       </tr>
+       <tr class="hover:bg-indigo-800 transition">
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         5
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 flex items-center space-x-3">
+         <img alt="Avatar of pilot Pepe with a jetpack and goggles flying" class="w-10 h-10 rounded-full" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ba91dae2-e4d4-4101-53ee-b3fcad4379f4.jpg" width="40"/>
+         <span>
+          SkyPepe
+         </span>
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         5432
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         Jetpack VI
+        </td>
+        <td class="border border-indigo-700 px-4 py-3">
+         Canada
+        </td>
+       </tr>
+       <tr class="hover:bg-indigo-800 transition">
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         6
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 flex items-center space-x-3">
+         <img alt="Avatar of pilot Pepe with a scarf and pilot headset" class="w-10 h-10 rounded-full" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/886846f4-8c51-4280-2cf7-670f38df3c20.jpg" width="40"/>
+         <span>
+          FlyerPepe
+         </span>
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         4321
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         Jetpack V
+        </td>
+        <td class="border border-indigo-700 px-4 py-3">
+         France
+        </td>
+       </tr>
+       <tr class="hover:bg-indigo-800 transition">
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         7
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 flex items-center space-x-3">
+         <img alt="Avatar of pilot Pepe with aviator goggles and a cheeky grin" class="w-10 h-10 rounded-full" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c61cec6b-54f4-4f9c-02d3-d4225414d1b7.jpg" width="40"/>
+         <span>
+          JetPepeX
+         </span>
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         3210
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         Jetpack IV
+        </td>
+        <td class="border border-indigo-700 px-4 py-3">
+         UK
+        </td>
+       </tr>
+       <tr class="hover:bg-indigo-800 transition">
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         8
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 flex items-center space-x-3">
+         <img alt="Avatar of pilot Pepe with pilot helmet and sunglasses" class="w-10 h-10 rounded-full" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7b2db766-d398-4a40-5d03-fafdda86f1e2.jpg" width="40"/>
+         <span>
+          PepeJet
+         </span>
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         2109
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         Jetpack III
+        </td>
+        <td class="border border-indigo-700 px-4 py-3">
+         Australia
+        </td>
+       </tr>
+       <tr class="hover:bg-indigo-800 transition">
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         9
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 flex items-center space-x-3">
+         <img alt="Avatar of pilot Pepe with scarf and pilot goggles" class="w-10 h-10 rounded-full" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/24d9f2e2-d687-4720-80db-fba5e17334bd.jpg" width="40"/>
+         <span>
+          FlyPepe
+         </span>
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         1098
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         Jetpack II
+        </td>
+        <td class="border border-indigo-700 px-4 py-3">
+         South Korea
+        </td>
+       </tr>
+       <tr class="hover:bg-indigo-800 transition">
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         10
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 flex items-center space-x-3">
+         <img alt="Avatar of pilot Pepe with jetpack and pilot cap" class="w-10 h-10 rounded-full" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/55fccc61-9a2e-49df-0898-2904d97fea11.jpg" width="40"/>
+         <span>
+          PepePilot
+         </span>
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         987
+        </td>
+        <td class="border border-indigo-700 px-4 py-3 font-mono">
+         Jetpack I
+        </td>
+        <td class="border border-indigo-700 px-4 py-3">
+         Russia
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </section>
+   <!-- Flight Meme Generator -->
+   <section class="max-w-5xl mx-auto bg-indigo-900 rounded-xl p-8 shadow-lg" id="meme-generator">
+    <h2 class="text-4xl font-bold text-indigo-300 mb-8 text-center tracking-wide">
+     Flight Meme Generator
+    </h2>
+    <div class="flex flex-col md:flex-row md:space-x-8 space-y-6 md:space-y-0 items-center justify-center">
+     <div class="w-full md:w-1/2">
+      <img alt="Placeholder image for Pepe jetpack meme with blank text areas" class="rounded-lg shadow-lg w-full object-cover" height="400" id="meme-image" loading="lazy" src="https://storage.googleapis.com/a1aa/image/57769449-cef8-4639-ec8a-0926f5eb1f34.jpg" width="600"/>
+     </div>
+     <form class="w-full md:w-1/2 flex flex-col space-y-4" id="meme-form">
+      <input aria-label="Top text for meme" class="p-3 rounded-md text-indigo-900 font-bold text-lg" id="top-text" maxlength="50" placeholder="Top Text" type="text"/>
+      <input aria-label="Bottom text for meme" class="p-3 rounded-md text-indigo-900 font-bold text-lg" id="bottom-text" maxlength="50" placeholder="Bottom Text" type="text"/>
+      <button class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 rounded-md shadow-lg transition" type="submit">
+       Generate Meme
+      </button>
+      <button class="bg-indigo-700 hover:bg-indigo-800 text-indigo-300 font-semibold py-2 rounded-md shadow-inner transition" id="reset-meme" type="button">
+       Reset
+      </button>
+     </form>
+    </div>
+    <canvas class="hidden" id="meme-canvas">
+    </canvas>
+   </section>
+   <!-- NFT Aviator Merch -->
+   <section class="max-w-6xl mx-auto" id="merch">
+    <h2 class="text-4xl font-bold text-indigo-300 mb-8 text-center tracking-wide">
+     NFT Aviator Merch
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+     <div class="bg-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-center">
+      <img alt="Pixel art style NFT of Pepe the Frog wearing a jetpack and aviator goggles with a blue sky background" class="rounded-lg mb-4 w-full object-cover" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/9525c001-b814-4ea4-5546-891b55d27ef5.jpg" width="300"/>
+      <h3 class="text-indigo-400 font-bold text-xl mb-2">
+       Jetpack Aviator #001
+      </h3>
+      <p class="text-indigo-200 mb-4 text-center">
+       Limited edition pixel art NFT of Pepe ready to fly.
+      </p>
+      <a class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition" href="https://example.com/nft/1" rel="noopener noreferrer" target="_blank">
+       View NFT
+      </a>
+     </div>
+     <div class="bg-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-center">
+      <img alt="Pixel art style NFT of Pepe the Frog flying with a jetpack and a sunset sky background" class="rounded-lg mb-4 w-full object-cover" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/60d656e6-ad32-4b6c-c627-3c854edd4de5.jpg" width="300"/>
+      <h3 class="text-indigo-400 font-bold text-xl mb-2">
+       Jetpack Aviator #002
+      </h3>
+      <p class="text-indigo-200 mb-4 text-center">
+       Exclusive NFT with fiery jetpack flames and cool shades.
+      </p>
+      <a class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition" href="https://example.com/nft/2" rel="noopener noreferrer" target="_blank">
+       View NFT
+      </a>
+     </div>
+     <div class="bg-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-center">
+      <img alt="Pixel art style NFT of Pepe the Frog with a jetpack and pilot helmet flying through clouds" class="rounded-lg mb-4 w-full object-cover" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e05cc1e5-a3e3-4d2b-74bd-0c5d7ebc2c08.jpg" width="300"/>
+      <h3 class="text-indigo-400 font-bold text-xl mb-2">
+       Jetpack Aviator #003
+      </h3>
+      <p class="text-indigo-200 mb-4 text-center">
+       Rare NFT featuring Pepe in full pilot gear soaring high.
+      </p>
+      <a class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition" href="https://example.com/nft/3" rel="noopener noreferrer" target="_blank">
+       View NFT
+      </a>
+     </div>
+    </div>
+   </section>
+   <!-- Countdown -->
+   <section class="max-w-3xl mx-auto bg-indigo-900 rounded-xl p-10 shadow-lg text-center" id="countdown">
+    <h2 class="text-4xl font-bold text-indigo-300 mb-6 tracking-wide">
+     Countdown to $FLYPEPE Moon Launch
+    </h2>
+    <div class="flex justify-center space-x-8 text-indigo-400 font-mono text-5xl font-bold" id="countdown-timer">
+     <div>
+      <span id="days">
+       00
+      </span>
+      <div class="text-sm uppercase mt-1">
+       Days
+      </div>
+     </div>
+     <div>
+      <span id="hours">
+       00
+      </span>
+      <div class="text-sm uppercase mt-1">
+       Hours
+      </div>
+     </div>
+     <div>
+      <span id="minutes">
+       00
+      </span>
+      <div class="text-sm uppercase mt-1">
+       Minutes
+      </div>
+     </div>
+     <div>
+      <span id="seconds">
+       00
+      </span>
+      <div class="text-sm uppercase mt-1">
+       Seconds
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Pixel-Style Flying Mini Game -->
+   <section class="max-w-4xl mx-auto bg-indigo-900 rounded-xl p-8 shadow-lg" id="minigame">
+    <h2 class="text-4xl font-bold text-indigo-300 mb-6 text-center tracking-wide">
+     Pixel-Style Flying Mini Game
+    </h2>
+    <p class="text-indigo-200 mb-6 text-center max-w-xl mx-auto">
+     Control Pepe’s jetpack and dodge obstacles to fly as far as possible! Use arrow keys or touch controls.
+    </p>
+    <div class="relative mx-auto w-full max-w-3xl aspect-[16/9] bg-indigo-800 rounded-lg shadow-lg overflow-hidden">
+     <canvas class="w-full h-full block" id="game-canvas">
+     </canvas>
+     <div aria-label="Touch controls for flying mini game" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-6 md:hidden" id="game-controls">
+      <button aria-label="Move left" class="bg-indigo-600 hover:bg-indigo-700 text-indigo-200 rounded-full p-4 shadow-lg" id="btn-left">
+       <i class="fas fa-arrow-left fa-lg">
+       </i>
+      </button>
+      <button aria-label="Move up" class="bg-indigo-600 hover:bg-indigo-700 text-indigo-200 rounded-full p-4 shadow-lg" id="btn-up">
+       <i class="fas fa-arrow-up fa-lg">
+       </i>
+      </button>
+      <button aria-label="Move down" class="bg-indigo-600 hover:bg-indigo-700 text-indigo-200 rounded-full p-4 shadow-lg" id="btn-down">
+       <i class="fas fa-arrow-down fa-lg">
+       </i>
+      </button>
+      <button aria-label="Move right" class="bg-indigo-600 hover:bg-indigo-700 text-indigo-200 rounded-full p-4 shadow-lg" id="btn-right">
+       <i class="fas fa-arrow-right fa-lg">
+       </i>
+      </button>
+     </div>
+    </div>
+    <p class="text-indigo-400 mt-4 text-center font-mono" id="game-score">
+     Score: 0
+    </p>
+   </section>
+  </main>
+  <footer class="bg-indigo-900 text-indigo-400 text-center py-6 mt-20">
+   <p class="text-sm">
+    © 2024 $FLYPEPE. All rights reserved. Pepe takes flight!
+   </p>
+  </footer>
+  <script>
+   // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Countdown Timer
+    const countdownDate = new Date();
+    countdownDate.setDate(countdownDate.getDate() + 15); // 15 days from now
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      if (distance < 0) {
+        document.getElementById('countdown-timer').innerHTML = '<span class="text-indigo-400 font-bold text-3xl">Launched!</span>';
+        clearInterval(countdownInterval);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+    updateCountdown();
+    const countdownInterval = setInterval(updateCountdown, 1000);
+
+    // Flight Meme Generator
+    const memeForm = document.getElementById('meme-form');
+    const memeImage = document.getElementById('meme-image');
+    const memeCanvas = document.getElementById('meme-canvas');
+    const resetBtn = document.getElementById('reset-meme');
+
+    memeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const topText = document.getElementById('top-text').value.toUpperCase();
+      const bottomText = document.getElementById('bottom-text').value.toUpperCase();
+
+      const canvas = memeCanvas;
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.src = memeImage.src;
+
+      img.onload = () => {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
+
+        ctx.fillStyle = 'white';
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 4;
+        ctx.textAlign = 'center';
+        ctx.font = `${Math.floor(canvas.height / 10)}px 'Press Start 2P', cursive`;
+        ctx.textBaseline = 'top';
+
+        // Top text
+        ctx.fillText(topText, canvas.width / 2, 10);
+        ctx.strokeText(topText, canvas.width / 2, 10);
+
+        // Bottom text
+        ctx.textBaseline = 'bottom';
+        ctx.fillText(bottomText, canvas.width / 2, canvas.height - 10);
+        ctx.strokeText(bottomText, canvas.width / 2, canvas.height - 10);
+
+        // Show canvas and hide image
+        canvas.classList.remove('hidden');
+        memeImage.classList.add('hidden');
+      };
+    });
+
+    resetBtn.addEventListener('click', () => {
+      memeCanvas.classList.add('hidden');
+      memeImage.classList.remove('hidden');
+      memeForm.reset();
+    });
+
+    // Pixel-Style Flying Mini Game
+    const canvas = document.getElementById('game-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let scale = 20; // size of each pixel block
+    let pepe = { x: 5, y: 10, size: scale, color: '#6366f1' };
+    let obstacles = [];
+    let score = 0;
+    let gameOver = false;
+    let keys = { left: false, right: false, up: false, down: false };
+
+    function resizeCanvas() {
+      width = canvas.clientWidth;
+      height = canvas.clientHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Draw pixelated Pepe (simple jetpack frog)
+    function drawPepe() {
+      ctx.fillStyle = pepe.color;
+      // Body
+      ctx.fillRect(pepe.x * scale, pepe.y * scale, scale, scale);
+      // Jetpack (red block behind)
+      ctx.fillStyle = '#ef4444';
+      ctx.fillRect(pepe.x * scale - scale, pepe.y * scale + scale / 4, scale, scale / 2);
+      // Goggles (white)
+      ctx.fillStyle = '#f3f4f6';
+      ctx.fillRect(pepe.x * scale + scale / 4, pepe.y * scale + scale / 4, scale / 2, scale / 4);
+    }
+
+    // Draw obstacles (clouds)
+    function drawObstacles() {
+      ctx.fillStyle = '#94a3b8';
+      obstacles.forEach((obs) => {
+        ctx.fillRect(obs.x * scale, obs.y * scale, scale * 2, scale);
+      });
+    }
+
+    // Update obstacles
+    function updateObstacles() {
+      for (let i = obstacles.length - 1; i >= 0; i--) {
+        obstacles[i].x -= 0.1;
+        if (obstacles[i].x < -2) {
+          obstacles.splice(i, 1);
+          score++;
+          updateScore();
+        }
+      }
+      if (Math.random() < 0.02) {
+        const yPos = Math.floor(Math.random() * (height / scale - 1));
+        obstacles.push({ x: width / scale + 2, y: yPos });
+      }
+    }
+
+    // Check collision
+    function checkCollision() {
+      for (const obs of obstacles) {
+        if (
+          pepe.x < obs.x + 2 &&
+          pepe.x + 1 > obs.x &&
+          pepe.y < obs.y + 1 &&
+          pepe.y + 1 > obs.y
+        ) {
+          gameOver = true;
+        }
+      }
+    }
+
+    // Update score display
+    function updateScore() {
+      document.getElementById('game-score').textContent = `Score: ${score}`;
+    }
+
+    // Game loop
+    function gameLoop() {
+      if (gameOver) {
+        ctx.fillStyle = 'rgba(0,0,0,0.7)';
+        ctx.fillRect(0, 0, width, height);
+        ctx.fillStyle = '#ef4444';
+        ctx.font = '48px "Press Start 2P", cursive';
+        ctx.textAlign = 'center';
+        ctx.fillText('Game Over!', width / 2, height / 2 - 20);
+        ctx.font = '24px "Press Start 2P", cursive';
+        ctx.fillText(`Final Score: ${score}`, width / 2, height / 2 + 20);
+        ctx.fillStyle = '#6366f1';
+        ctx.font = '20px "Press Start 2P", cursive';
+        ctx.fillText('Refresh to play again', width / 2, height / 2 + 60);
+        return;
+      }
+
+      ctx.clearRect(0, 0, width, height);
+
+      // Move Pepe
+      if (keys.left && pepe.x > 0) pepe.x -= 0.15;
+      if (keys.right && pepe.x < width / scale - 1) pepe.x += 0.15;
+      if (keys.up && pepe.y > 0) pepe.y -= 0.15;
+      if (keys.down && pepe.y < height / scale - 1) pepe.y += 0.15;
+
+      drawPepe();
+      drawObstacles();
+      updateObstacles();
+      checkCollision();
+
+      requestAnimationFrame(gameLoop);
+    }
+
+    // Keyboard controls
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') keys.left = true;
+      if (e.key === 'ArrowRight') keys.right = true;
+      if (e.key === 'ArrowUp') keys.up = true;
+      if (e.key === 'ArrowDown') keys.down = true;
+    });
+    window.addEventListener('keyup', (e) => {
+      if (e.key === 'ArrowLeft') keys.left = false;
+      if (e.key === 'ArrowRight') keys.right = false;
+      if (e.key === 'ArrowUp') keys.up = false;
+      if (e.key === 'ArrowDown') keys.down = false;
+    });
+
+    // Touch controls for mobile
+    const btnLeft = document.getElementById('btn-left');
+    const btnRight = document.getElementById('btn-right');
+    const btnUp = document.getElementById('btn-up');
+    const btnDown = document.getElementById('btn-down');
+
+    btnLeft.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      keys.left = true;
+    });
+    btnLeft.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      keys.left = false;
+    });
+    btnRight.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      keys.right = true;
+    });
+    btnRight.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      keys.right = false;
+    });
+    btnUp.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      keys.up = true;
+    });
+    btnUp.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      keys.up = false;
+    });
+    btnDown.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      keys.down = true;
+    });
+    btnDown.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      keys.down = false;
+    });
+
+    // Start game loop
+    gameLoop();
+  </script>
+ </body>
+</html>
+

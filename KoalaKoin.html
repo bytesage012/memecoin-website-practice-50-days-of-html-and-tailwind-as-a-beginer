@@ -1,0 +1,224 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        KoalaKoin - $EUCALYP
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-green-50 text-green-900 min-h-screen flex flex-col">
+    <header class="sticky top-0 bg-green-100 bg-opacity-80 backdrop-blur-md z-30 shadow-md">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a class="text-3xl font-semibold tracking-wide select-none" href="#hero">
+     KoalaKoin
+    </a>
+            <ul class="hidden md:flex space-x-8 text-green-800 font-semibold">
+                <li>
+                    <a class="hover:text-green-600 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-600 transition" href="#stake">
+       Stake Your Koala
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-green-600 transition" href="#faq">
+       FAQ
+      </a>
+                </li>
+            </ul>
+            <button class="md:hidden text-green-800 focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </nav>
+        <div class="md:hidden bg-green-100 bg-opacity-90 backdrop-blur-md hidden" id="mobile-menu">
+            <ul class="flex flex-col space-y-4 px-6 py-4 text-green-800 font-semibold">
+                <li>
+                    <a class="block hover:text-green-600 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-green-600 transition" href="#stake">
+       Stake Your Koala
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-green-600 transition" href="#faq">
+       FAQ
+      </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="flex-grow">
+        <section class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12" id="hero">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-5xl font-extrabold mb-4 leading-tight">
+                    Welcome to KoalaKoin
+                    <span class="text-green-600">
+       ($EUCALYP)
+      </span>
+                </h1>
+                <p class="text-green-800 text-lg mb-8 max-w-md mx-auto md:mx-0">
+                    Chill out with the softest crypto on the blockchain. Stake your koala, earn rewards, and join a calm, green community.
+                </p>
+                <a class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-lg shadow-md transition" href="#stake">
+      Stake Your Koala
+     </a>
+            </div>
+            <div class="md:w-1/2 max-w-md mx-auto">
+                <img alt="Sleeping koala peacefully resting on a eucalyptus branch surrounded by soft pastel green leaves and gentle sunlight filtering through" class="rounded-3xl shadow-lg w-full object-cover" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ecf972c9-0913-4bef-4126-e604697a0f23.jpg"
+                    width="600" />
+            </div>
+        </section>
+        <section class="bg-green-100 bg-opacity-70 py-20" id="stake">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-green-800 mb-6">
+                    Stake Your Koala
+                </h2>
+                <p class="text-green-700 mb-10 max-w-xl mx-auto">
+                    Connect your wallet and start staking your KoalaKoin tokens to earn exclusive rewards and help grow the eucalyptus forest of $EUCALYP.
+                </p>
+                <button aria-label="Connect Wallet" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-10 py-4 rounded-full shadow-lg transition flex items-center justify-center mx-auto" id="connect-wallet">
+      <i class="fas fa-wallet mr-3">
+      </i>
+      Connect Wallet
+     </button>
+            </div>
+        </section>
+        <section class="max-w-4xl mx-auto px-6 py-20" id="faq">
+            <h2 class="text-4xl font-bold text-green-800 mb-12 text-center">
+                Frequently Asked Questions
+            </h2>
+            <div class="space-y-4">
+                <div class="border border-green-300 rounded-lg overflow-hidden">
+                    <button aria-controls="faq1-content" aria-expanded="false" class="w-full flex justify-between items-center px-6 py-4 text-left text-green-800 font-semibold focus:outline-none focus:ring-2 focus:ring-green-400" id="faq1">
+       <span>
+        What is KoalaKoin ($EUCALYP)?
+       </span>
+       <i class="fas fa-chevron-down transition-transform duration-300">
+       </i>
+      </button>
+                    <div aria-labelledby="faq1" class="px-6 pb-6 max-h-0 overflow-hidden text-green-700 transition-all duration-300" id="faq1-content" role="region">
+                        KoalaKoin ($EUCALYP) is a chill, eucalyptus-themed cryptocurrency designed for a calm and supportive community. Stake your tokens and watch your koala grow happy and healthy.
+                    </div>
+                </div>
+                <div class="border border-green-300 rounded-lg overflow-hidden">
+                    <button aria-controls="faq2-content" aria-expanded="false" class="w-full flex justify-between items-center px-6 py-4 text-left text-green-800 font-semibold focus:outline-none focus:ring-2 focus:ring-green-400" id="faq2">
+       <span>
+        How do I stake my KoalaKoin?
+       </span>
+       <i class="fas fa-chevron-down transition-transform duration-300">
+       </i>
+      </button>
+                    <div aria-labelledby="faq2" class="px-6 pb-6 max-h-0 overflow-hidden text-green-700 transition-all duration-300" id="faq2-content" role="region">
+                        Simply connect your wallet using the “Connect Wallet” button above, then follow the staking instructions to lock your $EUCALYP tokens and start earning rewards.
+                    </div>
+                </div>
+                <div class="border border-green-300 rounded-lg overflow-hidden">
+                    <button aria-controls="faq3-content" aria-expanded="false" class="w-full flex justify-between items-center px-6 py-4 text-left text-green-800 font-semibold focus:outline-none focus:ring-2 focus:ring-green-400" id="faq3">
+       <span>
+        What rewards can I earn?
+       </span>
+       <i class="fas fa-chevron-down transition-transform duration-300">
+       </i>
+      </button>
+                    <div aria-labelledby="faq3" class="px-6 pb-6 max-h-0 overflow-hidden text-green-700 transition-all duration-300" id="faq3-content" role="region">
+                        Rewards include additional $EUCALYP tokens, exclusive NFTs of sleepy koalas, and access to community events focused on sustainability and crypto education.
+                    </div>
+                </div>
+                <div class="border border-green-300 rounded-lg overflow-hidden">
+                    <button aria-controls="faq4-content" aria-expanded="false" class="w-full flex justify-between items-center px-6 py-4 text-left text-green-800 font-semibold focus:outline-none focus:ring-2 focus:ring-green-400" id="faq4">
+       <span>
+        Is KoalaKoin eco-friendly?
+       </span>
+       <i class="fas fa-chevron-down transition-transform duration-300">
+       </i>
+      </button>
+                    <div aria-labelledby="faq4" class="px-6 pb-6 max-h-0 overflow-hidden text-green-700 transition-all duration-300" id="faq4-content" role="region">
+                        Yes! KoalaKoin is committed to sustainability and partners with organizations to plant eucalyptus trees and support koala habitats.
+                    </div>
+                </div>
+                <div class="border border-green-300 rounded-lg overflow-hidden">
+                    <button aria-controls="faq5-content" aria-expanded="false" class="w-full flex justify-between items-center px-6 py-4 text-left text-green-800 font-semibold focus:outline-none focus:ring-2 focus:ring-green-400" id="faq5">
+       <span>
+        How can I join the community?
+       </span>
+       <i class="fas fa-chevron-down transition-transform duration-300">
+       </i>
+      </button>
+                    <div aria-labelledby="faq5" class="px-6 pb-6 max-h-0 overflow-hidden text-green-700 transition-all duration-300" id="faq5-content" role="region">
+                        Join our social channels linked at the bottom of the page, participate in staking, and engage with fellow koala lovers to stay updated and involved.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-green-100 bg-opacity-80 backdrop-blur-md py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 text-center text-green-700 space-x-6">
+            <a aria-label="Twitter" class="inline-block hover:text-green-600 transition" href="https://twitter.com/KoalaKoin" rel="noopener" target="_blank">
+                <i class="fab fa-twitter fa-lg">
+     </i>
+            </a>
+            <a aria-label="Discord" class="inline-block hover:text-green-600 transition" href="https://discord.gg/KoalaKoin" rel="noopener" target="_blank">
+                <i class="fab fa-discord fa-lg">
+     </i>
+            </a>
+            <a aria-label="GitHub" class="inline-block hover:text-green-600 transition" href="https://github.com/KoalaKoin" rel="noopener" target="_blank">
+                <i class="fab fa-github fa-lg">
+     </i>
+            </a>
+        </div>
+        <p class="mt-4 text-green-600 text-sm">
+            © 2024 KoalaKoin. All rights reserved.
+        </p>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ accordion functionality
+        const faqButtons = document.querySelectorAll('#faq button');
+        faqButtons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                // Close all
+                faqButtons.forEach((b) => {
+                    b.setAttribute('aria-expanded', 'false');
+                    b.querySelector('i').classList.remove('rotate-180');
+                    const content = document.getElementById(b.getAttribute('aria-controls'));
+                    content.style.maxHeight = null;
+                });
+                if (!expanded) {
+                    btn.setAttribute('aria-expanded', 'true');
+                    btn.querySelector('i').classList.add('rotate-180');
+                    const content = document.getElementById(btn.getAttribute('aria-controls'));
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Initialize FAQ maxHeight for any expanded on load (none by default)
+    </script>
+</body>
+
+</html>

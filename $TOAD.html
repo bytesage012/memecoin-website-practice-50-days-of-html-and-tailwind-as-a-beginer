@@ -1,0 +1,893 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        $TOAD - Turbo Meme Coin Powered by Frog Lore
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Press Start 2P', cursive;
+        }
+        /* Bouncy animation for hero text */
+        
+        @keyframes bounceY {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .bounce-y {
+            animation: bounceY 2s infinite;
+        }
+        /* Mini game styles */
+        
+        #gameCanvas {
+            background-color: #1e3a1e;
+            border: 4px solid #4ade80;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-green-900 via-green-800 to-green-700 text-green-100 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-green-900 bg-opacity-90 fixed w-full z-30 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+            <a class="text-2xl font-bold text-lime-400 flex items-center space-x-2" href="#hero">
+                <img alt="Green cartoon frog face with racing goggles" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/8535c9e8-e21b-4cd4-c781-2417646e193c.jpg" width="40" />
+                <span>
+      $TOAD
+     </span>
+            </a>
+            <ul class="hidden md:flex space-x-8 font-semibold text-green-300">
+                <li>
+                    <a class="hover:text-lime-400 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-lime-400 transition" href="#swampomics">
+       Swampomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-lime-400 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-lime-400 transition" href="#game">
+       Mini Game
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-lime-400 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-lime-400 transition" href="#toad500">
+       Toad 500
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-lime-400 transition" href="#merch">
+       NFT Croak Merch
+      </a>
+                </li>
+            </ul>
+            <button class="md:hidden text-lime-400 focus:outline-none" id="mobile-menu-btn">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-green-900 bg-opacity-95" id="mobile-menu">
+            <ul class="flex flex-col space-y-3 px-6 py-4 font-semibold text-green-300">
+                <li>
+                    <a class="block hover:text-lime-400 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-lime-400 transition" href="#swampomics">
+       Swampomics
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-lime-400 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-lime-400 transition" href="#game">
+       Mini Game
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-lime-400 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-lime-400 transition" href="#toad500">
+       Toad 500
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-lime-400 transition" href="#merch">
+       NFT Croak Merch
+      </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="flex-grow pt-20">
+        <!-- Hero Section -->
+        <section class="relative bg-gradient-to-r from-lime-600 via-green-500 to-green-700 overflow-hidden" id="hero">
+            <div class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="max-w-xl text-center md:text-left">
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-lime-300 bounce-y leading-tight">
+                        $TOAD
+                    </h1>
+                    <p class="mt-6 text-green-100 text-lg md:text-xl font-semibold drop-shadow-lg">
+                        The memecoin powered by turbo memes and legendary frog lore.
+                    </p>
+                    <a class="inline-block mt-8 px-8 py-4 bg-lime-400 text-green-900 font-bold rounded-full shadow-lg hover:bg-lime-500 transition transform hover:-translate-y-1" href="#game">
+       Race Now!
+      </a>
+                </div>
+                <div class="relative w-full max-w-md">
+                    <img alt="Cartoon frog wearing racing goggles and helmet driving a toad-shaped race car on a swamp racing track with cheering frogs in the background" class="rounded-xl shadow-2xl" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5f15f0f8-44c9-406a-c5cf-02af07a24071.jpg"
+                        width="400" />
+                    <img alt="Turbo Toad logo with a stylized frog and racing flames" class="absolute -top-8 -right-8 w-28 h-28 animate-bounce" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1004aca4-1ed7-4617-def6-91c7a472883c.jpg" width="120"
+                    />
+                </div>
+            </div>
+            <img alt="Wide swamp race track background with toad footprints and racing flags" class="w-full mt-12" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/eb14fcdf-2db6-4acc-1afd-e37a4b9eba6a.jpg" width="1920" />
+        </section>
+        <!-- Swampomics Tokenomics Section -->
+        <section class="max-w-7xl mx-auto px-6 py-20 bg-green-900 bg-opacity-90 rounded-t-3xl shadow-lg mt-16" id="swampomics">
+            <h2 class="text-4xl font-extrabold text-lime-400 text-center mb-12 tracking-wide">
+                Swampomics Tokenomics
+            </h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                <div class="w-full md:w-1/2 max-w-md">
+                    <img alt="Pie chart showing $TOAD tokenomics with swamp-themed colors: 40% liquidity, 25% community rewards, 15% dev fund, 10% marketing, 10% burn" class="mx-auto rounded-lg shadow-lg" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6cde0eab-905b-4859-153c-91beb27c6c1e.jpg"
+                        width="400" />
+                </div>
+                <div class="w-full md:w-1/2 max-w-md text-green-200 space-y-6 text-lg font-semibold">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-6 h-6 rounded-full bg-lime-400">
+                        </div>
+                        <span>
+        40% Liquidity Pool - Keeps the swamp flowing
+       </span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-6 h-6 rounded-full bg-green-500">
+                        </div>
+                        <span>
+        25% Community Rewards - For the fastest frogs
+       </span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-6 h-6 rounded-full bg-yellow-400">
+                        </div>
+                        <span>
+        15% Dev Fund - Building the swamp empire
+       </span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-6 h-6 rounded-full bg-red-500">
+                        </div>
+                        <span>
+        10% Marketing - Spreading the croak
+       </span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-6 h-6 rounded-full bg-gray-700">
+                        </div>
+                        <span>
+        10% Burn - To keep the swamp hot
+       </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Roadmap Section -->
+        <section class="max-w-7xl mx-auto px-6 py-20 mt-16" id="roadmap">
+            <h2 class="text-4xl font-extrabold text-lime-400 text-center mb-12 tracking-wide">
+                Meme-Filled Roadmap
+            </h2>
+            <div class="relative max-w-4xl mx-auto">
+                <div class="border-l-4 border-lime-400 absolute h-full left-1/2 transform -translate-x-1/2 top-0">
+                </div>
+                <ul class="space-y-16">
+                    <li class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="md:w-1/2 md:pr-8 text-right md:text-right">
+                            <h3 class="text-2xl font-bold text-lime-300">
+                                Q2 2024
+                            </h3>
+                            <p class="mt-2 text-green-200 max-w-md inline-block">
+                                Launch $TOAD token with turbo meme hype and frog lore storytelling.
+                            </p>
+                        </div>
+                        <div class="md:w-1/2 flex justify-center md:justify-start relative">
+                            <img alt="Funny frog holding a checkered racing flag with meme style" class="rounded-full border-4 border-lime-400 shadow-lg" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/47a56ecc-0837-4b2f-0bf0-8b65a90a6e7f.jpg" width="120"
+                            />
+                            <div class="absolute left-1/2 top-1/2 w-6 h-6 bg-lime-400 rounded-full border-2 border-green-900 transform -translate-x-1/2 -translate-y-1/2">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="md:w-1/2 md:order-2 md:pl-8 text-left md:text-left">
+                            <h3 class="text-2xl font-bold text-lime-300">
+                                Q3 2024
+                            </h3>
+                            <p class="mt-2 text-green-200 max-w-md inline-block">
+                                Release Meme Racing Mini Game &amp; Leaderboard to crown the fastest wallets.
+                            </p>
+                        </div>
+                        <div class="md:w-1/2 md:order-1 flex justify-center md:justify-end relative">
+                            <img alt="Cartoon toad racing in a pixel art style meme" class="rounded-full border-4 border-lime-400 shadow-lg" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1b6c31f8-b088-4d79-f56b-2a8864853b37.jpg" width="120" />
+                            <div class="absolute right-1/2 top-1/2 w-6 h-6 bg-lime-400 rounded-full border-2 border-green-900 transform translate-x-1/2 -translate-y-1/2">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="md:w-1/2 md:pr-8 text-right md:text-right">
+                            <h3 class="text-2xl font-bold text-lime-300">
+                                Q4 2024
+                            </h3>
+                            <p class="mt-2 text-green-200 max-w-md inline-block">
+                                Countdown &amp; Event for Toad 500 - The ultimate frog race showdown.
+                            </p>
+                        </div>
+                        <div class="md:w-1/2 flex justify-center md:justify-start relative">
+                            <img alt="Meme style frog race flag with Toad 500 text and racing flames" class="rounded-full border-4 border-lime-400 shadow-lg" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/fdc5389c-b8cf-4fec-18f6-5e2ceefb21d0.jpg" width="120"
+                            />
+                            <div class="absolute left-1/2 top-1/2 w-6 h-6 bg-lime-400 rounded-full border-2 border-green-900 transform -translate-x-1/2 -translate-y-1/2">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div class="md:w-1/2 md:order-2 md:pl-8 text-left md:text-left">
+                            <h3 class="text-2xl font-bold text-lime-300">
+                                Q1 2025
+                            </h3>
+                            <p class="mt-2 text-green-200 max-w-md inline-block">
+                                Launch NFT Croak Merch - Exclusive frog-themed collectibles &amp; wearables.
+                            </p>
+                        </div>
+                        <div class="md:w-1/2 md:order-1 flex justify-center md:justify-end relative">
+                            <img alt="Pixel art style frog NFT wearing sunglasses and merch hat meme" class="rounded-full border-4 border-lime-400 shadow-lg" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/fab5f0d3-3d95-4cc4-7690-329611ec6c54.jpg" width="120"
+                            />
+                            <div class="absolute right-1/2 top-1/2 w-6 h-6 bg-lime-400 rounded-full border-2 border-green-900 transform translate-x-1/2 -translate-y-1/2">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Meme Racing Mini Game Section -->
+        <section class="max-w-7xl mx-auto px-6 py-20 bg-green-900 bg-opacity-90 rounded-b-3xl shadow-lg mt-16" id="game">
+            <h2 class="text-4xl font-extrabold text-lime-400 text-center mb-12 tracking-wide">
+                Meme Racing Mini Game
+            </h2>
+            <div class="max-w-3xl mx-auto">
+                <canvas class="rounded-lg shadow-lg" height="300" id="gameCanvas" width="600">
+     </canvas>
+                <div class="mt-6 flex justify-center space-x-6 text-green-300 font-mono text-lg select-none">
+                    <div>
+                        <i class="fas fa-arrow-left">
+       </i> Move Left
+                    </div>
+                    <div>
+                        <i class="fas fa-arrow-right">
+       </i> Move Right
+                    </div>
+                    <div>
+                        <i class="fas fa-arrow-up">
+       </i> Jump
+                    </div>
+                </div>
+                <button class="mt-8 block mx-auto px-8 py-3 bg-lime-400 text-green-900 font-bold rounded-full shadow-lg hover:bg-lime-500 transition transform hover:-translate-y-1" id="startGameBtn">
+      Start Race
+     </button>
+                <p class="mt-6 text-center text-lime-300 font-semibold" id="gameStatus">
+                </p>
+            </div>
+        </section>
+        <!-- Leaderboard Section -->
+        <section class="max-w-7xl mx-auto px-6 py-20 mt-16" id="leaderboard">
+            <h2 class="text-4xl font-extrabold text-lime-400 text-center mb-12 tracking-wide">
+                Leaderboard of Fastest Wallets
+            </h2>
+            <div class="overflow-x-auto rounded-lg shadow-lg bg-green-900 bg-opacity-90">
+                <table class="min-w-full text-green-200 text-center text-sm md:text-base">
+                    <thead class="bg-lime-400 text-green-900 font-bold uppercase">
+                        <tr>
+                            <th class="py-3 px-4">
+                                Rank
+                            </th>
+                            <th class="py-3 px-4">
+                                Wallet Address
+                            </th>
+                            <th class="py-3 px-4">
+                                Top Speed (Toad Units)
+                            </th>
+                            <th class="py-3 px-4">
+                                Best Lap Time
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-green-700 hover:bg-green-800 transition">
+                            <td class="py-3 px-4 font-bold">
+                                1
+                            </td>
+                            <td class="py-3 px-4 font-mono truncate max-w-xs">
+                                0xFrog1234Toad5678Race9...
+                            </td>
+                            <td class="py-3 px-4">
+                                98.7
+                            </td>
+                            <td class="py-3 px-4">
+                                00:01:23
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-800 transition">
+                            <td class="py-3 px-4 font-bold">
+                                2
+                            </td>
+                            <td class="py-3 px-4 font-mono truncate max-w-xs">
+                                0xToadRaceFrog9876Jump...
+                            </td>
+                            <td class="py-3 px-4">
+                                95.4
+                            </td>
+                            <td class="py-3 px-4">
+                                00:01:30
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-800 transition">
+                            <td class="py-3 px-4 font-bold">
+                                3
+                            </td>
+                            <td class="py-3 px-4 font-mono truncate max-w-xs">
+                                0xJumpToadFrog4321Speed...
+                            </td>
+                            <td class="py-3 px-4">
+                                92.1
+                            </td>
+                            <td class="py-3 px-4">
+                                00:01:35
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-800 transition">
+                            <td class="py-3 px-4 font-bold">
+                                4
+                            </td>
+                            <td class="py-3 px-4 font-mono truncate max-w-xs">
+                                0xSpeedyFrogToad2468Race...
+                            </td>
+                            <td class="py-3 px-4">
+                                90.0
+                            </td>
+                            <td class="py-3 px-4">
+                                00:01:40
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-800 transition">
+                            <td class="py-3 px-4 font-bold">
+                                5
+                            </td>
+                            <td class="py-3 px-4 font-mono truncate max-w-xs">
+                                0xTurboToadFrog1357Jump...
+                            </td>
+                            <td class="py-3 px-4">
+                                88.5
+                            </td>
+                            <td class="py-3 px-4">
+                                00:01:45
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-800 transition">
+                            <td class="py-3 px-4 font-bold">
+                                6
+                            </td>
+                            <td class="py-3 px-4 font-mono truncate max-w-xs">
+                                0xFrogJumpToad8642Speed...
+                            </td>
+                            <td class="py-3 px-4">
+                                87.0
+                            </td>
+                            <td class="py-3 px-4">
+                                00:01:50
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-800 transition">
+                            <td class="py-3 px-4 font-bold">
+                                7
+                            </td>
+                            <td class="py-3 px-4 font-mono truncate max-w-xs">
+                                0xRaceToadFrog9753Turbo...
+                            </td>
+                            <td class="py-3 px-4">
+                                85.3
+                            </td>
+                            <td class="py-3 px-4">
+                                00:01:55
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-800 transition">
+                            <td class="py-3 px-4 font-bold">
+                                8
+                            </td>
+                            <td class="py-3 px-4 font-mono truncate max-w-xs">
+                                0xToadSpeedFrog3579Jump...
+                            </td>
+                            <td class="py-3 px-4">
+                                83.9
+                            </td>
+                            <td class="py-3 px-4">
+                                00:02:00
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-800 transition">
+                            <td class="py-3 px-4 font-bold">
+                                9
+                            </td>
+                            <td class="py-3 px-4 font-mono truncate max-w-xs">
+                                0xJumpFrogToad4682Race...
+                            </td>
+                            <td class="py-3 px-4">
+                                82.4
+                            </td>
+                            <td class="py-3 px-4">
+                                00:02:05
+                            </td>
+                        </tr>
+                        <tr class="border-b border-green-700 hover:bg-green-800 transition">
+                            <td class="py-3 px-4 font-bold">
+                                10
+                            </td>
+                            <td class="py-3 px-4 font-mono truncate max-w-xs">
+                                0xTurboFrogToad1597Speed...
+                            </td>
+                            <td class="py-3 px-4">
+                                80.0
+                            </td>
+                            <td class="py-3 px-4">
+                                00:02:10
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- Toad 500 Countdown Section -->
+        <section class="max-w-7xl mx-auto px-6 py-20 bg-gradient-to-r from-lime-600 via-green-500 to-green-700 rounded-3xl shadow-lg mt-16 text-center text-green-900" id="toad500">
+            <h2 class="text-5xl font-extrabold mb-8 tracking-wide">
+                Countdown to Toad 500
+            </h2>
+            <div class="flex justify-center space-x-12 text-4xl font-mono font-bold" id="countdown">
+                <div>
+                    <div class="bg-lime-400 rounded-lg px-6 py-4 shadow-lg" id="days">
+                        00
+                    </div>
+                    <div class="mt-2 text-lg">
+                        Days
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-lime-400 rounded-lg px-6 py-4 shadow-lg" id="hours">
+                        00
+                    </div>
+                    <div class="mt-2 text-lg">
+                        Hours
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-lime-400 rounded-lg px-6 py-4 shadow-lg" id="minutes">
+                        00
+                    </div>
+                    <div class="mt-2 text-lg">
+                        Minutes
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-lime-400 rounded-lg px-6 py-4 shadow-lg" id="seconds">
+                        00
+                    </div>
+                    <div class="mt-2 text-lg">
+                        Seconds
+                    </div>
+                </div>
+            </div>
+            <p class="mt-8 text-lg font-semibold">
+                Get ready for the ultimate frog race showdown!
+            </p>
+        </section>
+        <!-- NFT Croak Merch Section -->
+        <section class="max-w-7xl mx-auto px-6 py-20 mt-16" id="merch">
+            <h2 class="text-4xl font-extrabold text-lime-400 text-center mb-12 tracking-wide">
+                NFT Croak Merch
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                <div class="bg-green-900 bg-opacity-90 rounded-xl shadow-lg p-6 flex flex-col items-center">
+                    <img alt="Pixel art style frog wearing a red racing helmet with green visor NFT collectible" class="rounded-lg mb-6 shadow-md" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d0a684e1-c25b-4556-fbe5-96cb5afb7600.jpg" width="300"
+                    />
+                    <h3 class="text-lime-400 font-bold text-xl mb-2">
+                        Turbo Helmet Toad
+                    </h3>
+                    <p class="text-green-300 text-center">
+                        Exclusive pixel frog with turbo racing helmet.
+                    </p>
+                </div>
+                <div class="bg-green-900 bg-opacity-90 rounded-xl shadow-lg p-6 flex flex-col items-center">
+                    <img alt="Cartoon frog wearing sunglasses and a gold chain necklace NFT collectible" class="rounded-lg mb-6 shadow-md" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/386ba48e-f997-46b5-69e2-0738063e8588.jpg" width="300" />
+                    <h3 class="text-lime-400 font-bold text-xl mb-2">
+                        Swamp King
+                    </h3>
+                    <p class="text-green-300 text-center">
+                        Cool frog flexing with swag and gold chain.
+                    </p>
+                </div>
+                <div class="bg-green-900 bg-opacity-90 rounded-xl shadow-lg p-6 flex flex-col items-center">
+                    <img alt="Frog wearing a green racing jumpsuit and boots NFT collectible" class="rounded-lg mb-6 shadow-md" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/fb4c9f53-8ca7-4e9c-1729-00e1871c5b42.jpg" width="300" />
+                    <h3 class="text-lime-400 font-bold text-xl mb-2">
+                        Speedster Suit
+                    </h3>
+                    <p class="text-green-300 text-center">
+                        Ready-to-race frog in full jumpsuit gear.
+                    </p>
+                </div>
+                <div class="bg-green-900 bg-opacity-90 rounded-xl shadow-lg p-6 flex flex-col items-center">
+                    <img alt="Frog holding a checkered racing flag and wearing racing gloves NFT collectible" class="rounded-lg mb-6 shadow-md" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/a76b6ffc-f0af-4689-2640-68f5059ace43.jpg" width="300"
+                    />
+                    <h3 class="text-lime-400 font-bold text-xl mb-2">
+                        Flag Bearer
+                    </h3>
+                    <p class="text-green-300 text-center">
+                        Champion frog waving the victory flag.
+                    </p>
+                </div>
+                <div class="bg-green-900 bg-opacity-90 rounded-xl shadow-lg p-6 flex flex-col items-center">
+                    <img alt="Frog wearing a turbo jetpack flying over swamp NFT collectible" class="rounded-lg mb-6 shadow-md" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/b08b95f8-7a4a-47f6-6d59-3ee0b94f96c4.jpg" width="300" />
+                    <h3 class="text-lime-400 font-bold text-xl mb-2">
+                        Jetpack Jumper
+                    </h3>
+                    <p class="text-green-300 text-center">
+                        Frog with turbo jetpack ready to leap ahead.
+                    </p>
+                </div>
+                <div class="bg-green-900 bg-opacity-90 rounded-xl shadow-lg p-6 flex flex-col items-center">
+                    <img alt="Frog wearing a gold crown and green racing suit NFT collectible" class="rounded-lg mb-6 shadow-md" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/96bfdb8b-c26a-4c9f-2db5-c6ad3fd394da.jpg" width="300" />
+                    <h3 class="text-lime-400 font-bold text-xl mb-2">
+                        King Croak
+                    </h3>
+                    <p class="text-green-300 text-center">
+                        The royal frog of the racing swamp.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-green-900 bg-opacity-90 text-green-300 py-8 mt-16 text-center font-mono text-sm">
+        © 2024 $TOAD Memecoin. Powered by Turbo Memes &amp; Frog Lore. All rights reserved.
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Countdown Timer for Toad 500
+        const countdownDate = new Date('2024-12-31T20:00:00Z').getTime();
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            if (distance < 0) {
+                daysEl.textContent = '00';
+                hoursEl.textContent = '00';
+                minutesEl.textContent = '00';
+                secondsEl.textContent = '00';
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            daysEl.textContent = days.toString().padStart(2, '0');
+            hoursEl.textContent = hours.toString().padStart(2, '0');
+            minutesEl.textContent = minutes.toString().padStart(2, '0');
+            secondsEl.textContent = seconds.toString().padStart(2, '0');
+        }
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Meme Racing Mini Game
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const startBtn = document.getElementById('startGameBtn');
+        const gameStatus = document.getElementById('gameStatus');
+
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
+
+        // Game variables
+        let gameRunning = false;
+        let player = {
+            x: 50,
+            y: canvasHeight - 60,
+            width: 50,
+            height: 40,
+            color: '#a3e635', // lime-400
+            vy: 0,
+            gravity: 0.8,
+            jumpPower: -15,
+            onGround: true,
+            speed: 5,
+        };
+
+        let obstacles = [];
+        let obstacleTimer = 0;
+        let obstacleInterval = 90; // frames
+        let frameCount = 0;
+        let score = 0;
+
+        // Leaderboard update simulation (not connected to real wallets)
+        const leaderboard = [{
+            rank: 1,
+            wallet: '0xFrog1234Toad5678Race9...',
+            speed: 98.7,
+            time: '00:01:23'
+        }, {
+            rank: 2,
+            wallet: '0xToadRaceFrog9876Jump...',
+            speed: 95.4,
+            time: '00:01:30'
+        }, {
+            rank: 3,
+            wallet: '0xJumpToadFrog4321Speed...',
+            speed: 92.1,
+            time: '00:01:35'
+        }, {
+            rank: 4,
+            wallet: '0xSpeedyFrogToad2468Race...',
+            speed: 90.0,
+            time: '00:01:40'
+        }, {
+            rank: 5,
+            wallet: '0xTurboToadFrog1357Jump...',
+            speed: 88.5,
+            time: '00:01:45'
+        }, {
+            rank: 6,
+            wallet: '0xFrogJumpToad8642Speed...',
+            speed: 87.0,
+            time: '00:01:50'
+        }, {
+            rank: 7,
+            wallet: '0xRaceToadFrog9753Turbo...',
+            speed: 85.3,
+            time: '00:01:55'
+        }, {
+            rank: 8,
+            wallet: '0xToadSpeedFrog3579Jump...',
+            speed: 83.9,
+            time: '00:02:00'
+        }, {
+            rank: 9,
+            wallet: '0xJumpFrogToad4682Race...',
+            speed: 82.4,
+            time: '00:02:05'
+        }, {
+            rank: 10,
+            wallet: '0xTurboFrogToad1597Speed...',
+            speed: 80.0,
+            time: '00:02:10'
+        }, ];
+
+        // Controls
+        const keys = {
+            left: false,
+            right: false,
+            up: false,
+        };
+
+        window.addEventListener('keydown', (e) => {
+            if (e.code === 'ArrowLeft') keys.left = true;
+            if (e.code === 'ArrowRight') keys.right = true;
+            if (e.code === 'ArrowUp') keys.up = true;
+        });
+
+        window.addEventListener('keyup', (e) => {
+            if (e.code === 'ArrowLeft') keys.left = false;
+            if (e.code === 'ArrowRight') keys.right = false;
+            if (e.code === 'ArrowUp') keys.up = false;
+        });
+
+        function createObstacle() {
+            const height = 30 + Math.random() * 20;
+            const width = 20 + Math.random() * 20;
+            const x = canvasWidth + width;
+            const y = canvasHeight - height - 20;
+            return {
+                x,
+                y,
+                width,
+                height,
+                color: '#84cc16'
+            }; // lime-500
+        }
+
+        function resetGame() {
+            player.x = 50;
+            player.y = canvasHeight - 60;
+            player.vy = 0;
+            player.onGround = true;
+            obstacles = [];
+            obstacleTimer = 0;
+            frameCount = 0;
+            score = 0;
+            gameStatus.textContent = '';
+        }
+
+        function drawPlayer() {
+            // Draw toad race car shape with eyes
+            ctx.fillStyle = player.color;
+            ctx.beginPath();
+            ctx.moveTo(player.x, player.y + player.height);
+            ctx.lineTo(player.x + player.width * 0.2, player.y);
+            ctx.lineTo(player.x + player.width * 0.8, player.y);
+            ctx.lineTo(player.x + player.width, player.y + player.height);
+            ctx.closePath();
+            ctx.fill();
+
+            // Eyes
+            ctx.fillStyle = '#d9f99d'; // lighter lime
+            ctx.beginPath();
+            ctx.ellipse(player.x + player.width * 0.3, player.y + player.height * 0.3, 8, 12, 0, 0, Math.PI * 2);
+            ctx.ellipse(player.x + player.width * 0.7, player.y + player.height * 0.3, 8, 12, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#166534'; // dark green pupils
+            ctx.beginPath();
+            ctx.ellipse(player.x + player.width * 0.3, player.y + player.height * 0.3, 4, 6, 0, 0, Math.PI * 2);
+            ctx.ellipse(player.x + player.width * 0.7, player.y + player.height * 0.3, 4, 6, 0, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function drawObstacles() {
+            obstacles.forEach((obs) => {
+                ctx.fillStyle = obs.color;
+                ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
+                // Draw toad footprint on obstacle
+                ctx.fillStyle = '#4d7c0f';
+                ctx.beginPath();
+                ctx.ellipse(obs.x + obs.width / 2, obs.y + obs.height / 2, obs.width / 3, obs.height / 2.5, 0, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        }
+
+        function updateGame() {
+            if (!gameRunning) return;
+
+            frameCount++;
+            ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+            // Draw ground
+            ctx.fillStyle = '#365314';
+            ctx.fillRect(0, canvasHeight - 20, canvasWidth, 20);
+
+            // Player movement
+            if (keys.left) {
+                player.x -= player.speed;
+                if (player.x < 0) player.x = 0;
+            }
+            if (keys.right) {
+                player.x += player.speed;
+                if (player.x + player.width > canvasWidth) player.x = canvasWidth - player.width;
+            }
+            if (keys.up && player.onGround) {
+                player.vy = player.jumpPower;
+                player.onGround = false;
+            }
+
+            // Gravity
+            player.vy += player.gravity;
+            player.y += player.vy;
+
+            if (player.y + player.height >= canvasHeight - 20) {
+                player.y = canvasHeight - 20 - player.height;
+                player.vy = 0;
+                player.onGround = true;
+            }
+
+            drawPlayer();
+
+            // Obstacles
+            obstacleTimer++;
+            if (obstacleTimer > obstacleInterval) {
+                obstacles.push(createObstacle());
+                obstacleTimer = 0;
+            }
+
+            obstacles.forEach((obs, i) => {
+                obs.x -= 6;
+                if (obs.x + obs.width < 0) {
+                    obstacles.splice(i, 1);
+                    score++;
+                }
+            });
+
+            drawObstacles();
+
+            // Collision detection
+            for (let obs of obstacles) {
+                if (
+                    player.x < obs.x + obs.width &&
+                    player.x + player.width > obs.x &&
+                    player.y < obs.y + obs.height &&
+                    player.y + player.height > obs.y
+                ) {
+                    gameStatus.textContent = `Game Over! You scored ${score} hops.`;
+                    gameRunning = false;
+                    startBtn.disabled = false;
+                    return;
+                }
+            }
+
+            // Score display
+            ctx.fillStyle = '#d9f99d';
+            ctx.font = '20px monospace';
+            ctx.fillText(`Hops: ${score}`, 10, 30);
+
+            requestAnimationFrame(updateGame);
+        }
+
+        startBtn.addEventListener('click', () => {
+            if (gameRunning) return;
+            resetGame();
+            gameRunning = true;
+            startBtn.disabled = true;
+            gameStatus.textContent = 'Race started! Hop over obstacles!';
+            updateGame();
+        });
+    </script>
+</body>
+
+</html>

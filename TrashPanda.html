@@ -1,0 +1,342 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        TrashPanda Token ($BIN) - Gritty Raccoon Meme Coin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=VT323&amp;display=swap" rel="stylesheet" />
+    <style>
+        /* Custom grunge textures and effects */
+        
+        body {
+            background-color: #121212;
+            font-family: 'VT323', monospace;
+            color: #d6d6d6;
+        }
+        
+        .grunge-text {
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+        }
+        
+        .cardboard {
+            background: #7a5e2e;
+            background-image: url('https://placehold.co/600x400/7a5e2e/4a3f1a/png?text=Cardboard+Texture');
+            background-size: cover;
+            box-shadow: inset 0 0 10px #4a3f1a, 4px 4px 10px #000000cc;
+            border: 3px solid #4a3f1a;
+            color: #f0e6c8;
+            font-family: 'Press Start 2P', cursive;
+            letter-spacing: 0.05em;
+        }
+        
+        .grunge-border {
+            border: 3px solid #444;
+            box-shadow: 0 0 10px #222 inset, 0 0 15px #000;
+        }
+        
+        .grunge-bg {
+            background-image: url('https://placehold.co/1920x1080/1a1a1a/333333/png?text=Grunge+Background');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* Animated raccoon rummaging */
+        
+        @keyframes raccoon-rummage {
+            0%,
+            100% {
+                transform: translateX(0) translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateX(5px) translateY(-3px) rotate(5deg);
+            }
+            50% {
+                transform: translateX(10px) translateY(0) rotate(-5deg);
+            }
+            75% {
+                transform: translateX(5px) translateY(3px) rotate(3deg);
+            }
+        }
+        
+        .raccoon-anim {
+            animation: raccoon-rummage 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 2px #000);
+        }
+        /* Scrollbar for dark theme */
+        
+         ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background-color: #555;
+            border-radius: 10px;
+            border: 2px solid #1a1a1a;
+        }
+    </style>
+</head>
+
+<body class="grunge-bg min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="w-full bg-black bg-opacity-90 border-b-4 border-yellow-500 shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+            <div class="flex items-center space-x-3">
+                <img alt="TrashPanda Token logo, stylized raccoon face with grunge effect" class="w-12 h-12 rounded-full border-2 border-yellow-500" height="48" src="https://storage.googleapis.com/a1aa/image/f6441ace-6612-47cd-49f5-c7dac8bc4220.jpg" width="48" />
+                <h1 class="text-yellow-400 text-3xl font-bold grunge-text tracking-widest select-none">
+                    TrashPanda Token
+                    <span class="text-gray-300 text-xl">
+       ($BIN)
+      </span>
+                </h1>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-semibold text-gray-300 hover:text-yellow-400 transition-colors">
+                <a class="hover:text-yellow-400" href="#about">
+      About
+     </a>
+                <a class="hover:text-yellow-400" href="#tokenomics">
+      Tokenomics
+     </a>
+                <a class="hover:text-yellow-400" href="#roadmap">
+      Roadmap
+     </a>
+                <a class="hover:text-yellow-400" href="#community">
+      Community
+     </a>
+            </nav>
+            <button class="md:hidden text-yellow-400 focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars fa-2x">
+     </i>
+    </button>
+        </div>
+        <nav class="hidden md:hidden bg-black bg-opacity-95 border-t border-yellow-500" id="mobile-menu">
+            <div class="flex flex-col px-6 py-4 space-y-3 font-semibold text-gray-300">
+                <a class="hover:text-yellow-400" href="#about">
+      About
+     </a>
+                <a class="hover:text-yellow-400" href="#tokenomics">
+      Tokenomics
+     </a>
+                <a class="hover:text-yellow-400" href="#roadmap">
+      Roadmap
+     </a>
+                <a class="hover:text-yellow-400" href="#community">
+      Community
+     </a>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="flex-grow flex flex-col justify-center items-center text-center px-6 py-20 max-w-7xl mx-auto" id="about">
+        <h2 class="text-yellow-400 text-5xl md:text-6xl font-extrabold mb-6 grunge-text select-none tracking-widest">
+            Welcome to TrashPanda Token
+        </h2>
+        <p class="max-w-3xl text-gray-300 text-lg md:text-xl leading-relaxed mb-10">
+            The gritty raccoon-themed meme coin that’s ready to rummage through the crypto trash and find the gems. Join the $BIN revolution and help us take over the blockchain dumpster!
+        </p>
+        <a class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-4 rounded-lg shadow-lg transition-all tracking-widest select-none" href="#tokenomics">
+    Explore Tokenomics
+   </a>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="bg-black bg-opacity-90 py-16 px-6" id="tokenomics">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-yellow-400 text-4xl font-bold mb-12 text-center grunge-text select-none tracking-widest">
+                Tokenomics
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Garbage Bin Card 1 -->
+                <div class="cardboard p-6 rounded-lg relative shadow-lg grunge-border flex flex-col items-center text-center">
+                    <img alt="Dark gray garbage bin with yellow $BIN token logo on front, grunge style" class="mb-4 w-28 h-28 object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/a0159f5f-bb4f-47e0-bd25-b5e0f4a8a32b.jpg" width="120" />
+                    <h4 class="text-yellow-400 text-2xl font-bold mb-2 select-none">
+                        Total Supply
+                    </h4>
+                    <p class="text-gray-200 text-lg font-mono">
+                        $1,000,000,000 $BIN
+                    </p>
+                </div>
+                <!-- Garbage Bin Card 2 -->
+                <div class="cardboard p-6 rounded-lg relative shadow-lg grunge-border flex flex-col items-center text-center">
+                    <img alt="Dark gray garbage bin with a wallet icon and $BIN token, grunge style" class="mb-4 w-28 h-28 object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/70f74e26-a1f7-44a2-7491-af99b5ebb5e3.jpg" width="120" />
+                    <h4 class="text-yellow-400 text-2xl font-bold mb-2 select-none">
+                        Circulating Supply
+                    </h4>
+                    <p class="text-gray-200 text-lg font-mono">
+                        750,000,000 $BIN
+                    </p>
+                </div>
+                <!-- Garbage Bin Card 3 -->
+                <div class="cardboard p-6 rounded-lg relative shadow-lg grunge-border flex flex-col items-center text-center">
+                    <img alt="Dark gray garbage bin with fire icon representing token burn, grunge style" class="mb-4 w-28 h-28 object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/739c41bc-f6f3-4172-f3b2-964d8c875bbe.jpg" width="120" />
+                    <h4 class="text-yellow-400 text-2xl font-bold mb-2 select-none">
+                        Burned Tokens
+                    </h4>
+                    <p class="text-gray-200 text-lg font-mono">
+                        150,000,000 $BIN
+                    </p>
+                </div>
+                <!-- Garbage Bin Card 4 -->
+                <div class="cardboard p-6 rounded-lg relative shadow-lg grunge-border flex flex-col items-center text-center">
+                    <img alt="Dark gray garbage bin with liquidity pool icon and $BIN token, grunge style" class="mb-4 w-28 h-28 object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/09db2edf-549b-44a9-8c62-7ac1c7de71a0.jpg" width="120" />
+                    <h4 class="text-yellow-400 text-2xl font-bold mb-2 select-none">
+                        Liquidity Pool
+                    </h4>
+                    <p class="text-gray-200 text-lg font-mono">
+                        100,000,000 $BIN
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="py-20 px-6 max-w-7xl mx-auto" id="roadmap">
+        <h3 class="text-yellow-400 text-4xl font-bold mb-12 text-center grunge-text select-none tracking-widest">
+            Roadmap
+        </h3>
+        <div class="flex flex-col space-y-10 max-w-4xl mx-auto">
+            <!-- Roadmap Panel 1 -->
+            <div class="cardboard p-8 rounded-lg grunge-border shadow-lg relative">
+                <h4 class="text-yellow-400 text-2xl font-bold mb-3 select-none tracking-widest">
+                    Q2 2024 - Launch
+                </h4>
+                <ul class="list-disc list-inside text-gray-200 font-mono space-y-1">
+                    <li>
+                        Token smart contract deployment
+                    </li>
+                    <li>
+                        Website launch with full branding
+                    </li>
+                    <li>
+                        Initial liquidity pool creation
+                    </li>
+                    <li>
+                        Community building on socials
+                    </li>
+                </ul>
+            </div>
+            <!-- Roadmap Panel 2 -->
+            <div class="cardboard p-8 rounded-lg grunge-border shadow-lg relative">
+                <h4 class="text-yellow-400 text-2xl font-bold mb-3 select-none tracking-widest">
+                    Q3 2024 - Growth
+                </h4>
+                <ul class="list-disc list-inside text-gray-200 font-mono space-y-1">
+                    <li>
+                        Listing on decentralized exchanges
+                    </li>
+                    <li>
+                        Marketing campaigns with meme contests
+                    </li>
+                    <li>
+                        Partnerships with NFT projects
+                    </li>
+                    <li>
+                        Community voting for charity donations
+                    </li>
+                </ul>
+            </div>
+            <!-- Roadmap Panel 3 -->
+            <div class="cardboard p-8 rounded-lg grunge-border shadow-lg relative">
+                <h4 class="text-yellow-400 text-2xl font-bold mb-3 select-none tracking-widest">
+                    Q4 2024 - Expansion
+                </h4>
+                <ul class="list-disc list-inside text-gray-200 font-mono space-y-1">
+                    <li>
+                        Launch of TrashPanda NFT collection
+                    </li>
+                    <li>
+                        Integration with metaverse platforms
+                    </li>
+                    <li>
+                        Staking and rewards program
+                    </li>
+                    <li>
+                        Community-driven development proposals
+                    </li>
+                </ul>
+            </div>
+            <!-- Roadmap Panel 4 -->
+            <div class="cardboard p-8 rounded-lg grunge-border shadow-lg relative">
+                <h4 class="text-yellow-400 text-2xl font-bold mb-3 select-none tracking-widest">
+                    2025 and Beyond
+                </h4>
+                <ul class="list-disc list-inside text-gray-200 font-mono space-y-1">
+                    <li>
+                        Cross-chain bridge implementation
+                    </li>
+                    <li>
+                        TrashPanda merchandise launch
+                    </li>
+                    <li>
+                        Charity events and environmental initiatives
+                    </li>
+                    <li>
+                        Continuous community engagement
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Community Section -->
+    <section class="bg-black bg-opacity-90 py-16 px-6" id="community">
+        <div class="max-w-7xl mx-auto text-center">
+            <h3 class="text-yellow-400 text-4xl font-bold mb-8 grunge-text select-none tracking-widest">
+                Join the TrashPanda Community
+            </h3>
+            <p class="text-gray-300 max-w-3xl mx-auto mb-12 font-mono text-lg">
+                Connect with fellow TrashPandas, share memes, and stay updated on all things $BIN.
+            </p>
+            <div class="flex flex-wrap justify-center gap-8 text-yellow-400 text-3xl">
+                <a aria-label="Twitter" class="hover:text-yellow-600 transition-colors" href="https://twitter.com" rel="noopener" target="_blank">
+                    <i class="fab fa-twitter">
+      </i>
+                </a>
+                <a aria-label="Discord" class="hover:text-yellow-600 transition-colors" href="https://discord.com" rel="noopener" target="_blank">
+                    <i class="fab fa-discord">
+      </i>
+                </a>
+                <a aria-label="Reddit" class="hover:text-yellow-600 transition-colors" href="https://reddit.com" rel="noopener" target="_blank">
+                    <i class="fab fa-reddit-alien">
+      </i>
+                </a>
+                <a aria-label="Telegram" class="hover:text-yellow-600 transition-colors" href="https://telegram.org" rel="noopener" target="_blank">
+                    <i class="fab fa-telegram-plane">
+      </i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer with animated raccoon rummaging -->
+    <footer class="relative bg-black bg-opacity-95 border-t-4 border-yellow-500 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between">
+            <p class="text-gray-400 font-mono select-none text-sm md:text-base">
+                © 2024 TrashPanda Token. All rights reserved.
+            </p>
+            <div class="mt-6 md:mt-0 flex items-center space-x-4">
+                <img alt="Animated raccoon rummaging through trash, dark grunge style with glowing eyes and mischievous expression" aria-hidden="true" class="raccoon-anim w-20 h-20 object-contain" height="80" src="https://storage.googleapis.com/a1aa/image/dbc59a44-b4c0-4ffc-4dfe-dcf433d7cf12.jpg"
+                    width="80" />
+                <span class="text-yellow-400 font-bold select-none tracking-widest text-lg">
+      Keep Rummaging $BIN
+     </span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

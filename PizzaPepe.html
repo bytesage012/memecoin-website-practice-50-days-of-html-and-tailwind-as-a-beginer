@@ -1,0 +1,279 @@
+<html lang="en" x-data="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        PizzaPepe ($ZA) - Delicious Crypto Pizza
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script defer="" src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+        /* Sizzling pizza animation */
+        
+        @keyframes sizzle {
+            0%,
+            100% {
+                transform: rotate(-2deg) scale(1);
+                filter: brightness(1);
+            }
+            50% {
+                transform: rotate(2deg) scale(1.05);
+                filter: brightness(1.1);
+            }
+        }
+        /* Steam animation */
+        
+        @keyframes steamUp {
+            0% {
+                opacity: 0;
+                transform: translateY(10px) scaleX(0.8);
+            }
+            50% {
+                opacity: 0.6;
+                transform: translateY(-10px) scaleX(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-30px) scaleX(0.8);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-yellow-50 via-yellow-100 to-yellow-50 min-h-screen flex flex-col">
+    <!-- Hero Section -->
+    <section class="relative flex flex-col items-center justify-center text-center px-6 py-20 bg-yellow-200 overflow-hidden">
+        <h1 class="text-5xl md:text-6xl text-red-600 mb-6 drop-shadow-lg">
+            Welcome to PizzaPepe
+            <span class="text-yellow-600">
+     ($ZA)
+    </span>
+        </h1>
+        <p class="max-w-xl text-lg md:text-xl text-yellow-900 font-semibold mb-12 drop-shadow-md">
+            The hottest crypto pizza token sizzling on the blockchain! Taste the flavor of decentralized deliciousness.
+        </p>
+        <div class="relative w-64 h-64 md:w-96 md:h-96 mx-auto">
+            <img alt="A delicious pepperoni pizza with melted cheese, fresh basil leaves, and a golden crust, steaming hot and ready to eat" class="w-full h-full object-cover rounded-full shadow-2xl animate-[sizzle_3s_ease-in-out_infinite]" height="384" src="https://storage.googleapis.com/a1aa/image/86e86190-bf7d-4f08-d746-1039288ba886.jpg"
+                width="384" />
+            <!-- Steam puffs -->
+            <div class="absolute top-10 left-1/3 w-6 h-16 opacity-70">
+                <svg class="w-full h-full" fill="none" viewbox="0 0 10 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 40C7 30 3 20 5 10C7 0 3 0 5 10C7 20 3 30 5 40Z" fill="url(#steamGradient)">
+      </path>
+      <defs>
+       <lineargradient gradientunits="userSpaceOnUse" id="steamGradient" x1="5" x2="5" y1="0" y2="40">
+        <stop stop-color="white" stop-opacity="0.6">
+        </stop>
+        <stop offset="1" stop-color="white" stop-opacity="0">
+        </stop>
+       </lineargradient>
+      </defs>
+     </svg>
+            </div>
+            <div class="absolute top-14 left-1/2 w-4 h-12 opacity-60 animate-[steamUp_4s_ease-in-out_infinite]">
+                <svg class="w-full h-full" fill="none" viewbox="0 0 10 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 40C7 30 3 20 5 10C7 0 3 0 5 10C7 20 3 30 5 40Z" fill="url(#steamGradient2)">
+      </path>
+      <defs>
+       <lineargradient gradientunits="userSpaceOnUse" id="steamGradient2" x1="5" x2="5" y1="0" y2="40">
+        <stop stop-color="white" stop-opacity="0.5">
+        </stop>
+        <stop offset="1" stop-color="white" stop-opacity="0">
+        </stop>
+       </lineargradient>
+      </defs>
+     </svg>
+            </div>
+            <div class="absolute top-8 right-1/3 w-5 h-14 opacity-65 animate-[steamUp_3.5s_ease-in-out_infinite] delay-500">
+                <svg class="w-full h-full" fill="none" viewbox="0 0 10 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 40C7 30 3 20 5 10C7 0 3 0 5 10C7 20 3 30 5 40Z" fill="url(#steamGradient3)">
+      </path>
+      <defs>
+       <lineargradient gradientunits="userSpaceOnUse" id="steamGradient3" x1="5" x2="5" y1="0" y2="40">
+        <stop stop-color="white" stop-opacity="0.55">
+        </stop>
+        <stop offset="1" stop-color="white" stop-opacity="0">
+        </stop>
+       </lineargradient>
+      </defs>
+     </svg>
+            </div>
+        </div>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="py-20 bg-yellow-50 px-6">
+        <h2 class="text-4xl text-red-600 text-center font-bold mb-12 drop-shadow-md">
+            Tokenomics - Slices of $ZA
+        </h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10">
+            <!-- Slice 1 -->
+            <div class="relative flex flex-col items-center bg-yellow-100 rounded-3xl shadow-lg p-8">
+                <img alt="Pizza slice shaped token burn icon with flames and a burning crust" class="w-36 h-36 rounded-full object-cover mb-6" height="150" src="https://storage.googleapis.com/a1aa/image/d707b9b6-adcf-4fe4-97cf-13b5612507f7.jpg" width="150" />
+                <h3 class="text-2xl font-semibold text-red-700 mb-2">
+                    Token Burn
+                </h3>
+                <p class="text-yellow-900 font-medium text-center">
+                    20% of tokens are burned to keep the supply spicy and scarce.
+                </p>
+            </div>
+            <!-- Slice 2 -->
+            <div class="relative flex flex-col items-center bg-yellow-100 rounded-3xl shadow-lg p-8">
+                <img alt="Pizza slice shaped liquidity pool icon with cheese melting and coins" class="w-36 h-36 rounded-full object-cover mb-6" height="150" src="https://storage.googleapis.com/a1aa/image/8b25b020-7977-48f6-e618-e25aa3ea930a.jpg" width="150" />
+                <h3 class="text-2xl font-semibold text-red-700 mb-2">
+                    Liquidity Pool
+                </h3>
+                <p class="text-yellow-900 font-medium text-center">
+                    40% locked in liquidity to keep the market fresh and stable.
+                </p>
+            </div>
+            <!-- Slice 3 -->
+            <div class="relative flex flex-col items-center bg-yellow-100 rounded-3xl shadow-lg p-8">
+                <img alt="Pizza slice shaped community rewards icon with gift boxes and confetti" class="w-36 h-36 rounded-full object-cover mb-6" height="150" src="https://storage.googleapis.com/a1aa/image/829c4744-283c-4001-d3f9-5fa6a5b6246f.jpg" width="150" />
+                <h3 class="text-2xl font-semibold text-red-700 mb-2">
+                    Community Rewards
+                </h3>
+                <p class="text-yellow-900 font-medium text-center">
+                    25% reserved for rewarding our loyal pizza lovers and holders.
+                </p>
+            </div>
+            <!-- Slice 4 -->
+            <div class="relative flex flex-col items-center bg-yellow-100 rounded-3xl shadow-lg p-8 sm:col-span-3">
+                <img alt="Pizza slice shaped development and marketing icon with tools and megaphone" class="w-36 h-36 rounded-full object-cover mb-6 mx-auto" height="150" src="https://storage.googleapis.com/a1aa/image/ab19fb34-1fac-46f2-b207-4f613a6063f1.jpg" width="150"
+                />
+                <h3 class="text-2xl font-semibold text-red-700 mb-2 text-center">
+                    Development &amp; Marketing
+                </h3>
+                <p class="text-yellow-900 font-medium text-center max-w-3xl mx-auto">
+                    15% allocated to fuel the growth, innovation, and spreading the cheesy goodness worldwide.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="py-20 bg-yellow-200 px-6">
+        <h2 class="text-4xl text-red-600 text-center font-bold mb-12 drop-shadow-md">
+            Cheesy Roadmap Timeline
+        </h2>
+        <div class="max-w-4xl mx-auto relative">
+            <div class="border-l-4 border-red-600 absolute h-full left-1/2 transform -translate-x-1/2">
+            </div>
+            <!-- Roadmap Item 1 -->
+            <div class="mb-12 flex flex-col md:flex-row items-center md:items-start">
+                <div class="md:w-1/2 md:pr-8 md:text-right">
+                    <div class="inline-block bg-yellow-100 rounded-full p-4 shadow-lg border-4 border-red-600">
+                        <img alt="Pizza slice icon representing Q1 2024 launch with flames and cheese" class="w-20 h-20 rounded-full object-cover" height="80" src="https://storage.googleapis.com/a1aa/image/cc07cc7d-9836-4ff8-8da3-dcb4081ff360.jpg" width="80" />
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-yellow-50 rounded-2xl p-6 shadow-lg border-2 border-red-400 mt-4 md:mt-0">
+                    <h3 class="text-2xl font-bold text-red-700 mb-2">
+                        Q1 2024 - Launch
+                    </h3>
+                    <p class="text-yellow-900 font-medium">
+                        PizzaPepe token ($ZA) is born! Initial liquidity added and community building begins.
+                    </p>
+                </div>
+            </div>
+            <!-- Roadmap Item 2 -->
+            <div class="mb-12 flex flex-col md:flex-row items-center md:items-start md:flex-row-reverse">
+                <div class="md:w-1/2 md:pl-8 md:text-left">
+                    <div class="inline-block bg-yellow-100 rounded-full p-4 shadow-lg border-4 border-red-600">
+                        <img alt="Pizza slice icon representing Q2 2024 exchange listings with coins and pizza toppings" class="w-20 h-20 rounded-full object-cover" height="80" src="https://storage.googleapis.com/a1aa/image/fbd578ea-caf4-43e1-13a4-b972242deef7.jpg" width="80"
+                        />
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-yellow-50 rounded-2xl p-6 shadow-lg border-2 border-red-400 mt-4 md:mt-0">
+                    <h3 class="text-2xl font-bold text-red-700 mb-2">
+                        Q2 2024 - Exchange Listings
+                    </h3>
+                    <p class="text-yellow-900 font-medium">
+                        $ZA gets listed on major decentralized exchanges. Liquidity pool locked for 1 year.
+                    </p>
+                </div>
+            </div>
+            <!-- Roadmap Item 3 -->
+            <div class="mb-12 flex flex-col md:flex-row items-center md:items-start">
+                <div class="md:w-1/2 md:pr-8 md:text-right">
+                    <div class="inline-block bg-yellow-100 rounded-full p-4 shadow-lg border-4 border-red-600">
+                        <img alt="Pizza slice icon representing Q3 2024 community rewards with gift boxes and confetti" class="w-20 h-20 rounded-full object-cover" height="80" src="https://storage.googleapis.com/a1aa/image/55b52fb1-bd55-4112-729c-09d3a00d4652.jpg" width="80"
+                        />
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-yellow-50 rounded-2xl p-6 shadow-lg border-2 border-red-400 mt-4 md:mt-0">
+                    <h3 class="text-2xl font-bold text-red-700 mb-2">
+                        Q3 2024 - Community Rewards
+                    </h3>
+                    <p class="text-yellow-900 font-medium">
+                        Launch of staking and rewards program to share the cheesy profits with holders.
+                    </p>
+                </div>
+            </div>
+            <!-- Roadmap Item 4 -->
+            <div class="mb-12 flex flex-col md:flex-row items-center md:items-start md:flex-row-reverse">
+                <div class="md:w-1/2 md:pl-8 md:text-left">
+                    <div class="inline-block bg-yellow-100 rounded-full p-4 shadow-lg border-4 border-red-600">
+                        <img alt="Pizza slice icon representing Q4 2024 expansion with megaphone and pizza box" class="w-20 h-20 rounded-full object-cover" height="80" src="https://storage.googleapis.com/a1aa/image/dd0fbf63-0901-4f19-661c-606f4b20f9e1.jpg" width="80" />
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-yellow-50 rounded-2xl p-6 shadow-lg border-2 border-red-400 mt-4 md:mt-0">
+                    <h3 class="text-2xl font-bold text-red-700 mb-2">
+                        Q4 2024 - Expansion
+                    </h3>
+                    <p class="text-yellow-900 font-medium">
+                        Marketing campaigns and partnerships to spread the pizza love worldwide.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Telegram CTA Section -->
+    <section class="py-20 bg-yellow-50 px-6 flex justify-center">
+        <div @mouseenter="hover = true" @mouseleave="hover = false" class="relative bg-yellow-200 border-4 border-red-600 rounded-3xl shadow-2xl max-w-md w-full p-8 flex flex-col items-center" x-data="{ hover: false }">
+            <img alt="A bright yellow pizza delivery box with PizzaPepe logo and red accents, slightly open with steam coming out" class="w-48 h-36 object-cover rounded-xl mb-6 shadow-lg" height="150" src="https://storage.googleapis.com/a1aa/image/7ed5fcca-c029-4b49-3e57-0660d10fe564.jpg"
+                width="200" />
+            <h2 class="text-3xl font-bold text-red-700 mb-4 drop-shadow-md">
+                Join Our Telegram Community!
+            </h2>
+            <p class="text-yellow-900 font-semibold mb-6 text-center max-w-xs">
+                Get the latest updates, giveaways, and chat with fellow pizza lovers.
+            </p>
+            <a :class="{ 'scale-105': hover }" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-yellow-50 font-bold py-3 px-8 rounded-full shadow-lg transition-colors duration-300" href="https://t.me/PizzaPepeOfficial" rel="noopener noreferrer" target="_blank">
+                <i class="fab fa-telegram-plane fa-lg mr-3">
+     </i> Join Telegram
+            </a>
+            <!-- Steam from box -->
+            <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-10 h-24 opacity-70 animate-[steamUp_4s_ease-in-out_infinite]">
+                <svg class="w-full h-full" fill="none" viewbox="0 0 10 40" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 40C7 30 3 20 5 10C7 0 3 0 5 10C7 20 3 30 5 40Z" fill="url(#steamGradientBox)">
+      </path>
+      <defs>
+       <lineargradient gradientunits="userSpaceOnUse" id="steamGradientBox" x1="5" x2="5" y1="0" y2="40">
+        <stop stop-color="white" stop-opacity="0.6">
+        </stop>
+        <stop offset="1" stop-color="white" stop-opacity="0">
+        </stop>
+       </lineargradient>
+      </defs>
+     </svg>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-yellow-200 text-yellow-900 text-center py-6 font-semibold">
+        © 2024 PizzaPepe ($ZA) - Sizzling Crypto Pizza Token
+    </footer>
+</body>
+
+</html>

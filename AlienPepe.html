@@ -1,0 +1,380 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        AlienPepe ($ZOGG) - The Ultimate Meme Coin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;family=Press+Start+2P&amp;family=Roboto+Mono&amp;display=swap" rel="stylesheet" />
+    <style>
+        /* Neon glowing text */
+        
+        .neon-text {
+            color: #39ff14;
+            text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+        }
+        /* Neon glowing button */
+        
+        .neon-btn {
+            color: #0ff;
+            border: 2px solid #0ff;
+            box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .neon-btn:hover {
+            color: #39ff14;
+            border-color: #39ff14;
+            box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 50px #39ff14;
+            background-color: rgba(57, 255, 20, 0.1);
+        }
+        /* UFO animation */
+        
+        @keyframes ufo-float {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+        }
+        /* Flicker effect for neon */
+        
+        @keyframes flicker {
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                opacity: 1;
+                text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+            }
+            20%,
+            22%,
+            24%,
+            55% {
+                opacity: 0.8;
+                text-shadow: none;
+            }
+        }
+        
+        .neon-flicker {
+            animation: flicker 3s infinite;
+        }
+        /* Scrollbar styling */
+        
+         ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #39ff14;
+            border-radius: 10px;
+        }
+        /* Roadmap timeline */
+        
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 2rem;
+            border-left: 4px solid #39ff14;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -12px;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: #0ff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+            border: 3px solid #39ff14;
+        }
+        /* NFT card hover glow */
+        
+        .nft-card:hover {
+            box-shadow: 0 0 15px #0ff, 0 0 30px #0ff, 0 0 45px #39ff14, 0 0 60px #39ff14;
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+        }
+        /* Responsive UFO size */
+        
+        @media (max-width: 640px) {
+            .ufo-img {
+                width: 120px !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white font-['Roboto_Mono'] selection:bg-neon-green selection:text-black">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-black bg-opacity-80 backdrop-blur-md z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a class="text-3xl font-['Press_Start_2P'] neon-text tracking-widest select-none" href="#home">
+     AlienPepe $ZOGG
+    </a>
+            <ul class="hidden md:flex space-x-8 text-lg font-semibold">
+                <li>
+                    <a class="hover:text-neon-green transition-colors" href="#home">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-neon-green transition-colors" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-neon-green transition-colors" href="#mint">
+       Mint NFT
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-neon-green transition-colors" href="#about">
+       About
+      </a>
+                </li>
+            </ul>
+            <button class="md:hidden text-neon-green focus:outline-none" id="menu-btn">
+     <i class="fas fa-bars fa-2x">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-black bg-opacity-90 backdrop-blur-md" id="mobile-menu">
+            <ul class="flex flex-col space-y-4 p-6 text-center text-lg font-semibold">
+                <li>
+                    <a class="hover:text-neon-green transition-colors" href="#home" onclick="toggleMenu()">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-neon-green transition-colors" href="#roadmap" onclick="toggleMenu()">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-neon-green transition-colors" href="#mint" onclick="toggleMenu()">
+       Mint NFT
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-neon-green transition-colors" href="#about" onclick="toggleMenu()">
+       About
+      </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section with Animated UFO Banner -->
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 pt-24 text-center relative overflow-hidden" id="home">
+        <img alt="Animated neon glowing UFO spaceship with bright blue and green lights hovering above the AlienPepe logo in a dark starry sky" class="ufo-img w-48 md:w-64 mb-8 animate-ufo-float" draggable="false" height="150" src="https://storage.googleapis.com/a1aa/image/0ee192ef-bef7-4bbc-2a33-1669ecd2f4f0.jpg"
+            style="animation: ufo-float 4s ease-in-out infinite;" width="300" />
+        <h1 class="text-5xl md:text-7xl font-['Press_Start_2P'] neon-text neon-flicker select-none leading-tight">
+            AlienPepe
+            <span class="text-neon-green">
+     $ZOGG
+    </span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg md:text-xl text-neon-green font-semibold tracking-wide">
+            The Meme Coin that mixes Alien Lore with Pepe Culture. Join the intergalactic revolution!
+        </p>
+        <a class="mt-10 inline-block px-10 py-4 neon-btn rounded-lg font-bold text-xl select-none shadow-lg" href="#mint">
+    Mint Your NFT
+   </a>
+        <img alt="AlienPepe meme coin logo featuring a green alien Pepe frog with glowing neon eyes and cosmic background" class="absolute bottom-0 right-0 w-48 md:w-72 opacity-20 pointer-events-none select-none" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/ca174091-dcbb-4cec-5f94-63f31d7a1ec7.jpg"
+            width="600" />
+    </section>
+    <!-- Intergalactic Roadmap Section -->
+    <section class="max-w-6xl mx-auto px-6 py-20" id="roadmap">
+        <h2 class="text-4xl md:text-5xl font-['Press_Start_2P'] neon-text text-center mb-16 select-none">
+            Intergalactic Roadmap
+        </h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3 class="text-2xl font-bold text-neon-green mb-2 select-none">
+                    Q1 2024 - Launch
+                </h3>
+                <p class="text-gray-300 max-w-xl">
+                    Official launch of AlienPepe $ZOGG on Ethereum blockchain. Website and social channels go live. Initial meme coin hype campaign starts.
+                </p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="text-2xl font-bold text-neon-green mb-2 select-none">
+                    Q2 2024 - NFT Collection
+                </h3>
+                <p class="text-gray-300 max-w-xl">
+                    Release of the first AlienPepe NFT collection featuring 10,000 unique alien Pepe characters with glowing neon effects and alien lore backstories.
+                </p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="text-2xl font-bold text-neon-green mb-2 select-none">
+                    Q3 2024 - Community Expansion
+                </h3>
+                <p class="text-gray-300 max-w-xl">
+                    Launch of community DAO, alien-themed contests, and partnerships with other meme coins and NFT projects. AlienPepe merch store opens.
+                </p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="text-2xl font-bold text-neon-green mb-2 select-none">
+                    Q4 2024 - Intergalactic Game
+                </h3>
+                <p class="text-gray-300 max-w-xl">
+                    Development and beta release of AlienPepe metaverse game where holders can use NFTs and $ZOGG tokens to explore alien worlds and battle cosmic foes.
+                </p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="text-2xl font-bold text-neon-green mb-2 select-none">
+                    Q1 2025 - Cross-Chain Expansion
+                </h3>
+                <p class="text-gray-300 max-w-xl">
+                    $ZOGG token bridges to multiple blockchains. AlienPepe NFTs become interoperable across metaverses. Massive marketing push for global adoption.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Mint NFT Section -->
+    <section class="bg-gradient-to-b from-black via-gray-900 to-black py-20 px-6" id="mint">
+        <h2 class="text-4xl md:text-5xl font-['Press_Start_2P'] neon-text text-center mb-12 select-none">
+            Mint Your AlienPepe NFT
+        </h2>
+        <p class="text-center text-neon-green max-w-3xl mx-auto mb-12 font-semibold">
+            Own a piece of the AlienPepe universe! Mint your unique $ZOGG NFT and join the cosmic community.
+        </p>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="nft-card bg-gray-900 rounded-xl p-4 shadow-lg border border-neon-green hover:border-neon-green hover:shadow-neon-green transition-all duration-300 select-none cursor-pointer">
+                <img alt="AlienPepe NFT number 1 featuring a neon glowing green alien frog wearing a futuristic space helmet with stars and planets in the background" class="rounded-lg mb-4 w-full object-cover" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/ca77a50d-5dcd-4a63-2395-36cb109f889a.jpg"
+                    width="400" />
+                <h3 class="text-xl font-bold neon-text mb-2">
+                    AlienPepe #001
+                </h3>
+                <p class="text-gray-300 mb-4">
+                    Rare cosmic Pepe with glowing eyes and alien tech suit.
+                </p>
+                <button class="neon-btn w-full py-2 rounded font-semibold text-lg">
+      Mint Now
+     </button>
+            </div>
+            <div class="nft-card bg-gray-900 rounded-xl p-4 shadow-lg border border-neon-green hover:border-neon-green hover:shadow-neon-green transition-all duration-300 select-none cursor-pointer">
+                <img alt="AlienPepe NFT number 2 showing a neon blue alien frog holding a laser gun with a glowing cosmic nebula background" class="rounded-lg mb-4 w-full object-cover" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/a8f813b6-29bd-46f8-5229-e1c819f5c2a4.jpg"
+                    width="400" />
+                <h3 class="text-xl font-bold neon-text mb-2">
+                    AlienPepe #002
+                </h3>
+                <p class="text-gray-300 mb-4">
+                    Galactic warrior Pepe armed with laser blaster.
+                </p>
+                <button class="neon-btn w-full py-2 rounded font-semibold text-lg">
+      Mint Now
+     </button>
+            </div>
+            <div class="nft-card bg-gray-900 rounded-xl p-4 shadow-lg border border-neon-green hover:border-neon-green hover:shadow-neon-green transition-all duration-300 select-none cursor-pointer">
+                <img alt="AlienPepe NFT number 3 depicting a neon purple alien frog pilot with a glowing spaceship cockpit background" class="rounded-lg mb-4 w-full object-cover" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/64c3ceac-4f8e-4c7b-e186-76350b80902c.jpg"
+                    width="400" />
+                <h3 class="text-xl font-bold neon-text mb-2">
+                    AlienPepe #003
+                </h3>
+                <p class="text-gray-300 mb-4">
+                    Pilot Pepe ready to explore the cosmos.
+                </p>
+                <button class="neon-btn w-full py-2 rounded font-semibold text-lg">
+      Mint Now
+     </button>
+            </div>
+            <div class="nft-card bg-gray-900 rounded-xl p-4 shadow-lg border border-neon-green hover:border-neon-green hover:shadow-neon-green transition-all duration-300 select-none cursor-pointer">
+                <img alt="AlienPepe NFT number 4 showing a neon red alien frog with glowing eyes and a cosmic starfield background" class="rounded-lg mb-4 w-full object-cover" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/dc38af2e-f4e7-4179-8d50-67d53875564d.jpg"
+                    width="400" />
+                <h3 class="text-xl font-bold neon-text mb-2">
+                    AlienPepe #004
+                </h3>
+                <p class="text-gray-300 mb-4">
+                    Fiery Pepe from the red nebula sector.
+                </p>
+                <button class="neon-btn w-full py-2 rounded font-semibold text-lg">
+      Mint Now
+     </button>
+            </div>
+            <div class="nft-card bg-gray-900 rounded-xl p-4 shadow-lg border border-neon-green hover:border-neon-green hover:shadow-neon-green transition-all duration-300 select-none cursor-pointer">
+                <img alt="AlienPepe NFT number 5 featuring a neon yellow alien frog with laser eyes and a futuristic cityscape background" class="rounded-lg mb-4 w-full object-cover" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/b6648e59-590a-497d-b602-323902329e64.jpg"
+                    width="400" />
+                <h3 class="text-xl font-bold neon-text mb-2">
+                    AlienPepe #005
+                </h3>
+                <p class="text-gray-300 mb-4">
+                    Laser-eyed Pepe from the neon city.
+                </p>
+                <button class="neon-btn w-full py-2 rounded font-semibold text-lg">
+      Mint Now
+     </button>
+            </div>
+            <div class="nft-card bg-gray-900 rounded-xl p-4 shadow-lg border border-neon-green hover:border-neon-green hover:shadow-neon-green transition-all duration-300 select-none cursor-pointer">
+                <img alt="AlienPepe NFT number 6 showing a neon cyan alien frog wearing a glowing space helmet with stars and planets in the background" class="rounded-lg mb-4 w-full object-cover" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/cc91a8cb-92d5-4010-11ca-5d5a2202f8aa.jpg"
+                    width="400" />
+                <h3 class="text-xl font-bold neon-text mb-2">
+                    AlienPepe #006
+                </h3>
+                <p class="text-gray-300 mb-4">
+                    Explorer Pepe ready for interstellar travel.
+                </p>
+                <button class="neon-btn w-full py-2 rounded font-semibold text-lg">
+      Mint Now
+     </button>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="max-w-5xl mx-auto px-6 py-20 text-center" id="about">
+        <h2 class="text-4xl md:text-5xl font-['Press_Start_2P'] neon-text mb-10 select-none">
+            About AlienPepe $ZOGG
+        </h2>
+        <p class="text-gray-300 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
+            AlienPepe ($ZOGG) is a unique meme coin that fuses the mysterious allure of alien lore with the iconic Pepe frog culture. Our mission is to create a vibrant community of cosmic explorers and meme enthusiasts who believe in the power of fun, creativity,
+            and intergalactic friendship. With glowing neon aesthetics, an engaging NFT collection, and an ambitious roadmap, AlienPepe is set to become the ultimate meme coin of the metaverse.
+        </p>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-90 py-8 text-center text-gray-500 text-sm select-none">
+        <p>
+            © 2024 AlienPepe. All rights reserved. $ZOGG is a meme coin and not financial advice.
+        </p>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Mint buttons dummy interaction
+        document.querySelectorAll('.nft-card button').forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                alert(`Minting AlienPepe NFT #00${i + 1} is currently not available. Stay tuned!`);
+            });
+        });
+    </script>
+</body>
+
+</html>

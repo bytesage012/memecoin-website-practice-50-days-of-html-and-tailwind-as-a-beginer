@@ -1,0 +1,198 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        FluffyShiba - $FLUF Memecoin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&amp;family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        tom fonts */ body {
+            font-family: 'Nunito', sans-serif;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Baloo 2', cursive;
+        }
+        /* Floating Shiba mascot animation */
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        /* Cloud float animation */
+        
+        @keyframes cloudMove {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(110%);
+            }
+        }
+        /* NFT hover scale */
+        
+        .nft-hover:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-pink-50 via-pink-100 to-pink-50 min-h-screen flex flex-col">
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden bg-pink-200 flex flex-col items-center justify-center text-center py-20 px-6 sm:px-12">
+        <!-- Animated clouds -->
+        <img alt="Fluffy white pastel cloud drifting gently in a bright pink sky" aria-hidden="true" class="absolute top-10 left-0 w-36 opacity-70 animate-[cloudMove_60s_linear_infinite]" height="80" src="https://storage.googleapis.com/a1aa/image/b1384f6f-24e4-45ce-b27e-ce16aed5b2e6.jpg"
+            style="animation-delay: 0s" width="150" />
+        <img alt="Soft pastel pink cloud floating slowly across a light pink sky" aria-hidden="true" class="absolute top-20 right-0 w-28 opacity-60 animate-[cloudMove_80s_linear_infinite]" height="60" src="https://storage.googleapis.com/a1aa/image/dbac020f-5125-4bc7-8559-49e3d8ba3cd4.jpg"
+            style="animation-delay: 20s" width="120" />
+        <img alt="Large fluffy pastel pink and white cloud drifting in a dreamy sky" aria-hidden="true" class="absolute top-32 left-1/2 w-44 opacity-50 animate-[cloudMove_100s_linear_infinite]" height="90" src="https://storage.googleapis.com/a1aa/image/0d508155-6e8c-4594-d33c-9bdd64f26d45.jpg"
+            style="animation-delay: 40s" width="180" />
+        <!-- Floating Shiba mascot -->
+        <img alt="Cute pastel pink Shiba Inu mascot with fluffy fur and big sparkling eyes floating gently" class="relative z-10 mb-8 w-48 h-48 rounded-full shadow-lg animate-[float_4s_ease-in-out_infinite]" draggable="false" height="200" src="https://storage.googleapis.com/a1aa/image/ea2cd955-0c54-4ad6-f3a2-1c00b93ed3b0.jpg"
+            width="200" />
+        <h1 class="text-5xl sm:text-6xl font-bold text-pink-700 drop-shadow-lg mb-4">
+            FluffyShiba
+            <span class="text-pink-400">
+     ($FLUF)
+    </span>
+        </h1>
+        <p class="max-w-xl text-pink-800 text-lg sm:text-xl font-semibold drop-shadow-sm">
+            The cutest memecoin on the blockchain! Join the fluffiest community and ride the wave of fun and fortune.
+        </p>
+        <a class="mt-8 inline-block bg-pink-400 hover:bg-pink-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition" href="#tokenomics">
+    Explore Tokenomics
+   </a>
+    </header>
+    <!-- Tokenomics Section -->
+    <section class="bg-pink-50 py-16 px-6 sm:px-12" id="tokenomics">
+        <h2 class="text-4xl font-bold text-pink-700 text-center mb-12">
+            Tokenomics
+        </h2>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-pink-100 rounded-3xl p-8 shadow-lg flex flex-col items-center text-center">
+                <img alt="Icon representing total supply with pastel pink coin stack" class="mb-4" draggable="false" height="80" src="https://storage.googleapis.com/a1aa/image/8bbec377-9d34-4074-8ad6-4953e4248f3c.jpg" width="80" />
+                <h3 class="text-2xl font-semibold text-pink-700 mb-2">
+                    Total Supply
+                </h3>
+                <p class="text-pink-600 text-lg font-medium">
+                    1,000,000,000 $FLUF
+                </p>
+            </div>
+            <div class="bg-pink-100 rounded-3xl p-8 shadow-lg flex flex-col items-center text-center">
+                <img alt="Icon representing liquidity pool with pastel pink water drop and coins" class="mb-4" draggable="false" height="80" src="https://storage.googleapis.com/a1aa/image/741cba13-0370-4816-684e-070e529858a7.jpg" width="80" />
+                <h3 class="text-2xl font-semibold text-pink-700 mb-2">
+                    Liquidity
+                </h3>
+                <p class="text-pink-600 text-lg font-medium">
+                    50% Locked for 1 Year
+                </p>
+            </div>
+            <div class="bg-pink-100 rounded-3xl p-8 shadow-lg flex flex-col items-center text-center">
+                <img alt="Icon representing rewards with pastel pink gift box and coins" class="mb-4" draggable="false" height="80" src="https://storage.googleapis.com/a1aa/image/85539f47-283d-42e8-3c73-a169f0f69cc6.jpg" width="80" />
+                <h3 class="text-2xl font-semibold text-pink-700 mb-2">
+                    Holder Rewards
+                </h3>
+                <p class="text-pink-600 text-lg font-medium">
+                    5% Reflections in $FLUF
+                </p>
+            </div>
+            <div class="bg-pink-100 rounded-3xl p-8 shadow-lg flex flex-col items-center text-center">
+                <img alt="Icon representing token burn with pastel pink flame and coins" class="mb-4" draggable="false" height="80" src="https://storage.googleapis.com/a1aa/image/3a3a5a86-6561-4a41-3ae6-0bd4eca1e885.jpg" width="80" />
+                <h3 class="text-2xl font-semibold text-pink-700 mb-2">
+                    Burn
+                </h3>
+                <p class="text-pink-600 text-lg font-medium">
+                    10% Burned to Increase Value
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- NFT Teaser Gallery -->
+    <section class="bg-pink-100 py-16 px-6 sm:px-12">
+        <h2 class="text-4xl font-bold text-pink-700 text-center mb-12">
+            FluffyShiba NFT Collection
+        </h2>
+        <p class="max-w-3xl mx-auto text-pink-700 text-center mb-10 font-semibold text-lg">
+            Collect your own adorable FluffyShiba NFTs! Each one is unique and bursting with pastel charm.
+        </p>
+        <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+            <div class="relative rounded-2xl overflow-hidden cursor-pointer nft-hover transition-transform duration-300 shadow-lg bg-pink-50">
+                <img alt="Pastel pink FluffyShiba NFT with big eyes and a playful smile, sitting on a soft cloud background" class="w-full h-full object-cover" draggable="false" height="300" src="https://storage.googleapis.com/a1aa/image/00b146f4-213e-4be8-41d2-1217ae2ca381.jpg"
+                    width="300" />
+                <div class="absolute inset-0 bg-pink-300 bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                    <img alt="Zoomed preview of pastel pink FluffyShiba NFT with playful smile and fluffy fur on soft cloud background" class="rounded-xl shadow-lg" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/c243a1cf-1946-45c8-4e04-73fd3914324c.jpg"
+                        width="400" />
+                </div>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden cursor-pointer nft-hover transition-transform duration-300 shadow-lg bg-pink-50">
+                <img alt="Pastel peach FluffyShiba NFT with a cute wink and a flower crown on a soft pastel background" class="w-full h-full object-cover" draggable="false" height="300" src="https://storage.googleapis.com/a1aa/image/0c5291f1-0c5a-4138-7a7a-0cfcf7f8f3e9.jpg"
+                    width="300" />
+                <div class="absolute inset-0 bg-pink-300 bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                    <img alt="Zoomed preview of pastel peach FluffyShiba NFT with flower crown and cute wink on soft pastel background" class="rounded-xl shadow-lg" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/ab785fe5-539a-4f9d-719c-a95d5e0dc03f.jpg"
+                        width="400" />
+                </div>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden cursor-pointer nft-hover transition-transform duration-300 shadow-lg bg-pink-50">
+                <img alt="Pastel lavender FluffyShiba NFT with big sparkling eyes and a tiny heart-shaped nose on a dreamy background" class="w-full h-full object-cover" draggable="false" height="300" src="https://storage.googleapis.com/a1aa/image/2f2788cb-142f-44af-5949-c8f91a10aa4d.jpg"
+                    width="300" />
+                <div class="absolute inset-0 bg-pink-300 bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                    <img alt="Zoomed preview of pastel lavender FluffyShiba NFT with sparkling eyes and heart-shaped nose on dreamy background" class="rounded-xl shadow-lg" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/e327b661-190e-4436-37f9-69152dcfd925.jpg"
+                        width="400" />
+                </div>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden cursor-pointer nft-hover transition-transform duration-300 shadow-lg bg-pink-50">
+                <img alt="Pastel mint green FluffyShiba NFT with a cheeky grin and fluffy tail curled up on a soft pastel background" class="w-full h-full object-cover" draggable="false" height="300" src="https://storage.googleapis.com/a1aa/image/72f508ce-cf35-45d1-a0eb-7bc8b3f91f9e.jpg"
+                    width="300" />
+                <div class="absolute inset-0 bg-pink-300 bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                    <img alt="Zoomed preview of pastel mint green FluffyShiba NFT with cheeky grin and fluffy curled tail on soft pastel background" class="rounded-xl shadow-lg" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/8fec370d-6f64-48be-2017-c037e2efc224.jpg"
+                        width="400" />
+                </div>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden cursor-pointer nft-hover transition-transform duration-300 shadow-lg bg-pink-50">
+                <img alt="Pastel yellow FluffyShiba NFT with sleepy eyes and a tiny pastel bow on its head on a soft dreamy background" class="w-full h-full object-cover" draggable="false" height="300" src="https://storage.googleapis.com/a1aa/image/83674a71-a504-4a2e-98a4-93980a0049da.jpg"
+                    width="300" />
+                <div class="absolute inset-0 bg-pink-300 bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                    <img alt="Zoomed preview of pastel yellow FluffyShiba NFT with sleepy eyes and tiny pastel bow on soft dreamy background" class="rounded-xl shadow-lg" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/bde6228b-5bcc-4ac5-de40-a379e03b5f7d.jpg"
+                        width="400" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-pink-200 py-8 px-6 sm:px-12 mt-auto">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between text-pink-700">
+            <p class="mb-4 sm:mb-0 font-semibold text-lg">
+                © 2024 FluffyShiba. All rights reserved.
+            </p>
+            <div class="flex space-x-8 text-2xl">
+                <a aria-label="FluffyShiba Twitter" class="hover:text-pink-500 transition-colors" href="https://twitter.com/FluffyShiba" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-twitter">
+      </i>
+                </a>
+                <a aria-label="FluffyShiba Telegram" class="hover:text-pink-500 transition-colors" href="https://t.me/FluffyShiba" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-telegram-plane">
+      </i>
+                </a>
+                <a aria-label="FluffyShiba DEXTools" class="hover:text-pink-500 transition-colors" href="https://www.dextools.io/app/en/ether/pair-explorer/0xFluffyShibaPairAddress" rel="noopener noreferrer" target="_blank">
+                    <i class="fas fa-chart-line">
+      </i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

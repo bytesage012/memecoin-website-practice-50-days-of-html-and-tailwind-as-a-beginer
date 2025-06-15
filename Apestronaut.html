@@ -1,0 +1,340 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Apestronaut ($APE-X) - To The Moon!
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0b0f1a;
+            color: #e0e6f0;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Orbitron', sans-serif;
+        }
+        /* Parallax layers */
+        
+        .parallax {
+            perspective: 1px;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+        
+        .parallax__layer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform-origin: 0 0;
+        }
+        
+        .parallax__layer--base {
+            transform: translateZ(0);
+            z-index: 10;
+            position: relative;
+        }
+        
+        .parallax__layer--back {
+            transform: translateZ(-1px) scale(2);
+            z-index: 1;
+        }
+        
+        .parallax__layer--deep {
+            transform: translateZ(-2px) scale(3);
+            z-index: 0;
+        }
+        /* Rocket animation */
+        
+        @keyframes rocket-flame {
+            0%,
+            100% {
+                opacity: 0.8;
+                transform: scaleY(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scaleY(1.3);
+            }
+        }
+        /* Team card hover effect */
+        
+        .team-card:hover .overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="relative overflow-x-hidden">
+    <!-- Parallax container -->
+    <div class="parallax h-screen relative overflow-y-auto scroll-snap-y-mandatory">
+        <!-- Deep background stars layer -->
+        <div aria-hidden="true" class="parallax__layer parallax__layer--deep">
+            <img alt="Deep starfield with tiny white stars scattered across a dark blue-black space background" class="w-full h-screen object-cover" draggable="false" height="1080" src="https://storage.googleapis.com/a1aa/image/ef5e898c-fa86-4ee6-b171-7bdd6cd0ed1a.jpg"
+                width="1920" />
+        </div>
+        <!-- Back background moon and planets layer -->
+        <div aria-hidden="true" class="parallax__layer parallax__layer--back">
+            <img alt="Large moon and distant planets glowing softly in space with a dark blue background" class="w-full h-screen object-cover" draggable="false" height="1080" src="https://storage.googleapis.com/a1aa/image/85dcc0a9-365f-418c-45bc-183bb61c4604.jpg"
+                width="1920" />
+        </div>
+        <!-- Base content layer -->
+        <main class="parallax__layer parallax__layer--base relative z-10">
+            <!-- Navbar -->
+            <nav aria-label="Primary Navigation" class="fixed top-0 left-0 w-full bg-gradient-to-b from-black/90 to-transparent z-50 backdrop-blur-md">
+                <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+                    <a class="text-3xl font-orbitron text-yellow-400 tracking-widest select-none" href="#home">
+       APE-X
+      </a>
+                    <ul class="hidden md:flex space-x-8 text-yellow-300 font-semibold uppercase tracking-wide">
+                        <li>
+                            <a class="hover:text-yellow-400 transition" href="#about">
+         About
+        </a>
+                        </li>
+                        <li>
+                            <a class="hover:text-yellow-400 transition" href="#team">
+         Team
+        </a>
+                        </li>
+                        <li>
+                            <a class="hover:text-yellow-400 transition" href="#wallet">
+         Wallet
+        </a>
+                        </li>
+                        <li>
+                            <a class="hover:text-yellow-400 transition" href="#contact">
+         Contact
+        </a>
+                        </li>
+                    </ul>
+                    <button aria-label="Toggle menu" class="md:hidden text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400" id="mobile-menu-button">
+       <i class="fas fa-bars fa-lg">
+       </i>
+      </button>
+                </div>
+                <div class="hidden md:hidden bg-black/90 backdrop-blur-md px-6 py-4 space-y-4 uppercase font-semibold tracking-wide text-yellow-300" id="mobile-menu">
+                    <a class="block hover:text-yellow-400 transition" href="#about">
+       About
+      </a>
+                    <a class="block hover:text-yellow-400 transition" href="#team">
+       Team
+      </a>
+                    <a class="block hover:text-yellow-400 transition" href="#wallet">
+       Wallet
+      </a>
+                    <a class="block hover:text-yellow-400 transition" href="#contact">
+       Contact
+      </a>
+                </div>
+            </nav>
+            <!-- Hero Section -->
+            <section aria-label="Hero section with Apestronaut rocket and tagline" class="relative flex flex-col justify-center items-center h-screen text-center px-6 pt-24" id="home">
+                <!-- Animated rocket background -->
+                <div class="absolute inset-0 flex justify-center items-center pointer-events-none select-none">
+                    <div class="relative w-40 h-96">
+                        <img alt="A sleek cartoon rocket body colored bright orange and white with ape logo on side" class="w-40 h-80 object-contain mx-auto" draggable="false" height="320" src="https://storage.googleapis.com/a1aa/image/e6bbb34d-9d8c-4257-8336-a7b92ccb398d.jpg"
+                            width="160" />
+                        <div aria-hidden="true" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-20 bg-gradient-to-b from-yellow-400 via-red-500 to-transparent rounded-t-full animate-[rocket-flame_1s_ease-in-out_infinite]">
+                        </div>
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-orbitron text-yellow-400 drop-shadow-lg z-10">
+                    Apestronaut
+                    <span class="text-white">
+       ($APE-X)
+      </span>
+                </h1>
+                <p class="mt-6 max-w-xl text-lg md:text-xl text-yellow-300 z-10">
+                    The memecoin for apes launching to the moon! Join the mission and ride the rocket to the stars.
+                </p>
+                <a class="mt-10 inline-block bg-yellow-400 text-black font-bold uppercase tracking-widest px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-500 transition z-10" href="#wallet">
+      Connect Wallet
+     </a>
+            </section>
+            <!-- About Section -->
+            <section aria-labelledby="about-title" class="relative max-w-6xl mx-auto px-6 py-20 scroll-mt-24" id="about">
+                <h2 class="text-4xl font-orbitron text-yellow-400 text-center mb-12" id="about-title">
+                    About Apestronaut
+                </h2>
+                <div class="text-yellow-300 max-w-3xl mx-auto text-center text-lg md:text-xl leading-relaxed">
+                    <p>
+                        $APE-X is a community-driven memecoin inspired by the fearless apes ready to launch themselves to the moon. Powered by the Solana blockchain, Apestronaut combines fast transactions, low fees, and a passionate community to create a rocket fuel for your
+                        crypto portfolio.
+                    </p>
+                    <p class="mt-6">
+                        Our mission is simple: bring fun, innovation, and astronomical gains to the memecoin space. Strap in, hold tight, and prepare for liftoff!
+                    </p>
+                </div>
+            </section>
+            <!-- Team Section -->
+            <section aria-labelledby="team-title" class="relative max-w-7xl mx-auto px-6 py-20 scroll-mt-24" id="team">
+                <h2 class="text-4xl font-orbitron text-yellow-400 text-center mb-12" id="team-title">
+                    Meet the Team
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
+                    <!-- Team Member 1 -->
+                    <div aria-label="Team member: Captain Banana, Lead Developer" class="team-card relative bg-gradient-to-br from-yellow-500 to-yellow-300 rounded-xl shadow-lg overflow-hidden cursor-pointer group" tabindex="0">
+                        <img alt="Portrait of Captain Banana, a cartoon ape wearing a space helmet with a banana emblem, smiling confidently" class="w-full h-80 object-cover" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/7f2c6de3-4f7b-4ab8-2165-ea55d284c945.jpg"
+                            width="400" />
+                        <div aria-hidden="true" class="overlay absolute inset-0 bg-black bg-opacity-75 opacity-0 transform translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex flex-col justify-center items-center text-center p-6">
+                            <h3 class="text-xl font-bold text-yellow-400 mb-2">
+                                Captain Banana
+                            </h3>
+                            <p class="text-yellow-200">
+                                Lead Developer
+                            </p>
+                            <p class="mt-3 text-yellow-100 text-sm">
+                                Mastermind behind the rocket code and smart contracts. Loves bananas and blockchain.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div aria-label="Team member: Luna Ape, Marketing Specialist" class="team-card relative bg-gradient-to-br from-yellow-500 to-yellow-300 rounded-xl shadow-lg overflow-hidden cursor-pointer group" tabindex="0">
+                        <img alt="Portrait of Luna Ape, a stylish cartoon ape with sunglasses and a moon necklace, smiling confidently" class="w-full h-80 object-cover" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/26036f1a-f810-4c29-e2a2-feb5ac63520b.jpg"
+                            width="400" />
+                        <div aria-hidden="true" class="overlay absolute inset-0 bg-black bg-opacity-75 opacity-0 transform translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex flex-col justify-center items-center text-center p-6">
+                            <h3 class="text-xl font-bold text-yellow-400 mb-2">
+                                Luna Ape
+                            </h3>
+                            <p class="text-yellow-200">
+                                Marketing Specialist
+                            </p>
+                            <p class="mt-3 text-yellow-100 text-sm">
+                                Spreading the word across the galaxy. Expert in viral campaigns and ape psychology.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div aria-label="Team member: Astro Simian, Community Manager" class="team-card relative bg-gradient-to-br from-yellow-500 to-yellow-300 rounded-xl shadow-lg overflow-hidden cursor-pointer group" tabindex="0">
+                        <img alt="Portrait of Astro Simian, a friendly cartoon ape wearing a headset and a space suit, smiling warmly" class="w-full h-80 object-cover" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/95c3b853-1b51-4daf-a0d8-ebd399da0381.jpg"
+                            width="400" />
+                        <div aria-hidden="true" class="overlay absolute inset-0 bg-black bg-opacity-75 opacity-0 transform translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex flex-col justify-center items-center text-center p-6">
+                            <h3 class="text-xl font-bold text-yellow-400 mb-2">
+                                Astro Simian
+                            </h3>
+                            <p class="text-yellow-200">
+                                Community Manager
+                            </p>
+                            <p class="mt-3 text-yellow-100 text-sm">
+                                Keeping the ape family united and hype strong. Your go-to for all community questions.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Team Member 4 -->
+                    <div aria-label="Team member: Rocket Rilla, UI/UX Designer" class="team-card relative bg-gradient-to-br from-yellow-500 to-yellow-300 rounded-xl shadow-lg overflow-hidden cursor-pointer group" tabindex="0">
+                        <img alt="Portrait of Rocket Rilla, a creative cartoon ape with glasses and a futuristic jacket, smiling thoughtfully" class="w-full h-80 object-cover" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/f6cde63c-07bf-4ea6-f22d-38f3f62b6d88.jpg"
+                            width="400" />
+                        <div aria-hidden="true" class="overlay absolute inset-0 bg-black bg-opacity-75 opacity-0 transform translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex flex-col justify-center items-center text-center p-6">
+                            <h3 class="text-xl font-bold text-yellow-400 mb-2">
+                                Rocket Rilla
+                            </h3>
+                            <p class="text-yellow-200">
+                                UI/UX Designer
+                            </p>
+                            <p class="mt-3 text-yellow-100 text-sm">
+                                Designs the smoothest rocket rides and interfaces for apes everywhere.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Wallet Section -->
+            <section aria-labelledby="wallet-title" class="relative max-w-4xl mx-auto px-6 py-20 scroll-mt-24 text-center" id="wallet">
+                <h2 class="text-4xl font-orbitron text-yellow-400 mb-12" id="wallet-title">
+                    Connect Your Solana Wallet
+                </h2>
+                <p class="text-yellow-300 max-w-xl mx-auto mb-8 text-lg">
+                    Connect your Solana wallet to join the Apestronaut mission. Manage your $APE-X tokens and prepare for liftoff!
+                </p>
+                <button aria-label="Connect Solana Wallet" aria-live="polite" class="inline-flex items-center space-x-3 bg-yellow-400 text-black font-bold uppercase tracking-widest px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-500 transition focus:outline-none focus:ring-4 focus:ring-yellow-300"
+                    id="connect-wallet">
+      <img alt="Solana logo icon" class="w-8 h-8" draggable="false" height="32" src="https://storage.googleapis.com/a1aa/image/bc7bebc1-f7fc-4324-696b-08d69736fe74.jpg" width="32"/>
+      <span>
+       Connect Wallet
+      </span>
+     </button>
+                <p aria-live="polite" class="mt-6 text-yellow-300 min-h-[1.5rem]" id="wallet-status">
+                </p>
+            </section>
+            <!-- Contact Section -->
+            <section aria-labelledby="contact-title" class="relative max-w-4xl mx-auto px-6 py-20 scroll-mt-24 text-center" id="contact">
+                <h2 class="text-4xl font-orbitron text-yellow-400 mb-12" id="contact-title">
+                    Contact &amp; Socials
+                </h2>
+                <p class="text-yellow-300 max-w-xl mx-auto mb-8 text-lg">
+                    Have questions or want to join the Apestronaut crew? Reach out or follow us on social media!
+                </p>
+                <div class="flex justify-center space-x-10 text-yellow-400 text-3xl">
+                    <a aria-label="Twitter" href="https://twitter.com/apestronaut" rel="noopener" target="_blank">
+                        <i class="fab fa-twitter hover:text-yellow-300 transition">
+       </i>
+                    </a>
+                    <a aria-label="Discord" href="https://discord.gg/apestronaut" rel="noopener" target="_blank">
+                        <i class="fab fa-discord hover:text-yellow-300 transition">
+       </i>
+                    </a>
+                    <a aria-label="Telegram" href="https://t.me/apestronaut" rel="noopener" target="_blank">
+                        <i class="fab fa-telegram-plane hover:text-yellow-300 transition">
+       </i>
+                    </a>
+                    <a aria-label="GitHub" href="https://github.com/apestronaut" rel="noopener" target="_blank">
+                        <i class="fab fa-github hover:text-yellow-300 transition">
+       </i>
+                    </a>
+                </div>
+            </section>
+            <footer class="text-center text-yellow-400 py-8 text-sm select-none">
+                © 2024 Apestronaut ($APE-X). All rights reserved.
+            </footer>
+        </main>
+    </div>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Solana wallet integration (basic Phantom wallet detection and connect)
+        const connectWalletBtn = document.getElementById('connect-wallet');
+        const walletStatus = document.getElementById('wallet-status');
+
+        async function connectSolanaWallet() {
+            if (window.solana && window.solana.isPhantom) {
+                try {
+                    const resp = await window.solana.connect();
+                    walletStatus.textContent = `Connected: ${resp.publicKey.toString()}`;
+                    connectWalletBtn.disabled = true;
+                    connectWalletBtn.classList.add('cursor-not-allowed', 'opacity-70');
+                } catch (err) {
+                    walletStatus.textContent = 'Connection rejected.';
+                }
+            } else {
+                walletStatus.innerHTML = 'Phantom Wallet not detected. <a href="https://phantom.app/" target="_blank" rel="noopener" class="underline text-yellow-300">Get Phantom Wallet</a>';
+            }
+        }
+
+        connectWalletBtn.addEventListener('click', connectSolanaWallet);
+
+        // Parallax scroll effect (optional enhancement)
+        // We use CSS perspective and translateZ for parallax, so no JS needed for parallax layers.
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        FluffyShiba - $FLUF Memecoin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&amp;family=Nunito:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        
+        .font-fluffy {
+            font-family: 'Baloo 2', cursive;
+        }
+        /* Floating Shiba mascot animation */
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        /* Cloud float animation */
+        
+        @keyframes cloudMove {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(110%);
+            }
+        }
+        /* NFT hover scale */
+        
+        .nft-hover:hover img {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        /* Soft card shadow */
+        
+        .soft-card {
+            box-shadow: 0 8px 20px rgba(255 182 193 / 0.3);
+            border-radius: 1rem;
+            background: #fff0f6;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-pink-50 via-pink-100 to-pink-50 min-h-screen flex flex-col">
+    <!-- Floating Shiba mascot top right -->
+    <img alt="Cute pastel pink Shiba Inu dog mascot with fluffy fur and big sparkling eyes floating gently" class="fixed top-6 right-6 w-28 h-28 pointer-events-none select-none animate-float z-50" height="120" src="https://storage.googleapis.com/a1aa/image/6fe87084-a8ba-46ea-eed7-9f83bdfa8942.jpg"
+        style="animation: float 4s ease-in-out infinite" width="120" />
+    <!-- Hero Section -->
+    <section class="relative flex flex-col items-center justify-center text-center py-24 px-6 bg-pink-50 overflow-hidden" id="hero">
+        <!-- Animated clouds -->
+        <img alt="Soft pastel pink fluffy cloud drifting gently in the sky" class="absolute top-10 left-[-150px] w-36 h-20 opacity-70 animate-cloudMove" height="80" src="https://storage.googleapis.com/a1aa/image/9aebd802-cffa-4acd-d547-919670e7f2c6.jpg" style="animation: cloudMove 40s linear infinite"
+            width="150" />
+        <img alt="Light pastel pink fluffy cloud drifting gently in the sky" class="absolute top-20 left-[-120px] w-28 h-14 opacity-60 animate-cloudMove" height="60" src="https://storage.googleapis.com/a1aa/image/1d421a37-958d-4899-8712-cf4cc88ec893.jpg" style="animation: cloudMove 50s linear infinite 10s"
+            width="120" />
+        <img alt="Soft pastel pink fluffy cloud drifting gently in the sky" class="absolute top-32 left-[-180px] w-44 h-24 opacity-50 animate-cloudMove" height="90" src="https://storage.googleapis.com/a1aa/image/9aebd802-cffa-4acd-d547-919670e7f2c6.jpg" style="animation: cloudMove 60s linear infinite 20s"
+            width="180" />
+        <h1 class="font-fluffy text-5xl sm:text-6xl md:text-7xl text-pink-600 mb-6 drop-shadow-lg select-none">
+            FluffyShiba
+            <span class="text-pink-400">
+     ($FLUF)
+    </span>
+        </h1>
+        <p class="max-w-xl text-pink-500 text-lg sm:text-xl font-semibold mb-10 px-4">
+            The cutest pastel memecoin with a fluffy Shiba mascot, ready to take you to the moon! 🚀🐕
+        </p>
+        <a class="inline-block bg-pink-400 hover:bg-pink-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition" href="#tokenomics">
+    Explore Tokenomics
+   </a>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="py-20 px-6 bg-pink-100 flex flex-col items-center" id="tokenomics">
+        <h2 class="font-fluffy text-4xl text-pink-600 mb-12 select-none">
+            Tokenomics
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl w-full">
+            <div class="soft-card p-8 text-center shadow-pink-300">
+                <h3 class="text-2xl font-semibold text-pink-700 mb-4">
+                    Total Supply
+                </h3>
+                <p class="text-pink-500 text-lg font-medium">
+                    1,000,000,000 $FLUF
+                </p>
+            </div>
+            <div class="soft-card p-8 text-center shadow-pink-300">
+                <h3 class="text-2xl font-semibold text-pink-700 mb-4">
+                    Liquidity
+                </h3>
+                <p class="text-pink-500 text-lg font-medium">
+                    50% Locked for 1 Year
+                </p>
+            </div>
+            <div class="soft-card p-8 text-center shadow-pink-300">
+                <h3 class="text-2xl font-semibold text-pink-700 mb-4">
+                    Reflection
+                </h3>
+                <p class="text-pink-500 text-lg font-medium">
+                    3% to Holders
+                </p>
+            </div>
+            <div class="soft-card p-8 text-center shadow-pink-300">
+                <h3 class="text-2xl font-semibold text-pink-700 mb-4">
+                    Marketing
+                </h3>
+                <p class="text-pink-500 text-lg font-medium">
+                    4% for Growth &amp; Ads
+                </p>
+            </div>
+            <div class="soft-card p-8 text-center shadow-pink-300">
+                <h3 class="text-2xl font-semibold text-pink-700 mb-4">
+                    Burn
+                </h3>
+                <p class="text-pink-500 text-lg font-medium">
+                    2% Burned Forever
+                </p>
+            </div>
+            <div class="soft-card p-8 text-center shadow-pink-300">
+                <h3 class="text-2xl font-semibold text-pink-700 mb-4">
+                    Team
+                </h3>
+                <p class="text-pink-500 text-lg font-medium">
+                    1% Locked &amp; Vested
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- NFT Teaser Gallery -->
+    <section class="py-20 px-6 bg-pink-50 flex flex-col items-center" id="nft-gallery">
+        <h2 class="font-fluffy text-4xl text-pink-600 mb-12 select-none">
+            FluffyShiba NFT Teaser Gallery
+        </h2>
+        <p class="max-w-xl text-pink-500 text-center mb-12 px-4 font-semibold">
+            Collect your own adorable FluffyShiba NFTs! Hover over each to preview the cuteness.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-7xl w-full">
+            <div class="relative nft-hover rounded-xl overflow-hidden cursor-pointer shadow-lg soft-card">
+                <img alt="Pastel pink FluffyShiba NFT with a happy Shiba Inu wearing a flower crown and sparkling eyes" class="w-full h-full object-cover transition-transform duration-300" height="300" src="https://storage.googleapis.com/a1aa/image/cc8dc15d-59c6-4df1-6a8f-c1e44ff36bc9.jpg"
+                    width="300" />
+                <div class="absolute inset-0 bg-pink-300 bg-opacity-70 opacity-0 hover:opacity-100 flex items-center justify-center text-white font-bold text-lg transition-opacity rounded-xl">
+                    Happy Shiba with Flower Crown
+                </div>
+            </div>
+            <div class="relative nft-hover rounded-xl overflow-hidden cursor-pointer shadow-lg soft-card">
+                <img alt="Pastel pink FluffyShiba NFT with a Shiba Inu wearing cute heart-shaped sunglasses and a cheeky smile" class="w-full h-full object-cover transition-transform duration-300" height="300" src="https://storage.googleapis.com/a1aa/image/e5471ffd-c503-48b5-506d-290a8786c36d.jpg"
+                    width="300" />
+                <div class="absolute inset-0 bg-pink-300 bg-opacity-70 opacity-0 hover:opacity-100 flex items-center justify-center text-white font-bold text-lg transition-opacity rounded-xl">
+                    Cool Shiba with Heart Sunglasses
+                </div>
+            </div>
+            <div class="relative nft-hover rounded-xl overflow-hidden cursor-pointer shadow-lg soft-card">
+                <img alt="Pastel pink FluffyShiba NFT with a Shiba Inu wearing a pastel scarf and a playful wink" class="w-full h-full object-cover transition-transform duration-300" height="300" src="https://storage.googleapis.com/a1aa/image/507ab79e-e4e8-40f6-5572-4dd489078046.jpg"
+                    width="300" />
+                <div class="absolute inset-0 bg-pink-300 bg-opacity-70 opacity-0 hover:opacity-100 flex items-center justify-center text-white font-bold text-lg transition-opacity rounded-xl">
+                    Playful Winking Shiba
+                </div>
+            </div>
+            <div class="relative nft-hover rounded-xl overflow-hidden cursor-pointer shadow-lg soft-card">
+                <img alt="Pastel pink FluffyShiba NFT with a Shiba Inu holding a pastel balloon and smiling joyfully" class="w-full h-full object-cover transition-transform duration-300" height="300" src="https://storage.googleapis.com/a1aa/image/b0611f20-9127-40d1-33f1-ea71aba8fcf9.jpg"
+                    width="300" />
+                <div class="absolute inset-0 bg-pink-300 bg-opacity-70 opacity-0 hover:opacity-100 flex items-center justify-center text-white font-bold text-lg transition-opacity rounded-xl">
+                    Joyful Shiba with Balloon
+                </div>
+            </div>
+            <div class="relative nft-hover rounded-xl overflow-hidden cursor-pointer shadow-lg soft-card">
+                <img alt="Pastel pink FluffyShiba NFT with a Shiba Inu wearing a pastel bowtie and a charming smile" class="w-full h-full object-cover transition-transform duration-300" height="300" src="https://storage.googleapis.com/a1aa/image/75ddd27b-b6d7-467c-b9d5-1784bfd375a5.jpg"
+                    width="300" />
+                <div class="absolute inset-0 bg-pink-300 bg-opacity-70 opacity-0 hover:opacity-100 flex items-center justify-center text-white font-bold text-lg transition-opacity rounded-xl">
+                    Charming Shiba with Bowtie
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-pink-200 py-8 px-6 mt-auto">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="text-pink-700 font-fluffy text-xl select-none">
+                © 2024 FluffyShiba
+            </div>
+            <div class="flex space-x-8 text-pink-700 text-2xl">
+                <a aria-label="FluffyShiba Twitter" class="hover:text-pink-500 transition" href="https://twitter.com/FluffyShiba" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-twitter">
+      </i>
+                </a>
+                <a aria-label="FluffyShiba Telegram" class="hover:text-pink-500 transition" href="https://t.me/FluffyShiba" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-telegram-plane">
+      </i>
+                </a>
+                <a aria-label="FluffyShiba DEXTools" class="hover:text-pink-500 transition" href="https://www.dextools.io/app/en/ether/pair-explorer/0xFluffyShibaPair" rel="noopener noreferrer" target="_blank">
+                    <i class="fas fa-chart-line">
+      </i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

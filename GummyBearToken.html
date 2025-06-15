@@ -1,0 +1,363 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        GummyBearToken - $YUM
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            background: #fff0f6;
+        }
+        
+        .sparkle {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .sparkle::after {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle at center, #fff9ff 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(-50%) scale(0.5);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            filter: drop-shadow(0 0 3px #ff6f91);
+            animation: sparkleAnim 1.2s infinite;
+            z-index: 10;
+        }
+        
+        .sparkle:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+        
+        @keyframes sparkleAnim {
+            0%,
+            100% {
+                opacity: 0.8;
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                opacity: 0.3;
+                transform: translateX(-50%) scale(0.8);
+            }
+        }
+        /* Bouncy gummy bear icon animation */
+        
+        .bouncy {
+            animation: bounce 2.5s ease-in-out infinite;
+            transform-origin: center bottom;
+            display: inline-block;
+        }
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-pink-100 via-pink-50 to-pink-100">
+    <header class="w-full bg-pink-300 shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img alt="A colorful gummy bear candy icon with shiny sugar sparkles" class="bouncy w-12 h-12" height="48" src="https://storage.googleapis.com/a1aa/image/249597b5-aebf-416b-2a8c-b31a2a32d3ad.jpg" width="48" />
+                <h1 class="text-3xl font-extrabold text-white select-none tracking-wider">
+                    GummyBearToken
+                    <span class="text-yellow-300">
+       $YUM
+      </span>
+                </h1>
+            </div>
+            <ul class="hidden md:flex space-x-8 text-white font-semibold text-lg">
+                <li>
+                    <a class="sparkle hover:text-yellow-300 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="sparkle hover:text-yellow-300 transition" href="#about">
+       About
+      </a>
+                </li>
+                <li>
+                    <a class="sparkle hover:text-yellow-300 transition" href="#get-gummy">
+       Get Your Gummy
+      </a>
+                </li>
+            </ul>
+            <button aria-label="Toggle menu" class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars fa-2x">
+     </i>
+    </button>
+        </nav>
+        <div class="hidden md:hidden bg-pink-200 px-6 pb-4" id="mobile-menu">
+            <ul class="flex flex-col space-y-3 text-pink-900 font-semibold text-lg">
+                <li>
+                    <a class="sparkle hover:text-yellow-500 transition block" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="sparkle hover:text-yellow-500 transition block" href="#about">
+       About
+      </a>
+                </li>
+                <li>
+                    <a class="sparkle hover:text-yellow-500 transition block" href="#get-gummy">
+       Get Your Gummy
+      </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="flex-grow">
+        <section class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-12" id="hero">
+            <div class="max-w-xl text-center md:text-left">
+                <h2 class="text-5xl font-extrabold text-pink-700 mb-6 leading-tight">
+                    Welcome to
+                    <span class="text-yellow-400">
+       GummyBearToken
+      </span>
+                    <br/>
+                    <span class="text-pink-900">
+       $YUM
+      </span> — The Sweetest Crypto Candy!
+                </h2>
+                <p class="text-pink-800 text-lg mb-8">
+                    Dive into a candy land of fun, rewards, and bouncy gummy bears. Join the sweetest community and get your gummy today!
+                </p>
+                <a class="inline-block sparkle bg-gradient-to-r from-yellow-300 to-pink-400 text-pink-900 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-yellow-400 transition transform hover:scale-105" href="#get-gummy">
+      Get Your Gummy 🍬
+     </a>
+            </div>
+            <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
+                <img alt="3D gummy bear token candy with shiny sugar sparkles and colorful candy background" class="bouncy w-full h-full object-contain" height="320" src="https://storage.googleapis.com/a1aa/image/b46fc4a4-73fd-4441-68e0-7fcc86e5c6e3.jpg" width="320"
+                />
+                <img alt="Bright sugar sparkle icon shining with candy colors" class="absolute top-4 left-4 animate-pulse" height="80" src="https://storage.googleapis.com/a1aa/image/5849be57-d2f9-4d5e-a833-cc04ede3c367.jpg" width="80" />
+                <img alt="Bright sugar sparkle icon shining with candy colors" class="absolute bottom-6 right-6 animate-pulse delay-500" height="80" src="https://storage.googleapis.com/a1aa/image/5849be57-d2f9-4d5e-a833-cc04ede3c367.jpg" width="80" />
+            </div>
+        </section>
+        <section class="max-w-7xl mx-auto px-6 py-20 bg-pink-50 rounded-3xl shadow-lg my-16" id="roadmap">
+            <h3 class="text-4xl font-extrabold text-pink-700 mb-12 text-center">
+                Candy-Themed Roadmap
+            </h3>
+            <div class="flex flex-col md:flex-row md:space-x-12 space-y-12 md:space-y-0">
+                <div class="flex-1">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <img alt="A colorful lollipop candy icon with sugar sparkles" class="bouncy w-16 h-16" height="64" src="https://storage.googleapis.com/a1aa/image/a22f80d6-7793-4c01-dde9-4fb42256c472.jpg" width="64" />
+                        <div>
+                            <h4 class="text-2xl font-bold text-pink-800">
+                                Step 1: Sweet Launch
+                            </h4>
+                            <p class="text-pink-700 mt-1">
+                                Release $YUM on major exchanges and start the candy craze.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 mb-8">
+                        <img alt="A shiny gummy bear candy icon with sugar sparkles" class="bouncy w-16 h-16" height="64" src="https://storage.googleapis.com/a1aa/image/cde2cb90-9385-4ff9-ab24-72e244b76fab.jpg" width="64" />
+                        <div>
+                            <h4 class="text-2xl font-bold text-pink-800">
+                                Step 2: Gummy Giveaways
+                            </h4>
+                            <p class="text-pink-700 mt-1">
+                                Host community giveaways and reward loyal holders with gummy treats.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 mb-8">
+                        <img alt="A chocolate candy bar icon with sugar sparkles" class="bouncy w-16 h-16" height="64" src="https://storage.googleapis.com/a1aa/image/d9bee7c5-e972-43b7-3408-5efaff3ab839.jpg" width="64" />
+                        <div>
+                            <h4 class="text-2xl font-bold text-pink-800">
+                                Step 3: Candy Partnerships
+                            </h4>
+                            <p class="text-pink-700 mt-1">
+                                Collaborate with candy brands and expand the $YUM universe.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <img alt="A colorful ice cream cone candy icon with sugar sparkles" class="bouncy w-16 h-16" height="64" src="https://storage.googleapis.com/a1aa/image/a8762c91-addf-4ad5-c8b4-8f3425bab166.jpg" width="64" />
+                        <div>
+                            <h4 class="text-2xl font-bold text-pink-800">
+                                Step 4: Sweet Merch
+                            </h4>
+                            <p class="text-pink-700 mt-1">
+                                Launch exclusive candy-themed merchandise for holders.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 mb-8">
+                        <img alt="A cookie candy icon with sugar sparkles" class="bouncy w-16 h-16" height="64" src="https://storage.googleapis.com/a1aa/image/4c1da557-35bb-444e-c29d-81a662136e17.jpg" width="64" />
+                        <div>
+                            <h4 class="text-2xl font-bold text-pink-800">
+                                Step 5: Candy Land Game
+                            </h4>
+                            <p class="text-pink-700 mt-1">
+                                Develop a fun candy land game where $YUM holders earn rewards.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 mb-8">
+                        <img alt="A shaved ice candy icon with sugar sparkles" class="bouncy w-16 h-16" height="64" src="https://storage.googleapis.com/a1aa/image/411ba516-92ec-4a47-90b7-6304dd7a6d68.jpg" width="64" />
+                        <div>
+                            <h4 class="text-2xl font-bold text-pink-800">
+                                Step 6: Global Candy Festival
+                            </h4>
+                            <p class="text-pink-700 mt-1">
+                                Host a global event celebrating $YUM and candy culture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="max-w-7xl mx-auto px-6 py-20 text-center" id="about">
+            <h3 class="text-4xl font-extrabold text-pink-700 mb-8">
+                About GummyBearToken
+            </h3>
+            <p class="max-w-3xl mx-auto text-pink-800 text-lg leading-relaxed">
+                GummyBearToken ($YUM) is a playful and vibrant cryptocurrency inspired by the joy and sweetness of gummy bears. Our mission is to create a fun, engaging, and rewarding experience for crypto enthusiasts and candy lovers alike. With a community-driven approach,
+                exciting roadmap, and unique candy-themed rewards, $YUM is the tastiest token on the blockchain.
+            </p>
+            <div class="mt-12 flex justify-center space-x-8">
+                <img alt="A cute red gummy bear candy with sugar sparkles and a happy face" class="bouncy w-24 h-24" height="120" src="https://storage.googleapis.com/a1aa/image/72556166-bdcb-4bfc-2795-c127cd0cae05.jpg" width="120" />
+                <img alt="A cute green gummy bear candy with sugar sparkles and a smiling face" class="bouncy w-24 h-24" height="120" src="https://storage.googleapis.com/a1aa/image/63b9265b-639a-4499-cad0-868c0a604cde.jpg" width="120" />
+                <img alt="A cute yellow gummy bear candy with sugar sparkles and a joyful face" class="bouncy w-24 h-24" height="120" src="https://storage.googleapis.com/a1aa/image/8529a297-5434-4038-c031-3be14dd15fc5.jpg" width="120" />
+            </div>
+        </section>
+        <section class="max-w-7xl mx-auto px-6 py-20 bg-gradient-to-r from-pink-300 via-yellow-300 to-pink-300 rounded-3xl shadow-lg text-center" id="get-gummy">
+            <h3 class="text-4xl font-extrabold text-pink-900 mb-6">
+                Ready to Get Your Gummy?
+            </h3>
+            <p class="text-pink-900 text-lg max-w-xl mx-auto mb-10">
+                Join the sweetest crypto community and start your journey with $YUM today. Bouncy gummy bears, candy rewards, and endless fun await!
+            </p>
+            <a class="sparkle inline-block bg-yellow-400 text-pink-900 font-extrabold px-12 py-5 rounded-full shadow-lg hover:shadow-yellow-600 transition transform hover:scale-110" href="https://example.com/buy-yum" rel="noopener noreferrer" target="_blank">
+     Buy $YUM Now 🍬
+    </a>
+            <div class="mt-12 flex justify-center space-x-6">
+                <img alt="A bouncy red gummy bear candy jumping with sugar sparkles" class="bouncy w-20 h-20" height="100" src="https://storage.googleapis.com/a1aa/image/356dc5d0-b93b-4d0a-d0d3-0190ea44bf20.jpg" width="100" />
+                <img alt="A bouncy blue gummy bear candy jumping with sugar sparkles" class="bouncy w-20 h-20" height="100" src="https://storage.googleapis.com/a1aa/image/57691ca2-8bd9-456e-f7aa-0589f80f4425.jpg" width="100" />
+                <img alt="A bouncy purple gummy bear candy jumping with sugar sparkles" class="bouncy w-20 h-20" height="100" src="https://storage.googleapis.com/a1aa/image/5519e582-419c-4747-1ad7-58af51a49ee2.jpg" width="100" />
+            </div>
+        </section>
+    </main>
+    <footer class="bg-pink-300 text-pink-900 py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p class="font-semibold">
+                © 2024 GummyBearToken. All rights reserved.
+            </p>
+            <div class="flex space-x-6 text-pink-900 text-2xl">
+                <a aria-label="Twitter" class="hover:text-yellow-400 transition sparkle" href="https://twitter.com/gummybeartoken" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-twitter">
+      </i>
+                </a>
+                <a aria-label="Discord" class="hover:text-yellow-400 transition sparkle" href="https://discord.gg/gummybeartoken" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-discord">
+      </i>
+                </a>
+                <a aria-label="Telegram" class="hover:text-yellow-400 transition sparkle" href="https://t.me/gummybeartoken" rel="noopener noreferrer" target="_blank">
+                    <i class="fab fa-telegram-plane">
+      </i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // GSAP animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate gummy bears in roadmap on scroll
+        gsap.utils.toArray('#roadmap .bouncy').forEach((el) => {
+            gsap.fromTo(
+                el, {
+                    y: 0
+                }, {
+                    y: -20,
+                    duration: 1.5,
+                    yoyo: true,
+                    repeat: -1,
+                    ease: 'power1.inOut',
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 80%',
+                        end: 'bottom 60%',
+                        toggleActions: 'play pause resume pause',
+                    },
+                }
+            );
+        });
+
+        // Animate gummy bears in about section
+        gsap.utils.toArray('#about .bouncy').forEach((el, i) => {
+            gsap.fromTo(
+                el, {
+                    y: 0,
+                    scale: 1
+                }, {
+                    y: -15,
+                    scale: 1.1,
+                    duration: 2,
+                    yoyo: true,
+                    repeat: -1,
+                    ease: 'sine.inOut',
+                    delay: i * 0.3,
+                }
+            );
+        });
+
+        // Animate gummy bears in get-gummy section
+        gsap.utils.toArray('#get-gummy .bouncy').forEach((el, i) => {
+            gsap.fromTo(
+                el, {
+                    y: 0,
+                    scale: 1
+                }, {
+                    y: -18,
+                    scale: 1.15,
+                    duration: 2.2,
+                    yoyo: true,
+                    repeat: -1,
+                    ease: 'power1.inOut',
+                    delay: i * 0.25,
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>

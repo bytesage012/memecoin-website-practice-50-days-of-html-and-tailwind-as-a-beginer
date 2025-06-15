@@ -1,0 +1,649 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        404Coin ($NOTFND) - Glitchy Meme Coin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        /* Glitch font */
+        
+        body {
+            font-family: 'VT323', monospace;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+        /* Glitch text effect */
+        
+        .glitch {
+            position: relative;
+            color: #f0f;
+            font-weight: 900;
+            font-size: 3.5rem;
+            letter-spacing: 0.1em;
+            user-select: none;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+        }
+        
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #0ff;
+            animation: glitch-anim-2 2s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #f0f;
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            10% {
+                clip: rect(10px, 9999px, 50px, 0);
+                transform: translate(-2px, -2px);
+            }
+            20% {
+                clip: rect(85px, 9999px, 140px, 0);
+                transform: translate(2px, 2px);
+            }
+            30% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            40% {
+                clip: rect(20px, 9999px, 60px, 0);
+                transform: translate(-1px, 1px);
+            }
+            50% {
+                clip: rect(60px, 9999px, 100px, 0);
+                transform: translate(1px, -1px);
+            }
+            60% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            100% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+        }
+        
+        @keyframes glitch-anim-2 {
+            0% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            10% {
+                clip: rect(85px, 9999px, 140px, 0);
+                transform: translate(2px, 2px);
+            }
+            20% {
+                clip: rect(10px, 9999px, 50px, 0);
+                transform: translate(-2px, -2px);
+            }
+            30% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            40% {
+                clip: rect(60px, 9999px, 100px, 0);
+                transform: translate(1px, -1px);
+            }
+            50% {
+                clip: rect(20px, 9999px, 60px, 0);
+                transform: translate(-1px, 1px);
+            }
+            60% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            100% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+        }
+        /* Pixelated button style */
+        
+        .pixel-btn {
+            font-family: 'VT323', monospace;
+            font-weight: 700;
+            font-size: 1.25rem;
+            background-color: #0ff;
+            color: #000;
+            border: 4px solid #0ff;
+            box-shadow: 2px 2px 0 #0ff, -2px -2px 0 #0ff;
+            image-rendering: pixelated;
+            transition: all 0.15s ease-in-out;
+            user-select: none;
+        }
+        
+        .pixel-btn:hover {
+            background-color: #f0f;
+            border-color: #f0f;
+            box-shadow: 3px 3px 0 #f0f, -3px -3px 0 #f0f;
+            color: #000;
+            transform: translate(2px, -2px);
+        }
+        
+        .pixel-btn:active {
+            transform: translate(0);
+            box-shadow: none;
+        }
+        /* Broken page glitch animation for hero image */
+        
+        .broken-page {
+            width: 100%;
+            max-width: 400px;
+            image-rendering: pixelated;
+            animation: broken-glitch 3s infinite;
+            user-select: none;
+        }
+        
+        @keyframes broken-glitch {
+            0% {
+                clip-path: inset(0 0 0 0);
+                transform: translate(0, 0) skew(0deg, 0deg);
+                filter: none;
+            }
+            10% {
+                clip-path: inset(10% 0 80% 0);
+                transform: translate(-5px, 3px) skew(5deg, 3deg);
+                filter: drop-shadow(2px 0 #f0f) drop-shadow(-2px 0 #0ff);
+            }
+            20% {
+                clip-path: inset(80% 0 10% 0);
+                transform: translate(5px, -3px) skew(-5deg, -3deg);
+                filter: drop-shadow(-2px 0 #f0f) drop-shadow(2px 0 #0ff);
+            }
+            30% {
+                clip-path: inset(0 0 0 0);
+                transform: translate(0, 0) skew(0deg, 0deg);
+                filter: none;
+            }
+            100% {
+                clip-path: inset(0 0 0 0);
+                transform: translate(0, 0) skew(0deg, 0deg);
+                filter: none;
+            }
+        }
+        /* Corrupted roadmap visuals */
+        
+        .roadmap-img {
+            image-rendering: pixelated;
+            filter: contrast(1.2) saturate(1.5) hue-rotate(-20deg);
+            animation: roadmap-glitch 4s infinite;
+            user-select: none;
+            border: 4px solid #f0f;
+            box-shadow: 0 0 10px #f0f, 0 0 20px #0ff;
+            border-radius: 0.25rem;
+        }
+        
+        @keyframes roadmap-glitch {
+            0%,
+            100% {
+                filter: contrast(1.2) saturate(1.5) hue-rotate(-20deg);
+                transform: translate(0, 0);
+            }
+            25% {
+                filter: contrast(1.5) saturate(2) hue-rotate(10deg);
+                transform: translate(3px, -2px);
+            }
+            50% {
+                filter: contrast(1.1) saturate(1.3) hue-rotate(-10deg);
+                transform: translate(-3px, 2px);
+            }
+            75% {
+                filter: contrast(1.4) saturate(1.7) hue-rotate(5deg);
+                transform: translate(2px, 1px);
+            }
+        }
+        /* Error-themed token stats */
+        
+        .error-stat {
+            font-family: 'VT323', monospace;
+            font-size: 1.5rem;
+            color: #f00;
+            text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000;
+            user-select: none;
+        }
+        /* Distorted glitch text for stats */
+        
+        .distort {
+            position: relative;
+            display: inline-block;
+            color: #f00;
+            font-weight: 900;
+            text-shadow: 1px 0 #0ff, -1px 0 #f0f, 0 1px #0ff, 0 -1px #f0f;
+            animation: distort-glitch 2.5s infinite;
+            user-select: none;
+        }
+        
+        @keyframes distort-glitch {
+            0% {
+                text-shadow: 1px 0 #0ff, -1px 0 #f0f, 0 1px #0ff, 0 -1px #f0f;
+                transform: translate(0, 0);
+            }
+            20% {
+                text-shadow: 3px 0 #0ff, -3px 0 #f0f, 0 3px #0ff, 0 -3px #f0f;
+                transform: translate(-2px, 1px);
+            }
+            40% {
+                text-shadow: 1px 0 #0ff, -1px 0 #f0f, 0 1px #0ff, 0 -1px #f0f;
+                transform: translate(2px, -1px);
+            }
+            60% {
+                text-shadow: 3px 0 #0ff, -3px 0 #f0f, 0 3px #0ff, 0 -3px #f0f;
+                transform: translate(-1px, 2px);
+            }
+            80% {
+                text-shadow: 1px 0 #0ff, -1px 0 #f0f, 0 1px #0ff, 0 -1px #f0f;
+                transform: translate(1px, -2px);
+            }
+            100% {
+                text-shadow: 1px 0 #0ff, -1px 0 #f0f, 0 1px #0ff, 0 -1px #f0f;
+                transform: translate(0, 0);
+            }
+        }
+        /* Container glitch overlay for hero text */
+        
+        .glitch-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .glitch-container .glitch-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #0ff;
+            clip-path: polygon(0 2%, 100% 0, 100% 15%, 0 20%);
+            opacity: 0.6;
+            animation: overlay-glitch 3s infinite;
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        @keyframes overlay-glitch {
+            0%,
+            100% {
+                clip-path: polygon(0 2%, 100% 0, 100% 15%, 0 20%);
+                opacity: 0.6;
+                transform: translate(0, 0);
+            }
+            50% {
+                clip-path: polygon(0 10%, 100% 5%, 100% 25%, 0 30%);
+                opacity: 0.3;
+                transform: translate(3px, 2px);
+            }
+        }
+        /* Pixelated glitch lines for hero */
+        
+        .glitch-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #0ff 50%, transparent 100%);
+            animation: glitch-line-move 2s infinite linear;
+            user-select: none;
+            pointer-events: none;
+            image-rendering: pixelated;
+        }
+        
+        .glitch-line.top {
+            top: 10%;
+            left: 0;
+            animation-delay: 0s;
+        }
+        
+        .glitch-line.middle {
+            top: 50%;
+            left: 0;
+            animation-delay: 1s;
+        }
+        
+        .glitch-line.bottom {
+            top: 90%;
+            left: 0;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes glitch-line-move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+        /* Scrollbar styling for dark theme */
+        
+         ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #0ff;
+            border-radius: 4px;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #f0f;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="w-full bg-black bg-opacity-90 fixed top-0 left-0 z-50 border-b border-fuchsia-600">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+            <a class="text-3xl font-bold glitch" data-text="404Coin" href="#">
+     404Coin
+    </a>
+            <ul class="flex space-x-6 text-cyan-400 font-semibold text-lg select-none">
+                <li>
+                    <a class="hover:text-fuchsia-400 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-fuchsia-400 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-fuchsia-400 transition" href="#stats">
+       Token Stats
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-fuchsia-400 transition" href="#buy">
+       Buy
+      </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="flex flex-col-reverse md:flex-row items-center justify-center flex-grow max-w-7xl mx-auto px-6 pt-28 pb-20 gap-12" id="hero">
+        <div class="max-w-xl text-center md:text-left relative">
+            <div class="glitch-container inline-block mb-6">
+                <h1 class="glitch text-6xl md:text-7xl leading-tight" data-text="404Coin">
+                    $NOTFND
+                </h1>
+                <div aria-hidden="true" class="glitch-overlay absolute top-0 left-0 w-full h-full" data-text="404Coin">
+                    $NOTFND
+                </div>
+            </div>
+            <p class="text-cyan-300 text-lg md:text-xl mb-8 select-text">
+                The ultimate glitchy meme coin lost in the blockchain void.
+                <br/> Embrace the error, own the chaos.
+            </p>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                <button aria-label="Buy 404Coin token" class="pixel-btn px-8 py-3 select-none" id="buyBtn">
+      <i class="fas fa-coins mr-2">
+      </i>
+      Buy $NOTFND
+     </button>
+                <button aria-label="View price chart" class="pixel-btn px-8 py-3 select-none" id="chartBtn">
+      <i class="fas fa-chart-line mr-2">
+      </i>
+      Price Chart
+     </button>
+            </div>
+        </div>
+        <div class="relative w-full max-w-md">
+            <img alt="Pixelated broken 404 error page with glitchy distorted text and corrupted UI elements" class="broken-page mx-auto" draggable="false" height="400" src="https://storage.googleapis.com/a1aa/image/0fcb8b73-78c0-466e-7cf3-cbd5fabb83b7.jpg" width="400"
+            />
+            <div class="glitch-line top">
+            </div>
+            <div class="glitch-line middle">
+            </div>
+            <div class="glitch-line bottom">
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20" id="roadmap">
+        <h2 class="text-5xl font-bold text-fuchsia-500 mb-12 text-center glitch" data-text="Roadmap">
+            Roadmap
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="bg-black bg-opacity-80 border border-fuchsia-600 p-6 rounded-lg shadow-lg">
+                <img alt="Pixelated corrupted roadmap visual showing phase 1 launch with glitchy purple and black colors" class="roadmap-img mb-4 w-full rounded" draggable="false" height="200" src="https://storage.googleapis.com/a1aa/image/bd981cfe-b730-45f7-1e09-38f0f455c874.jpg"
+                    width="300" />
+                <h3 class="text-2xl font-semibold text-fuchsia-400 mb-2 distort">
+                    Phase 1: Genesis
+                </h3>
+                <ul class="list-disc list-inside text-cyan-300 space-y-1">
+                    <li>
+                        Token launch with glitchy smart contract
+                    </li>
+                    <li>
+                        Initial liquidity pool creation
+                    </li>
+                    <li>
+                        Community building &amp; social chaos
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-black bg-opacity-80 border border-fuchsia-600 p-6 rounded-lg shadow-lg">
+                <img alt="Pixelated corrupted roadmap visual showing phase 2 expansion with glitchy cyan and black colors" class="roadmap-img mb-4 w-full rounded" draggable="false" height="200" src="https://storage.googleapis.com/a1aa/image/56990f57-98a8-4515-8065-b2a97431d6bc.jpg"
+                    width="300" />
+                <h3 class="text-2xl font-semibold text-fuchsia-400 mb-2 distort">
+                    Phase 2: Glitch Expansion
+                </h3>
+                <ul class="list-disc list-inside text-cyan-300 space-y-1">
+                    <li>
+                        Listing on decentralized exchanges
+                    </li>
+                    <li>
+                        Glitch-themed NFT airdrops
+                    </li>
+                    <li>
+                        Community-driven meme contests
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-black bg-opacity-80 border border-fuchsia-600 p-6 rounded-lg shadow-lg">
+                <img alt="Pixelated corrupted roadmap visual showing phase 3 uprising with glitchy purple and black colors" class="roadmap-img mb-4 w-full rounded" draggable="false" height="200" src="https://storage.googleapis.com/a1aa/image/47366c82-9d87-4c93-bc26-a1672f944a0e.jpg"
+                    width="300" />
+                <h3 class="text-2xl font-semibold text-fuchsia-400 mb-2 distort">
+                    Phase 3: Error Uprising
+                </h3>
+                <ul class="list-disc list-inside text-cyan-300 space-y-1">
+                    <li>
+                        Launch of corrupted DAO governance
+                    </li>
+                    <li>
+                        Glitchy staking &amp; rewards
+                    </li>
+                    <li>
+                        Partnerships with meme projects
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Token Stats Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20 bg-black bg-opacity-90 border-t border-fuchsia-600" id="stats">
+        <h2 class="text-5xl font-bold text-fuchsia-500 mb-12 text-center glitch" data-text="Token Stats">
+            Token Stats
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-center select-none">
+            <div class="error-stat">
+                <div class="text-6xl mb-2 distort" id="totalSupply">
+                    --.--B
+                </div>
+                <div>
+                    Total Supply
+                </div>
+            </div>
+            <div class="error-stat">
+                <div class="text-6xl mb-2 distort" id="circulatingSupply">
+                    --.--B
+                </div>
+                <div>
+                    Circulating Supply
+                </div>
+            </div>
+            <div class="error-stat">
+                <div class="text-6xl mb-2 distort" id="marketCap">
+                    --.--M
+                </div>
+                <div>
+                    Market Cap
+                </div>
+            </div>
+            <div class="error-stat">
+                <div class="text-6xl mb-2 distort" id="price">
+                    --.--¢
+                </div>
+                <div>
+                    Price
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Buy Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20" id="buy">
+        <h2 class="text-5xl font-bold text-fuchsia-500 mb-12 text-center glitch" data-text="Buy $NOTFND">
+            Buy $NOTFND
+        </h2>
+        <div class="max-w-md mx-auto bg-black bg-opacity-80 border border-fuchsia-600 rounded-lg p-8 shadow-lg">
+            <form class="flex flex-col gap-6" id="buyForm">
+                <label class="text-cyan-300 font-semibold text-lg select-text" for="amount">
+      Amount to Buy
+     </label>
+                <input aria-describedby="amountHelp" class="bg-black bg-opacity-70 border border-fuchsia-600 rounded px-4 py-3 text-cyan-300 font-mono text-lg focus:outline-none focus:ring-2 focus:ring-fuchsia-500" id="amount" min="1" name="amount" placeholder="Enter amount"
+                    required="" step="1" type="number" />
+                <div class="text-sm text-fuchsia-400 select-text" id="amountHelp">
+                    Minimum 1 $NOTFND
+                </div>
+                <button aria-label="Submit buy order" class="pixel-btn px-6 py-3 self-center w-full max-w-xs" type="submit">
+      <i class="fas fa-shopping-cart mr-2">
+      </i>
+      Buy Now
+     </button>
+            </form>
+            <p aria-live="polite" class="mt-4 text-center text-fuchsia-400 font-semibold select-text" id="buyMessage">
+            </p>
+        </div>
+    </section>
+    <footer class="bg-black bg-opacity-90 border-t border-fuchsia-600 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 text-center text-cyan-400 font-mono select-none">
+            © 2024 404Coin. All rights lost in the void.
+        </div>
+    </footer>
+    <script>
+        // Token stats with error-themed random distortions
+        const totalSupplyEl = document.getElementById('totalSupply');
+        const circulatingSupplyEl = document.getElementById('circulatingSupply');
+        const marketCapEl = document.getElementById('marketCap');
+        const priceEl = document.getElementById('price');
+
+        function randomErrorNumber(base, variance, decimals = 2) {
+            const error = (Math.random() - 0.5) * variance;
+            return (base + error).toFixed(decimals);
+        }
+
+        function updateStats() {
+            // Base values for stats
+            const baseTotalSupply = 10.00; // billion
+            const baseCirculating = 7.25; // billion
+            const baseMarketCap = 125.50; // million USD
+            const basePrice = 0.0175; // USD
+
+            // Random glitchy error offsets
+            totalSupplyEl.textContent = randomErrorNumber(baseTotalSupply, 0.15) + 'B';
+            circulatingSupplyEl.textContent = randomErrorNumber(baseCirculating, 0.2) + 'B';
+            marketCapEl.textContent = randomErrorNumber(baseMarketCap, 5) + 'M';
+            priceEl.textContent = (randomErrorNumber(basePrice * 100, 1, 3)) + '¢';
+        }
+
+        setInterval(updateStats, 2500);
+        updateStats();
+
+        // Pixelated button glitch effect on click
+        const buyBtn = document.getElementById('buyBtn');
+        const chartBtn = document.getElementById('chartBtn');
+        const buyMessage = document.getElementById('buyMessage');
+        const buyForm = document.getElementById('buyForm');
+
+        function glitchButtonEffect(btn) {
+            btn.classList.add('glitch');
+            setTimeout(() => btn.classList.remove('glitch'), 800);
+        }
+
+        buyBtn.addEventListener('mouseenter', () => glitchButtonEffect(buyBtn));
+        chartBtn.addEventListener('mouseenter', () => glitchButtonEffect(chartBtn));
+
+        // Buy form submission simulation
+        buyForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const amount = e.target.amount.value;
+            if (amount < 1) {
+                buyMessage.textContent = 'Error: Minimum purchase is 1 $NOTFND.';
+                buyMessage.classList.add('text-red-600');
+                return;
+            }
+            buyMessage.classList.remove('text-red-600');
+            buyMessage.textContent = 'Processing transaction...';
+            setTimeout(() => {
+                buyMessage.textContent = `Success! You bought ${amount} $NOTFND tokens. Welcome to the glitch!`;
+            }, 2000);
+            e.target.reset();
+        });
+
+        // Hero broken page distortion effect with JS
+        const brokenPage = document.querySelector('.broken-page');
+        let glitchInterval;
+
+        function glitchDistort() {
+            const maxSkew = 5;
+            const maxTranslate = 6;
+            const skewX = (Math.random() - 0.5) * maxSkew * 2;
+            const skewY = (Math.random() - 0.5) * maxSkew * 2;
+            const translateX = (Math.random() - 0.5) * maxTranslate * 2;
+            const translateY = (Math.random() - 0.5) * maxTranslate * 2;
+            brokenPage.style.transform = `translate(${translateX}px, ${translateY}px) skew(${skewX}deg, ${skewY}deg)`;
+            brokenPage.style.filter = `drop-shadow(${translateX / 2}px ${translateY / 2}px #f0f) drop-shadow(${-translateX / 2}px ${-translateY / 2}px #0ff)`;
+        }
+
+        function startGlitch() {
+            glitchInterval = setInterval(() => {
+                glitchDistort();
+                setTimeout(() => {
+                    brokenPage.style.transform = 'translate(0,0) skew(0,0)';
+                    brokenPage.style.filter = 'none';
+                }, 150);
+            }, 3000);
+        }
+        startGlitch();
+    </script>
+</body>
+
+</html>

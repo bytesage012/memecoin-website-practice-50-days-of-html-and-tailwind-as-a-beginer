@@ -1,0 +1,230 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        ScalyToken ($DRACO) - The Dragon Memecoin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;family=Roboto&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Orbitron', sans-serif;
+        }
+        /* Fire breath animation */
+        
+        @keyframes fire-breath {
+            0% {
+                opacity: 0;
+                transform: translateX(0) scaleX(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(20px) scaleX(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(40px) scaleX(0.5);
+            }
+        }
+        
+        .fire-breath {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 120px;
+            height: 40px;
+            transform-origin: left center;
+            animation: fire-breath 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 6px #ff4500);
+            z-index: 10;
+        }
+        /* Collapsible arrow rotation */
+        
+        .rotate-90 {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Intro Banner -->
+    <header class="relative bg-gradient-to-r from-red-900 via-orange-700 to-yellow-500 flex flex-col md:flex-row items-center justify-center p-8 md:p-16 overflow-hidden">
+        <div class="relative z-20 max-w-xl text-center md:text-left">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-wide text-yellow-300 drop-shadow-lg">
+                ScalyToken
+                <span class="text-red-600">
+      ($DRACO)
+     </span>
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-yellow-100 drop-shadow-md">
+                The fiery memecoin forged in the heart of dragons. Join the flight to the moon!
+            </p>
+            <button class="mt-8 px-8 py-3 bg-red-600 hover:bg-red-700 active:bg-red-800 rounded-full text-yellow-100 font-bold text-lg shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-red-400" id="claimBtn">
+     Claim Your $DRACO Tokens
+    </button>
+        </div>
+        <div class="relative mt-12 md:mt-0 md:ml-16 w-64 h-48 md:w-96 md:h-72 flex-shrink-0">
+            <img alt="Detailed side view of a fierce red dragon head breathing fire with glowing eyes and sharp scales" class="w-full h-full object-contain" height="288" src="https://storage.googleapis.com/a1aa/image/fe1181d9-050d-4a3c-544c-9210d1c52c74.jpg" width="384"
+            />
+            <img alt="Animated fire breath flames shooting from dragon's mouth in bright orange and yellow hues" class="fire-breath" height="40" src="https://storage.googleapis.com/a1aa/image/015da4ca-3e42-4674-6be2-ef008be02011.jpg" width="120" />
+        </div>
+    </header>
+    <!-- Stats Section -->
+    <section class="bg-gradient-to-b from-gray-900 to-gray-800 py-12 px-6 md:px-20 text-center">
+        <h2 class="text-4xl font-extrabold mb-10 text-yellow-400 drop-shadow-md">
+            Scaly Stats
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            <div>
+                <div class="text-6xl font-bold text-red-500" data-target="1000000">
+                    0
+                </div>
+                <p class="mt-2 text-yellow-300 uppercase tracking-widest font-semibold">
+                    Total Supply
+                </p>
+            </div>
+            <div>
+                <div class="text-6xl font-bold text-red-500" data-target="75000">
+                    0
+                </div>
+                <p class="mt-2 text-yellow-300 uppercase tracking-widest font-semibold">
+                    Holders
+                </p>
+            </div>
+            <div>
+                <div class="text-6xl font-bold text-red-500" data-target="120000">
+                    0
+                </div>
+                <p class="mt-2 text-yellow-300 uppercase tracking-widest font-semibold">
+                    Tokens Claimed
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Lore Section -->
+    <section class="py-12 px-6 md:px-20 max-w-5xl mx-auto">
+        <h2 class="text-4xl font-extrabold mb-8 text-yellow-400 drop-shadow-md text-center">
+            The Lore of ScalyToken
+        </h2>
+        <div class="space-y-6 text-yellow-100 text-lg">
+            <div class="border border-yellow-600 rounded-lg bg-gray-900 shadow-lg">
+                <button aria-controls="lore1" aria-expanded="false" class="w-full flex justify-between items-center px-6 py-4 font-semibold focus:outline-none focus:ring-2 focus:ring-yellow-400" id="lore1-btn">
+      <span>
+       The Origin of $DRACO
+      </span>
+      <i class="fas fa-chevron-right transition-transform duration-300">
+      </i>
+     </button>
+                <div aria-labelledby="lore1-btn" class="px-6 pb-6 max-h-0 overflow-hidden transition-all duration-500" id="lore1" role="region">
+                    <p>
+                        In the ancient digital realms, where blockchain dragons roamed free, the ScalyToken was forged from the fiery breath of the mightiest dragon, Draco. Born to ignite the memecoin market, $DRACO carries the spirit of power, mystery, and unstoppable growth.
+                    </p>
+                </div>
+            </div>
+            <div class="border border-yellow-600 rounded-lg bg-gray-900 shadow-lg">
+                <button aria-controls="lore2" aria-expanded="false" class="w-full flex justify-between items-center px-6 py-4 font-semibold focus:outline-none focus:ring-2 focus:ring-yellow-400" id="lore2-btn">
+      <span>
+       The Dragon's Flight
+      </span>
+      <i class="fas fa-chevron-right transition-transform duration-300">
+      </i>
+     </button>
+                <div aria-labelledby="lore2-btn" class="px-6 pb-6 max-h-0 overflow-hidden transition-all duration-500" id="lore2" role="region">
+                    <p>
+                        As $DRACO soared through the skies of the crypto world, it left trails of fire and fortune. Its holders are the chosen riders, destined to claim treasures and ride the waves of the market with dragon-like ferocity.
+                    </p>
+                </div>
+            </div>
+            <div class="border border-yellow-600 rounded-lg bg-gray-900 shadow-lg">
+                <button aria-controls="lore3" aria-expanded="false" class="w-full flex justify-between items-center px-6 py-4 font-semibold focus:outline-none focus:ring-2 focus:ring-yellow-400" id="lore3-btn">
+      <span>
+       The Treasure Hoard
+      </span>
+      <i class="fas fa-chevron-right transition-transform duration-300">
+      </i>
+     </button>
+                <div aria-labelledby="lore3-btn" class="px-6 pb-6 max-h-0 overflow-hidden transition-all duration-500" id="lore3" role="region">
+                    <p>
+                        Deep within the blockchain caves lies the treasure hoard of $DRACO — a bounty of tokens waiting to be claimed by brave adventurers. Claim your share and become part of the legend.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer with Claim Button -->
+    <footer class="bg-gradient-to-t from-gray-900 to-gray-800 py-12 px-6 md:px-20 text-center">
+        <button class="px-10 py-4 bg-red-600 hover:bg-red-700 active:bg-red-800 rounded-full text-yellow-100 font-extrabold text-2xl shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-red-400" id="claimBtnFooter">
+    Claim Your $DRACO Tokens Now
+   </button>
+    </footer>
+    <script>
+        // Animated counters
+        const counters = document.querySelectorAll('[data-target]');
+        const animationDuration = 2000; // 2 seconds
+
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            let start = 0;
+            let startTime = null;
+
+            function animate(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+                const progressRatio = Math.min(progress / animationDuration, 1);
+                counter.textContent = Math.floor(progressRatio * target).toLocaleString();
+                if (progress < animationDuration) {
+                    requestAnimationFrame(animate);
+                } else {
+                    counter.textContent = target.toLocaleString();
+                }
+            }
+
+            requestAnimationFrame(animate);
+        });
+
+        // Lore collapsible sections
+        const loreButtons = document.querySelectorAll('section button[aria-controls]');
+
+        loreButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const contentId = button.getAttribute('aria-controls');
+                const content = document.getElementById(contentId);
+                const expanded = button.getAttribute('aria-expanded') === 'true';
+
+                if (expanded) {
+                    // Collapse
+                    content.style.maxHeight = null;
+                    button.setAttribute('aria-expanded', 'false');
+                    button.querySelector('i').classList.remove('rotate-90');
+                } else {
+                    // Expand
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    button.setAttribute('aria-expanded', 'true');
+                    button.querySelector('i').classList.add('rotate-90');
+                }
+            });
+        });
+
+        // Token claim button click handlers
+        function claimTokens() {
+            alert('🔥 You have claimed your $DRACO tokens! Welcome to the dragon’s hoard! 🔥');
+        }
+
+        document.getElementById('claimBtn').addEventListener('click', claimTokens);
+        document.getElementById('claimBtnFooter').addEventListener('click', claimTokens);
+    </script>
+</body>
+
+</html>

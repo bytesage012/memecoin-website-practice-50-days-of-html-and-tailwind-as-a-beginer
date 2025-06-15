@@ -1,0 +1,296 @@
+<html class="scroll-smooth" lang="en" x-cloak="" x-data="{ newsletterSuccess: false }">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Froggonaut - $RIBBIT Meme Coin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script defer="" src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0b1120;
+            color: #d1d5db;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #7fffd4;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #0b1120;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background-color: #7fffd4;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Header / Navbar -->
+    <header class="bg-gradient-to-r from-green-700 via-green-900 to-green-800 shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto flex items-center justify-between p-4">
+            <a class="text-3xl font-orbitron text-teal-300 flex items-center space-x-2" href="#top">
+                <img alt="Green frog astronaut helmet icon" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/48146500-53d1-4661-3adc-e36d7adad8cd.jpg" width="40" />
+                <span>
+      Froggonaut
+     </span>
+            </a>
+            <ul class="hidden md:flex space-x-8 text-teal-200 font-semibold text-lg">
+                <li>
+                    <a class="hover:text-teal-400 transition" href="#mission">
+       Mission Brief
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-teal-400 transition" href="#token-stats">
+       Token Stats
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-teal-400 transition" href="#nft-gallery">
+       NFT Gallery
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-teal-400 transition" href="#join-swamp">
+       Join the Swamp
+      </a>
+                </li>
+            </ul>
+            <button @click="open = !open" aria-label="Toggle menu" class="md:hidden text-teal-300 focus:outline-none" x-data="{ open: false }">
+     <i :class="open ? 'fas fa-times' : 'fas fa-bars'" class="text-2xl">
+     </i>
+    </button>
+        </nav>
+        <div @click.away="open = false" class="md:hidden bg-green-900/90" x-data="{ open: false }" x-show="open">
+            <ul class="flex flex-col space-y-4 p-4 text-teal-200 font-semibold text-lg">
+                <li>
+                    <a @click="open = false" class="hover:text-teal-400 transition" href="#mission">
+       Mission Brief
+      </a>
+                </li>
+                <li>
+                    <a @click="open = false" class="hover:text-teal-400 transition" href="#token-stats">
+       Token Stats
+      </a>
+                </li>
+                <li>
+                    <a @click="open = false" class="hover:text-teal-400 transition" href="#nft-gallery">
+       NFT Gallery
+      </a>
+                </li>
+                <li>
+                    <a @click="open = false" class="hover:text-teal-400 transition" href="#join-swamp">
+       Join the Swamp
+      </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-green-900 via-green-800 to-black text-center py-20 px-6" id="top">
+        <h1 class="text-5xl md:text-6xl font-orbitron mb-4 text-teal-300 drop-shadow-lg">
+            Froggonaut
+        </h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto text-green-300 mb-8">
+            $RIBBIT - The Meme Coin for Space Frogs Taking Over the DeFi Universe
+        </p>
+        <img alt="A heroic green frog wearing a futuristic astronaut suit floating in space with stars and planets in the background" class="mx-auto rounded-lg shadow-lg max-w-full w-[600px]" height="300" src="https://storage.googleapis.com/a1aa/image/c6906952-fcd6-43e1-f299-2cc28357c1bd.jpg"
+            width="600" />
+        <a class="inline-block mt-10 px-8 py-4 bg-teal-400 hover:bg-teal-500 text-black font-bold rounded-full text-lg transition shadow-lg" href="#join-swamp">
+    Join the Swamp
+   </a>
+    </section>
+    <!-- Mission Brief -->
+    <section class="container mx-auto px-6 py-16 max-w-6xl" id="mission">
+        <h2 class="text-4xl font-orbitron mb-8 text-teal-300 text-center">
+            Mission Brief
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <img alt="A green frog astronaut piloting a sleek spaceship orbiting a colorful alien planet with rings" class="rounded-lg shadow-lg mx-auto" height="400" src="https://storage.googleapis.com/a1aa/image/a3577ffb-90d5-4270-7e38-9698b713842f.jpg" width="500"
+            />
+            <div class="text-green-300 text-lg space-y-6">
+                <p>
+                    Welcome to the Froggonaut mission! Our fearless space frogs are on a quest to conquer the DeFi universe, hopping from blockchain to blockchain, spreading $RIBBIT and revolutionizing decentralized finance with fun and community spirit.
+                </p>
+                <p>
+                    Join the swarm of froggonauts as we leap into new frontiers, launch innovative DeFi projects, and create a vibrant ecosystem where memes meet money. Together, we’ll ribbit up the crypto pond and make waves across the galaxy.
+                </p>
+                <p>
+                    Prepare for liftoff, and remember: in the vastness of space, only the boldest frogs survive. Are you ready to join the leap?
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Token Stats -->
+    <section class="bg-gradient-to-r from-green-900 via-green-800 to-green-900 py-16 px-6" id="token-stats">
+        <div class="container mx-auto max-w-5xl text-center">
+            <h2 class="text-4xl font-orbitron mb-12 text-teal-300">
+                Token Stats
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-green-300 font-semibold text-lg">
+                <div class="bg-green-800 rounded-xl p-6 shadow-lg hover:scale-105 transform transition">
+                    <i class="fas fa-coins text-4xl text-teal-400 mb-4">
+      </i>
+                    <h3 class="text-2xl mb-2">
+                        $RIBBIT
+                    </h3>
+                    <p>
+                        Total Supply
+                    </p>
+                    <p class="text-teal-300 text-xl mt-1">
+                        1,000,000,000
+                    </p>
+                </div>
+                <div class="bg-green-800 rounded-xl p-6 shadow-lg hover:scale-105 transform transition">
+                    <i class="fas fa-wallet text-4xl text-teal-400 mb-4">
+      </i>
+                    <h3 class="text-2xl mb-2">
+                        Circulating Supply
+                    </h3>
+                    <p>
+                        Currently in Market
+                    </p>
+                    <p class="text-teal-300 text-xl mt-1">
+                        750,000,000
+                    </p>
+                </div>
+                <div class="bg-green-800 rounded-xl p-6 shadow-lg hover:scale-105 transform transition">
+                    <i class="fas fa-chart-line text-4xl text-teal-400 mb-4">
+      </i>
+                    <h3 class="text-2xl mb-2">
+                        Market Cap
+                    </h3>
+                    <p>
+                        At Current Price
+                    </p>
+                    <p class="text-teal-300 text-xl mt-1">
+                        $15,000,000
+                    </p>
+                </div>
+                <div class="bg-green-800 rounded-xl p-6 shadow-lg hover:scale-105 transform transition">
+                    <i class="fas fa-hand-holding-usd text-4xl text-teal-400 mb-4">
+      </i>
+                    <h3 class="text-2xl mb-2">
+                        Liquidity Pool
+                    </h3>
+                    <p>
+                        Locked &amp; Secured
+                    </p>
+                    <p class="text-teal-300 text-xl mt-1">
+                        $2,000,000
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- NFT Gallery -->
+    <section class="container mx-auto px-6 py-16 max-w-7xl" id="nft-gallery">
+        <h2 class="text-4xl font-orbitron mb-12 text-teal-300 text-center">
+            NFT Gallery
+        </h2>
+        <p class="text-green-300 text-center max-w-3xl mx-auto mb-12 text-lg">
+            Explore the exclusive collection of Froggonaut NFTs — unique space frog characters ready to join your DeFi adventures. Own a piece of the swamp and show off your interstellar frog pride!
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <div class="bg-green-900 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition">
+                <img alt="Froggonaut NFT 1: A green frog wearing a shiny silver spacesuit and helmet with stars reflecting on the visor" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/b7dd8cda-d2bd-4ee1-3ce4-43677bfdbfe9.jpg"
+                    width="400" />
+                <div class="p-4 text-green-300 font-semibold text-center text-lg">
+                    Froggonaut #001
+                </div>
+            </div>
+            <div class="bg-green-900 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition">
+                <img alt="Froggonaut NFT 2: A blue frog with a futuristic jetpack flying through a starry nebula" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/d53b6c1d-661e-4cfa-0b5e-970675d75ea3.jpg" width="400" />
+                <div class="p-4 text-green-300 font-semibold text-center text-lg">
+                    Froggonaut #002
+                </div>
+            </div>
+            <div class="bg-green-900 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition">
+                <img alt="Froggonaut NFT 3: A yellow frog holding a laser gun standing on a rocky alien planet surface" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/cc40c78d-1885-41bb-472b-3c681f8870e9.jpg" width="400"
+                />
+                <div class="p-4 text-green-300 font-semibold text-center text-lg">
+                    Froggonaut #003
+                </div>
+            </div>
+            <div class="bg-green-900 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition">
+                <img alt="Froggonaut NFT 4: A purple frog examining a holographic star map floating above its hand" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/a2395785-4053-49c3-af18-03b4790f4107.jpg" width="400" />
+                <div class="p-4 text-green-300 font-semibold text-center text-lg">
+                    Froggonaut #004
+                </div>
+            </div>
+            <div class="bg-green-900 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition">
+                <img alt="Froggonaut NFT 5: An orange frog wearing a space helmet with stars twinkling in the background" class="w-full h-64 object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/7658f8e9-90e9-4ff1-e6bc-854b4125e318.jpg" width="400"
+                />
+                <div class="p-4 text-green-300 font-semibold text-center text-lg">
+                    Froggonaut #005
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Join the Swamp (Newsletter Form) -->
+    <section class="bg-gradient-to-r from-green-800 via-green-900 to-green-800 py-16 px-6" id="join-swamp">
+        <div class="container mx-auto max-w-3xl text-center text-green-300">
+            <h2 class="text-4xl font-orbitron mb-6 text-teal-300">
+                Join the Swamp
+            </h2>
+            <p class="mb-8 text-lg">
+                Subscribe to the Froggonaut newsletter and never miss a launch, update, or meme drop. Get exclusive access to $RIBBIT news and NFT releases.
+            </p>
+            <form @submit.prevent="newsletterSuccess = true" class="flex flex-col sm:flex-row justify-center gap-4">
+                <input aria-label="Email address" class="w-full sm:w-auto flex-grow px-5 py-3 rounded-full text-black font-semibold focus:outline-none focus:ring-4 focus:ring-teal-400" placeholder="Enter your email address" required="" type="email" />
+                <button aria-label="Subscribe to newsletter" class="px-8 py-3 bg-teal-400 hover:bg-teal-500 text-black font-bold rounded-full transition shadow-lg" type="submit">
+      Subscribe
+     </button>
+            </form>
+            <template x-if="newsletterSuccess">
+     <p class="mt-6 text-teal-300 font-semibold text-lg">
+      Thank you for joining the swamp! 🚀🐸
+     </p>
+    </template>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-green-900 text-green-400 py-8 mt-auto">
+        <div class="container mx-auto max-w-6xl px-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div class="flex items-center space-x-3">
+                <img alt="Small green frog icon" class="w-8 h-8" height="32" src="https://storage.googleapis.com/a1aa/image/dcde7b11-7d4c-4f19-0d0f-cb47c8e4f3b1.jpg" width="32" />
+                <span class="font-orbitron text-teal-300 text-lg">
+      Froggonaut © 2024
+     </span>
+            </div>
+            <div class="space-x-6 text-xl">
+                <a aria-label="Twitter" class="hover:text-teal-400 transition" href="https://twitter.com/froggonaut" rel="noopener" target="_blank">
+                    <i class="fab fa-twitter">
+      </i>
+                </a>
+                <a aria-label="Discord" class="hover:text-teal-400 transition" href="https://discord.gg/froggonaut" rel="noopener" target="_blank">
+                    <i class="fab fa-discord">
+      </i>
+                </a>
+                <a aria-label="GitHub" class="hover:text-teal-400 transition" href="https://github.com/froggonaut" rel="noopener" target="_blank">
+                    <i class="fab fa-github">
+      </i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

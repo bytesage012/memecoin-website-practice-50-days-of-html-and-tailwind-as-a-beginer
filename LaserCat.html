@@ -1,0 +1,332 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        LaserCat ($MEOW) - Futuristic Cat Memecoin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&amp;family=Press+Start+2P&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Orbitron', monospace;
+            background-color: #0a0a0a;
+            color: #00fff7;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 40px #00fff7;
+        }
+        
+        .glow-button {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        
+        .glow-button:hover {
+            box-shadow: 0 0 8px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7, 0 0 40px #00fff7;
+        }
+        /* Laser pointer animation */
+        
+        .laser-pointer {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #00fff7;
+            border-radius: 50%;
+            box-shadow: 0 0 6px #00fff7, 0 0 12px #00fff7, 0 0 18px #00fff7;
+            pointer-events: none;
+            animation: pulse 1.5s infinite alternate;
+            z-index: 50;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.6);
+                opacity: 0.4;
+            }
+        }
+        /* Laser beam */
+        
+        .laser-beam {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, #00fff7, #00a3a3);
+            box-shadow: 0 0 8px #00fff7, 0 0 20px #00fff7;
+            pointer-events: none;
+            z-index: 49;
+            transform-origin: left center;
+            animation: beamPulse 1.5s infinite alternate;
+        }
+        
+        @keyframes beamPulse {
+            0% {
+                opacity: 1;
+                filter: drop-shadow(0 0 6px #00fff7);
+            }
+            100% {
+                opacity: 0.5;
+                filter: drop-shadow(0 0 12px #00fff7);
+            }
+        }
+        /* Scrollbar neon */
+        
+         ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #00fff7;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
+        }
+    </style>
+</head>
+
+<body class="relative overflow-x-hidden">
+    <!-- Laser pointers container -->
+    <div class="pointer-events-none fixed top-0 left-0 w-full h-full z-50" id="laser-container">
+    </div>
+    <!-- Header -->
+    <header class="flex items-center justify-between px-6 py-4 border-b border-cyan-600 bg-black bg-opacity-80 fixed w-full z-40">
+        <div class="flex items-center space-x-3">
+            <img alt="LaserCat logo: pixel art cat face with glowing neon laser eyes in cyan on black background" class="w-12 h-12" height="48" src="https://storage.googleapis.com/a1aa/image/030721cf-4711-4018-d4ac-0924bb6e824e.jpg" width="48" />
+            <h1 class="text-2xl font-['Press_Start_2P'] neon-text select-none">
+                $MEOW
+            </h1>
+        </div>
+        <nav class="hidden md:flex space-x-8 font-semibold text-cyan-400">
+            <a class="hover:text-white transition" href="#about">
+     About
+    </a>
+            <a class="hover:text-white transition" href="#roadmap">
+     Roadmap
+    </a>
+            <a class="hover:text-white transition" href="#buy">
+     Buy Now
+    </a>
+        </nav>
+        <button class="hidden md:inline-block glow-button px-5 py-2 rounded-md border border-cyan-400 text-cyan-400 font-semibold hover:text-white hover:border-white transition" id="buy-now-header">
+    Buy Now
+   </button>
+        <button aria-label="Toggle menu" class="md:hidden text-cyan-400 focus:outline-none" id="mobile-menu-btn">
+    <i class="fas fa-bars fa-lg">
+    </i>
+   </button>
+    </header>
+    <!-- Mobile menu -->
+    <div class="fixed top-16 left-0 w-full bg-black bg-opacity-95 border-t border-cyan-600 md:hidden z-40 hidden flex-col space-y-4 py-6 px-6 font-semibold text-cyan-400" id="mobile-menu">
+        <a class="hover:text-white transition" href="#about" onclick="toggleMobileMenu()">
+    About
+   </a>
+        <a class="hover:text-white transition" href="#roadmap" onclick="toggleMobileMenu()">
+    Roadmap
+   </a>
+        <a class="hover:text-white transition" href="#buy" onclick="toggleMobileMenu()">
+    Buy Now
+   </a>
+    </div>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 pb-20 relative overflow-visible" id="about">
+        <img alt="Futuristic pixel art cat with glowing neon cyan laser eyes shooting laser beams in a dark futuristic cityscape background" class="w-72 h-72 mb-8 drop-shadow-[0_0_15px_rgba(0,255,247,0.8)]" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/0ec2c1df-6781-4d1b-f3b9-75779466683c.jpg"
+            width="300" />
+        <h2 class="text-5xl md:text-6xl font-['Press_Start_2P'] neon-text mb-4 select-none">
+            LaserCat
+        </h2>
+        <p class="max-w-xl text-cyan-300 text-lg md:text-xl mb-8 leading-relaxed">
+            The ultimate cat-themed memecoin with
+            <span class="text-white font-bold">
+     laser eyes
+    </span> and a neon future. Join the $MEOW revolution and blast off to the moon!
+        </p>
+        <button class="glow-button bg-transparent border-2 border-cyan-400 text-cyan-400 font-semibold px-8 py-3 rounded-lg hover:bg-cyan-400 hover:text-black transition text-lg select-none" id="buy-now-hero">
+    Buy Now
+   </button>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="bg-black bg-opacity-90 py-20 px-6 md:px-20 relative overflow-visible" id="roadmap">
+        <h3 class="text-4xl md:text-5xl font-['Press_Start_2P'] neon-text text-center mb-16 select-none">
+            Roadmap: Space Arcade Levels
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+            <!-- Level 1 -->
+            <div class="space-y-4 bg-gradient-to-br from-cyan-900 to-cyan-700 rounded-xl p-8 border border-cyan-500 shadow-[0_0_20px_rgba(0,255,247,0.7)]">
+                <div class="flex items-center space-x-4">
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-cyan-600 border-4 border-cyan-400 neon-text text-2xl font-bold select-none">
+                        1
+                    </div>
+                    <h4 class="text-2xl font-semibold neon-text select-none">
+                        Level 1: Initiation
+                    </h4>
+                </div>
+                <ul class="list-disc list-inside text-cyan-300 space-y-2">
+                    <li>
+                        Launch $MEOW token on Ethereum
+                    </li>
+                    <li>
+                        Website &amp; social media launch
+                    </li>
+                    <li>
+                        Community building &amp; giveaways
+                    </li>
+                </ul>
+                <img alt="Pixel art arcade style space level 1 with neon cyan cat spaceship flying through stars and planets" class="w-full rounded-lg drop-shadow-[0_0_15px_rgba(0,255,247,0.8)]" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7d232283-2b6c-4f12-7547-2ad067068217.jpg"
+                    width="400" />
+            </div>
+            <!-- Level 2 -->
+            <div class="space-y-4 bg-gradient-to-br from-cyan-900 to-cyan-700 rounded-xl p-8 border border-cyan-500 shadow-[0_0_20px_rgba(0,255,247,0.7)]">
+                <div class="flex items-center space-x-4">
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-cyan-600 border-4 border-cyan-400 neon-text text-2xl font-bold select-none">
+                        2
+                    </div>
+                    <h4 class="text-2xl font-semibold neon-text select-none">
+                        Level 2: Laser Focus
+                    </h4>
+                </div>
+                <ul class="list-disc list-inside text-cyan-300 space-y-2">
+                    <li>
+                        Partnerships with NFT artists
+                    </li>
+                    <li>
+                        Launch LaserCat NFT collection
+                    </li>
+                    <li>
+                        Community contests &amp; staking
+                    </li>
+                </ul>
+                <img alt="Pixel art arcade style space level 2 with neon cyan laser cat NFT art floating in space arcade background" class="w-full rounded-lg drop-shadow-[0_0_15px_rgba(0,255,247,0.8)]" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/484d072a-8702-404e-f441-cb917ec7f8da.jpg"
+                    width="400" />
+            </div>
+            <!-- Level 3 -->
+            <div class="space-y-4 bg-gradient-to-br from-cyan-900 to-cyan-700 rounded-xl p-8 border border-cyan-500 shadow-[0_0_20px_rgba(0,255,247,0.7)]">
+                <div class="flex items-center space-x-4">
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-cyan-600 border-4 border-cyan-400 neon-text text-2xl font-bold select-none">
+                        3
+                    </div>
+                    <h4 class="text-2xl font-semibold neon-text select-none">
+                        Level 3: Moon Mission
+                    </h4>
+                </div>
+                <ul class="list-disc list-inside text-cyan-300 space-y-2">
+                    <li>
+                        Launch on major exchanges
+                    </li>
+                    <li>
+                        LaserCat merchandise drop
+                    </li>
+                    <li>
+                        Community DAO &amp; governance
+                    </li>
+                </ul>
+                <img alt="Pixel art arcade style space level 3 with neon cyan cat rocket launching to moon with stars and planets" class="w-full rounded-lg drop-shadow-[0_0_15px_rgba(0,255,247,0.8)]" height="200" loading="lazy" src="https://storage.googleapis.com/a1aa/image/df5dd7ad-5c88-4edf-03e9-02b6c49c2464.jpg"
+                    width="400" />
+            </div>
+        </div>
+    </section>
+    <!-- Buy Now Section -->
+    <section class="min-h-[40vh] flex flex-col justify-center items-center bg-gradient-to-b from-black via-cyan-900 to-black px-6 py-20" id="buy">
+        <h3 class="text-4xl md:text-5xl font-['Press_Start_2P'] neon-text mb-8 select-none">
+            Get Your $MEOW Now
+        </h3>
+        <p class="max-w-lg text-cyan-300 text-center mb-12 leading-relaxed">
+            Ready to join the LaserCat revolution? Buy $MEOW tokens instantly and become part of the neon future. Secure, fast, and fun.
+        </p>
+        <button class="glow-button bg-transparent border-4 border-cyan-400 text-cyan-400 font-bold px-12 py-4 rounded-xl hover:bg-cyan-400 hover:text-black transition text-2xl select-none" id="buy-now-footer">
+    Buy Now
+   </button>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-90 border-t border-cyan-600 py-6 text-center text-cyan-400 text-sm select-none">
+        <p>
+            © 2024 LaserCat ($MEOW) - The Future is Neon &amp; Feline
+        </p>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        // Laser pointer effect
+        const laserContainer = document.getElementById('laser-container');
+
+        // Create multiple laser pointers that animate around the cursor
+        const laserCount = 3;
+        const lasers = [];
+
+        for (let i = 0; i < laserCount; i++) {
+            const laserDot = document.createElement('div');
+            laserDot.classList.add('laser-pointer');
+            laserContainer.appendChild(laserDot);
+
+            const laserBeam = document.createElement('div');
+            laserBeam.classList.add('laser-beam');
+            laserContainer.appendChild(laserBeam);
+
+            lasers.push({
+                dot: laserDot,
+                beam: laserBeam,
+                angleOffset: (i * 120)
+            });
+        }
+
+        window.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            lasers.forEach(({
+                dot,
+                beam,
+                angleOffset
+            }, index) => {
+                // Calculate position of dot in a small circle around cursor
+                const radius = 20 + index * 10;
+                const time = Date.now() / 500;
+                const angle = time + angleOffset * (Math.PI / 180);
+
+                const dotX = mouseX + radius * Math.cos(angle);
+                const dotY = mouseY + radius * Math.sin(angle);
+
+                dot.style.left = dotX + 'px';
+                dot.style.top = dotY + 'px';
+
+                // Laser beam from dot to cursor
+                const dx = mouseX - dotX;
+                const dy = mouseY - dotY;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                beam.style.left = dotX + 'px';
+                beam.style.top = dotY + 'px';
+                beam.style.width = dist + 'px';
+
+                const deg = Math.atan2(dy, dx) * (180 / Math.PI);
+                beam.style.transform = `rotate(${deg}deg)`;
+            });
+        });
+
+        // Buy Now buttons click handlers (simulate action)
+        const buyButtons = document.querySelectorAll('#buy-now-header, #buy-now-hero, #buy-now-footer');
+        buyButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('Redirecting to buy $MEOW tokens... 🚀😼');
+            });
+        });
+    </script>
+</body>
+
+</html>

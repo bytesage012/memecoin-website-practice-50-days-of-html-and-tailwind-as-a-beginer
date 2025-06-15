@@ -1,0 +1,732 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        $PUNKY - Where Cats, Punk Rock &amp; Memes Collide
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&amp;family=Press+Start+2P&amp;family=VT323&amp;display=swap" rel="stylesheet" />
+    <style>
+        /* Vaporwave colors and glitch effect */
+        
+        body {
+            background: linear-gradient(135deg, #ff77ff 0%, #00ffff 100%);
+            font-family: 'VT323', monospace;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 1px 0 #ff00de, -1px 0 #00fff7, 0 1px #ff00de, 0 -1px #00fff7;
+        }
+        
+        .glitch {
+            position: relative;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 3.5rem;
+            letter-spacing: 0.1em;
+            animation: glitch 2s infinite;
+            user-select: none;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            right: 0;
+            opacity: 0.8;
+            clip: rect(0, 900px, 0, 0);
+        }
+        
+        .glitch::before {
+            animation: glitchTop 2s infinite;
+            color: #ff00de;
+            z-index: -1;
+        }
+        
+        .glitch::after {
+            animation: glitchBottom 2s infinite;
+            color: #00fff7;
+            z-index: -2;
+        }
+        
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 0 #ff00de, -2px 0 #00fff7;
+            }
+            20% {
+                text-shadow: -2px 0 #ff00de, 2px 0 #00fff7;
+            }
+            40% {
+                text-shadow: 2px 2px #ff00de, -2px -2px #00fff7;
+            }
+            60% {
+                text-shadow: -2px 2px #ff00de, 2px -2px #00fff7;
+            }
+            80% {
+                text-shadow: 2px -2px #ff00de, -2px 2px #00fff7;
+            }
+            100% {
+                text-shadow: 2px 0 #ff00de, -2px 0 #00fff7;
+            }
+        }
+        
+        @keyframes glitchTop {
+            0% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            10% {
+                clip: rect(0, 9999px, 10px, 0);
+                transform: translate(-2px, -2px);
+            }
+            20% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            30% {
+                clip: rect(0, 9999px, 8px, 0);
+                transform: translate(2px, 2px);
+            }
+            40% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            100% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+        }
+        
+        @keyframes glitchBottom {
+            0% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            10% {
+                clip: rect(10px, 9999px, 20px, 0);
+                transform: translate(2px, 2px);
+            }
+            20% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            30% {
+                clip: rect(8px, 9999px, 18px, 0);
+                transform: translate(-2px, -2px);
+            }
+            40% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+            100% {
+                clip: rect(0, 9999px, 0, 0);
+                transform: translate(0);
+            }
+        }
+        /* Fuzzy border effect */
+        
+        .fuzzy-border {
+            border: 4px solid #ff00de;
+            box-shadow: 0 0 8px #ff00de, 0 0 20px #00fff7, 0 0 30px #ff00de, 0 0 40px #00fff7;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(6px);
+        }
+        /* Rotating gallery */
+        
+        .rotate-360 {
+            animation: rotate360 20s linear infinite;
+        }
+        
+        @keyframes rotate360 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        /* Meme slideshow */
+        
+        .fade-slide {
+            animation: fadeSlide 15s infinite;
+            opacity: 0;
+            position: absolute;
+            inset: 0;
+            object-fit: contain;
+            border-radius: 1rem;
+            box-shadow: 0 0 15px #ff00de;
+        }
+        
+        .fade-slide.active {
+            opacity: 1;
+            position: relative;
+            z-index: 10;
+        }
+        
+        @keyframes fadeSlide {
+            0%,
+            20% {
+                opacity: 1;
+            }
+            25%,
+            100% {
+                opacity: 0;
+            }
+        }
+        /* Scrollbar for leaderboard */
+        
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background-color: #ff00de;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="w-full bg-gradient-to-r from-pink-600 via-purple-700 to-cyan-600 shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+            <a class="text-white text-2xl font-extrabold tracking-widest select-none" href="#hero">
+     $PUNKY
+    </a>
+            <ul class="hidden md:flex space-x-8 text-white font-semibold uppercase text-sm tracking-widest">
+                <li>
+                    <a class="hover:text-pink-400 transition" href="#lore">
+       Fluff’s Rebellion
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-pink-400 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-pink-400 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-pink-400 transition" href="#community">
+       Community
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-pink-400 transition" href="#gallery">
+       NFT Merch
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-pink-400 transition" href="#memes">
+       Memes
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-pink-400 transition" href="#leaderboard">
+       Leaderboard
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-pink-400 transition" href="#countdown">
+       Next Drop
+      </a>
+                </li>
+            </ul>
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-gradient-to-r from-pink-600 via-purple-700 to-cyan-600 px-6 pb-4 space-y-3 uppercase font-semibold tracking-widest text-white text-center" id="mobile-menu">
+            <a class="block py-2 hover:text-pink-400 transition" href="#lore">
+     Fluff’s Rebellion
+    </a>
+            <a class="block py-2 hover:text-pink-400 transition" href="#roadmap">
+     Roadmap
+    </a>
+            <a class="block py-2 hover:text-pink-400 transition" href="#tokenomics">
+     Tokenomics
+    </a>
+            <a class="block py-2 hover:text-pink-400 transition" href="#community">
+     Community
+    </a>
+            <a class="block py-2 hover:text-pink-400 transition" href="#gallery">
+     NFT Merch
+    </a>
+            <a class="block py-2 hover:text-pink-400 transition" href="#memes">
+     Memes
+    </a>
+            <a class="block py-2 hover:text-pink-400 transition" href="#leaderboard">
+     Leaderboard
+    </a>
+            <a class="block py-2 hover:text-pink-400 transition" href="#countdown">
+     Next Drop
+    </a>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative flex flex-col items-center justify-center text-center py-24 px-6 bg-gradient-to-br from-purple-900 via-pink-700 to-cyan-800 overflow-hidden" id="hero">
+        <h1 class="glitch mb-6" data-text="$PUNKY">
+            $PUNKY
+        </h1>
+        <p class="text-lg md:text-2xl max-w-3xl font-semibold tracking-widest text-pink-300 drop-shadow-lg">
+            Where Cats, Punk Rock, and Memes Collide in a Vaporwave Dream
+        </p>
+        <div class="mt-12 flex space-x-6 justify-center">
+            <img alt="Vaporwave style cat punk with neon mohawk and sunglasses, pixel art style" class="w-28 h-28 md:w-36 md:h-36 rounded-full border-4 border-pink-500 shadow-lg" height="120" src="https://storage.googleapis.com/a1aa/image/44821407-f604-4cd4-0010-a8d6f28e1e3c.jpg"
+                width="120" />
+            <img alt="Pixel art cat punk with spiked collar and electric guitar, neon colors" class="w-28 h-28 md:w-36 md:h-36 rounded-full border-4 border-cyan-400 shadow-lg" height="120" src="https://storage.googleapis.com/a1aa/image/97017c9c-5416-4415-1af1-062354c950c3.jpg"
+                width="120" />
+            <img alt="Vaporwave cat punk with pink mohawk and pixelated sunglasses, neon pink and blue" class="w-28 h-28 md:w-36 md:h-36 rounded-full border-4 border-pink-500 shadow-lg" height="120" src="https://storage.googleapis.com/a1aa/image/c2de2fc5-d4f8-4330-2dbb-b3f46695b8b5.jpg"
+                width="120" />
+        </div>
+        <img alt="Glitchy vaporwave style horizontal glitch effect overlay with neon pink and cyan" aria-hidden="true" class="pointer-events-none absolute inset-0 mx-auto my-auto w-full max-w-4xl opacity-30 mix-blend-screen" height="200" src="https://storage.googleapis.com/a1aa/image/5fb00899-65af-405a-7d11-d8f3c068511d.jpg"
+            width="600" />
+    </section>
+    <!-- Fluff's Rebellion Lore -->
+    <section class="max-w-7xl mx-auto px-6 py-16" id="lore">
+        <h2 class="text-4xl md:text-5xl text-pink-400 mb-8 text-center font-bold tracking-widest drop-shadow-lg">
+            Fluff’s Rebellion
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <img alt="Vaporwave pixel art of Fluff the cat leading a punk rebellion with neon mohawks and electric guitars" class="rounded-lg fuzzy-border shadow-2xl" height="400" src="https://storage.googleapis.com/a1aa/image/1b23f8ac-e30d-4b96-f82f-6ff0e3ac813c.jpg"
+                width="600" />
+            <div class="text-pink-200 text-lg leading-relaxed font-mono">
+                <p>
+                    In the neon-lit alleys of CyberCity, Fluff the cat sparked a revolution. Tired of the mundane and the mainstream, Fluff rallied the punk cats, armed with electric guitars and pixelated attitude, to overthrow the dull and bring chaos wrapped in pastel
+                    hues and glitchy beats.
+                </p>
+                <p class="mt-4">
+                    The rebellion wasn’t just about noise — it was a movement to reclaim the internet’s soul, blending memes, punk rock, and feline fury into a vaporwave symphony. Join Fluff’s rebellion and become part of the $PUNKY legacy.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Fuzzy Roadmap -->
+    <section class="bg-gradient-to-r from-pink-700 via-purple-800 to-cyan-700 py-16 px-6" id="roadmap">
+        <h2 class="text-4xl md:text-5xl text-cyan-300 mb-12 text-center font-bold tracking-widest drop-shadow-lg">
+            Fuzzy Roadmap
+        </h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="fuzzy-border p-6 flex flex-col items-center text-center space-y-4">
+                <div class="text-6xl text-pink-400 font-extrabold">
+                    Q1
+                </div>
+                <h3 class="text-xl font-bold text-pink-300 uppercase tracking-wide">
+                    The Spark
+                </h3>
+                <ul class="list-disc list-inside text-pink-200 text-sm leading-relaxed font-mono">
+                    <li>
+                        Launch $PUNKY token
+                    </li>
+                    <li>
+                        Initial NFT punk cat drop
+                    </li>
+                    <li>
+                        Community Discord opens
+                    </li>
+                </ul>
+            </div>
+            <div class="fuzzy-border p-6 flex flex-col items-center text-center space-y-4">
+                <div class="text-6xl text-cyan-400 font-extrabold">
+                    Q2
+                </div>
+                <h3 class="text-xl font-bold text-cyan-300 uppercase tracking-wide">
+                    The Rebellion
+                </h3>
+                <ul class="list-disc list-inside text-cyan-200 text-sm leading-relaxed font-mono">
+                    <li>
+                        Fluff’s lore comic release
+                    </li>
+                    <li>
+                        First merch NFT collection
+                    </li>
+                    <li>
+                        Community meme contests
+                    </li>
+                </ul>
+            </div>
+            <div class="fuzzy-border p-6 flex flex-col items-center text-center space-y-4">
+                <div class="text-6xl text-purple-400 font-extrabold">
+                    Q3
+                </div>
+                <h3 class="text-xl font-bold text-purple-300 uppercase tracking-wide">
+                    The Takeover
+                </h3>
+                <ul class="list-disc list-inside text-purple-200 text-sm leading-relaxed font-mono">
+                    <li>
+                        Leaderboard &amp; rewards launch
+                    </li>
+                    <li>
+                        Next Fluff drop countdown
+                    </li>
+                    <li>
+                        Collaborations with punk artists
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Punk Art Tokenomics -->
+    <section class="max-w-7xl mx-auto px-6 py-16" id="tokenomics">
+        <h2 class="text-4xl md:text-5xl text-pink-400 mb-12 text-center font-bold tracking-widest drop-shadow-lg">
+            Punk Art Tokenomics
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 text-pink-200 font-mono text-lg leading-relaxed">
+                <p>
+                    $PUNKY is the lifeblood of the rebellion. Every transaction fuels the punk cats’ uprising, supporting community rewards, merch drops, and exclusive NFT art.
+                </p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>
+                        <span class="font-bold text-pink-300">
+        Total Supply:
+       </span> 1,000,000,000 $PUNKY
+                    </li>
+                    <li>
+                        <span class="font-bold text-pink-300">
+        Reflection:
+       </span> 5% redistributed to holders
+                    </li>
+                    <li>
+                        <span class="font-bold text-pink-300">
+        Liquidity Pool:
+       </span> 3% added automatically
+                    </li>
+                    <li>
+                        <span class="font-bold text-pink-300">
+        Marketing &amp; Development:
+       </span> 2%
+                    </li>
+                    <li>
+                        <span class="font-bold text-pink-300">
+        Burn:
+       </span> 1% to increase scarcity
+                    </li>
+                </ul>
+                <p>
+                    Holders gain exclusive access to punk art drops, merch discounts, and voting power in the rebellion’s future.
+                </p>
+            </div>
+            <img alt="Vaporwave style pie chart showing $PUNKY tokenomics with neon pink and cyan colors" class="rounded-lg fuzzy-border shadow-2xl" height="400" src="https://storage.googleapis.com/a1aa/image/f2d383ae-5450-4cc0-4320-8f71bc467d1d.jpg" width="600"
+            />
+        </div>
+    </section>
+    <!-- Community Links -->
+    <section class="bg-gradient-to-r from-purple-900 via-pink-700 to-cyan-800 py-16 px-6" id="community">
+        <h2 class="text-4xl md:text-5xl text-cyan-300 mb-12 text-center font-bold tracking-widest drop-shadow-lg">
+            Join the $PUNKY Community
+        </h2>
+        <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-10">
+            <a class="fuzzy-border px-8 py-6 flex flex-col items-center space-y-3 w-40 hover:bg-pink-600 transition rounded-lg cursor-pointer" href="https://discord.gg/punky" rel="noopener" target="_blank">
+                <i class="fab fa-discord fa-3x text-pink-400">
+     </i>
+                <span class="text-pink-300 font-bold uppercase tracking-wide">
+      Discord
+     </span>
+            </a>
+            <a class="fuzzy-border px-8 py-6 flex flex-col items-center space-y-3 w-40 hover:bg-cyan-600 transition rounded-lg cursor-pointer" href="https://twitter.com/punky" rel="noopener" target="_blank">
+                <i class="fab fa-twitter fa-3x text-cyan-400">
+     </i>
+                <span class="text-cyan-300 font-bold uppercase tracking-wide">
+      Twitter
+     </span>
+            </a>
+            <a class="fuzzy-border px-8 py-6 flex flex-col items-center space-y-3 w-40 hover:bg-purple-600 transition rounded-lg cursor-pointer" href="https://instagram.com/punky" rel="noopener" target="_blank">
+                <i class="fab fa-instagram fa-3x text-purple-400">
+     </i>
+                <span class="text-purple-300 font-bold uppercase tracking-wide">
+      Instagram
+     </span>
+            </a>
+            <a class="fuzzy-border px-8 py-6 flex flex-col items-center space-y-3 w-40 hover:bg-pink-600 transition rounded-lg cursor-pointer" href="https://opensea.io/collection/punky" rel="noopener" target="_blank">
+                <i class="fas fa-store fa-3x text-pink-400">
+     </i>
+                <span class="text-pink-300 font-bold uppercase tracking-wide">
+      OpenSea
+     </span>
+            </a>
+        </div>
+    </section>
+    <!-- Rotating NFT Merch Gallery -->
+    <section class="max-w-7xl mx-auto px-6 py-16" id="gallery">
+        <h2 class="text-4xl md:text-5xl text-pink-400 mb-12 text-center font-bold tracking-widest drop-shadow-lg">
+            NFT Merch Gallery
+        </h2>
+        <div class="relative w-full max-w-5xl mx-auto h-64 md:h-80">
+            <div class="absolute inset-0 flex justify-center items-center rotate-360">
+                <img alt="Vaporwave style pixel art NFT hoodie with neon pink and cyan colors" class="w-36 h-36 rounded-lg border-4 border-pink-400 shadow-lg mx-4" height="150" src="https://storage.googleapis.com/a1aa/image/f61735e8-0696-47dd-537c-15fb0068cc31.jpg" style="transform: translateX(0) translateY(-120px);"
+                    width="150" />
+                <img alt="Pixel art NFT cap with neon cyan and pink highlights, vaporwave style" class="w-36 h-36 rounded-lg border-4 border-cyan-400 shadow-lg mx-4" height="150" src="https://storage.googleapis.com/a1aa/image/c9642534-278b-40fd-3b2f-a24265b305d7.jpg"
+                    style="transform: translateX(120px) translateY(0);" width="150" />
+                <img alt="Vaporwave pixel art NFT t-shirt with neon pink and cyan colors" class="w-36 h-36 rounded-lg border-4 border-pink-400 shadow-lg mx-4" height="150" src="https://storage.googleapis.com/a1aa/image/961ff80b-2688-4af1-2419-c11d5487c64d.jpg" style="transform: translateX(0) translateY(120px);"
+                    width="150" />
+                <img alt="Pixel art NFT sticker pack with neon cyan and pink vaporwave colors" class="w-36 h-36 rounded-lg border-4 border-cyan-400 shadow-lg mx-4" height="150" src="https://storage.googleapis.com/a1aa/image/8b96d8ce-37af-4b9e-0446-ce36eb3c5539.jpg" style="transform: translateX(-120px) translateY(0);"
+                    width="150" />
+            </div>
+        </div>
+    </section>
+    <!-- Meme Slideshow -->
+    <section class="bg-gradient-to-r from-pink-700 via-purple-800 to-cyan-700 py-16 px-6" id="memes">
+        <h2 class="text-4xl md:text-5xl text-cyan-300 mb-12 text-center font-bold tracking-widest drop-shadow-lg">
+            Meme Slideshow
+        </h2>
+        <div class="relative max-w-4xl mx-auto h-64 rounded-lg overflow-hidden fuzzy-border shadow-2xl">
+            <img alt="Vaporwave style pixel art meme of a cat punk laughing with neon pink and cyan colors" class="fade-slide active" height="400" src="https://storage.googleapis.com/a1aa/image/5bcd1b78-f1ee-4092-596f-89fe9cd8dbcc.jpg" width="800" />
+            <img alt="Pixel art meme of Fluff the cat punk holding a guitar with neon cyan and pink colors" class="fade-slide" height="400" src="https://storage.googleapis.com/a1aa/image/34d65f53-f2c1-4023-46e5-b6271baa630a.jpg" width="800" />
+            <img alt="Vaporwave pixel art meme showing a crowd of punk cats with neon pink and cyan colors" class="fade-slide" height="400" src="https://storage.googleapis.com/a1aa/image/c7432079-f36e-41ca-cb30-b6412b1a8e90.jpg" width="800" />
+            <img alt="Pixel art meme of a glitchy cat punk with neon cyan and pink vaporwave colors" class="fade-slide" height="400" src="https://storage.googleapis.com/a1aa/image/1e427e0c-cee7-47de-9241-3df97332fd47.jpg" width="800" />
+        </div>
+    </section>
+    <!-- Leaderboard of Top Punks -->
+    <section class="max-w-7xl mx-auto px-6 py-16" id="leaderboard">
+        <h2 class="text-4xl md:text-5xl text-pink-400 mb-12 text-center font-bold tracking-widest drop-shadow-lg">
+            Top Punks Leaderboard
+        </h2>
+        <div class="max-w-3xl mx-auto bg-gradient-to-r from-pink-900 via-purple-900 to-cyan-900 rounded-xl fuzzy-border shadow-2xl overflow-y-auto max-h-96 scrollbar-thin">
+            <table class="w-full text-left text-pink-200 font-mono">
+                <thead class="bg-pink-700/70 sticky top-0">
+                    <tr>
+                        <th class="py-3 px-6 uppercase tracking-widest text-pink-300">
+                            Rank
+                        </th>
+                        <th class="py-3 px-6 uppercase tracking-widest text-pink-300">
+                            Punk Name
+                        </th>
+                        <th class="py-3 px-6 uppercase tracking-widest text-pink-300">
+                            Score
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-pink-600 hover:bg-pink-800/40 transition">
+                        <td class="py-3 px-6 font-bold text-pink-400">
+                            1
+                        </td>
+                        <td class="py-3 px-6">
+                            NeonClaw
+                        </td>
+                        <td class="py-3 px-6">
+                            9870
+                        </td>
+                    </tr>
+                    <tr class="border-b border-pink-600 hover:bg-pink-800/40 transition">
+                        <td class="py-3 px-6 font-bold text-pink-400">
+                            2
+                        </td>
+                        <td class="py-3 px-6">
+                            GlitchFur
+                        </td>
+                        <td class="py-3 px-6">
+                            9450
+                        </td>
+                    </tr>
+                    <tr class="border-b border-pink-600 hover:bg-pink-800/40 transition">
+                        <td class="py-3 px-6 font-bold text-pink-400">
+                            3
+                        </td>
+                        <td class="py-3 px-6">
+                            PixelPunk
+                        </td>
+                        <td class="py-3 px-6">
+                            9120
+                        </td>
+                    </tr>
+                    <tr class="border-b border-pink-600 hover:bg-pink-800/40 transition">
+                        <td class="py-3 px-6 font-bold text-pink-400">
+                            4
+                        </td>
+                        <td class="py-3 px-6">
+                            Fluffinator
+                        </td>
+                        <td class="py-3 px-6">
+                            8900
+                        </td>
+                    </tr>
+                    <tr class="border-b border-pink-600 hover:bg-pink-800/40 transition">
+                        <td class="py-3 px-6 font-bold text-pink-400">
+                            5
+                        </td>
+                        <td class="py-3 px-6">
+                            SynthCat
+                        </td>
+                        <td class="py-3 px-6">
+                            8750
+                        </td>
+                    </tr>
+                    <tr class="border-b border-pink-600 hover:bg-pink-800/40 transition">
+                        <td class="py-3 px-6 font-bold text-pink-400">
+                            6
+                        </td>
+                        <td class="py-3 px-6">
+                            LaserWhisker
+                        </td>
+                        <td class="py-3 px-6">
+                            8600
+                        </td>
+                    </tr>
+                    <tr class="border-b border-pink-600 hover:bg-pink-800/40 transition">
+                        <td class="py-3 px-6 font-bold text-pink-400">
+                            7
+                        </td>
+                        <td class="py-3 px-6">
+                            CyberFeline
+                        </td>
+                        <td class="py-3 px-6">
+                            8450
+                        </td>
+                    </tr>
+                    <tr class="border-b border-pink-600 hover:bg-pink-800/40 transition">
+                        <td class="py-3 px-6 font-bold text-pink-400">
+                            8
+                        </td>
+                        <td class="py-3 px-6">
+                            PunkPaws
+                        </td>
+                        <td class="py-3 px-6">
+                            8300
+                        </td>
+                    </tr>
+                    <tr class="border-b border-pink-600 hover:bg-pink-800/40 transition">
+                        <td class="py-3 px-6 font-bold text-pink-400">
+                            9
+                        </td>
+                        <td class="py-3 px-6">
+                            GlitchTail
+                        </td>
+                        <td class="py-3 px-6">
+                            8150
+                        </td>
+                    </tr>
+                    <tr class="border-b border-pink-600 hover:bg-pink-800/40 transition">
+                        <td class="py-3 px-6 font-bold text-pink-400">
+                            10
+                        </td>
+                        <td class="py-3 px-6">
+                            ElectricMeow
+                        </td>
+                        <td class="py-3 px-6">
+                            8000
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- Countdown to Next Fluff Drop -->
+    <section class="bg-gradient-to-r from-pink-700 via-purple-800 to-cyan-700 py-16 px-6 text-center" id="countdown">
+        <h2 class="text-4xl md:text-5xl text-cyan-300 mb-8 font-bold tracking-widest drop-shadow-lg">
+            Countdown to Next Fluff Drop
+        </h2>
+        <div class="inline-flex space-x-8 bg-pink-900/70 fuzzy-border rounded-xl px-10 py-8 shadow-2xl font-mono text-pink-300 text-4xl md:text-6xl tracking-widest select-none">
+            <div>
+                <div class="font-extrabold text-pink-400" id="days">
+                    00
+                </div>
+                <div class="text-sm uppercase mt-1">
+                    Days
+                </div>
+            </div>
+            <div>
+                <div class="font-extrabold text-pink-400" id="hours">
+                    00
+                </div>
+                <div class="text-sm uppercase mt-1">
+                    Hours
+                </div>
+            </div>
+            <div>
+                <div class="font-extrabold text-pink-400" id="minutes">
+                    00
+                </div>
+                <div class="text-sm uppercase mt-1">
+                    Minutes
+                </div>
+            </div>
+            <div>
+                <div class="font-extrabold text-pink-400" id="seconds">
+                    00
+                </div>
+                <div class="text-sm uppercase mt-1">
+                    Seconds
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-gradient-to-r from-purple-900 via-pink-700 to-cyan-800 py-8 text-center text-pink-300 font-mono text-sm select-none">
+        © 2024 $PUNKY. All rights reserved. Punk cats forever.
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Meme slideshow logic
+        const slides = document.querySelectorAll('#memes .fade-slide');
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(showNextSlide, 4000);
+
+        // Countdown timer
+        // Set next fluff drop date (example: 10 days from now)
+        const nextDropDate = new Date();
+        nextDropDate.setDate(nextDropDate.getDate() + 10);
+        nextDropDate.setHours(18, 0, 0, 0); // 6 PM
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = nextDropDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>

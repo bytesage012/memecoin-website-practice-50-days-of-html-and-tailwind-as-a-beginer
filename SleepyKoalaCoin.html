@@ -1,0 +1,365 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        SleepyKoalaCoin ($NAP)
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Comfortaa', cursive;
+            background-color: #f0f4f8;
+            color: #4a5568;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .lazy-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+        
+        .lazy-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img alt="Cute cartoon sleepy koala face with closed eyes and a smile" class="w-12 h-12" height="48" src="https://storage.googleapis.com/a1aa/image/0cedd5c1-66b0-41b5-71f6-bcf0ace7783c.jpg" width="48" />
+                <h1 class="text-2xl font-bold text-indigo-600">
+                    SleepyKoalaCoin
+                </h1>
+            </div>
+            <ul class="hidden md:flex space-x-8 text-indigo-600 font-semibold">
+                <li>
+                    <a class="hover:text-indigo-400 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-indigo-400 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-indigo-400 transition" href="#set-alarm">
+       Set Alarm
+      </a>
+                </li>
+            </ul>
+            <button aria-label="Toggle menu" class="md:hidden text-indigo-600 focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-white px-6 pb-4 space-y-3" id="mobile-menu">
+            <a class="block text-indigo-600 font-semibold hover:text-indigo-400 transition" href="#tokenomics">
+     Tokenomics
+    </a>
+            <a class="block text-indigo-600 font-semibold hover:text-indigo-400 transition" href="#roadmap">
+     Roadmap
+    </a>
+            <a class="block text-indigo-600 font-semibold hover:text-indigo-400 transition" href="#set-alarm">
+     Set Alarm
+    </a>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-20 md:py-32 gap-12">
+        <div class="max-w-xl text-center md:text-left space-y-6">
+            <h2 class="text-5xl font-extrabold text-indigo-700 leading-tight">
+                SleepyKoalaCoin
+                <span class="text-indigo-400">
+      ($NAP)
+     </span>
+            </h2>
+            <p class="text-lg text-indigo-600/80">
+                The most relaxing meme coin on the blockchain. Drift into dreams with $NAP and earn while you nap.
+            </p>
+            <a class="inline-block bg-indigo-400 hover:bg-indigo-500 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition" href="#set-alarm">
+     Set Alarm
+    </a>
+        </div>
+        <div class="w-full max-w-md">
+            <img alt="A cute cartoon sleeping koala curled up on a crescent moon surrounded by soft glowing stars and fluffy clouds in pastel colors" class="w-full rounded-3xl shadow-lg" height="400" src="https://storage.googleapis.com/a1aa/image/29735c46-fce4-4765-1d07-929fb7536114.jpg"
+                width="400" />
+        </div>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20 bg-indigo-50 rounded-t-3xl shadow-inner" id="tokenomics">
+        <h3 class="text-4xl font-bold text-indigo-700 text-center mb-12 fade-in">
+            Tokenomics
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-5xl mx-auto" id="tokenomics-cards">
+            <div class="bg-white rounded-2xl p-8 shadow-md fade-in border border-indigo-100">
+                <div class="text-indigo-400 text-5xl mb-4">
+                    <i class="fas fa-coins">
+      </i>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 text-indigo-700">
+                    Total Supply
+                </h4>
+                <p class="text-indigo-600 text-lg">
+                    1,000,000,000 $NAP
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-md fade-in border border-indigo-100">
+                <div class="text-indigo-400 text-5xl mb-4">
+                    <i class="fas fa-hand-holding-usd">
+      </i>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 text-indigo-700">
+                    Liquidity Pool
+                </h4>
+                <p class="text-indigo-600 text-lg">
+                    50% Locked for 1 Year
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-md fade-in border border-indigo-100">
+                <div class="text-indigo-400 text-5xl mb-4">
+                    <i class="fas fa-users">
+      </i>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 text-indigo-700">
+                    Community Rewards
+                </h4>
+                <p class="text-indigo-600 text-lg">
+                    20% Distributed to Holders
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-md fade-in border border-indigo-100">
+                <div class="text-indigo-400 text-5xl mb-4">
+                    <i class="fas fa-bolt">
+      </i>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 text-indigo-700">
+                    Development Fund
+                </h4>
+                <p class="text-indigo-600 text-lg">
+                    15% Reserved for Growth
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-md fade-in border border-indigo-100">
+                <div class="text-indigo-400 text-5xl mb-4">
+                    <i class="fas fa-cloud">
+      </i>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 text-indigo-700">
+                    Charity
+                </h4>
+                <p class="text-indigo-600 text-lg">
+                    10% Donated to Koala Conservation
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-md fade-in border border-indigo-100">
+                <div class="text-indigo-400 text-5xl mb-4">
+                    <i class="fas fa-shield-alt">
+      </i>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 text-indigo-700">
+                    Security
+                </h4>
+                <p class="text-indigo-600 text-lg">
+                    Audited &amp; Rug Proof
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-md fade-in border border-indigo-100">
+                <div class="text-indigo-400 text-5xl mb-4">
+                    <i class="fas fa-sleep">
+      </i>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 text-indigo-700">
+                    Sleep Rewards
+                </h4>
+                <p class="text-indigo-600 text-lg">
+                    Holders Earn While They Nap
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-md fade-in border border-indigo-100">
+                <div class="text-indigo-400 text-5xl mb-4">
+                    <i class="fas fa-rocket">
+      </i>
+                </div>
+                <h4 class="text-xl font-semibold mb-2 text-indigo-700">
+                    Launch Date
+                </h4>
+                <p class="text-indigo-600 text-lg">
+                    Q3 2024
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20 relative overflow-visible" id="roadmap">
+        <h3 class="text-4xl font-bold text-indigo-700 text-center mb-16">
+            Dream Roadmap
+        </h3>
+        <div class="relative max-w-4xl mx-auto">
+            <!-- Vertical line -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-indigo-300">
+            </div>
+            <!-- Roadmap items -->
+            <div class="space-y-20">
+                <div class="flex flex-col md:flex-row items-center md:items-start md:justify-start gap-6 lazy-scroll">
+                    <div class="md:w-1/2 md:pr-12 text-right md:text-right">
+                        <h4 class="text-indigo-600 font-semibold text-xl mb-2">
+                            Q2 2024
+                        </h4>
+                        <p class="text-indigo-700 text-lg max-w-md inline-block">
+                            Concept &amp; Community Building — Start dreaming with our first followers.
+                        </p>
+                    </div>
+                    <div class="flex justify-center md:justify-start w-full md:w-1/2 relative">
+                        <img alt="Soft white fluffy cloud with subtle pastel blue shading" aria-hidden="true" class="absolute -left-20 top-0 opacity-40" height="60" src="https://storage.googleapis.com/a1aa/image/2a1aa09f-f134-439e-5bfe-e7a86144657b.jpg" width="100" />
+                        <div class="bg-indigo-400 rounded-full w-12 h-12 flex items-center justify-center text-white text-2xl shadow-lg">
+                            <i class="fas fa-cloud-moon">
+        </i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row-reverse items-center md:items-start md:justify-start gap-6 lazy-scroll">
+                    <div class="md:w-1/2 md:pl-12 text-left md:text-left">
+                        <h4 class="text-indigo-600 font-semibold text-xl mb-2">
+                            Q3 2024
+                        </h4>
+                        <p class="text-indigo-700 text-lg max-w-md inline-block">
+                            Token Launch &amp; Initial Exchange Listings — Time to wake up the market.
+                        </p>
+                    </div>
+                    <div class="flex justify-center md:justify-end w-full md:w-1/2 relative">
+                        <img alt="Soft white fluffy cloud with subtle pastel purple shading" aria-hidden="true" class="absolute -right-20 top-0 opacity-40" height="60" src="https://storage.googleapis.com/a1aa/image/ed4674b4-b4ad-46c1-4d8d-162194674715.jpg" width="100" />
+                        <div class="bg-indigo-400 rounded-full w-12 h-12 flex items-center justify-center text-white text-2xl shadow-lg">
+                            <i class="fas fa-rocket">
+        </i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center md:items-start md:justify-start gap-6 lazy-scroll">
+                    <div class="md:w-1/2 md:pr-12 text-right md:text-right">
+                        <h4 class="text-indigo-600 font-semibold text-xl mb-2">
+                            Q4 2024
+                        </h4>
+                        <p class="text-indigo-700 text-lg max-w-md inline-block">
+                            Community Rewards &amp; Staking Launch — Earn $NAP while you snooze.
+                        </p>
+                    </div>
+                    <div class="flex justify-center md:justify-start w-full md:w-1/2 relative">
+                        <img alt="Soft white fluffy cloud with subtle pastel pink shading" aria-hidden="true" class="absolute -left-20 top-0 opacity-40" height="60" src="https://storage.googleapis.com/a1aa/image/45617a15-39c0-48de-4d78-6f4b6cdf5826.jpg" width="100" />
+                        <div class="bg-indigo-400 rounded-full w-12 h-12 flex items-center justify-center text-white text-2xl shadow-lg">
+                            <i class="fas fa-gift">
+        </i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row-reverse items-center md:items-start md:justify-start gap-6 lazy-scroll">
+                    <div class="md:w-1/2 md:pl-12 text-left md:text-left">
+                        <h4 class="text-indigo-600 font-semibold text-xl mb-2">
+                            Q1 2025
+                        </h4>
+                        <p class="text-indigo-700 text-lg max-w-md inline-block">
+                            Koala Conservation Charity Drive — Giving back to our sleepy friends.
+                        </p>
+                    </div>
+                    <div class="flex justify-center md:justify-end w-full md:w-1/2 relative">
+                        <img alt="Soft white fluffy cloud with subtle pastel yellow shading" aria-hidden="true" class="absolute -right-20 top-0 opacity-40" height="60" src="https://storage.googleapis.com/a1aa/image/8213073f-c625-494d-4779-571191ae0133.jpg" width="100" />
+                        <div class="bg-indigo-400 rounded-full w-12 h-12 flex items-center justify-center text-white text-2xl shadow-lg">
+                            <i class="fas fa-heart">
+        </i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center md:items-start md:justify-start gap-6 lazy-scroll">
+                    <div class="md:w-1/2 md:pr-12 text-right md:text-right">
+                        <h4 class="text-indigo-600 font-semibold text-xl mb-2">
+                            Q2 2025
+                        </h4>
+                        <p class="text-indigo-700 text-lg max-w-md inline-block">
+                            Expansion &amp; Partnerships — Dream bigger, reach further.
+                        </p>
+                    </div>
+                    <div class="flex justify-center md:justify-start w-full md:w-1/2 relative">
+                        <img alt="Soft white fluffy cloud with subtle pastel green shading" aria-hidden="true" class="absolute -left-20 top-0 opacity-40" height="60" src="https://storage.googleapis.com/a1aa/image/278d1885-da85-44f3-df03-2b470876b622.jpg" width="100" />
+                        <div class="bg-indigo-400 rounded-full w-12 h-12 flex items-center justify-center text-white text-2xl shadow-lg">
+                            <i class="fas fa-handshake">
+        </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Set Alarm CTA Section -->
+    <section class="bg-indigo-100 py-20 px-6 flex flex-col items-center text-center rounded-b-3xl shadow-inner" id="set-alarm">
+        <h3 class="text-4xl font-bold text-indigo-700 mb-6">
+            Ready to Wake Up to $NAP?
+        </h3>
+        <p class="max-w-xl text-indigo-600 mb-10 text-lg">
+            Set your alarm and join the SleepyKoalaCoin community. Don’t miss out on the dreamiest crypto ride.
+        </p>
+        <a class="inline-flex items-center bg-indigo-400 hover:bg-indigo-500 text-white font-semibold px-10 py-4 rounded-full shadow-lg transition" href="https://example.com/set-alarm" rel="noopener noreferrer" target="_blank">
+            <i class="fas fa-bell fa-lg mr-3">
+    </i> Set Alarm
+        </a>
+    </section>
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Intersection Observer for fade-in and lazy-scroll animations
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        const lazyScrollElements = document.querySelectorAll('.lazy-scroll');
+
+        const options = {
+            threshold: 0.1,
+        };
+
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeInObserver.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        fadeInElements.forEach((el) => fadeInObserver.observe(el));
+
+        const lazyScrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    lazyScrollObserver.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        lazyScrollElements.forEach((el) => lazyScrollObserver.observe(el));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,550 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        NachoToken ($CHEEZE) - Spicy Snack Crypto
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff8f0;
+            color: #4b2e00;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fredoka One', cursive;
+        }
+        /* Salsa drip transition container */
+        
+        .salsa-drip-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .salsa-drip {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 120%;
+            height: 40px;
+            background: linear-gradient(135deg, #d94e00 0%, #ff6f00 100%);
+            border-radius: 0 0 50% 50% / 0 0 100% 100%;
+            transform: translateX(-50%);
+            animation: drip 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 4px #ff6f00);
+            z-index: 10;
+        }
+        
+        @keyframes drip {
+            0%,
+            100% {
+                height: 40px;
+                border-radius: 0 0 50% 50% / 0 0 100% 100%;
+            }
+            50% {
+                height: 60px;
+                border-radius: 0 0 40% 60% / 0 0 90% 110%;
+            }
+        }
+        /* Triangular roadmap cards */
+        
+        .triangle-card {
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            background: linear-gradient(135deg, #ffb347, #ffcc33);
+            box-shadow: 0 4px 8px rgba(255, 140, 0, 0.4);
+            color: #4b2e00;
+            padding: 2rem 1.5rem 3rem 1.5rem;
+            position: relative;
+            transition: transform 0.3s ease;
+            cursor: default;
+        }
+        
+        .triangle-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 140, 0, 0.7);
+        }
+        
+        .triangle-card h3 {
+            margin-bottom: 0.5rem;
+        }
+        /* Jalapeño flame tokenomics */
+        
+        .jalapeno-flame {
+            position: relative;
+            display: inline-block;
+            color: #d94e00;
+            font-weight: 700;
+            font-size: 1.25rem;
+            user-select: none;
+            cursor: default;
+        }
+        
+        .jalapeno-flame .flame-icon {
+            color: #ff4500;
+            margin-left: 0.3rem;
+            animation: flame-flicker 1.5s infinite alternate;
+            filter: drop-shadow(0 0 4px #ff4500);
+        }
+        
+        @keyframes flame-flicker {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-3px) scale(1.1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        /* NFT dip gallery */
+        
+        .dip-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .dip-card {
+            background: #fff3e0;
+            border-radius: 1rem;
+            box-shadow: 0 4px 8px rgba(255, 140, 0, 0.3);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .dip-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(255, 140, 0, 0.6);
+            z-index: 20;
+        }
+        
+        .dip-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .dip-card .dip-info {
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            color: #7a3e00;
+            text-align: center;
+            background: #fff8f0;
+        }
+        /* Spicy hover animation for nav links */
+        
+        .spicy-hover {
+            position: relative;
+            overflow: hidden;
+            color: #d94e00;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        
+        .spicy-hover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: #ff6f00;
+            border-radius: 2px;
+            transition: width 0.3s ease, left 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .spicy-hover:hover {
+            color: #ff6f00;
+        }
+        
+        .spicy-hover:hover::after {
+            width: 100%;
+            left: 50%;
+        }
+        /* Responsive adjustments */
+        
+        @media (max-width: 640px) {
+            .triangle-card {
+                padding: 1.5rem 1rem 2.5rem 1rem;
+            }
+            .dip-card img {
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-white shadow-md sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a class="text-3xl font-fredoka-one tracking-widest drop-shadow-lg select-none" href="#home">
+     NachoToken
+     <span class="text-yellow-300">
+      $CHEEZE
+     </span>
+    </a>
+            <nav class="space-x-6 text-lg font-semibold hidden sm:flex">
+                <a class="spicy-hover" href="#roadmap">
+      Roadmap
+     </a>
+                <a class="spicy-hover" href="#tokenomics">
+      Tokenomics
+     </a>
+                <a class="spicy-hover" href="#gallery">
+      NFT Dip Gallery
+     </a>
+                <a class="spicy-hover" href="#contact">
+      Contact
+     </a>
+            </nav>
+            <button aria-label="Toggle menu" class="sm:hidden text-yellow-300 focus:outline-none" id="mobile-menu-btn">
+     <i class="fas fa-bars fa-2x">
+     </i>
+    </button>
+        </div>
+        <nav class="sm:hidden bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 px-6 py-4 space-y-3 hidden" id="mobile-menu">
+            <a class="block spicy-hover text-white text-lg font-semibold" href="#roadmap">
+     Roadmap
+    </a>
+            <a class="block spicy-hover text-white text-lg font-semibold" href="#tokenomics">
+     Tokenomics
+    </a>
+            <a class="block spicy-hover text-white text-lg font-semibold" href="#gallery">
+     NFT Dip Gallery
+    </a>
+            <a class="block spicy-hover text-white text-lg font-semibold" href="#contact">
+     Contact
+    </a>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative salsa-drip-container bg-gradient-to-b from-yellow-50 to-yellow-100 py-20 px-6 text-center" id="home">
+        <h1 class="text-5xl sm:text-6xl font-fredoka-one text-orange-600 drop-shadow-lg mb-4 select-none">
+            Welcome to NachoToken
+        </h1>
+        <p class="max-w-3xl mx-auto text-xl sm:text-2xl font-semibold text-yellow-900 mb-8">
+            The hottest spicy snack-themed crypto token on the blockchain. Get ready to dip into $CHEEZE and ride the jalapeño flame!
+        </p>
+        <a class="inline-block bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:brightness-110 transition" href="#tokenomics">
+    Get $CHEEZE Now
+   </a>
+        <div class="salsa-drip">
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20" id="roadmap">
+        <h2 class="text-4xl font-fredoka-one text-orange-600 text-center mb-12 select-none">
+            Roadmap
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-12">
+            <div aria-label="Roadmap Phase 1: Token Launch and Community Building" class="triangle-card" tabindex="0">
+                <h3 class="text-2xl">
+                    Phase 1
+                </h3>
+                <p class="text-yellow-900 font-semibold mb-2">
+                    Token Launch &amp; Community Building
+                </p>
+                <ul class="list-disc list-inside text-yellow-800 text-sm leading-relaxed">
+                    <li>
+                        Deploy $CHEEZE token on Ethereum
+                    </li>
+                    <li>
+                        Launch official website &amp; social channels
+                    </li>
+                    <li>
+                        Community giveaways &amp; contests
+                    </li>
+                </ul>
+            </div>
+            <div aria-label="Roadmap Phase 2: NFT Dip Gallery and Partnerships" class="triangle-card" tabindex="0">
+                <h3 class="text-2xl">
+                    Phase 2
+                </h3>
+                <p class="text-yellow-900 font-semibold mb-2">
+                    NFT Dip Gallery &amp; Partnerships
+                </p>
+                <ul class="list-disc list-inside text-yellow-800 text-sm leading-relaxed">
+                    <li>
+                        Release limited edition spicy snack NFTs
+                    </li>
+                    <li>
+                        Build NFT dip gallery &amp; marketplace
+                    </li>
+                    <li>
+                        Partner with spicy food brands
+                    </li>
+                </ul>
+            </div>
+            <div aria-label="Roadmap Phase 3: Jalapeño Flame Tokenomics &amp; Expansion" class="triangle-card" tabindex="0">
+                <h3 class="text-2xl">
+                    Phase 3
+                </h3>
+                <p class="text-yellow-900 font-semibold mb-2">
+                    Jalapeño Flame Tokenomics &amp; Expansion
+                </p>
+                <ul class="list-disc list-inside text-yellow-800 text-sm leading-relaxed">
+                    <li>
+                        Implement jalapeño flame deflationary mechanics
+                    </li>
+                    <li>
+                        Expand to multiple blockchains
+                    </li>
+                    <li>
+                        Launch spicy snack merch store
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="bg-gradient-to-r from-yellow-50 via-yellow-100 to-yellow-50 py-20 px-6" id="tokenomics">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-fredoka-one text-orange-600 mb-12 select-none">
+                Jalapeño Flame Tokenomics
+            </h2>
+            <div aria-label="Jalapeño flame tokenomics with flame icon" class="jalapeno-flame text-3xl mb-10 select-none">
+                $CHEEZE Tokenomics
+                <i aria-hidden="true" class="fas fa-pepper-hot flame-icon">
+     </i>
+            </div>
+            <div class="max-w-3xl mx-auto bg-yellow-200 rounded-3xl shadow-lg p-8 text-left text-yellow-900 font-semibold">
+                <ul class="space-y-6 text-lg">
+                    <li>
+                        <span class="font-bold text-orange-600">
+        Total Supply:
+       </span> 1,000,000,000 $CHEEZE
+                    </li>
+                    <li>
+                        <span class="font-bold text-orange-600">
+        Burn Mechanism:
+       </span> 2% of every transaction is burned to keep the flame alive 🔥
+                    </li>
+                    <li>
+                        <span class="font-bold text-orange-600">
+        Redistribution:
+       </span> 3% redistributed to holders as spicy rewards
+                    </li>
+                    <li>
+                        <span class="font-bold text-orange-600">
+        Liquidity Pool:
+       </span> 3% added to liquidity to keep the dip smooth
+                    </li>
+                    <li>
+                        <span class="font-bold text-orange-600">
+        Marketing &amp; Development:
+       </span> 2% to fuel growth and spicy partnerships
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- NFT Dip Gallery Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20" id="gallery">
+        <h2 class="text-4xl font-fredoka-one text-orange-600 text-center mb-12 select-none">
+            NFT Dip Gallery
+        </h2>
+        <div aria-label="NFT Dip Gallery with spicy snack themed NFTs" class="dip-gallery">
+            <div aria-label="NFT Dip: Nacho with melted cheese and jalapeño flames" class="dip-card" tabindex="0">
+                <img alt="NFT image of a nacho chip covered in melted cheese with jalapeño flames licking the edges" height="400" src="https://storage.googleapis.com/a1aa/image/518d6e4e-c61c-478b-3d05-27589080395c.jpg" width="400" />
+                <div class="dip-info">
+                    Nacho Blaze #001
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Salsa jar with spicy drips and fiery background" class="dip-card" tabindex="0">
+                <img alt="NFT image of a salsa jar with spicy red drips and a fiery orange background" height="400" src="https://storage.googleapis.com/a1aa/image/ebd437a7-9986-459b-17cb-0a6b3de20ac7.jpg" width="400" />
+                <div class="dip-info">
+                    Salsa Drip #007
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Jalapeño pepper with animated flame aura" class="dip-card" tabindex="0">
+                <img alt="NFT image of a bright green jalapeño pepper surrounded by animated orange and red flames" height="400" src="https://storage.googleapis.com/a1aa/image/b56b5b1e-15c9-4a5f-9cf9-a06c93ca525e.jpg" width="400" />
+                <div class="dip-info">
+                    Jalapeño Flame #015
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Bowl of guacamole with chili flakes and steam" class="dip-card" tabindex="0">
+                <img alt="NFT image of a bowl of guacamole topped with chili flakes and steam rising" height="400" src="https://storage.googleapis.com/a1aa/image/114d07a3-41e1-4de7-e7d7-1f172e2af447.jpg" width="400" />
+                <div class="dip-info">
+                    Guac Heat #023
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Spicy nacho stack with cheese and jalapeños" class="dip-card" tabindex="0">
+                <img alt="NFT image of a stack of spicy nachos covered in melted cheese and sliced jalapeños" height="400" src="https://storage.googleapis.com/a1aa/image/f23df887-05b5-42f0-3007-9f78997e7ee0.jpg" width="400" />
+                <div class="dip-info">
+                    Cheezy Stack #034
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Hot sauce bottle with fiery label and splashes" class="dip-card" tabindex="0">
+                <img alt="NFT image of a hot sauce bottle with a fiery label and splashes of sauce around it" height="400" src="https://storage.googleapis.com/a1aa/image/f9d412b2-94b5-434c-19a8-4f2eee4401fa.jpg" width="400" />
+                <div class="dip-info">
+                    Hot Sauce #042
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Spicy taco with jalapeño flames and cheese" class="dip-card" tabindex="0">
+                <img alt="NFT image of a spicy taco with jalapeño flames and melted cheese dripping" height="400" src="https://storage.googleapis.com/a1aa/image/c590a996-2d59-4130-0ee5-78fcc8503417.jpg" width="400" />
+                <div class="dip-info">
+                    Taco Flame #051
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Nacho chip with salsa splash and chili pepper" class="dip-card" tabindex="0">
+                <img alt="NFT image of a nacho chip splashing into salsa with a chili pepper on top" height="400" src="https://storage.googleapis.com/a1aa/image/3088efc3-add0-4d99-ed0a-c73e85fcbf75.jpg" width="400" />
+                <div class="dip-info">
+                    Splash Dip #060
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Bowl of spicy queso with jalapeño garnish" class="dip-card" tabindex="0">
+                <img alt="NFT image of a bowl filled with spicy queso cheese dip garnished with sliced jalapeños" height="400" src="https://storage.googleapis.com/a1aa/image/16ca0085-a415-4319-1569-5785c108fffb.jpg" width="400" />
+                <div class="dip-info">
+                    Queso Heat #068
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Nacho chip with fiery eyes and spicy aura" class="dip-card" tabindex="0">
+                <img alt="NFT image of a nacho chip with fiery glowing eyes and a spicy red aura around it" height="400" src="https://storage.googleapis.com/a1aa/image/d1eaef26-d4cb-4f5d-a0c4-067bc784483b.jpg" width="400" />
+                <div class="dip-info">
+                    Fiery Nacho #075
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Salsa splash with chili pepper and flame" class="dip-card" tabindex="0">
+                <img alt="NFT image of a splash of salsa with a chili pepper and flame rising from it" height="400" src="https://storage.googleapis.com/a1aa/image/5cea4afa-34fb-44f4-fa63-d509fc976d1d.jpg" width="400" />
+                <div class="dip-info">
+                    Salsa Splash #083
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Jalapeño pepper with spicy smoke and glowing embers" class="dip-card" tabindex="0">
+                <img alt="NFT image of a jalapeño pepper surrounded by spicy smoke and glowing embers" height="400" src="https://storage.googleapis.com/a1aa/image/7cec3b3c-4263-4f06-2fa2-54d4f4187479.jpg" width="400" />
+                <div class="dip-info">
+                    Ember Pepper #091
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Nacho chip dipped in fiery cheese sauce" class="dip-card" tabindex="0">
+                <img alt="NFT image of a nacho chip being dipped into a bowl of fiery cheese sauce" height="400" src="https://storage.googleapis.com/a1aa/image/6308d20f-fadc-4e21-4d34-bf2b1997f9f7.jpg" width="400" />
+                <div class="dip-info">
+                    Cheese Dip #099
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Spicy snack platter with jalapeños and sauces" class="dip-card" tabindex="0">
+                <img alt="NFT image of a spicy snack platter featuring jalapeños, nachos, and various sauces" height="400" src="https://storage.googleapis.com/a1aa/image/87e86944-b752-422c-1552-be2be2ce583e.jpg" width="400" />
+                <div class="dip-info">
+                    Snack Platter #105
+                </div>
+            </div>
+            <div aria-label="NFT Dip: Hot chili pepper with flame crown" class="dip-card" tabindex="0">
+                <img alt="NFT image of a hot chili pepper wearing a crown made of flames" height="400" src="https://storage.googleapis.com/a1aa/image/08a4124c-42f1-4576-5e21-200590249488.jpg" width="400" />
+                <div class="dip-info">
+                    Flame King #112
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="bg-gradient-to-r from-yellow-50 via-yellow-100 to-yellow-50 py-16 px-6" id="contact">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl font-fredoka-one text-orange-600 mb-8 select-none">
+                Get in Touch
+            </h2>
+            <p class="text-yellow-900 font-semibold mb-6">
+                Have questions or want to join the spicy community? Drop us a message!
+            </p>
+            <form aria-label="Contact form for NachoToken" class="space-y-6 text-left">
+                <div>
+                    <label class="block mb-2 font-semibold text-yellow-900" for="name">
+       Name
+      </label>
+                    <input class="w-full rounded-md border border-yellow-400 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400" id="name" name="name" required="" type="text" />
+                </div>
+                <div>
+                    <label class="block mb-2 font-semibold text-yellow-900" for="email">
+       Email
+      </label>
+                    <input class="w-full rounded-md border border-yellow-400 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400" id="email" name="email" required="" type="email" />
+                </div>
+                <div>
+                    <label class="block mb-2 font-semibold text-yellow-900" for="message">
+       Message
+      </label>
+                    <textarea class="w-full rounded-md border border-yellow-400 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400" id="message" name="message" required="" rows="4"></textarea>
+                </div>
+                <button class="bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:brightness-110 transition w-full sm:w-auto" type="submit">
+      Send Message
+     </button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-white py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center text-sm select-none">
+            <div>
+                © 2024 NachoToken. All rights reserved.
+            </div>
+            <div class="space-x-6 mt-3 sm:mt-0">
+                <a aria-label="Twitter" class="hover:text-yellow-300 transition" href="https://twitter.com" rel="noopener" target="_blank">
+                    <i class="fab fa-twitter fa-lg">
+      </i>
+                </a>
+                <a aria-label="Discord" class="hover:text-yellow-300 transition" href="https://discord.com" rel="noopener" target="_blank">
+                    <i class="fab fa-discord fa-lg">
+      </i>
+                </a>
+                <a aria-label="GitHub" class="hover:text-yellow-300 transition" href="https://github.com" rel="noopener" target="_blank">
+                    <i class="fab fa-github fa-lg">
+      </i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Custom spicy hover animation for roadmap cards (extra JS animation)
+        const triangleCards = document.querySelectorAll('.triangle-card');
+        triangleCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+                card.style.transform = 'translateY(-15px) scale(1.07)';
+                card.style.boxShadow = '0 12px 24px rgba(255, 140, 0, 0.9)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.boxShadow = '';
+            });
+        });
+
+        // Spicy hover animation for NFT dip cards - subtle flame flicker effect
+        const dipCards = document.querySelectorAll('.dip-card');
+        dipCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+                card.style.transform = 'scale(1.08)';
+                card.style.boxShadow = '0 12px 24px rgba(255, 140, 0, 0.8)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+
+</html>

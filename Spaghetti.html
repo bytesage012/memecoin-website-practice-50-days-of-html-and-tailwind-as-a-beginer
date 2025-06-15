@@ -1,0 +1,351 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Spaghetti Inu ($PASTA) - The Funniest Meme Coin
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Roboto+Slab&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto Slab', serif;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Pacifico', cursive;
+        }
+        /* Flying pasta noodles animation */
+        
+        @keyframes flyPasta {
+            0% {
+                transform: translateX(-100%) translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(110vw) translateY(-50vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .fly-pasta {
+            position: absolute;
+            width: 60px;
+            animation: flyPasta 10s linear infinite;
+            will-change: transform, opacity;
+            pointer-events: none;
+            user-select: none;
+        }
+        /* Different delays for multiple noodles */
+        
+        .fly-pasta:nth-child(1) {
+            top: 20vh;
+            animation-delay: 0s;
+        }
+        
+        .fly-pasta:nth-child(2) {
+            top: 40vh;
+            animation-delay: 3.3s;
+            width: 50px;
+        }
+        
+        .fly-pasta:nth-child(3) {
+            top: 60vh;
+            animation-delay: 6.6s;
+            width: 70px;
+        }
+        /* Boiling pot bubbling effect */
+        
+        @keyframes bubble {
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+        }
+        
+        .bubble {
+            animation: bubble 2s ease-in-out infinite;
+        }
+        /* Ingredient card hover scale */
+        
+        .ingredient-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 165, 0, 0.4);
+            z-index: 10;
+        }
+        /* Recipe step hover effect */
+        
+        .recipe-step:hover {
+            background-color: #fef3c7;
+            border-color: #fbbf24;
+            box-shadow: 0 8px 15px rgba(251, 191, 36, 0.4);
+            cursor: pointer;
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-yellow-50 to-yellow-100 min-h-screen relative overflow-x-hidden">
+    <!-- Flying pasta noodles in hero -->
+    <img alt="Flying twisted spaghetti noodle with steam" class="fly-pasta" height="60" src="https://storage.googleapis.com/a1aa/image/6d09cda8-1a8c-4f91-c87a-ef69ce696871.jpg" style="top: 15vh; animation-delay: 0s;" width="60" />
+    <img alt="Flying curly pasta noodle with steam" class="fly-pasta" height="50" src="https://storage.googleapis.com/a1aa/image/770fe856-653b-4315-2d31-b20e983857e0.jpg" style="top: 35vh; animation-delay: 3.5s;" width="50" />
+    <img alt="Flying long spaghetti noodle with steam" class="fly-pasta" height="70" src="https://storage.googleapis.com/a1aa/image/9009579e-a202-4209-8e12-3d4b51493754.jpg" style="top: 55vh; animation-delay: 7s;" width="70" />
+    <!-- Navbar -->
+    <nav class="bg-yellow-300 bg-opacity-90 backdrop-blur-md fixed w-full z-30 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a class="text-3xl text-orange-600 font-pacifico font-bold flex items-center gap-2" href="#hero">
+                <img alt="Spaghetti Inu cartoon dog mascot with pasta hat" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/524f2ed6-c760-4aed-edab-70c70341fd2b.jpg" width="40" /> Spaghetti Inu
+            </a>
+            <ul class="hidden md:flex space-x-8 text-yellow-900 font-semibold">
+                <li>
+                    <a class="hover:text-orange-600 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-orange-600 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-orange-600 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-orange-600 transition" href="#how-it-works">
+       How It Works
+      </a>
+                </li>
+                <li>
+                    <a class="hover:text-orange-600 transition" href="#footer">
+       Contact
+      </a>
+                </li>
+            </ul>
+            <button aria-label="Toggle menu" class="md:hidden text-yellow-900 hover:text-orange-600 focus:outline-none" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+        </div>
+        <div class="hidden md:hidden bg-yellow-200 bg-opacity-90" id="mobile-menu">
+            <ul class="flex flex-col space-y-3 p-4 text-yellow-900 font-semibold">
+                <li>
+                    <a class="block hover:text-orange-600 transition" href="#hero">
+       Home
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-orange-600 transition" href="#roadmap">
+       Roadmap
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-orange-600 transition" href="#tokenomics">
+       Tokenomics
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-orange-600 transition" href="#how-it-works">
+       How It Works
+      </a>
+                </li>
+                <li>
+                    <a class="block hover:text-orange-600 transition" href="#footer">
+       Contact
+      </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="pt-24 pb-20 bg-yellow-100 relative overflow-visible flex flex-col items-center text-center px-6" id="hero">
+        <h1 class="text-5xl md:text-6xl text-orange-600 font-pacifico mb-4 drop-shadow-lg">
+            Spaghetti Inu
+            <span class="text-yellow-700">
+     ($PASTA)
+    </span>
+        </h1>
+        <p class="max-w-3xl text-yellow-900 text-lg md:text-xl mb-8 font-semibold drop-shadow-sm">
+            The funniest meme coin that’s cooking up gains with flying pasta noodles and boiling pots of roadmap magic!
+        </p>
+        <a class="inline-block bg-orange-500 hover:bg-orange-600 text-yellow-50 font-bold py-3 px-8 rounded-full shadow-lg transition" href="#tokenomics">
+    Get $PASTA Now!
+   </a>
+        <div class="mt-12 flex justify-center gap-8 flex-wrap max-w-5xl">
+            <!-- Flying pasta noodle images repeated for hero decoration -->
+            <img alt="Close-up twisted spaghetti noodle with steam" class="animate-float w-20 h-20" height="80" src="https://storage.googleapis.com/a1aa/image/e8dca333-6517-438e-b6d4-32e7cb6efc3d.jpg" style="animation: flyPasta 12s linear infinite;" width="80" />
+            <img alt="Curly pasta noodle flying with steam" class="animate-float w-24 h-24" height="90" src="https://storage.googleapis.com/a1aa/image/0f9e1f7f-e444-4a29-ec62-2e6d2592b639.jpg" style="animation: flyPasta 14s linear infinite 3s;" width="90" />
+            <img alt="Long spaghetti noodle flying with steam" class="animate-float w-18 h-18" height="70" src="https://storage.googleapis.com/a1aa/image/dfdc1ad5-c13a-412e-a6ec-6f761e8755bc.jpg" style="animation: flyPasta 10s linear infinite 6s;" width="70" />
+        </div>
+    </section>
+    <!-- Roadmap Section -->
+    <section class="bg-yellow-50 py-20 px-6 max-w-7xl mx-auto" id="roadmap">
+        <h2 class="text-4xl text-orange-600 font-pacifico text-center mb-12 drop-shadow-md">
+            Boiling Roadmap
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Roadmap Step 1 -->
+            <div class="relative bg-yellow-100 border-4 border-orange-400 rounded-3xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-2xl transition cursor-default">
+                <img alt="Boiling pot with bubbling pasta and steam rising" class="w-28 h-28 mb-6 bubble" height="120" src="https://storage.googleapis.com/a1aa/image/a751a818-f6f8-46f7-07e7-42a7ae379585.jpg" width="120" />
+                <h3 class="text-2xl font-semibold text-orange-600 mb-2">
+                    Step 1: Seed Sizzle
+                </h3>
+                <p class="text-yellow-900 font-medium">
+                    Launch $PASTA token and start cooking the community with spicy giveaways and social media sauce.
+                </p>
+            </div>
+            <!-- Roadmap Step 2 -->
+            <div class="relative bg-yellow-100 border-4 border-orange-400 rounded-3xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-2xl transition cursor-default">
+                <img alt="Boiling pot with pasta noodles and bubbles rising" class="w-28 h-28 mb-6 bubble" height="120" src="https://storage.googleapis.com/a1aa/image/16ef71e3-1342-489e-cbc4-b5fe977ec753.jpg" style="animation-delay: 0.5s" width="120" />
+                <h3 class="text-2xl font-semibold text-orange-600 mb-2">
+                    Step 2: Sauce Simmer
+                </h3>
+                <p class="text-yellow-900 font-medium">
+                    List on PancakeSwap and add liquidity. Stir the pot with influencer partnerships and spicy memes.
+                </p>
+            </div>
+            <!-- Roadmap Step 3 -->
+            <div class="relative bg-yellow-100 border-4 border-orange-400 rounded-3xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-2xl transition cursor-default">
+                <img alt="Boiling pot with pasta and steam, bubbles rising" class="w-28 h-28 mb-6 bubble" height="120" src="https://storage.googleapis.com/a1aa/image/69037a46-9e1f-406e-b151-cc94b2ff1f19.jpg" style="animation-delay: 1s" width="120" />
+                <h3 class="text-2xl font-semibold text-orange-600 mb-2">
+                    Step 3: Pasta Party
+                </h3>
+                <p class="text-yellow-900 font-medium">
+                    Launch community voting, NFT pasta art drops, and spicy staking rewards. Let’s get saucy!
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Tokenomics Section -->
+    <section class="bg-yellow-100 py-20 px-6 max-w-7xl mx-auto" id="tokenomics">
+        <h2 class="text-4xl text-orange-600 font-pacifico text-center mb-12 drop-shadow-md">
+            Tokenomics Ingredients
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Ingredient Card 1 -->
+            <div class="ingredient-card bg-yellow-50 border-2 border-orange-400 rounded-2xl p-6 flex flex-col items-center text-center shadow-md transition-transform duration-300">
+                <img alt="Spaghetti pasta ingredient icon with steam" class="w-24 h-24 mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/75c1e3a9-1b8a-46f7-9a0f-eca9cb5245f0.jpg" width="100" />
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">
+                    Total Supply
+                </h3>
+                <p class="text-yellow-900 font-medium text-lg">
+                    1,000,000,000 $PASTA
+                </p>
+            </div>
+            <!-- Ingredient Card 2 -->
+            <div class="ingredient-card bg-yellow-50 border-2 border-orange-400 rounded-2xl p-6 flex flex-col items-center text-center shadow-md transition-transform duration-300">
+                <img alt="Fiery chili pepper ingredient icon representing burn" class="w-24 h-24 mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/9c8590b5-270d-45df-64ac-4def5e6cfa53.jpg" width="100" />
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">
+                    Burn Rate
+                </h3>
+                <p class="text-yellow-900 font-medium text-lg">
+                    5% Burn on Every Transaction
+                </p>
+            </div>
+            <!-- Ingredient Card 3 -->
+            <div class="ingredient-card bg-yellow-50 border-2 border-orange-400 rounded-2xl p-6 flex flex-col items-center text-center shadow-md transition-transform duration-300">
+                <img alt="Money bag ingredient icon representing liquidity pool" class="w-24 h-24 mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/f5b6a41b-cb6a-401e-8755-3b34eaa8bb3c.jpg" width="100" />
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">
+                    Liquidity Pool
+                </h3>
+                <p class="text-yellow-900 font-medium text-lg">
+                    50% Locked for 1 Year
+                </p>
+            </div>
+            <!-- Ingredient Card 4 -->
+            <div class="ingredient-card bg-yellow-50 border-2 border-orange-400 rounded-2xl p-6 flex flex-col items-center text-center shadow-md transition-transform duration-300">
+                <img alt="Party popper ingredient icon representing community rewards" class="w-24 h-24 mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/f7890855-2787-4c81-f077-302a4747796b.jpg" width="100" />
+                <h3 class="text-xl font-semibold text-orange-600 mb-2">
+                    Community Rewards
+                </h3>
+                <p class="text-yellow-900 font-medium text-lg">
+                    3% Reflections to Holders
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- How It Works Section -->
+    <section class="bg-yellow-50 py-20 px-6 max-w-7xl mx-auto" id="how-it-works">
+        <h2 class="text-4xl text-orange-600 font-pacifico text-center mb-12 drop-shadow-md">
+            How It Works - The Recipe
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Step 1 -->
+            <div class="recipe-step bg-yellow-100 border-2 border-yellow-300 rounded-3xl p-8 flex flex-col items-center text-center shadow-md transition-all duration-300">
+                <img alt="Mixing bowl with ingredients for token launch" class="w-28 h-28 mb-6" height="120" src="https://storage.googleapis.com/a1aa/image/90ba7287-be66-4c4a-ab8a-685083a8e61b.jpg" width="120" />
+                <h3 class="text-2xl font-semibold text-orange-600 mb-3">
+                    Step 1: Mix the Dough
+                </h3>
+                <p class="text-yellow-900 font-medium">
+                    Deploy the $PASTA token smart contract and add initial liquidity to the pool.
+                </p>
+            </div>
+            <!-- Step 2 -->
+            <div class="recipe-step bg-yellow-100 border-2 border-yellow-300 rounded-3xl p-8 flex flex-col items-center text-center shadow-md transition-all duration-300">
+                <img alt="Fresh tomato sauce being poured into a bowl" class="w-28 h-28 mb-6" height="120" src="https://storage.googleapis.com/a1aa/image/e7a30760-7e22-4f18-845a-2b748a81a9b8.jpg" width="120" />
+                <h3 class="text-2xl font-semibold text-orange-600 mb-3">
+                    Step 2: Add the Sauce
+                </h3>
+                <p class="text-yellow-900 font-medium">
+                    Engage the community with memes, contests, and social media campaigns to spread the flavor.
+                </p>
+            </div>
+            <!-- Step 3 -->
+            <div class="recipe-step bg-yellow-100 border-2 border-yellow-300 rounded-3xl p-8 flex flex-col items-center text-center shadow-md transition-all duration-300">
+                <img alt="Serving plate with delicious spaghetti and garnish" class="w-28 h-28 mb-6" height="120" src="https://storage.googleapis.com/a1aa/image/f73566bf-0e7c-439c-60e3-a2835767ae52.jpg" width="120" />
+                <h3 class="text-2xl font-semibold text-orange-600 mb-3">
+                    Step 3: Serve &amp; Enjoy
+                </h3>
+                <p class="text-yellow-900 font-medium">
+                    Hold $PASTA, earn reflections, and watch your investment simmer to tasty profits.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-yellow-300 bg-opacity-90 backdrop-blur-md py-10 mt-20 text-yellow-900 text-center max-w-7xl mx-auto px-6 rounded-t-3xl shadow-inner" id="footer">
+        <p class="mb-4 font-semibold text-lg">
+            © 2024 Spaghetti Inu Meme Coin. All rights reserved.
+        </p>
+        <div class="flex justify-center space-x-6 text-2xl">
+            <a aria-label="Twitter" class="hover:text-orange-600 transition" href="https://twitter.com/spaghettinu" rel="noopener noreferrer" target="_blank">
+                <i class="fab fa-twitter">
+     </i>
+            </a>
+            <a aria-label="Telegram" class="hover:text-orange-600 transition" href="https://t.me/spaghettinu" rel="noopener noreferrer" target="_blank">
+                <i class="fab fa-telegram-plane">
+     </i>
+            </a>
+            <a aria-label="Discord" class="hover:text-orange-600 transition" href="https://discord.gg/spaghettinu" rel="noopener noreferrer" target="_blank">
+                <i class="fab fa-discord">
+     </i>
+            </a>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

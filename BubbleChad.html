@@ -1,0 +1,318 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        BubbleChad ($POP) - Pastel Bubble Token
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            background: #fef9ff;
+            overflow-x: hidden;
+        }
+        
+        .bubble {
+            border-radius: 50%;
+            cursor: pointer;
+            user-select: none;
+            position: absolute;
+            transition: transform 0.3s ease;
+            box-shadow: 0 8px 15px rgba(255 255 255 / 0.7);
+        }
+        
+        .bubble:active {
+            transform: scale(0.8);
+        }
+        
+        .pop {
+            animation: popAnim 0.4s forwards;
+        }
+        
+        @keyframes popAnim {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.8);
+            }
+        }
+    </style>
+</head>
+
+<body class="relative min-h-screen flex flex-col items-center justify-start pt-24 px-4 sm:px-8 bg-gradient-to-b from-pink-50 via-purple-50 to-blue-50 overflow-hidden">
+    <!-- Header -->
+    <header class="w-full max-w-7xl flex flex-col sm:flex-row items-center justify-between mb-12">
+        <div class="flex items-center space-x-3">
+            <img alt="BubbleChad logo: a pastel pink bubble with white text POP inside, shiny and glossy" class="w-16 h-16 rounded-full shadow-lg" height="64" src="https://storage.googleapis.com/a1aa/image/e411eed9-f1c9-4d13-7cd3-00ca8f693666.jpg" width="64" />
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-pink-500 select-none">
+                BubbleChad
+                <span class="text-purple-500">
+      $POP
+     </span>
+            </h1>
+        </div>
+        <nav class="mt-6 sm:mt-0 space-x-6 text-lg font-semibold text-purple-600">
+            <a class="hover:text-pink-500 transition" href="#tokenomics">
+     Tokenomics
+    </a>
+            <a class="hover:text-pink-500 transition" href="#about">
+     About
+    </a>
+            <a class="hover:text-pink-500 transition" href="#contact">
+     Contact
+    </a>
+        </nav>
+    </header>
+    <!-- Floating bubbles container -->
+    <div class="fixed inset-0 pointer-events-none z-0" id="bubbles-container">
+    </div>
+    <!-- Main content -->
+    <main class="relative z-10 max-w-7xl w-full flex flex-col items-center space-y-16">
+        <!-- Hero Section -->
+        <section class="text-center max-w-3xl px-4">
+            <h2 class="text-5xl sm:text-6xl font-extrabold text-pink-400 drop-shadow-lg mb-4 select-none">
+                Welcome to BubbleChad
+            </h2>
+            <p class="text-xl sm:text-2xl text-purple-600 mb-8 leading-relaxed">
+                The pastel, bubble-style token that’s ready to POP! Join the fun with floating bubbles, interactive popping, and bubbly tokenomics.
+            </p>
+            <button class="bg-pink-400 hover:bg-pink-500 active:bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-pink-300" id="popAllBtn">
+     Pop All Bubbles!
+    </button>
+        </section>
+        <!-- Tokenomics Section -->
+        <section class="w-full max-w-5xl bg-white bg-opacity-70 rounded-3xl p-8 shadow-lg backdrop-blur-md" id="tokenomics">
+            <h3 class="text-4xl font-extrabold text-purple-600 mb-8 text-center select-none">
+                Tokenomics
+            </h3>
+            <div class="flex flex-wrap justify-center gap-12">
+                <!-- Bubble chart items -->
+                <div class="bubble-chart-item flex flex-col items-center space-y-3">
+                    <div class="bubble bg-pink-300 shadow-md flex items-center justify-center text-white font-bold select-none" data-percent="40" style="width: 120px; height: 120px;">
+                        40%
+                    </div>
+                    <span class="text-purple-700 font-semibold text-lg">
+       Liquidity Pool
+      </span>
+                </div>
+                <div class="bubble-chart-item flex flex-col items-center space-y-3">
+                    <div class="bubble bg-purple-300 shadow-md flex items-center justify-center text-white font-bold select-none" data-percent="25" style="width: 90px; height: 90px;">
+                        25%
+                    </div>
+                    <span class="text-purple-700 font-semibold text-lg">
+       Marketing
+      </span>
+                </div>
+                <div class="bubble-chart-item flex flex-col items-center space-y-3">
+                    <div class="bubble bg-blue-300 shadow-md flex items-center justify-center text-white font-bold select-none" data-percent="15" style="width: 75px; height: 75px;">
+                        15%
+                    </div>
+                    <span class="text-purple-700 font-semibold text-lg">
+       Team
+      </span>
+                </div>
+                <div class="bubble-chart-item flex flex-col items-center space-y-3">
+                    <div class="bubble bg-pink-200 shadow-md flex items-center justify-center text-white font-bold select-none" data-percent="10" style="width: 60px; height: 60px;">
+                        10%
+                    </div>
+                    <span class="text-purple-700 font-semibold text-lg">
+       Development
+      </span>
+                </div>
+                <div class="bubble-chart-item flex flex-col items-center space-y-3">
+                    <div class="bubble bg-purple-200 shadow-md flex items-center justify-center text-white font-bold select-none" data-percent="10" style="width: 45px; height: 45px;">
+                        10%
+                    </div>
+                    <span class="text-purple-700 font-semibold text-lg">
+       Community Rewards
+      </span>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="max-w-4xl bg-white bg-opacity-70 rounded-3xl p-8 shadow-lg backdrop-blur-md text-purple-700" id="about">
+            <h3 class="text-4xl font-extrabold mb-6 select-none">
+                About BubbleChad
+            </h3>
+            <p class="text-lg leading-relaxed mb-4">
+                BubbleChad ($POP) is a fun, pastel-themed cryptocurrency designed to bring joy and interactivity to the crypto space. Our unique bubble-style design and playful animations make every interaction delightful.
+            </p>
+            <p class="text-lg leading-relaxed">
+                Pop bubbles, explore tokenomics visualized as bubbles, and enjoy light bubbly sounds that enhance your experience. Join the BubbleChad community and watch your $POP tokens grow!
+            </p>
+        </section>
+        <!-- Contact Section -->
+        <section class="max-w-4xl bg-white bg-opacity-70 rounded-3xl p-8 shadow-lg backdrop-blur-md text-purple-700" id="contact">
+            <h3 class="text-4xl font-extrabold mb-6 select-none">
+                Contact Us
+            </h3>
+            <form class="flex flex-col space-y-6" onsubmit="event.preventDefault(); alert('Thank you for reaching out!');">
+                <input class="p-3 rounded-xl border border-purple-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent" placeholder="Your Name" required="" type="text" />
+                <input class="p-3 rounded-xl border border-purple-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent" placeholder="Your Email" required="" type="email" />
+                <textarea class="p-3 rounded-xl border border-purple-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent resize-none" placeholder="Your Message" required="" rows="4"></textarea>
+                <button class="bg-pink-400 hover:bg-pink-500 active:bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-pink-300" type="submit">
+      Send Message
+     </button>
+            </form>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full max-w-7xl mt-20 mb-8 text-center text-purple-400 font-semibold select-none">
+        © 2024 BubbleChad. All rights reserved.
+    </footer>
+    <!-- Bubbly Sounds -->
+    <audio id="popSound" preload="auto" src="https://actions.google.com/sounds/v1/foley/bubble_pop.ogg">
+  </audio>
+    <script>
+        // Configuration for floating bubbles
+        const bubbleColors = [
+            '#f9c5d1', // pastel pink
+            '#cdb4db', // pastel purple
+            '#b5ead7', // pastel teal
+            '#ffdac1', // pastel peach
+            '#e2f0cb', // pastel green
+        ];
+
+        const bubblesContainer = document.getElementById('bubbles-container');
+        const popSound = document.getElementById('popSound');
+
+        // Generate random pastel bubble size between min and max px
+        function randomSize(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Generate random float between min and max
+        function randomFloat(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        // Create a bubble element with random properties
+        function createBubble(id) {
+            const size = randomSize(40, 100);
+            const color = bubbleColors[Math.floor(Math.random() * bubbleColors.length)];
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.width = size + 'px';
+            bubble.style.height = size + 'px';
+            bubble.style.backgroundColor = color;
+            bubble.style.left = randomFloat(0, window.innerWidth - size) + 'px';
+            bubble.style.top = window.innerHeight + size + 'px'; // start below screen
+            bubble.style.opacity = 0.8;
+            bubble.style.zIndex = 0;
+            bubble.id = 'bubble-' + id;
+            bubble.setAttribute('aria-label', 'Floating pastel bubble, clickable to pop');
+            bubble.tabIndex = 0;
+
+            // Add subtle shine highlight using an img overlay
+            const shine = document.createElement('img');
+            shine.src = 'https://placehold.co/100x100/ffffff/ffffff?text=';
+            shine.alt = 'Glossy shine highlight on bubble';
+            shine.className = 'pointer-events-none absolute top-0 left-0 w-full h-full rounded-full mix-blend-screen';
+            bubble.style.position = 'absolute';
+            bubble.appendChild(shine);
+
+            // Pop bubble on click or keyboard enter/space
+            bubble.addEventListener('click', () => popBubble(bubble));
+            bubble.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    popBubble(bubble);
+                }
+            });
+
+            bubblesContainer.appendChild(bubble);
+
+            return {
+                element: bubble,
+                size,
+                speed: randomFloat(0.5, 1.5),
+                x: parseFloat(bubble.style.left),
+                y: window.innerHeight + size,
+                directionX: randomFloat(-0.3, 0.3),
+                popped: false,
+            };
+        }
+
+        // Pop bubble animation and sound
+        function popBubble(bubble) {
+            if (bubble.classList.contains('pop')) return; // already popped
+            bubble.classList.add('pop');
+            popSound.currentTime = 0;
+            popSound.play();
+            bubble.style.pointerEvents = 'none';
+            setTimeout(() => {
+                bubble.remove();
+            }, 400);
+        }
+
+        // Animate bubbles floating upwards with slight horizontal movement
+        let bubbles = [];
+        const totalBubbles = 30;
+
+        function initBubbles() {
+            for (let i = 0; i < totalBubbles; i++) {
+                bubbles.push(createBubble(i));
+            }
+        }
+
+        function animateBubbles() {
+            bubbles.forEach((bubbleObj, i) => {
+                if (bubbleObj.popped) return;
+                bubbleObj.y -= bubbleObj.speed;
+                bubbleObj.x += bubbleObj.directionX;
+
+                // Wrap horizontally
+                if (bubbleObj.x < -bubbleObj.size) bubbleObj.x = window.innerWidth;
+                if (bubbleObj.x > window.innerWidth) bubbleObj.x = -bubbleObj.size;
+
+                // Reset bubble to bottom if it floats off top
+                if (bubbleObj.y < -bubbleObj.size) {
+                    bubbleObj.y = window.innerHeight + bubbleObj.size;
+                    bubbleObj.x = randomFloat(0, window.innerWidth - bubbleObj.size);
+                    bubbleObj.speed = randomFloat(0.5, 1.5);
+                    bubbleObj.directionX = randomFloat(-0.3, 0.3);
+                    bubbleObj.element.style.pointerEvents = 'auto';
+                    bubbleObj.element.classList.remove('pop');
+                    bubbleObj.element.style.opacity = 0.8;
+                    bubbles[i].popped = false;
+                    bubbles[i].element.style.display = 'block';
+                }
+
+                bubbleObj.element.style.top = bubbleObj.y + 'px';
+                bubbleObj.element.style.left = bubbleObj.x + 'px';
+            });
+            requestAnimationFrame(animateBubbles);
+        }
+
+        // Pop all bubbles button
+        document.getElementById('popAllBtn').addEventListener('click', () => {
+            bubbles.forEach((bubbleObj) => {
+                if (!bubbleObj.popped) {
+                    popBubble(bubbleObj.element);
+                    bubbleObj.popped = true;
+                }
+            });
+        });
+
+        // Initialize bubbles and start animation
+        initBubbles();
+        animateBubbles();
+
+        // Accessibility: focus outline for bubbles
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('user-is-tabbing');
+            }
+        });
+    </script>
+</body>
+
+</html>

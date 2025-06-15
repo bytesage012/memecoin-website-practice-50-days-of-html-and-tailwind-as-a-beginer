@@ -1,0 +1,349 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        TurboTurtle - The Fastest Turtle on the Blockchain
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Smooth fade-in animation */
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+            animation-name: fadeInUp;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-cyan-50 to-blue-100 min-h-screen flex flex-col">
+    <header class="bg-cyan-700 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img alt="TurboTurtle logo, a stylized fast turtle with blockchain elements" class="w-12 h-12" height="48" src="https://storage.googleapis.com/a1aa/image/3ea61719-cd13-4091-9b81-1e9b8125531d.jpg" width="48" />
+                <h1 class="text-2xl font-bold tracking-wide">
+                    TurboTurtle
+                    <span class="text-yellow-400 font-extrabold">
+       $SHELL
+      </span>
+                </h1>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-semibold text-cyan-100">
+                <a class="hover:text-yellow-400 transition" href="#about">
+      About the Race
+     </a>
+                <a class="hover:text-yellow-400 transition" href="#tokenomics">
+      Tokenomics
+     </a>
+                <a class="hover:text-yellow-400 transition" href="#leaderboard">
+      Leaderboard
+     </a>
+                <a class="hover:text-yellow-400 transition" href="#join">
+      Join the Shell Club
+     </a>
+            </nav>
+            <button class="md:hidden focus:outline-none" id="menu-btn">
+     <i class="fas fa-bars text-2xl text-white">
+     </i>
+    </button>
+        </div>
+        <nav class="hidden bg-cyan-600 text-cyan-100 flex flex-col space-y-2 px-6 py-4 md:hidden" id="mobile-menu">
+            <a class="hover:text-yellow-400 transition" href="#about" onclick="toggleMenu()">
+     About the Race
+    </a>
+            <a class="hover:text-yellow-400 transition" href="#tokenomics" onclick="toggleMenu()">
+     Tokenomics
+    </a>
+            <a class="hover:text-yellow-400 transition" href="#leaderboard" onclick="toggleMenu()">
+     Leaderboard
+    </a>
+            <a class="hover:text-yellow-400 transition" href="#join" onclick="toggleMenu()">
+     Join the Shell Club
+    </a>
+        </nav>
+    </header>
+    <main class="flex-grow container mx-auto px-6 py-12 space-y-20">
+        <!-- About the Race -->
+        <section class="fade-in max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12" id="about">
+            <h2 class="text-4xl font-extrabold text-cyan-800 mb-6 text-center">
+                About the Race
+            </h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <img alt="Illustration of a fast turtle racing on a futuristic blockchain track with glowing nodes and digital effects" class="rounded-lg shadow-lg w-full md:w-1/2 mb-6 md:mb-0" height="300" src="https://storage.googleapis.com/a1aa/image/75f3efdf-3e8a-48c5-7f81-dc74e328ec97.jpg"
+                    width="400" />
+                <p class="text-cyan-700 text-lg leading-relaxed md:w-1/2">
+                    TurboTurtle ($SHELL) is the fastest turtle on the blockchain, blazing trails through decentralized networks with unmatched speed and agility. Join the race where innovation meets fun, and watch as TurboTurtle outpaces the competition with lightning-fast
+                    transactions and a community-driven spirit. Whether you're a seasoned crypto racer or a newcomer, TurboTurtle offers a thrilling journey through the blockchain ecosystem.
+                </p>
+            </div>
+        </section>
+        <!-- Tokenomics -->
+        <section class="fade-in max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12" id="tokenomics">
+            <h2 class="text-4xl font-extrabold text-cyan-800 mb-10 text-center">
+                Tokenomics
+            </h2>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-12 md:space-y-0 md:space-x-16">
+                <!-- Pie Chart 1 -->
+                <div class="flex flex-col items-center space-y-4">
+                    <img alt="Pie chart showing 50% liquidity, 30% rewards, 20% development allocation for TurboTurtle tokenomics" class="w-48 h-48 rounded-full shadow-lg" height="200" src="https://storage.googleapis.com/a1aa/image/60d0c616-b6f9-49fd-3531-a29824eb637f.jpg"
+                        width="200" />
+                    <h3 class="text-xl font-semibold text-cyan-700">
+                        Allocation Breakdown
+                    </h3>
+                    <ul class="text-cyan-600 text-sm space-y-1">
+                        <li>
+                            <i class="fas fa-circle text-yellow-400 mr-2">
+        </i> 50% Liquidity
+                        </li>
+                        <li>
+                            <i class="fas fa-circle text-cyan-500 mr-2">
+        </i> 30% Rewards
+                        </li>
+                        <li>
+                            <i class="fas fa-circle text-green-500 mr-2">
+        </i> 20% Development
+                        </li>
+                    </ul>
+                </div>
+                <!-- Pie Chart 2 -->
+                <div class="flex flex-col items-center space-y-4">
+                    <img alt="Pie chart showing 40% holders, 35% team, 25% marketing distribution for TurboTurtle tokenomics" class="w-48 h-48 rounded-full shadow-lg" height="200" src="https://storage.googleapis.com/a1aa/image/a264eb6b-a5eb-4d4c-8560-c42690c6ee06.jpg" width="200"
+                    />
+                    <h3 class="text-xl font-semibold text-cyan-700">
+                        Distribution
+                    </h3>
+                    <ul class="text-cyan-600 text-sm space-y-1">
+                        <li>
+                            <i class="fas fa-circle text-purple-500 mr-2">
+        </i> 40% Holders
+                        </li>
+                        <li>
+                            <i class="fas fa-circle text-pink-500 mr-2">
+        </i> 35% Team
+                        </li>
+                        <li>
+                            <i class="fas fa-circle text-red-500 mr-2">
+        </i> 25% Marketing
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Leaderboard -->
+        <section class="fade-in max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12 overflow-x-auto" id="leaderboard">
+            <h2 class="text-4xl font-extrabold text-cyan-800 mb-8 text-center">
+                Leaderboard
+            </h2>
+            <table class="min-w-full table-auto border-collapse border border-cyan-300">
+                <thead class="bg-cyan-700 text-white">
+                    <tr>
+                        <th class="border border-cyan-300 px-4 py-3 text-left">
+                            Rank
+                        </th>
+                        <th class="border border-cyan-300 px-4 py-3 text-left">
+                            Turtle Name
+                        </th>
+                        <th class="border border-cyan-300 px-4 py-3 text-left">
+                            Speed Score
+                        </th>
+                        <th class="border border-cyan-300 px-4 py-3 text-left">
+                            Wallet
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-cyan-800">
+                    <tr class="hover:bg-cyan-100 transition">
+                        <td class="border border-cyan-300 px-4 py-3 font-semibold">
+                            1
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            ShellRacer
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            9876
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3 font-mono truncate max-w-xs">
+                            0xA1b2C3d4E5f67890123456789abcdef123456789
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-cyan-100 transition bg-cyan-50">
+                        <td class="border border-cyan-300 px-4 py-3 font-semibold">
+                            2
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            TurboTurtleX
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            9450
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3 font-mono truncate max-w-xs">
+                            0xB2c3D4e5F67890123456789abcdef1234567890ab
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-cyan-100 transition">
+                        <td class="border border-cyan-300 px-4 py-3 font-semibold">
+                            3
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            ShellShock
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            9123
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3 font-mono truncate max-w-xs">
+                            0xC3d4E5f67890123456789abcdef1234567890abc1
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-cyan-100 transition bg-cyan-50">
+                        <td class="border border-cyan-300 px-4 py-3 font-semibold">
+                            4
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            SpeedShell
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            8900
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3 font-mono truncate max-w-xs">
+                            0xD4e5F67890123456789abcdef1234567890abc12d
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-cyan-100 transition">
+                        <td class="border border-cyan-300 px-4 py-3 font-semibold">
+                            5
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            BlazingShell
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            8650
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3 font-mono truncate max-w-xs">
+                            0xE5f67890123456789abcdef1234567890abc1234e
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-cyan-100 transition bg-cyan-50">
+                        <td class="border border-cyan-300 px-4 py-3 font-semibold">
+                            6
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            ShellStorm
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            8400
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3 font-mono truncate max-w-xs">
+                            0xF67890123456789abcdef1234567890abc12345f
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-cyan-100 transition">
+                        <td class="border border-cyan-300 px-4 py-3 font-semibold">
+                            7
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            TurboTide
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            8200
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3 font-mono truncate max-w-xs">
+                            0x67890123456789abcdef1234567890abc12345678
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-cyan-100 transition bg-cyan-50">
+                        <td class="border border-cyan-300 px-4 py-3 font-semibold">
+                            8
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            ShellBlaze
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            7950
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3 font-mono truncate max-w-xs">
+                            0x7890123456789abcdef1234567890abc123456789
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-cyan-100 transition">
+                        <td class="border border-cyan-300 px-4 py-3 font-semibold">
+                            9
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            ShellRunner
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            7700
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3 font-mono truncate max-w-xs">
+                            0x890123456789abcdef1234567890abc1234567890
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-cyan-100 transition bg-cyan-50">
+                        <td class="border border-cyan-300 px-4 py-3 font-semibold">
+                            10
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            ShellFlash
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3">
+                            7500
+                        </td>
+                        <td class="border border-cyan-300 px-4 py-3 font-mono truncate max-w-xs">
+                            0x90123456789abcdef1234567890abc12345678901
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- Join the Shell Club -->
+        <section class="fade-in max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12 text-center" id="join">
+            <h2 class="text-4xl font-extrabold text-cyan-800 mb-6">
+                Join the Shell Club
+            </h2>
+            <p class="text-cyan-700 text-lg mb-8 max-w-3xl mx-auto">
+                Become part of the fastest turtle community on the blockchain! Connect with fellow racers, get the latest updates, and participate in exclusive events by joining our Discord server.
+            </p>
+            <a aria-label="Join TurboTurtle Discord Server" class="inline-flex items-center space-x-3 bg-cyan-700 hover:bg-yellow-400 hover:text-cyan-900 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105" href="https://discord.gg/turboturtle"
+                rel="noopener noreferrer" target="_blank">
+                <i class="fab fa-discord fa-2x">
+     </i>
+                <span class="text-xl">
+      Join Discord
+     </span>
+            </a>
+        </section>
+    </main>
+    <footer class="bg-cyan-700 text-cyan-100 py-6 text-center font-semibold">
+        © 2024 TurboTurtle. All rights reserved.
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+
+</html>
