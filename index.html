@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meme Coin Templates — Index</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  /* Small custom styles to polish previews */
+  .card-iframe { border: 1px solid rgba(0,0,0,0.08); border-radius: 0.5rem; overflow: hidden; }
+  .card-iframe iframe { width: 100%; height: 220px; display: block; overflow: hidden; pointer-events: none; }
+    .card { transition: transform .12s ease, box-shadow .12s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(16,24,40,.08); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <header class="max-w-6xl mx-auto p-6 flex items-center justify-between">
+    <div>
+      <h1 class="text-2xl font-bold">Meme Coin Templates</h1>
+      <p class="text-sm text-slate-500 mt-1">A visual index of all single-file HTML templates in this practice project. Click a card or use the preview to explore.</p>
+    </div>
+    <div class="text-sm text-slate-400">Generated: 2025-11-18</div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 pb-12">
+    <div class="flex gap-4 mb-6 items-center">
+      <input id="search" type="search" placeholder="Search templates (name or description)" class="flex-1 p-3 rounded-lg border border-slate-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-300" />
+      <select id="mode" class="p-3 rounded-lg border border-slate-200">
+        <option value="grid">Grid</option>
+        <option value="list">List</option>
+      </select>
+    </div>
+
+    <section id="count" class="text-sm text-slate-600 mb-4">Loading templates...</section>
+
+    <section id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></section>
+
+    <footer class="mt-12 text-sm text-slate-500">Tip: Previews lazy-load when cards appear in your viewport to reduce initial load. Open a preview in a new tab by clicking the "Open" link.</footer>
+  </main>
+
+  <script>
+    // List of templates and descriptions (inferred from filenames)
+    const templates = [
+      { file: "$BEANZ.html", title: "$BEANZ", desc: "Bean-themed meme coin landing page with playful mascot." },
+      { file: "$DRIP.html", title: "$DRIP", desc: "Drip-themed token template with glossy/neon visuals." },
+      { file: "$FLYPEPE.html", title: "$FLYPEPE", desc: "Flying Pepe themed template with whimsical art." },
+      { file: "$FRT.html", title: "$FRT", desc: "Short/abbreviated token page; simple landing layout." },
+      { file: "$LENNY.html", title: "$LENNY", desc: "Lenny-face meme themed microsite with retro humor." },
+      { file: "$MOO.html", title: "$MOO", desc: "Cow/dairy-themed coin page with fun branding." },
+      { file: "$PUNKY.html", title: "$PUNKY", desc: "Punk-styled token with edgy typography." },
+      { file: "$SNACC.html", title: "$SNACC", desc: "Snack-themed meme coin landing page." },
+      { file: "$TOAD.html", title: "$TOAD", desc: "Toad-themed template with quirky copy." },
+      { file: "$WOJZ.html", title: "$WOJZ", desc: "Wojak-style token template with emotional mascot." },
+      { file: "$ZZZ.html", title: "$ZZZ", desc: "Sleep motif; calm pastel minimal layout." },
+      { file: "404Coin.html", title: "404Coin", desc: "Novelty coin themed around the HTTP 404 error." },
+      { file: "AlienPepe.html", title: "AlienPepe", desc: "Alien Pepe variant with space visuals." },
+      { file: "Apestronaut.html", title: "Apestronaut", desc: "Ape + astronaut themed template, sci-fi primate." },
+      { file: "BananaDAO.html", title: "BananaDAO", desc: "DAO-themed banana coin with community governance hints." },
+      { file: "BeanieCoin.html", title: "BeanieCoin", desc: "Beanie hat mascot token page." },
+      { file: "BroccoliBro.html", title: "BroccoliBro", desc: "Broccoli-themed character token with quirky mascot." },
+      { file: "BubbleChad.html", title: "BubbleChad", desc: "Bubble/Chad fusion with confident CTAs." },
+      { file: "BuzzCoin.html", title: "BuzzCoin", desc: "Energetic, hype-focused token landing page." },
+      { file: "CaptainCorn.html", title: "CaptainCorn", desc: "Nautical/corn mashup mascot template." },
+      { file: "CloudyCoin.html", title: "CloudyCoin", desc: "Cloud/dreamy aesthetic with airy layout." },
+      { file: "CyberPigeon.html", title: "CyberPigeon", desc: "Futuristic pigeon mascot with cyber visuals." },
+      { file: "DonkeyDAO.html", title: "DonkeyDAO", desc: "Donkey-themed DAO template focused on community." },
+      { file: "Duck.html", title: "Duck", desc: "Friendly duck mascot landing page." },
+      { file: "FlaminGoUp.html", title: "FlaminGoUp", desc: "Flamingo + pump motif, bright and energetic." },
+      { file: "FluffyShiba.html", title: "FluffyShiba", desc: "Shiba Inu themed cute mascot template." },
+      { file: "Froggonaut.html", title: "Froggonaut", desc: "Frog astronaut combo, space-themed frog." },
+      { file: "GhostDoge.html", title: "GhostDoge", desc: "Ghost + Doge mashup with ethereal visuals." },
+      { file: "GiraffeGang.html", title: "GiraffeGang", desc: "Giraffe-themed community token layout." },
+      { file: "GummyBearToken.html", title: "GummyBearToken", desc: "Candy/gummy bear token page—colorful and playful." },
+      { file: "HootHootCoin.html", title: "HootHootCoin", desc: "Owl/hoot-themed token with nocturnal visuals." },
+      { file: "IceCream.html", title: "IceCream", desc: "Dessert-themed template with sweet visuals." },
+      { file: "KoalaKoin.html", title: "KoalaKoin", desc: "Koala mascot token, calm color scheme." },
+      { file: "LaserCat.html", title: "LaserCat", desc: "Laser-eyed cat meme with neon styling." },
+      { file: "MechaShiba.html", title: "MechaShiba", desc: "Robotic Shiba Inu with tech/mecha aesthetics." },
+      { file: "MooFi.html", title: "MooFi", desc: "Finance-themed cow token mixing DeFi jargon and bovine mascot." },
+      { file: "MoonMango.html", title: "MoonMango", desc: "Tropical + to-the-moon motif; mango + space." },
+      { file: "NachoToken.html", title: "NachoToken", desc: "Nacho-themed token with snacky branding." },
+      { file: "OtterlyCoin.html", title: "OtterlyCoin", desc: "Otter mascot token with playful aquatic visuals." },
+      { file: "PenguinPalz.html", title: "PenguinPalz", desc: "Penguin-themed community token with family-friendly styling." },
+      { file: "PixelPaws.html", title: "PixelPaws", desc: "Pixel-art pet token look with retro graphics." },
+      { file: "PizzaPepe.html", title: "PizzaPepe", desc: "Pepe + pizza fusion; playful food-and-meme branding." },
+      { file: "Pugzilla.html", title: "Pugzilla", desc: "Pug + Godzilla mashup; humorous giant mascot." },
+      { file: "QuantumHamster.html", title: "QuantumHamster", desc: "Sci-fi hamster token with quantum/tech motifs." },
+      { file: "RoboRat.html", title: "RoboRat", desc: "Robotic rat mascot with futuristic styling." },
+      { file: "SassySnail.html", title: "SassySnail", desc: "Snail-themed token with attitude and quirky copy." },
+      { file: "ScalyToken.html", title: "ScalyToken", desc: "Dragon or scaled creature motif with fantasy visuals." },
+      { file: "SharkSnax.html", title: "SharkSnax", desc: "Shark + snack mashup; fierce branding." },
+      { file: "SleepyKoalaCoin.html", title: "SleepyKoalaCoin", desc: "Mellow sleepy koala variant with relaxed CTAs." },
+      { file: "SnaccCoin.html", title: "SnaccCoin", desc: "Snack-themed token with quick, snackable content." },
+      { file: "Solana.html", title: "Solana", desc: "Template inspired by Solana-like visual language." },
+      { file: "Spaghetti.html", title: "Spaghetti", desc: "Spaghetti-themed page with playful messy visuals." },
+      { file: "Toadzilla.html", title: "Toadzilla", desc: "Toad + Godzilla mashup with monster-sized mascot." },
+      { file: "TrashPanda.html", title: "TrashPanda", desc: "Raccoon (trash panda) themed token—mischievous mascot." },
+      { file: "TurboTurtle.html", title: "TurboTurtle", desc: "Fast-turtle paradox theme with playful messaging." },
+      { file: "UnicornFi.html", title: "UnicornFi", desc: "Unicorn-themed DeFi-style landing page—dreamy visuals." },
+      { file: "WaffleCoin.html", title: "WaffleCoin", desc: "Waffle-themed token with sweet breakfast branding." },
+      { file: "WizardWAGMI.html", title: "WizardWAGMI", desc: "Wizard + WAGMI lingo; mystical crypto-optimism styling." },
+      { file: "Woofinator.html", title: "Woofinator", desc: "Dog robot mashup token with mechanical visuals." },
+      { file: "ZenPepe.html", title: "ZenPepe", desc: "Zen/meditation spin on Pepe mascot—calm layout." },
+      { file: "llamacoim2.html", title: "llamacoim2", desc: "Alternate llama-themed token (version 2)." },
+      { file: "llamacoin.html", title: "llamacoin", desc: "Primary llama token with warm friendly branding." },
+      { file: "nineteenth.html", title: "nineteenth", desc: "Exercise/day 19 template—layout experiment." },
+      { file: "twenty first.html", title: "twenty first", desc: "Exercise/day 21 template—another layout experiment." }
+    ];
+
+    const grid = document.getElementById('grid');
+    const count = document.getElementById('count');
+    const search = document.getElementById('search');
+    const mode = document.getElementById('mode');
+
+    function makeCard(t) {
+      // Create the card element
+      const card = document.createElement('article');
+      card.className = 'card bg-white p-4 rounded-lg border border-slate-100';
+
+      const header = document.createElement('div');
+      header.className = 'flex items-start justify-between gap-3 mb-3';
+
+      const title = document.createElement('div');
+      title.innerHTML = `<h3 class="font-semibold">${t.title}</h3><div class="text-xs text-slate-500">${t.file}</div>`;
+
+      const links = document.createElement('div');
+      links.className = 'text-sm flex gap-2';
+      const open = document.createElement('a');
+      open.href = t.file;
+      open.target = '_blank';
+      open.rel = 'noopener noreferrer';
+      open.className = 'text-sky-600 hover:underline';
+      open.textContent = 'Open';
+
+      const openPreview = document.createElement('a');
+      openPreview.href = '#preview-' + encodeURIComponent(t.file);
+      openPreview.className = 'text-slate-500 hover:underline text-xs';
+      openPreview.textContent = 'Jump to preview';
+
+      links.appendChild(open);
+      links.appendChild(openPreview);
+
+      header.appendChild(title);
+      header.appendChild(links);
+
+      const iframeWrapper = document.createElement('div');
+      iframeWrapper.className = 'card-iframe mb-3';
+      iframeWrapper.id = 'preview-' + encodeURIComponent(t.file);
+
+    const iframe = document.createElement('iframe');
+    // set data-src for lazy-loading
+    iframe.setAttribute('data-src', t.file);
+    iframe.setAttribute('loading', 'lazy');
+    iframe.setAttribute('title', t.title + ' preview');
+    iframe.setAttribute('scrolling', 'no');
+    iframe.style.background = 'white';
+    iframe.style.overflow = 'hidden';
+    iframe.style.pointerEvents = 'none'; // Prevent interaction/scrolling
+    iframeWrapper.appendChild(iframe);
+      const desc = document.createElement('p');
+      desc.className = 'text-sm text-slate-600 mb-3';
+      desc.textContent = t.desc;
+
+      card.appendChild(header);
+      card.appendChild(iframeWrapper);
+      card.appendChild(desc);
+
+      return card;
+    }
+
+    function render(list) {
+      grid.innerHTML = '';
+      list.forEach(t => grid.appendChild(makeCard(t)));
+      count.textContent = `${list.length} templates`;
+      // reinit lazy loader
+      initLazyLoad();
+    }
+
+    function filterTemplates(q) {
+      q = q.trim().toLowerCase();
+      if (!q) return templates;
+      return templates.filter(t => (t.title + ' ' + t.file + ' ' + t.desc).toLowerCase().includes(q));
+    }
+
+    search.addEventListener('input', () => {
+      render(filterTemplates(search.value));
+    });
+
+    mode.addEventListener('change', () => {
+      if (mode.value === 'list') {
+        grid.className = 'space-y-4';
+      } else {
+        grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5';
+      }
+    });
+
+    // Lazy load iframes when they enter the viewport
+    let io;
+    function initLazyLoad() {
+      // disconnect previous observer
+      if (io) io.disconnect();
+      const iframes = Array.from(document.querySelectorAll('iframe[data-src]'));
+      iframes.forEach(f => f.removeAttribute('src'));
+
+      if ('IntersectionObserver' in window) {
+        io = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const src = el.getAttribute('data-src');
+              if (src && !el.src) {
+                // safe-encode spaces
+                el.src = src.split(' ').map(s => encodeURIComponent(s)).join('%20').replace(/%2520/g, '%20');
+              }
+              io.unobserve(el);
+            }
+          });
+        }, { rootMargin: '200px 0px' });
+
+        iframes.forEach(f => io.observe(f));
+      } else {
+        // Fallback: load all
+        iframes.forEach(f => { if (!f.src) f.src = f.getAttribute('data-src'); });
+      }
+    }
+
+    // Initial render
+    render(templates);
+  </script>
+</body>
+</html>
