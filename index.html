@@ -5,37 +5,293 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Meme Coin Templates — Index</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Icons and scroll animation library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pap6K8S3m1Y6qh5r+u1h2VZ7xv0s5b6E3kpE+e2k9h1qzZlqZQdKq6Y3Gg2KQfV6G5V6H4xJ1q3s9D3V6x3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-Ho3G6Q2bXQF0zW9nZkD1sKpJw1x6G9s2H3z6Qv2G2b1q3H5x6Y4k==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-  /* Small custom styles to polish previews */
-  .card-iframe { border: 1px solid rgba(0,0,0,0.08); border-radius: 0.5rem; overflow: hidden; }
-  .card-iframe iframe { width: 100%; height: 220px; display: block; overflow: hidden; pointer-events: none; }
-    .card { transition: transform .12s ease, box-shadow .12s ease; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(16,24,40,.08); }
+  /* Design tokens and component styles */
+  :root {
+    /* Color tokens */
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --fg: #0f172a;
+    --muted: #64748b;
+    --primary: #7c5cff; /* vibrant primary */
+    --primary-700: #6b4bed;
+    --card-bg: var(--surface);
+    --border: rgba(0,0,0,0.08);
+
+    /* Spacing */
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+
+    /* Radii */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+
+    /* Shadows */
+    --shadow-1: 0 6px 18px rgba(12,18,30,0.12);
+    --shadow-2: 0 10px 30px rgba(12,18,30,0.16);
+  }
+
+  body.dark {
+    --bg: #071026;
+    --surface: #0b1226;
+    --fg: #e6eef8;
+    --muted: #94a3b8;
+    --card-bg: #071226;
+    --border: rgba(255,255,255,0.06);
+  }
+
+  body { background-color: var(--bg); color: var(--fg); }
+  .text-muted { color: var(--muted); }
+  button:focus { outline: 3px solid rgba(59,130,246,0.35); outline-offset: 2px; }
+  /* Dark-mode overrides for common Tailwind utility classes used in the page */
+  body.dark .bg-white { background-color: var(--card-bg) !important; }
+  body.dark .text-slate-500,
+  body.dark .text-slate-600,
+  body.dark .text-slate-400 { color: var(--muted) !important; }
+  body.dark .text-slate-800 { color: var(--fg) !important; }
+
+  /* Header form elements and pagination should blend with theme */
+  header input, header select, #theme-toggle { background-color: var(--card-bg); border-color: var(--border); color: var(--fg); }
+  #pagination button { background-color: transparent; color: var(--fg); border-color: var(--border); }
+
+  /* Primary color utility */
+  .text-primary { color: var(--primary); }
+  .hover\:text-primary:hover { color: var(--primary); }
+
+  /* Ensure iframe element background follows theme */
+  .card-iframe iframe { background: var(--card-bg); }
+  .card { transition: transform .12s ease, box-shadow .12s ease; background-color: var(--card-bg) !important; border-color: var(--border) !important; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(16,24,40,.08); }
+  .card-iframe { border: 1px solid var(--border); border-radius: 0.5rem; overflow: hidden; }
+  .card-iframe iframe { width: 100%; height: 220px; display: block; overflow: hidden; pointer-events: none; background: var(--card-bg); }
+
+  /* Site header (glassmorphism & sticky) */
+  .site-header { position: fixed; left: 0; right: 0; top: 0; z-index: 60; padding: 1rem 0; }
+  .site-header .inner { max-width: 96rem; margin: 0 auto; background: rgba(255,255,255,0.6); backdrop-filter: blur(8px); border-radius: var(--radius-md); padding: 0.6rem 1rem; box-shadow: var(--shadow-1); }
+  body.dark .site-header .inner { background: rgba(10,12,20,0.45); }
+
+  /* Hero with animated grid background */
+  .hero { position: relative; overflow: hidden; border-radius: calc(var(--radius-md) * 1.1); padding: var(--space-lg) 0; margin-bottom: var(--space-lg); min-height: 72vh; }
+  .hero .hero-inner { position: relative; z-index: 2; }
+  .hero-grid { position: absolute; inset: 0; z-index: 0; opacity: 0.12; pointer-events: none; }
+  .hero-grid::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(180deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mix-blend-mode: overlay;
+  }
+  .hero-grid::after {
+    content: '';
+    position: absolute; inset: 0; background: radial-gradient(circle at 10% 20%, rgba(124,92,255,0.14), transparent 15%), radial-gradient(circle at 80% 80%, rgba(124,92,255,0.12), transparent 18%);
+    animation: wash 9s linear infinite;
+    opacity: 0.65;
+    mix-blend-mode: screen;
+  }
+  @keyframes wash { 0% { transform: translateX(-20%); } 50% { transform: translateX(20%); } 100% { transform: translateX(-20%); } }
+
+  /* Components */
+  .btn-primary { background: linear-gradient(90deg,var(--primary),var(--primary-700)); color: white; padding: 0.75rem 1.1rem; border-radius: 12px; box-shadow: var(--shadow-2); display: inline-flex; align-items: center; gap: 8px; transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease; }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(107,75,255,0.18); }
+
+  .feature-card { background: var(--card-bg); padding: var(--space-md); border-radius: var(--radius-sm); box-shadow: var(--shadow-1); transition: transform .12s ease, box-shadow .12s ease; }
+  .feature-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-2); }
+
+  /* Zigzag section helper */
+  .section-alt { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); align-items: center; }
+  @media (min-width: 768px) { .section-alt { grid-template-columns: 1fr 1fr; } .section-alt.even { direction: rtl; } .section-alt.even > * { direction: ltr; } }
+
+  /* Testimonials and footer */
+  .testimonials .card { padding: var(--space-md); }
+
+  /* Ensure the body leaves space for the sticky header */
+  body { padding-top: 96px; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
-  <header class="max-w-6xl mx-auto p-6 flex items-center justify-between">
-    <div>
-      <h1 class="text-2xl font-bold">Meme Coin Templates</h1>
-      <p class="text-sm text-slate-500 mt-1">A visual index of all single-file HTML templates in this practice project. Click a card or use the preview to explore.</p>
+<body>
+  <header class="site-header">
+    <div class="inner flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="#" class="flex items-center gap-3 no-underline">
+          <div class="rounded-md p-2" style="background:linear-gradient(90deg,var(--primary),var(--primary-700)); color: white;"><i class="fa fa-coins"></i></div>
+          <div>
+            <h1 class="text-lg font-semibold m-0">Meme Coin Templates</h1>
+            <div class="text-xs text-muted">Curated single-file demos</div>
+          </div>
+        </a>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6">
+        <a class="text-sm text-muted hover:text-primary no-underline flex items-center gap-2" href="#features"><i class="fa fa-th-large"></i> Features</a>
+        <a class="text-sm text-muted hover:text-primary no-underline flex items-center gap-2" href="#templates"><i class="fa fa-table"></i> Templates</a>
+        <a class="text-sm text-muted hover:text-primary no-underline flex items-center gap-2" href="#testimonials"><i class="fa fa-star"></i> Testimonials</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button class="btn-primary hidden md:inline-flex" id="nav-cta">Explore Templates <i class="fa fa-arrow-right"></i></button>
+      </div>
     </div>
-    <div class="text-sm text-slate-400">Generated: 2025-11-18</div>
   </header>
 
   <main class="max-w-6xl mx-auto px-6 pb-12">
+    <!-- Hero -->
+    <section id="hero" class="hero mb-8" data-aos="fade-up" data-aos-duration="900">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-inner max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">Premium single-file templates for rapid prototyping</h2>
+            <p class="mt-4 text-muted max-w-xl">A curated collection of clean, modern, single-file HTML templates—perfect for experimentation, demos, and learning Tailwind.</p>
+            <div class="mt-6 flex gap-3 items-center">
+              <button class="btn-primary" id="hero-cta">Get started <i class="fa fa-arrow-right"></i></button>
+              <a href="#templates" class="text-sm text-muted hover:underline">Browse all templates →</a>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <div class="rounded-xl p-6" style="background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)); box-shadow: var(--shadow-1);">
+              <!-- Placeholder illustration or screenshot -->
+              <div class="w-full h-48 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold">Template Preview</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features -->
+    <section id="features" class="mb-8" data-aos="fade-up">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h3 class="text-2xl font-semibold">Features</h3>
+          <p class="text-sm text-muted">Modern components, thoughtful interactions, and accessible defaults.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-start gap-3">
+            <div class="text-2xl text-primary"><i class="fa fa-bolt" style="color:var(--primary)"></i></div>
+            <div>
+              <h4 class="font-semibold">Performance</h4>
+              <p class="text-sm text-muted mt-1">Optimized markup and lazy previews for snappy interactions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-start gap-3">
+            <div class="text-2xl text-primary"><i class="fa fa-lock" style="color:var(--primary)"></i></div>
+            <div>
+              <h4 class="font-semibold">Accessible</h4>
+              <p class="text-sm text-muted mt-1">Keyboard navigable, ARIA-ready components, and clear contrast.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-start gap-3">
+            <div class="text-2xl text-primary"><i class="fa fa-palette" style="color:var(--primary)"></i></div>
+            <div>
+              <h4 class="font-semibold">Design Tokens</h4>
+              <p class="text-sm text-muted mt-1">Centralized design tokens for colors, spacing, and elevation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="mb-8" data-aos="fade-up">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h3 class="text-2xl font-semibold">Features</h3>
+          <p class="text-sm text-muted">Modern components, thoughtful interactions, and accessible defaults.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-start gap-3">
+            <div class="text-2xl text-primary"><i class="fa fa-bolt" style="color:var(--primary)"></i></div>
+            <div>
+              <h4 class="font-semibold">Performance</h4>
+              <p class="text-sm text-muted mt-1">Optimized markup and lazy previews for snappy interactions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-start gap-3">
+            <div class="text-2xl text-primary"><i class="fa fa-lock" style="color:var(--primary)"></i></div>
+            <div>
+              <h4 class="font-semibold">Accessible</h4>
+              <p class="text-sm text-muted mt-1">Keyboard navigable, ARIA-ready components, and clear contrast.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-start gap-3">
+            <div class="text-2xl text-primary"><i class="fa fa-palette" style="color:var(--primary)"></i></div>
+            <div>
+              <h4 class="font-semibold">Design Tokens</h4>
+              <p class="text-sm text-muted mt-1">Centralized design tokens for colors, spacing, and elevation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="flex gap-4 mb-6 items-center">
-      <input id="search" type="search" placeholder="Search templates (name or description)" class="flex-1 p-3 rounded-lg border border-slate-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-300" />
-      <select id="mode" class="p-3 rounded-lg border border-slate-200">
+      <input id="search" type="search" placeholder="Search templates (name or description)" class="flex-1 p-3 rounded-lg border shadow-sm focus:outline-none" />
+      <select id="mode" class="p-3 rounded-lg border">
         <option value="grid">Grid</option>
         <option value="list">List</option>
       </select>
+
+      <!-- Theme toggle -->
+      <button id="theme-toggle" aria-pressed="true" title="Toggle light/dark theme" class="p-3 rounded-lg border">
+        <span id="theme-icon">🌙</span>
+        <span class="sr-only">Toggle theme</span>
+      </button>
     </div>
 
-    <section id="count" class="text-sm text-slate-600 mb-4">Loading templates...</section>
+    <section id="templates" data-aos="fade-up">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-2xl font-semibold">Templates</h3>
+        <div class="text-sm text-muted">A live index of single-file demos</div>
+      </div>
 
-    <section id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></section>
+      <section id="count" class="text-sm text-muted mb-4">Loading templates...</section>
 
-    <footer class="mt-12 text-sm text-slate-500">Tip: Previews lazy-load when cards appear in your viewport to reduce initial load. Open a preview in a new tab by clicking the "Open" link.</footer>
+      <section id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></section>
+
+      <!-- Pagination controls -->
+      <nav id="pagination" class="flex items-center justify-center gap-2 mt-6" aria-label="Pagination"></nav>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="mt-12 testimonials" data-aos="fade-up">
+      <h3 class="text-2xl font-semibold mb-4">What people say</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card p-6">
+          <p class="text-sm text-muted">"Fast, clean templates that helped our team prototype in hours not days."</p>
+          <div class="mt-4 font-semibold">— Alex</div>
+        </div>
+        <div class="card p-6">
+          <p class="text-sm text-muted">"Surprisingly polished starting points. Loved the attention to accessibility."</p>
+          <div class="mt-4 font-semibold">— Priya</div>
+        </div>
+        <div class="card p-6">
+          <p class="text-sm text-muted">"Great for demos and teaching—single files are so easy to fork and play with."</p>
+          <div class="mt-4 font-semibold">— Marco</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-12 text-sm text-muted">Tip: Previews lazy-load when cards appear in your viewport to reduce initial load. Open a preview in a new tab by clicking the "Open" link.</footer>
   </main>
 
   <script>
@@ -121,7 +377,7 @@
       header.className = 'flex items-start justify-between gap-3 mb-3';
 
       const title = document.createElement('div');
-      title.innerHTML = `<h3 class="font-semibold">${t.title}</h3><div class="text-xs text-slate-500">${t.file}</div>`;
+      title.innerHTML = `<h3 class="font-semibold">${t.title}</h3><div class="text-xs text-muted">${t.file}</div>`;
 
       const links = document.createElement('div');
       links.className = 'text-sm flex gap-2';
@@ -129,12 +385,12 @@
       open.href = t.file;
       open.target = '_blank';
       open.rel = 'noopener noreferrer';
-      open.className = 'text-sky-600 hover:underline';
+      open.className = 'text-primary hover:underline';
       open.textContent = 'Open';
 
       const openPreview = document.createElement('a');
       openPreview.href = '#preview-' + encodeURIComponent(t.file);
-      openPreview.className = 'text-slate-500 hover:underline text-xs';
+      openPreview.className = 'text-muted hover:underline text-xs';
       openPreview.textContent = 'Jump to preview';
 
       links.appendChild(open);
@@ -153,12 +409,12 @@
     iframe.setAttribute('loading', 'lazy');
     iframe.setAttribute('title', t.title + ' preview');
     iframe.setAttribute('scrolling', 'no');
-    iframe.style.background = 'white';
+    iframe.style.background = 'var(--card-bg)';
     iframe.style.overflow = 'hidden';
     iframe.style.pointerEvents = 'none'; // Prevent interaction/scrolling
     iframeWrapper.appendChild(iframe);
       const desc = document.createElement('p');
-      desc.className = 'text-sm text-slate-600 mb-3';
+      desc.className = 'text-sm text-muted mb-3';
       desc.textContent = t.desc;
 
       card.appendChild(header);
@@ -168,12 +424,60 @@
       return card;
     }
 
+    // Pagination settings
+    const PAGE_SIZE = 9;
+    let currentPage = 1;
+    let filteredTemplates = templates;
+
     function render(list) {
+      filteredTemplates = list;
+      const totalPages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+      if (currentPage > totalPages) currentPage = totalPages;
+      const start = (currentPage - 1) * PAGE_SIZE;
+      const pageItems = list.slice(start, start + PAGE_SIZE);
+
       grid.innerHTML = '';
-      list.forEach(t => grid.appendChild(makeCard(t)));
-      count.textContent = `${list.length} templates`;
+      pageItems.forEach(t => grid.appendChild(makeCard(t)));
+      count.textContent = `${list.length} templates — page ${currentPage} of ${totalPages}`;
+
+      renderPagination(totalPages);
       // reinit lazy loader
       initLazyLoad();
+    }
+
+    function renderPagination(totalPages) {
+      const nav = document.getElementById('pagination');
+      nav.innerHTML = '';
+
+      const prev = document.createElement('button');
+      prev.className = 'px-3 py-1 rounded border';
+      prev.setAttribute('aria-label', 'Previous page');
+      prev.textContent = 'Prev';
+      prev.disabled = currentPage === 1;
+      prev.addEventListener('click', () => { if (currentPage > 1) { currentPage--; render(filteredTemplates); } });
+      nav.appendChild(prev);
+
+      // show page numbers (simple approach)
+      for (let i = 1; i <= totalPages; i++) {
+        const b = document.createElement('button');
+        b.className = 'px-3 py-1 rounded';
+        if (i === currentPage) {
+          b.className += ' font-semibold underline';
+          b.setAttribute('aria-current', 'page');
+        }
+        b.setAttribute('aria-label', `Page ${i}`);
+        b.textContent = i;
+        b.addEventListener('click', () => { currentPage = i; render(filteredTemplates); });
+        nav.appendChild(b);
+      }
+
+      const next = document.createElement('button');
+      next.className = 'px-3 py-1 rounded border';
+      next.setAttribute('aria-label', 'Next page');
+      next.textContent = 'Next';
+      next.disabled = currentPage === totalPages;
+      next.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; render(filteredTemplates); } });
+      nav.appendChild(next);
     }
 
     function filterTemplates(q) {
@@ -183,6 +487,7 @@
     }
 
     search.addEventListener('input', () => {
+      currentPage = 1;
       render(filterTemplates(search.value));
     });
 
@@ -193,6 +498,47 @@
         grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5';
       }
     });
+
+    // Theme toggle (default to dark)
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    function setTheme(t) {
+      if (t === 'dark') {
+        document.body.classList.add('dark');
+        themeIcon.textContent = '🌙';
+        themeToggle.setAttribute('aria-pressed', 'true');
+      } else {
+        document.body.classList.remove('dark');
+        themeIcon.textContent = '☀️';
+        themeToggle.setAttribute('aria-pressed', 'false');
+      }
+      try { localStorage.setItem('theme', t); } catch (e) { /* ignore */ }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.classList.contains('dark');
+      setTheme(isDark ? 'light' : 'dark');
+    });
+
+    // Initialize theme from localStorage, default to dark
+    (function initTheme() {
+      const stored = (() => { try { return localStorage.getItem('theme'); } catch (e) { return null; } })();
+      setTheme(stored || 'dark');
+    })();
+
+    // Initialize AOS (Animate On Scroll)
+    (function initAOS() {
+      if (window.AOS) {
+        AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+      } else {
+        // attempt to load AOS script dynamically
+        const s = document.createElement('script');
+        s.src = 'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js';
+        s.onload = () => { AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' }); };
+        document.head.appendChild(s);
+      }
+    })();
 
     // Lazy load iframes when they enter the viewport
     let io;
